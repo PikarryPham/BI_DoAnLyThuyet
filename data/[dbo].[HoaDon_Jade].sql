@@ -1,0 +1,10 @@
+insert into [dbo].[HoaDon_Jade] ([MaHD] , [MaKH] , [MaCH], [NgayBan], [NgayCapNhat] , [TrangThai] ) values ('0001', '0001', '0003', GETDATE(), null, 1);
+insert into [dbo].[HoaDon_Jade] ([MaHD] , [MaKH] , [MaCH], [NgayBan], [NgayCapNhat] , [TrangThai] ) values ('0002', '0002', '0003', GETDATE(), null, 1);
+insert into [dbo].[HoaDon_Jade] ([MaHD] , [MaKH] , [MaCH], [NgayBan], [NgayCapNhat] , [TrangThai] ) values ('0003', '0003', '0005', GETDATE(), null, 1);
+insert into [dbo].[HoaDon_Jade] ([MaHD] , [MaKH] , [MaCH], [NgayBan], [NgayCapNhat] , [TrangThai] ) values ('0004', '0004', '0004', GETDATE(), null, 1);
+insert into [dbo].[HoaDon_Jade] ([MaHD] , [MaKH] , [MaCH], [NgayBan], [NgayCapNhat] , [TrangThai] ) values ('0005', '0005', '0004', GETDATE(), null, 1);
+insert into [dbo].[HoaDon_Jade] ([MaHD] , [MaKH] , [MaCH], [NgayBan], [NgayCapNhat] , [TrangThai] ) values ('0006', '0006', '0011', GETDATE(), null, 1);
+insert into [dbo].[HoaDon_Jade] ([MaHD] , [MaKH] , [MaCH], [NgayBan], [NgayCapNhat] , [TrangThai] ) values ('0007', '0007', '0011', GETDATE(), null, 1);
+insert into [dbo].[HoaDon_Jade] ([MaHD] , [MaKH] , [MaCH], [NgayBan], [NgayCapNhat] , [TrangThai] ) values ('0008', '0008', '0011', GETDATE(), null, 1);
+insert into [dbo].[HoaDon_Jade] ([MaHD] , [MaKH] , [MaCH], [NgayBan], [NgayCapNhat] , [TrangThai] ) values ('0009', '0009', '0011', GETDATE(), null, 1);
+insert into [dbo].[HoaDon_Jade] ([MaHD] , [MaKH] , [MaCH], [NgayBan], [NgayCapNhat] , [TrangThai] ) values ('0010', '0010', '0009', GETDATE(), null, 1);

@@ -1,0 +1,10 @@
+insert into [dbo].[KhachHang_Jade] ([MaKH], [TenKH], [DiaChi], [NgayTao], [NgayCapNhat], [TrangThai]) values ('0001','Gilli Jagels','Wallstrasse,Berlin,Berlin-Brandenburg,Germany', GETDATE(), null, 1);
+insert into [dbo].[KhachHang_Jade] ([MaKH], [TenKH], [DiaChi], [NgayTao], [NgayCapNhat], [TrangThai]) values ('0002','Jaime Francesco','Chalk Farm Street,London,Scotland,UK', GETDATE(), null, 1);
+insert into [dbo].[KhachHang_Jade] ([MaKH], [TenKH], [DiaChi], [NgayTao], [NgayCapNhat], [TrangThai]) values ('0003','Brockie Cawcutt','Broadway Street,Birmingham,Wales,UK', GETDATE(), null, 1);
+insert into [dbo].[KhachHang_Jade] ([MaKH], [TenKH], [DiaChi], [NgayTao], [NgayCapNhat], [TrangThai]) values ('0004','Nessi Trice','Wallstrasse,Berlin,Hamburg,Germany',GETDATE(), null, 1);
+insert into [dbo].[KhachHang_Jade] ([MaKH], [TenKH], [DiaChi], [NgayTao], [NgayCapNhat], [TrangThai]) values ('0005', 'Doti Oxer','Greenwich St.,New York,Delaware,US', GETDATE(), null, 1);
+insert into [dbo].[KhachHang_Jade] ([MaKH], [TenKH], [DiaChi], [NgayTao], [NgayCapNhat], [TrangThai]) values ('0006', 'Gasparo Clarridge','Brick Lane,Liverpool,Ireland,UK', GETDATE(), null, 1);
+insert into [dbo].[KhachHang_Jade] ([MaKH], [TenKH], [DiaChi], [NgayTao], [NgayCapNhat], [TrangThai]) values ('0007','Enriqueta Oels','Columbus Cir,New York,Florida,US', GETDATE(), null, 1);
+insert into [dbo].[KhachHang_Jade] ([MaKH], [TenKH], [DiaChi], [NgayTao], [NgayCapNhat], [TrangThai]) values ('0008','Kettie Grancher','rueJac,Wallstrasse,Paris,France', GETDATE(), null, 1);
+insert into [dbo].[KhachHang_Jade] ([MaKH], [TenKH], [DiaChi], [NgayTao], [NgayCapNhat], [TrangThai]) values ('0009','Gayle Blonden', 'avenue de Choisy,rue Jacquemont,75017 Paris,France',  GETDATE(), null, 1);
+insert into [dbo].[KhachHang_Jade] ([MaKH], [TenKH], [DiaChi], [NgayTao], [NgayCapNhat], [TrangThai]) values ('0010','Allyn Withnall','rue Descartes,rue Menilmontan,Paris,France',GETDATE(), null, 1);
