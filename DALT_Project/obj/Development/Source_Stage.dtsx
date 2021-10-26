@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="54"
-  DTS:VersionGUID="{93BA135F-DA58-4D3B-8612-F33CF749D35C}">
+  DTS:VersionBuild="57"
+  DTS:VersionGUID="{52300D3A-027A-40E8-BDEE-F10A17F7B1F3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -100,6 +100,54 @@
           DTS:ConnectionString="Data Source=DESKTOP-ED2S73F\TRANGPHAM;Initial Catalog=DALT_Webtower;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_Jade]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{BD0E1386-BC22-4517-B749-39282691DD56}"
+      DTS:ObjectName="DESKTOP-LATGDUJ.DALT_Jade">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-LATGDUJ;Initial Catalog=DALT_Jade;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_METADATA]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{4049537A-3DA0-44A7-8EBE-9269ACA811B9}"
+      DTS:ObjectName="DESKTOP-LATGDUJ.DALT_METADATA">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-LATGDUJ;Initial Catalog=DALT_METADATA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_STAGE]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{CF9D9E47-F6A3-444F-B20A-9C357660F49B}"
+      DTS:ObjectName="DESKTOP-LATGDUJ.DALT_STAGE">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-LATGDUJ;Initial Catalog=DALT_STAGE;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_STAGE 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{79CA7A5C-6CA9-43E3-8215-AF262984C769}"
+      DTS:ObjectName="DESKTOP-LATGDUJ.DALT_STAGE 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-LATGDUJ;Initial Catalog=DALT_STAGE;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Variables>
     <DTS:Variable
@@ -113,12 +161,30 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
+      DTS:DTSID="{75C16537-833E-450C-90CE-84000FE484E9}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="CET_KHJ">
+      <DTS:VariableValue
+        DTS:DataType="7">1/1/1990</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
       DTS:DTSID="{EA479747-C927-4737-9A43-DB3646D5916B}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="LSETResult_HoaDon">
       <DTS:VariableValue
         DTS:DataType="7">1/1/1900</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{5F90D3D7-70D6-4A26-8B5F-A8EE0988CBF6}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="LSET_KHJ">
+      <DTS:VariableValue
+        DTS:DataType="7">1/1/1990</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
@@ -532,6 +598,7 @@ WHERE (NgayTao &gt;= xxx AND NgayTao &lt; xxx) OR (NgayCapNhat &gt;= xxx AND Nga
       DTS:refId="Package\Data Flow HoaDon"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
+      DTS:Disabled="True"
       DTS:DTSID="{eed90dfb-afc5-4068-b8b5-4ea9086dec78}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -947,7 +1014,6 @@ WHERE (NgayBan &gt;= ? AND NgayBan &lt; ?) OR (NgayCapNhat &gt;= ? OR NgayCapNha
       DTS:refId="Package\Data Flow KhachHang"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:Disabled="True"
       DTS:DTSID="{8C87A18E-4B19-428D-8A09-B749E24CEB1B}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -983,8 +1049,8 @@ WHERE (NgayBan &gt;= ? AND NgayBan &lt; ?) OR (NgayCapNhat &gt;= ? OR NgayCapNha
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT * FROM KhachHang_Jade
-WHERE (NgayTao &gt;= xxx AND NgayTao &lt; xxx) OR (NgayCapNhat &gt;= xxx AND NgayCapNhat &lt; xxx)</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT * FROM KhachHang_Jade 
+WHERE (NgayTao &gt;= ? AND NgayTao &lt; ?) OR (NgayCapNhat &gt;= ? OR NgayCapNhat &lt; ?)</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -1001,17 +1067,17 @@ WHERE (NgayTao &gt;= xxx AND NgayTao &lt; xxx) OR (NgayCapNhat &gt;= xxx AND Nga
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
                   name="AccessMode"
-                  typeConverter="AccessMode">0</property>
+                  typeConverter="AccessMode">2</property>
                 <property
                   dataType="System.String"
                   description="The mappings between the parameters in the SQL command and variables."
-                  name="ParameterMapping"></property>
+                  name="ParameterMapping">"Parameter0:Input",{5F90D3D7-70D6-4A26-8B5F-A8EE0988CBF6};"Parameter1:Input",{75C16537-833E-450C-90CE-84000FE484E9};"Parameter2:Input",{5F90D3D7-70D6-4A26-8B5F-A8EE0988CBF6};"Parameter3:Input",{75C16537-833E-450C-90CE-84000FE484E9};</property>
               </properties>
               <connections>
                 <connection
                   refId="Package\Data Flow KhachHang\KhachHang_Jade Source.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_Jade]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_Jade]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_Jade]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_Jade]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1304,8 +1370,8 @@ WHERE (NgayTao &gt;= xxx AND NgayTao &lt; xxx) OR (NgayCapNhat &gt;= xxx AND Nga
               <connections>
                 <connection
                   refId="Package\Data Flow KhachHang\KhachHang_Stage.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_STAGE 1]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_STAGE 1]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_STAGE]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_STAGE]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1494,12 +1560,13 @@ WHERE (NgayTao &gt;= xxx AND NgayTao &lt; xxx) OR (NgayCapNhat &gt;= xxx AND Nga
       DTS:refId="Package\Get LSET for HoaDon"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{65c9e994-19e2-4621-b3bd-65d063a2e697}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get LSET for HoaDon"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1519,17 +1586,25 @@ WHERE (NgayTao &gt;= xxx AND NgayTao &lt; xxx) OR (NgayCapNhat &gt;= xxx AND Nga
       DTS:refId="Package\Get LSET for KhachHang"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:Disabled="True"
       DTS:DTSID="{D006ED1A-6684-45A4-BEE2-F32720F0B0D2}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get LSET for KhachHang"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{A0FB4AAA-0275-4867-A604-E51D240C7418}" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:Connection="{4049537A-3DA0-44A7-8EBE-9269ACA811B9}"
+          SQLTask:SqlStatementSource="SELECT LSET,CET FROM Metadata_Table WHERE Name_DataFlow = 'KhachHang_Jade'"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="LSET"
+            SQLTask:DtsVariableName="User::LSET_KHJ" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="CET"
+            SQLTask:DtsVariableName="User::CET_KHJ" />
+        </SQLTask:SqlTaskData>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -1553,12 +1628,13 @@ WHERE (NgayTao &gt;= xxx AND NgayTao &lt; xxx) OR (NgayCapNhat &gt;= xxx AND Nga
       DTS:refId="Package\Set CET for HoaDon"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{da2ec394-fc5f-4617-b436-fc5421639a7d}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set CET for HoaDon"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1570,17 +1646,17 @@ WHERE (NgayTao &gt;= xxx AND NgayTao &lt; xxx) OR (NgayCapNhat &gt;= xxx AND Nga
       DTS:refId="Package\Set CET for KhachHang"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:Disabled="True"
       DTS:DTSID="{D0593AF4-9602-458F-B8AD-D4269EAA8D12}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set CET for KhachHang"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{A0FB4AAA-0275-4867-A604-E51D240C7418}" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:Connection="{4049537A-3DA0-44A7-8EBE-9269ACA811B9}"
+          SQLTask:SqlStatementSource="UPDATE Metadata_Table&#xA;SET CET = GETDATE()&#xA;WHERE Name_DataFlow = 'KhachHang_Jade'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -1604,12 +1680,13 @@ WHERE (NgayTao &gt;= xxx AND NgayTao &lt; xxx) OR (NgayCapNhat &gt;= xxx AND Nga
       DTS:refId="Package\Set LSET for HoaDon"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{9a3629d5-1ece-4ca0-bcd9-1fb233d661fd}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set LSET for HoaDon"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1621,17 +1698,17 @@ WHERE (NgayTao &gt;= xxx AND NgayTao &lt; xxx) OR (NgayCapNhat &gt;= xxx AND Nga
       DTS:refId="Package\Set LSET for KhachHang"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:Disabled="True"
       DTS:DTSID="{DACFFEF4-9EA6-4ACD-B0A8-E59BE144C631}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set LSET for KhachHang"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{A0FB4AAA-0275-4867-A604-E51D240C7418}" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:Connection="{4049537A-3DA0-44A7-8EBE-9269ACA811B9}"
+          SQLTask:SqlStatementSource="UPDATE Metadata_Table&#xA;SET LSET  = CET&#xA;WHERE Name_DataFlow = 'KhachHang_Jade';" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -1655,12 +1732,13 @@ WHERE (NgayTao &gt;= xxx AND NgayTao &lt; xxx) OR (NgayCapNhat &gt;= xxx AND Nga
       DTS:refId="Package\Truncate table HoaDon_Stage"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{3e7ac15d-0c54-462c-bad2-315cf83c6192}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate table HoaDon_Stage"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1672,17 +1750,17 @@ WHERE (NgayTao &gt;= xxx AND NgayTao &lt; xxx) OR (NgayCapNhat &gt;= xxx AND Nga
       DTS:refId="Package\Truncate table KhachHang_Stage"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:Disabled="True"
       DTS:DTSID="{86138038-64CC-49BF-99B6-B776C98D4289}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate table KhachHang_Stage"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{E5FDE510-5EFC-4D6E-AC83-5DDC9ECD14A2}" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:Connection="{CF9D9E47-F6A3-444F-B20A-9C357660F49B}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE KhachHang_Stage" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -1797,63 +1875,63 @@ WHERE (NgayTao &gt;= xxx AND NgayTao &lt; xxx) OR (NgayCapNhat &gt;= xxx AND Nga
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="166.4,41.6"
+          Size="166.333333333334,41.6666666666667"
           Id="Package\Data Flow ChiTietHoaDon"
           TopLeft="639.142857945695,287.529415797198" />
         <NodeLayout
-          Size="166.4,41.6"
+          Size="166.333333333334,41.6666666666667"
           Id="Package\Data Flow HoaDon"
           TopLeft="343.142857945695,287.529415797198" />
         <NodeLayout
-          Size="182.4,41.6"
+          Size="182.333333333334,41.6666666666667"
           Id="Package\Data Flow KhachHang"
           TopLeft="47.1428579456953,287.529415797197" />
         <NodeLayout
-          Size="178.4,41.6"
+          Size="178.333333333334,41.6666666666667"
           Id="Package\Get LSET for ChiTietHoaDon"
           TopLeft="639.857143672145,204.941179344811" />
         <NodeLayout
-          Size="178.4,41.6"
+          Size="178.333333333334,41.6666666666667"
           Id="Package\Get LSET for HoaDon"
           TopLeft="346.000000851495,198.058826307112" />
         <NodeLayout
-          Size="162.4,41.6"
+          Size="162.333333333334,41.6666666666667"
           Id="Package\Get LSET for KhachHang"
           TopLeft="50.000000851495,198.058826307112" />
         <NodeLayout
-          Size="172.8,41.6"
+          Size="172.666666666667,41.6666666666667"
           Id="Package\Set CET for ChiTietHoaDon"
           TopLeft="644.142858030845,29.8235298300285" />
         <NodeLayout
-          Size="172.8,41.6"
+          Size="172.666666666667,41.6666666666667"
           Id="Package\Set CET for HoaDon"
           TopLeft="350.285715210194,20.6470591130966" />
         <NodeLayout
-          Size="162.4,41.6"
+          Size="162.333333333334,41.6666666666667"
           Id="Package\Set CET for KhachHang"
           TopLeft="55.0000009366444,20.6470591130966" />
         <NodeLayout
-          Size="162.4,41.6"
+          Size="162.333333333334,41.6666666666667"
           Id="Package\Set LSET for ChiTietHoaDon"
           TopLeft="632.714286407646,389.294121872596" />
         <NodeLayout
-          Size="162.4,41.6"
+          Size="162.333333333334,41.6666666666667"
           Id="Package\Set LSET for HoaDon"
           TopLeft="336.714286407646,389.294121872596" />
         <NodeLayout
-          Size="162.4,41.6"
+          Size="162.333333333334,41.6666666666667"
           Id="Package\Set LSET for KhachHang"
           TopLeft="40.714286407646,389.294121872595" />
         <NodeLayout
-          Size="236,41.6"
+          Size="236,41.6666666666667"
           Id="Package\Truncate table ChiTietHoaDon_stage"
           TopLeft="609.857143161248,113.176472175493" />
         <NodeLayout
-          Size="236,41.6"
+          Size="236,41.6666666666667"
           Id="Package\Truncate table HoaDon_Stage"
           TopLeft="313.857143161248,113.176472175493" />
         <NodeLayout
-          Size="236,41.6"
+          Size="236,41.6666666666667"
           Id="Package\Truncate table KhachHang_Stage"
           TopLeft="17.8571431612482,113.176472175493" />
         <EdgeLayout
@@ -2177,11 +2255,11 @@ WHERE (NgayTao &gt;= xxx AND NgayTao &lt; xxx) OR (NgayCapNhat &gt;= xxx AND Nga
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="196.8,41.6"
+          Size="196.666666666667,41.6666666666667"
           Id="Package\Data Flow ChiTietHoaDon\ChiTietHoaDon_Jade Source"
           TopLeft="198.57143195308,48.9411771569698" />
         <NodeLayout
-          Size="170.4,41.6"
+          Size="170.333333333334,41.6666666666667"
           Id="Package\Data Flow ChiTietHoaDon\ChiTietHoaDon_Stage"
           TopLeft="199.28571767953,281.411768652576" />
         <EdgeLayout
@@ -2253,11 +2331,11 @@ WHERE (NgayTao &gt;= xxx AND NgayTao &lt; xxx) OR (NgayCapNhat &gt;= xxx AND Nga
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="196.8,41.6"
+          Size="196.666666666667,41.6666666666667"
           Id="Package\Data Flow HoaDon\HoaDon_Jade Source"
           TopLeft="198.57143195308,48.9411771569698" />
         <NodeLayout
-          Size="170.4,41.6"
+          Size="170.333333333334,41.6666666666667"
           Id="Package\Data Flow HoaDon\HoaDon_Stage"
           TopLeft="199.28571767953,281.411768652576" />
         <EdgeLayout
@@ -2327,15 +2405,15 @@ WHERE (NgayTao &gt;= xxx AND NgayTao &lt; xxx) OR (NgayCapNhat &gt;= xxx AND Nga
     design-time-name="Package\Data Flow KhachHang">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="149.6,41.6"
-          Id="Package\Data Flow KhachHang\KhachHang_Jade Source"
-          TopLeft="198.57143195308,48.9411771569698" />
-        <NodeLayout
-          Size="170.4,41.6"
+          Size="170.333333333334,41.6666666666667"
           Id="Package\Data Flow KhachHang\KhachHang_Stage"
           TopLeft="199.28571767953,281.411768652576" />
+        <NodeLayout
+          Size="149.666666666667,41.6666666666667"
+          Id="Package\Data Flow KhachHang\KhachHang_Jade Source"
+          TopLeft="198.57143195308,48.9411771569698" />
         <EdgeLayout
           Id="Package\Data Flow KhachHang.Paths[OLE DB Source Output]"
           TopLeft="273.37143195308,90.5411771569698">
@@ -2367,7 +2445,9 @@ WHERE (NgayTao &gt;= xxx AND NgayTao &lt; xxx) OR (NgayCapNhat &gt;= xxx AND Nga
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
