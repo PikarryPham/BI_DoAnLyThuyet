@@ -68,12 +68,15 @@ END;
 
 /* Create new table */
 CREATE TABLE KhachHang_Stage (
-	[MaKH] [varchar](4) NOT NULL,
-	[TenKH] [varchar](50) NULL,
-	[DiaChi] [varchar](50) NULL,
-	[NgayTao] [datetime] NULL,
-	[NgayCapNhat] [datetime] NULL,
-	[TrangThai] [int] NULL
+	[MaKH] varchar(4) NOT NULL,
+  [TenKH] varchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+  [DiaChi] varchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+  [NgayTao] datetime NULL,
+  [NgayCapNhat] datetime NULL,
+  [TrangThai] int NULL,
+  [GioiTinh] char(1) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+  [SoThich] varchar(30) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+  [NgheNghiep] varchar(30) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
 );
 
 CREATE TABLE HoaDon_Stage (
