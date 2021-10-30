@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="10/24/2021 9:47:36 PM"
@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="60"
-  DTS:VersionGUID="{4186102F-E4BD-43CB-9F11-F9C1DF9D2D10}">
+  DTS:VersionBuild="70"
+  DTS:VersionGUID="{23D93677-CF85-495C-95F0-A703D4F6A6A9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -282,7 +282,7 @@
                   description="The SQL command to be executed."
                   name="SqlCommand"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT * FROM ChiTietHoaDon_Jade 
-WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &gt;= ? OR NgayCapNhat &lt; ?)</property>
+WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNhat &lt; ?)</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -308,8 +308,8 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &gt;= ? OR NgayCapNhat
               <connections>
                 <connection
                   refId="Package\Data Flow ChiTietHoaDon\ChiTietHoaDon_Jade Source.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[LocalHost.DALT_Jade]"
-                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.DALT_Jade]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_Jade]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_Jade]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -524,8 +524,8 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &gt;= ? OR NgayCapNhat
               <connections>
                 <connection
                   refId="Package\Data Flow ChiTietHoaDon\ChiTietHoaDon_Stage.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[LocalHost.DALT_STAGE]"
-                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.DALT_STAGE]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_STAGE]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_STAGE]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -550,6 +550,18 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &gt;= ? OR NgayCapNhat
                       externalMetadataColumnId="Package\Data Flow ChiTietHoaDon\ChiTietHoaDon_Stage.Inputs[OLE DB Destination Input].ExternalColumns[TrangThai]"
                       lineageId="Package\Data Flow ChiTietHoaDon\ChiTietHoaDon_Jade Source.Outputs[OLE DB Source Output].Columns[TrangThai]" />
                     <inputColumn
+                      refId="Package\Data Flow ChiTietHoaDon\ChiTietHoaDon_Stage.Inputs[OLE DB Destination Input].Columns[NgayTao]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="NgayTao"
+                      externalMetadataColumnId="Package\Data Flow ChiTietHoaDon\ChiTietHoaDon_Stage.Inputs[OLE DB Destination Input].ExternalColumns[NgayTao]"
+                      lineageId="Package\Data Flow ChiTietHoaDon\ChiTietHoaDon_Jade Source.Outputs[OLE DB Source Output].Columns[NgayTao]" />
+                    <inputColumn
+                      refId="Package\Data Flow ChiTietHoaDon\ChiTietHoaDon_Stage.Inputs[OLE DB Destination Input].Columns[MaChiTiet]"
+                      cachedDataType="i4"
+                      cachedName="MaChiTiet"
+                      externalMetadataColumnId="Package\Data Flow ChiTietHoaDon\ChiTietHoaDon_Stage.Inputs[OLE DB Destination Input].ExternalColumns[MaChiTiet]"
+                      lineageId="Package\Data Flow ChiTietHoaDon\ChiTietHoaDon_Jade Source.Outputs[OLE DB Source Output].Columns[MaChiTiet]" />
+                    <inputColumn
                       refId="Package\Data Flow ChiTietHoaDon\ChiTietHoaDon_Stage.Inputs[OLE DB Destination Input].Columns[MaHD]"
                       cachedCodepage="1252"
                       cachedDataType="str"
@@ -558,12 +570,6 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &gt;= ? OR NgayCapNhat
                       externalMetadataColumnId="Package\Data Flow ChiTietHoaDon\ChiTietHoaDon_Stage.Inputs[OLE DB Destination Input].ExternalColumns[MaHD]"
                       lineageId="Package\Data Flow ChiTietHoaDon\ChiTietHoaDon_Jade Source.Outputs[OLE DB Source Output].Columns[MaHD]" />
                     <inputColumn
-                      refId="Package\Data Flow ChiTietHoaDon\ChiTietHoaDon_Stage.Inputs[OLE DB Destination Input].Columns[MaChiTiet]"
-                      cachedDataType="i4"
-                      cachedName="MaChiTiet"
-                      externalMetadataColumnId="Package\Data Flow ChiTietHoaDon\ChiTietHoaDon_Stage.Inputs[OLE DB Destination Input].ExternalColumns[MaChiTiet]"
-                      lineageId="Package\Data Flow ChiTietHoaDon\ChiTietHoaDon_Jade Source.Outputs[OLE DB Source Output].Columns[MaChiTiet]" />
-                    <inputColumn
                       refId="Package\Data Flow ChiTietHoaDon\ChiTietHoaDon_Stage.Inputs[OLE DB Destination Input].Columns[MaSP]"
                       cachedCodepage="1252"
                       cachedDataType="str"
@@ -571,12 +577,6 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &gt;= ? OR NgayCapNhat
                       cachedName="MaSP"
                       externalMetadataColumnId="Package\Data Flow ChiTietHoaDon\ChiTietHoaDon_Stage.Inputs[OLE DB Destination Input].ExternalColumns[MaSP]"
                       lineageId="Package\Data Flow ChiTietHoaDon\ChiTietHoaDon_Jade Source.Outputs[OLE DB Source Output].Columns[MaSP]" />
-                    <inputColumn
-                      refId="Package\Data Flow ChiTietHoaDon\ChiTietHoaDon_Stage.Inputs[OLE DB Destination Input].Columns[NgayTao]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="NgayTao"
-                      externalMetadataColumnId="Package\Data Flow ChiTietHoaDon\ChiTietHoaDon_Stage.Inputs[OLE DB Destination Input].ExternalColumns[NgayTao]"
-                      lineageId="Package\Data Flow ChiTietHoaDon\ChiTietHoaDon_Jade Source.Outputs[OLE DB Source Output].Columns[NgayTao]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -589,25 +589,25 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &gt;= ? OR NgayCapNhat
                       dataType="i4"
                       name="TrangThai" />
                     <externalMetadataColumn
+                      refId="Package\Data Flow ChiTietHoaDon\ChiTietHoaDon_Stage.Inputs[OLE DB Destination Input].ExternalColumns[NgayTao]"
+                      dataType="dbTimeStamp"
+                      name="NgayTao" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow ChiTietHoaDon\ChiTietHoaDon_Stage.Inputs[OLE DB Destination Input].ExternalColumns[MaChiTiet]"
+                      dataType="i4"
+                      name="MaChiTiet" />
+                    <externalMetadataColumn
                       refId="Package\Data Flow ChiTietHoaDon\ChiTietHoaDon_Stage.Inputs[OLE DB Destination Input].ExternalColumns[MaHD]"
                       codePage="1252"
                       dataType="str"
                       length="4"
                       name="MaHD" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow ChiTietHoaDon\ChiTietHoaDon_Stage.Inputs[OLE DB Destination Input].ExternalColumns[MaChiTiet]"
-                      dataType="i4"
-                      name="MaChiTiet" />
-                    <externalMetadataColumn
                       refId="Package\Data Flow ChiTietHoaDon\ChiTietHoaDon_Stage.Inputs[OLE DB Destination Input].ExternalColumns[MaSP]"
                       codePage="1252"
                       dataType="str"
                       length="4"
                       name="MaSP" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow ChiTietHoaDon\ChiTietHoaDon_Stage.Inputs[OLE DB Destination Input].ExternalColumns[NgayTao]"
-                      dataType="dbTimeStamp"
-                      name="NgayTao" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -687,7 +687,7 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &gt;= ? OR NgayCapNhat
                   description="The SQL command to be executed."
                   name="SqlCommand"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT * FROM HoaDon_Jade 
-WHERE (NgayBan &gt;= ? AND NgayBan &lt; ?) OR (NgayCapNhat &gt;= ? OR NgayCapNhat &lt; ?)</property>
+WHERE (NgayBan &gt;= ? AND NgayBan &lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNhat &lt; ?)</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -1102,7 +1102,7 @@ WHERE (NgayBan &gt;= ? AND NgayBan &lt; ?) OR (NgayCapNhat &gt;= ? OR NgayCapNha
                   description="The SQL command to be executed."
                   name="SqlCommand"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT * FROM KhachHang_Jade 
-WHERE (NgayTao &gt;= ? AND NgayTao &lt; ?) OR (NgayCapNhat &gt;= ? OR NgayCapNhat &lt; ?)</property>
+WHERE (NgayTao &gt;= ? AND NgayTao &lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNhat &lt; ?)</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -1128,8 +1128,8 @@ WHERE (NgayTao &gt;= ? AND NgayTao &lt; ?) OR (NgayCapNhat &gt;= ? OR NgayCapNha
               <connections>
                 <connection
                   refId="Package\Data Flow KhachHang\KhachHang_Jade Source.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_Jade]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_Jade]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_Jade]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_Jade]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1422,8 +1422,8 @@ WHERE (NgayTao &gt;= ? AND NgayTao &lt; ?) OR (NgayCapNhat &gt;= ? OR NgayCapNha
               <connections>
                 <connection
                   refId="Package\Data Flow KhachHang\KhachHang_Stage.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_STAGE]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_STAGE]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_STAGE]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_STAGE]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1625,7 +1625,7 @@ WHERE (NgayTao &gt;= ? AND NgayTao &lt; ?) OR (NgayCapNhat &gt;= ? OR NgayCapNha
       DTS:LocaleID="-1"
       DTS:ObjectName="Get LSET for HoaDon"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1650,11 +1650,11 @@ WHERE (NgayTao &gt;= ? AND NgayTao &lt; ?) OR (NgayCapNhat &gt;= ? OR NgayCapNha
       DTS:LocaleID="-1"
       DTS:ObjectName="Get LSET for KhachHang"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{4049537A-3DA0-44A7-8EBE-9269ACA811B9}"
+          SQLTask:Connection="{A0FB4AAA-0275-4867-A604-E51D240C7418}"
           SQLTask:SqlStatementSource="SELECT LSET,CET FROM Metadata_Table WHERE Name_DataFlow = 'KhachHang_Jade'"
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
@@ -1692,7 +1692,7 @@ WHERE (NgayTao &gt;= ? AND NgayTao &lt; ?) OR (NgayCapNhat &gt;= ? OR NgayCapNha
       DTS:LocaleID="-1"
       DTS:ObjectName="Set CET for HoaDon"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1709,11 +1709,11 @@ WHERE (NgayTao &gt;= ? AND NgayTao &lt; ?) OR (NgayCapNhat &gt;= ? OR NgayCapNha
       DTS:LocaleID="-1"
       DTS:ObjectName="Set CET for KhachHang"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{4049537A-3DA0-44A7-8EBE-9269ACA811B9}"
+          SQLTask:Connection="{A0FB4AAA-0275-4867-A604-E51D240C7418}"
           SQLTask:SqlStatementSource="UPDATE Metadata_Table&#xA;SET CET = GETDATE()&#xA;WHERE Name_DataFlow = 'KhachHang_Jade'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -1743,7 +1743,7 @@ WHERE (NgayTao &gt;= ? AND NgayTao &lt; ?) OR (NgayCapNhat &gt;= ? OR NgayCapNha
       DTS:LocaleID="-1"
       DTS:ObjectName="Set LSET for HoaDon"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1760,7 +1760,7 @@ WHERE (NgayTao &gt;= ? AND NgayTao &lt; ?) OR (NgayCapNhat &gt;= ? OR NgayCapNha
       DTS:LocaleID="-1"
       DTS:ObjectName="Set LSET for KhachHang"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1794,7 +1794,7 @@ WHERE (NgayTao &gt;= ? AND NgayTao &lt; ?) OR (NgayCapNhat &gt;= ? OR NgayCapNha
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate table HoaDon_Stage"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1811,11 +1811,11 @@ WHERE (NgayTao &gt;= ? AND NgayTao &lt; ?) OR (NgayCapNhat &gt;= ? OR NgayCapNha
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate table KhachHang_Stage"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{CF9D9E47-F6A3-444F-B20A-9C357660F49B}"
+          SQLTask:Connection="{E5FDE510-5EFC-4D6E-AC83-5DDC9ECD14A2}"
           SQLTask:SqlStatementSource="TRUNCATE TABLE KhachHang_Stage" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -1992,18 +1992,18 @@ WHERE (NgayTao &gt;= ? AND NgayTao &lt; ?) OR (NgayCapNhat &gt;= ? OR NgayCapNha
           TopLeft="17.3571431612482,113.176472175493" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="136.053572048946,62.1470591130966">
+          TopLeft="135.978572048946,62.2470591130966">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,51.0294130623964"
+              EndConnector="0,50.9294130623964"
               Start="0,0"
-              End="0,43.5294130623964">
+              End="0,43.4294130623964">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,43.5294130623964" />
+                    End="0,43.4294130623964" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2335,11 +2335,11 @@ WHERE (NgayTao &gt;= ? AND NgayTao &lt; ?) OR (NgayCapNhat &gt;= ? OR NgayCapNha
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="197,41.5"
+          Size="196.8,41.6"
           Id="Package\Data Flow ChiTietHoaDon\ChiTietHoaDon_Jade Source"
           TopLeft="198.57143195308,48.9411771569698" />
         <NodeLayout
-          Size="170.5,48"
+          Size="170.4,48"
           Id="Package\Data Flow ChiTietHoaDon\ChiTietHoaDon_Stage"
           TopLeft="208.78571767953,128.120102747317" />
         <EdgeLayout
@@ -2394,11 +2394,11 @@ WHERE (NgayTao &gt;= ? AND NgayTao &lt; ?) OR (NgayCapNhat &gt;= ? OR NgayCapNha
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="196.666666666667,41.6666666666667"
+          Size="196.8,41.6"
           Id="Package\Data Flow HoaDon\HoaDon_Jade Source"
           TopLeft="198.57143195308,48.9411771569698" />
         <NodeLayout
-          Size="170.333333333334,41.6666666666667"
+          Size="170.4,41.6"
           Id="Package\Data Flow HoaDon\HoaDon_Stage"
           TopLeft="199.28571767953,281.411768652576" />
         <EdgeLayout
