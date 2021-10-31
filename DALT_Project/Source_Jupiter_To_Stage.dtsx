@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="55"
-  DTS:VersionGUID="{2DF2681A-54AD-4221-9BB9-E35912105BC5}">
+  DTS:VersionBuild="56"
+  DTS:VersionGUID="{DE71E9C3-E6E7-49C6-B5D9-6BB3DB416BD0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -114,6 +114,7 @@
       DTS:refId="Package\Data Flow Cua Hang"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
+      DTS:Disabled="True"
       DTS:DTSID="{7de48131-263f-4621-97b3-93f8eef18f51}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -567,6 +568,7 @@ WHERE (NgayTao &gt;= ? AND NgayTao &lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNh
       DTS:refId="Package\Data Flow Loai Cua Hang"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
+      DTS:Disabled="True"
       DTS:DTSID="{35882d58-a429-4402-96cf-505270a36b4f}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -944,6 +946,7 @@ WHERE (NgayTao &gt;= ? AND NgayTao &lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNh
       DTS:refId="Package\Data Flow Nuoc (Quoc Gia)"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
+      DTS:Disabled="True"
       DTS:DTSID="{2d45f3f1-a9d7-41c1-b8e2-9596805ce9f0}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -1321,12 +1324,13 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNha
       DTS:refId="Package\Get LSET for CuaHang"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{47ae1394-21bc-4201-ab4e-a7d4ba0a5db8}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get LSET for CuaHang"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1346,12 +1350,13 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNha
       DTS:refId="Package\Get LSET for Loai Cua Hang"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{9256821b-5aa1-4367-bd76-6e635a6461ba}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get LSET for Loai Cua Hang"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1371,12 +1376,13 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNha
       DTS:refId="Package\Get LSET for Nuoc (Quoc gia)"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{efa5e128-090d-4122-bbc1-ae453df4fa28}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get LSET for Nuoc (Quoc gia)"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1396,12 +1402,13 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNha
       DTS:refId="Package\Set CET for CuaHang"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{d6a18398-bc6a-4430-9622-b3ec697ae26b}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set CET for CuaHang"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1413,12 +1420,13 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNha
       DTS:refId="Package\Set CET for LoaiCH"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{b7dcf0c3-6621-4b92-9360-e177ca34993e}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set CET for LoaiCH"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1430,12 +1438,13 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNha
       DTS:refId="Package\Set CET for Nuoc (Quoc Gia)"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{8c612033-80ae-40e4-ae1d-1a869bf99d84}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set CET for Nuoc (Quoc Gia)"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1447,12 +1456,13 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNha
       DTS:refId="Package\Set LSET for CuaHang"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{fb5fb077-6ab8-43cc-a69c-39a1fb61c5a6}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set LSET for CuaHang"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1464,12 +1474,13 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNha
       DTS:refId="Package\Set LSET for Loai Cua Hang"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{8fad2294-d6ec-44eb-9741-d027668e1df4}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set LSET for Loai Cua Hang"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1481,12 +1492,13 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNha
       DTS:refId="Package\Set LSET for Nuoc (Quoc Gia)"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{27a1b19f-65ae-4494-a2c7-6c24c5828283}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set LSET for Nuoc (Quoc Gia)"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1498,12 +1510,13 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNha
       DTS:refId="Package\Truncate table CuaHang_Jupiter"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{c18ce2ec-dad8-46d5-9b62-ae2680f2be29}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate table CuaHang_Jupiter"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1515,12 +1528,13 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNha
       DTS:refId="Package\Truncate table LoaiCH_Stage"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{9cb5ea19-2938-4ac1-9c4b-686e484bfbf5}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate table LoaiCH_Stage"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1532,12 +1546,13 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNha
       DTS:refId="Package\Truncate table Nuoc_Stage"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{e99f8b29-c5aa-4f61-af6b-8c36535459b4}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate table Nuoc_Stage"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1657,65 +1672,65 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNha
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="166.4,41.6"
-          Id="Package\Data Flow Nuoc (Quoc Gia)"
-          TopLeft="658.928571623199,318.72549341312" />
-        <NodeLayout
-          Size="182.4,41.6"
+          Size="182.333333333334,41.6666666666667"
           Id="Package\Data Flow Cua Hang"
           TopLeft="89.7857147844471,326.8823566841" />
         <NodeLayout
-          Size="166.4,41.6"
+          Size="166.333333333334,41.6666666666667"
           Id="Package\Data Flow Loai Cua Hang"
           TopLeft="385.785714784447,326.882356684101" />
         <NodeLayout
-          Size="214.4,41.6"
-          Id="Package\Get LSET for Nuoc (Quoc gia)"
-          TopLeft="659.642857349649,236.137256960733" />
+          Size="166.333333333334,41.6666666666667"
+          Id="Package\Data Flow Nuoc (Quoc Gia)"
+          TopLeft="658.928571623199,318.72549341312" />
         <NodeLayout
-          Size="162.4,41.6"
+          Size="162.333333333334,41.6666666666667"
           Id="Package\Get LSET for CuaHang"
           TopLeft="92.6428576902468,237.411767194015" />
         <NodeLayout
-          Size="178.4,41.6"
+          Size="178.333333333334,41.6666666666667"
           Id="Package\Get LSET for Loai Cua Hang"
           TopLeft="388.642857690247,237.411767194015" />
         <NodeLayout
-          Size="172.8,41.6"
-          Id="Package\Set CET for Nuoc (Quoc Gia)"
-          TopLeft="663.928571708349,61.0196074459506" />
+          Size="214.333333333334,41.6666666666667"
+          Id="Package\Get LSET for Nuoc (Quoc gia)"
+          TopLeft="659.642857349649,236.137256960733" />
         <NodeLayout
-          Size="226.4,41.6"
+          Size="226.333333333334,41.6666666666667"
           Id="Package\Set CET for CuaHang"
           TopLeft="97.6428577753962,60" />
         <NodeLayout
-          Size="172.8,41.6"
+          Size="172.666666666667,41.6666666666667"
           Id="Package\Set CET for LoaiCH"
           TopLeft="392.928572048946,60" />
         <NodeLayout
-          Size="213.6,41.6"
-          Id="Package\Set LSET for Nuoc (Quoc Gia)"
-          TopLeft="652.50000008515,420.490199488518" />
+          Size="172.666666666667,41.6666666666667"
+          Id="Package\Set CET for Nuoc (Quoc Gia)"
+          TopLeft="663.928571708349,61.0196074459506" />
         <NodeLayout
-          Size="162.4,41.6"
-          Id="Package\Set LSET for Loai Cua Hang"
-          TopLeft="379.357143246398,428.647062759499" />
-        <NodeLayout
-          Size="162.4,41.6"
+          Size="162.333333333334,41.6666666666667"
           Id="Package\Set LSET for CuaHang"
           TopLeft="83.3571432463978,428.647062759498" />
         <NodeLayout
-          Size="252,41.6"
-          Id="Package\Truncate table Nuoc_Stage"
-          TopLeft="629.642856838752,144.372549791415" />
+          Size="162.333333333334,41.6666666666667"
+          Id="Package\Set LSET for Loai Cua Hang"
+          TopLeft="379.357143246398,428.647062759499" />
         <NodeLayout
-          Size="236.8,41.6"
+          Size="213.666666666667,41.6666666666667"
+          Id="Package\Set LSET for Nuoc (Quoc Gia)"
+          TopLeft="652.50000008515,420.490199488518" />
+        <NodeLayout
+          Size="236.666666666667,41.6666666666667"
           Id="Package\Truncate table CuaHang_Jupiter"
           TopLeft="60,152.529413062396" />
         <NodeLayout
-          Size="236,41.6"
+          Size="236,41.6666666666667"
           Id="Package\Truncate table LoaiCH_Stage"
           TopLeft="356.5,152.529413062396" />
+        <NodeLayout
+          Size="252,41.6666666666667"
+          Id="Package\Truncate table Nuoc_Stage"
+          TopLeft="629.642856838752,144.372549791415" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="210.842857775396,101.6">
@@ -2068,64 +2083,6 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNha
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\Data Flow Nuoc (Quoc Gia)">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="196.8,41.6"
-          Id="Package\Data Flow Nuoc (Quoc Gia)\Nuoc_Jupiter Source"
-          TopLeft="198.57143195308,48.9411771569698" />
-        <NodeLayout
-          Size="179.2,41.6"
-          Id="Package\Data Flow Nuoc (Quoc Gia)\Nuoc_Stage"
-          TopLeft="230,158" />
-        <EdgeLayout
-          Id="Package\Data Flow Nuoc (Quoc Gia).Paths[OLE DB Source Output]"
-          TopLeft="296.97143195308,90.5411771569698">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="22.62856804692,67.4588228430302"
-              Start="0,0"
-              End="22.62856804692,59.9588228430302">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,29.7294114215151" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,29.7294114215151"
-                    Point2="0,33.7294114215151"
-                    Point3="4,33.7294114215151" />
-                  <mssgle:LineSegment
-                    End="18.62856804692,33.7294114215151" />
-                  <mssgle:CubicBezierSegment
-                    Point1="18.62856804692,33.7294114215151"
-                    Point2="22.62856804692,33.7294114215151"
-                    Point3="22.62856804692,37.7294114215151" />
-                  <mssgle:LineSegment
-                    End="22.62856804692,59.9588228430302" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Nuoc (Quoc Gia)\Nuoc_Jupiter Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
     design-time-name="Package\Data Flow Cua Hang">
     <LayoutInfo>
       <GraphLayout
@@ -2235,14 +2192,6 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNha
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Loai Cua Hang\LoaiCuaHang_Jupiter Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Data Flow Loai Cua Hang\Loai Cua Hang Stage">
     <Properties>
       <Property>
@@ -2252,6 +2201,72 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNha
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Loai Cua Hang\LoaiCuaHang_Jupiter Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Data Flow Nuoc (Quoc Gia)">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="196.8,41.6"
+          Id="Package\Data Flow Nuoc (Quoc Gia)\Nuoc_Jupiter Source"
+          TopLeft="198.57143195308,48.9411771569698" />
+        <NodeLayout
+          Size="179.2,41.6"
+          Id="Package\Data Flow Nuoc (Quoc Gia)\Nuoc_Stage"
+          TopLeft="230,158" />
+        <EdgeLayout
+          Id="Package\Data Flow Nuoc (Quoc Gia).Paths[OLE DB Source Output]"
+          TopLeft="296.97143195308,90.5411771569698">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="22.62856804692,67.4588228430302"
+              Start="0,0"
+              End="22.62856804692,59.9588228430302">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.7294114215151" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29.7294114215151"
+                    Point2="0,33.7294114215151"
+                    Point3="4,33.7294114215151" />
+                  <mssgle:LineSegment
+                    End="18.62856804692,33.7294114215151" />
+                  <mssgle:CubicBezierSegment
+                    Point1="18.62856804692,33.7294114215151"
+                    Point2="22.62856804692,33.7294114215151"
+                    Point3="22.62856804692,37.7294114215151" />
+                  <mssgle:LineSegment
+                    End="22.62856804692,59.9588228430302" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Nuoc (Quoc Gia)\Nuoc_Jupiter Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
