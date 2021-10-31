@@ -30,5 +30,13 @@ TRUNCATE TABLE Metadata_Table;
 INSERT INTO Metadata_Table(Name_DataFlow,LSET,CET) VALUES ('KhachHang_Jade','1900-01-01',NULL);
 INSERT INTO Metadata_Table(Name_DataFlow,LSET,CET) VALUES ('HoaDon_Jade','1900-01-01',NULL);
 INSERT INTO Metadata_Table(Name_DataFlow,LSET,CET) VALUES ('ChiTietHoaDon_Jade','1900-01-01',NULL);
-
+----------------------------------
+INSERT INTO Metadata_Table(Name_DataFlow,LSET,CET) VALUES ('KhachHang_Webtower','1900-01-01',NULL);
+INSERT INTO Metadata_Table(Name_DataFlow,LSET,CET) VALUES ('HoaDon_Webtower','1900-01-01',NULL);
+INSERT INTO Metadata_Table(Name_DataFlow,LSET,CET) VALUES ('ChiTietHoaDon_Webtower','1900-01-01',NULL);
+INSERT INTO Metadata_Table(Name_DataFlow,LSET,CET) VALUES ('CuaHang_Jupiter','1900-01-01',NULL);
+INSERT INTO Metadata_Table(Name_DataFlow,LSET,CET) VALUES ('LoaiCuaHang_Jupiter','1900-01-01',NULL);
+INSERT INTO Metadata_Table(Name_DataFlow,LSET,CET) VALUES ('SanPham_Jupiter','1900-01-01',NULL);
+INSERT INTO Metadata_Table(Name_DataFlow,LSET,CET) VALUES ('LoaiSanPham_Jupiter','1900-01-01',NULL);
+INSERT INTO Metadata_Table(Name_DataFlow,LSET,CET) VALUES ('Nuoc_Jupiter','1900-01-01',NULL);
 SELECT * FROM Metadata_Table;
