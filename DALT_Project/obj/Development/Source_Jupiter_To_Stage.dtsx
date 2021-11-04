@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="58"
-  DTS:VersionGUID="{50C25374-2AEF-4661-9E18-34C355FF8D9B}">
+  DTS:VersionBuild="63"
+  DTS:VersionGUID="{C0613CB3-A8FF-4EBE-8688-E2D4981FF157}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -198,7 +198,6 @@
       DTS:refId="Package\Data Flow Cua Hang"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:Disabled="True"
       DTS:DTSID="{7de48131-263f-4621-97b3-93f8eef18f51}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -652,7 +651,6 @@ WHERE (NgayTao &gt;= ? AND NgayTao &lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNh
       DTS:refId="Package\Data Flow Loai Cua Hang"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:Disabled="True"
       DTS:DTSID="{35882d58-a429-4402-96cf-505270a36b4f}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -1030,6 +1028,7 @@ WHERE (NgayTao &gt;= ? AND NgayTao &lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNh
       DTS:refId="Package\Data Flow LoaiSanPham"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
+      DTS:Disabled="True"
       DTS:DTSID="{12b58950-97c1-4a71-b0aa-f132c0967e09}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -1277,7 +1276,7 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNha
                 <property
                   dataType="System.Boolean"
                   description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepNulls">false</property>
+                  name="FastLoadKeepNulls">true</property>
                 <property
                   dataType="System.String"
                   description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
@@ -1407,7 +1406,6 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNha
       DTS:refId="Package\Data Flow Nuoc (Quoc Gia)"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:Disabled="True"
       DTS:DTSID="{2d45f3f1-a9d7-41c1-b8e2-9596805ce9f0}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -1785,6 +1783,7 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNha
       DTS:refId="Package\Data Flow SanPham"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
+      DTS:Disabled="True"
       DTS:DTSID="{d5db2aac-3324-442f-ae90-a41fe8fd55c8}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -2229,13 +2228,12 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhap &gt;= ? AND NgayCapNha
       DTS:refId="Package\Get LSET for CuaHang"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:Disabled="True"
       DTS:DTSID="{47ae1394-21bc-4201-ab4e-a7d4ba0a5db8}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get LSET for CuaHang"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2255,13 +2253,12 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhap &gt;= ? AND NgayCapNha
       DTS:refId="Package\Get LSET for Loai Cua Hang"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:Disabled="True"
       DTS:DTSID="{9256821b-5aa1-4367-bd76-6e635a6461ba}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get LSET for Loai Cua Hang"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2281,12 +2278,13 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhap &gt;= ? AND NgayCapNha
       DTS:refId="Package\Get LSET for LoaiSanPham"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{6c877b37-9a89-432c-ae19-2ce8c8900ff3}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get LSET for LoaiSanPham"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2306,13 +2304,12 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhap &gt;= ? AND NgayCapNha
       DTS:refId="Package\Get LSET for Nuoc (Quoc gia)"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:Disabled="True"
       DTS:DTSID="{efa5e128-090d-4122-bbc1-ae453df4fa28}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get LSET for Nuoc (Quoc gia)"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="4">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2332,12 +2329,13 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhap &gt;= ? AND NgayCapNha
       DTS:refId="Package\Get LSET for SanPham"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{0eaf3087-4bb6-4ceb-94d8-49f8f2acae8f}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get LSET for SanPham"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="4">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2357,13 +2355,12 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhap &gt;= ? AND NgayCapNha
       DTS:refId="Package\Set CET for CuaHang"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:Disabled="True"
       DTS:DTSID="{d6a18398-bc6a-4430-9622-b3ec697ae26b}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set CET for CuaHang"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2375,13 +2372,12 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhap &gt;= ? AND NgayCapNha
       DTS:refId="Package\Set CET for LoaiCH"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:Disabled="True"
       DTS:DTSID="{b7dcf0c3-6621-4b92-9360-e177ca34993e}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set CET for LoaiCH"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2393,12 +2389,13 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhap &gt;= ? AND NgayCapNha
       DTS:refId="Package\Set CET for LoaiSanPham"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{bf0f6193-b8a8-4b36-84b2-58e364206456}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set CET for LoaiSanPham"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2410,13 +2407,12 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhap &gt;= ? AND NgayCapNha
       DTS:refId="Package\Set CET for Nuoc (Quoc Gia)"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:Disabled="True"
       DTS:DTSID="{8c612033-80ae-40e4-ae1d-1a869bf99d84}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set CET for Nuoc (Quoc Gia)"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="4">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2428,12 +2424,13 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhap &gt;= ? AND NgayCapNha
       DTS:refId="Package\Set CET for SanPham"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{79137b88-2863-49ab-81c2-daebd8448996}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set CET for SanPham"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="4">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2445,13 +2442,12 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhap &gt;= ? AND NgayCapNha
       DTS:refId="Package\Set LSET for CuaHang"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:Disabled="True"
       DTS:DTSID="{fb5fb077-6ab8-43cc-a69c-39a1fb61c5a6}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set LSET for CuaHang"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2463,13 +2459,12 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhap &gt;= ? AND NgayCapNha
       DTS:refId="Package\Set LSET for Loai Cua Hang"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:Disabled="True"
       DTS:DTSID="{8fad2294-d6ec-44eb-9741-d027668e1df4}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set LSET for Loai Cua Hang"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2481,12 +2476,13 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhap &gt;= ? AND NgayCapNha
       DTS:refId="Package\Set LSET for LoaiSanPham"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{785314b9-6772-4660-b84a-0e98446ddab0}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set LSET for LoaiSanPham"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2498,13 +2494,12 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhap &gt;= ? AND NgayCapNha
       DTS:refId="Package\Set LSET for Nuoc (Quoc Gia)"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:Disabled="True"
       DTS:DTSID="{27a1b19f-65ae-4494-a2c7-6c24c5828283}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set LSET for Nuoc (Quoc Gia)"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="4">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2516,12 +2511,13 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhap &gt;= ? AND NgayCapNha
       DTS:refId="Package\Set LSET for SanPham"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{9bdfdc6b-f6ac-43e6-83ae-f23ae03fcf03}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set LSET for SanPham"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="4">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2533,13 +2529,12 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhap &gt;= ? AND NgayCapNha
       DTS:refId="Package\Truncate table CuaHang_Jupiter"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:Disabled="True"
       DTS:DTSID="{c18ce2ec-dad8-46d5-9b62-ae2680f2be29}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate table CuaHang_Jupiter"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2551,13 +2546,12 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhap &gt;= ? AND NgayCapNha
       DTS:refId="Package\Truncate table LoaiCH_Stage"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:Disabled="True"
       DTS:DTSID="{9cb5ea19-2938-4ac1-9c4b-686e484bfbf5}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate table LoaiCH_Stage"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2569,12 +2563,13 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhap &gt;= ? AND NgayCapNha
       DTS:refId="Package\Truncate table LoaiSanPham_Stage"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{ab85e2c7-4345-4bd5-ba54-096137c8bef6}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate table LoaiSanPham_Stage"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2586,13 +2581,12 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhap &gt;= ? AND NgayCapNha
       DTS:refId="Package\Truncate table Nuoc_Stage"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:Disabled="True"
       DTS:DTSID="{e99f8b29-c5aa-4f61-af6b-8c36535459b4}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate table Nuoc_Stage"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="4">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2604,12 +2598,13 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhap &gt;= ? AND NgayCapNha
       DTS:refId="Package\Truncate table SanPham_Stage"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{1415b459-a31b-4478-bbb1-353e4fd14ba3}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate table SanPham_Stage"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="4">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2793,65 +2788,105 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhap &gt;= ? AND NgayCapNha
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="182.666666666667,42"
+          Size="182.4,41.6"
           Id="Package\Data Flow Cua Hang"
           TopLeft="89.7857147844471,326.8823566841" />
         <NodeLayout
-          Size="166.666666666667,42"
+          Size="166.4,41.6"
           Id="Package\Data Flow Loai Cua Hang"
           TopLeft="385.785714784447,326.882356684101" />
         <NodeLayout
-          Size="166.666666666667,42"
+          Size="197.6,42.4"
+          Id="Package\Data Flow LoaiSanPham"
+          TopLeft="983.416652827214,348.947374989122" />
+        <NodeLayout
+          Size="166.4,41.6"
           Id="Package\Data Flow Nuoc (Quoc Gia)"
           TopLeft="658.928571623199,318.72549341312" />
         <NodeLayout
-          Size="162.666666666667,42"
+          Size="177.6,42.4"
+          Id="Package\Data Flow SanPham"
+          TopLeft="1274.66664848725,338.000006362011" />
+        <NodeLayout
+          Size="184,41.6"
           Id="Package\Get LSET for CuaHang"
           TopLeft="92.6428576902468,237.411767194015" />
         <NodeLayout
-          Size="178.666666666667,42"
+          Size="178.4,41.6"
           Id="Package\Get LSET for Loai Cua Hang"
           TopLeft="388.642857690247,237.411767194015" />
         <NodeLayout
-          Size="214.666666666667,42"
+          Size="212,42.4"
+          Id="Package\Get LSET for LoaiSanPham"
+          TopLeft="976.874985890463,241.526320335607" />
+        <NodeLayout
+          Size="214.4,41.6"
           Id="Package\Get LSET for Nuoc (Quoc gia)"
           TopLeft="659.642857349649,236.137256960733" />
         <NodeLayout
-          Size="226.666666666667,42"
+          Size="192,42.4"
+          Id="Package\Get LSET for SanPham"
+          TopLeft="1244.3749819044,247.684215188356" />
+        <NodeLayout
+          Size="226.4,41.6"
           Id="Package\Set CET for CuaHang"
           TopLeft="97.6428577753962,60" />
         <NodeLayout
-          Size="172.666666666667,42"
+          Size="172.8,41.6"
           Id="Package\Set CET for LoaiCH"
           TopLeft="392.928572048946,60" />
         <NodeLayout
-          Size="172.666666666667,42"
+          Size="205.6,42.4"
+          Id="Package\Set CET for LoaiSanPham"
+          TopLeft="946.416647835325,65.6842117626582" />
+        <NodeLayout
+          Size="172.8,41.6"
           Id="Package\Set CET for Nuoc (Quoc Gia)"
           TopLeft="663.928571708349,61.0196074459506" />
         <NodeLayout
-          Size="162.666666666667,42"
+          Size="185.6,42.4"
+          Id="Package\Set CET for SanPham"
+          TopLeft="1205.49998513609,64.3157906842694" />
+        <NodeLayout
+          Size="162.4,41.6"
           Id="Package\Set LSET for CuaHang"
           TopLeft="83.3571432463978,428.647062759498" />
         <NodeLayout
-          Size="162.666666666667,42"
+          Size="162.4,41.6"
           Id="Package\Set LSET for Loai Cua Hang"
           TopLeft="379.357143246398,428.647062759499" />
         <NodeLayout
-          Size="214,42"
+          Size="210.4,42.4"
+          Id="Package\Set LSET for LoaiSanPham"
+          TopLeft="973.874986412004,435.842113466805" />
+        <NodeLayout
+          Size="214.4,41.6"
           Id="Package\Set LSET for Nuoc (Quoc Gia)"
           TopLeft="652.50000008515,420.490199488518" />
         <NodeLayout
-          Size="236.666666666667,42"
+          Size="190.4,42.4"
+          Id="Package\Set LSET for SanPham"
+          TopLeft="1254.49998223037,418.052639447751" />
+        <NodeLayout
+          Size="236.8,41.6"
           Id="Package\Truncate table CuaHang_Jupiter"
           TopLeft="60,152.529413062396" />
         <NodeLayout
-          Size="236,42"
+          Size="236,41.6"
           Id="Package\Truncate table LoaiCH_Stage"
           TopLeft="356.5,152.529413062396" />
         <NodeLayout
-          Size="252,42"
+          Size="252,42.4"
+          Id="Package\Truncate table LoaiSanPham_Stage"
+          TopLeft="937.499986030162,150.526318622758" />
+        <NodeLayout
+          Size="252,41.6"
           Id="Package\Truncate table Nuoc_Stage"
           TopLeft="629.642856838752,144.372549791415" />
+        <NodeLayout
+          Size="230.4,42.4"
+          Id="Package\Truncate table SanPham_Stage"
+          TopLeft="1209.54164898085,151.210529161953" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="210.842857775396,101.6">
@@ -2888,18 +2923,18 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhap &gt;= ? AND NgayCapNha
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="177.414286237347,279.011767194015">
+          TopLeft="182.814286237347,279.011767194015">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,47.8705894900854"
+              EndConnector="0,47.870589490085"
               Start="0,0"
-              End="0,40.3705894900854">
+              End="0,40.370589490085">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,40.3705894900854" />
+                    End="0,40.370589490085" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2977,19 +3012,267 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhap &gt;= ? AND NgayCapNha
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="176.196428845124,194.529413062396">
+          Id="Package.PrecedenceConstraints[Constraint 12]"
+          TopLeft="1049.08331450199,108.350878429325">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,42.882354131619"
+              EndConnector="14.4166715281704,42.1754401934336"
               Start="0,0"
-              End="0,35.382354131619">
+              End="14.4166715281704,34.6754401934336">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35.382354131619" />
+                    End="0,17.0877200967168" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.0877200967168"
+                    Point2="0,21.0877200967168"
+                    Point3="4,21.0877200967168" />
+                  <mssgle:LineSegment
+                    End="10.4166715281704,21.0877200967168" />
+                  <mssgle:CubicBezierSegment
+                    Point1="10.4166715281704,21.0877200967168"
+                    Point2="14.4166715281704,21.0877200967168"
+                    Point3="14.4166715281704,25.0877200967168" />
+                  <mssgle:LineSegment
+                    End="14.4166715281704,34.6754401934336" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 13]"
+          TopLeft="1298.16665180276,106.982457350936">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="26.7083305114254,44.2280718110165"
+              Start="0,0"
+              End="26.7083305114254,36.7280718110165">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.1140359055082" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.1140359055082"
+                    Point2="0,22.1140359055082"
+                    Point3="4,22.1140359055082" />
+                  <mssgle:LineSegment
+                    End="22.7083305114254,22.1140359055082" />
+                  <mssgle:CubicBezierSegment
+                    Point1="22.7083305114254,22.1140359055082"
+                    Point2="26.7083305114254,22.1140359055082"
+                    Point3="26.7083305114254,26.1140359055082" />
+                  <mssgle:LineSegment
+                    End="26.7083305114254,36.7280718110165" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 14]"
+          TopLeft="1063.49998603016,193.192985289425">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="19.3749998603016,48.3333350461825"
+              Start="0,0"
+              End="19.3749998603016,40.8333350461825">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.1666675230912" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.1666675230912"
+                    Point2="0,24.1666675230912"
+                    Point3="4,24.1666675230912" />
+                  <mssgle:LineSegment
+                    End="15.3749998603016,24.1666675230912" />
+                  <mssgle:CubicBezierSegment
+                    Point1="15.3749998603016,24.1666675230912"
+                    Point2="19.3749998603016,24.1666675230912"
+                    Point3="19.3749998603016,28.1666675230912" />
+                  <mssgle:LineSegment
+                    End="19.3749998603016,40.8333350461825" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 15]"
+          TopLeft="1324.87498231418,193.877195828619">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="15.4999995902187,53.8070193597372"
+              Start="0,0"
+              End="15.4999995902187,46.3070193597372">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.9035096798686" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.9035096798686"
+                    Point2="0,26.9035096798686"
+                    Point3="4,26.9035096798686" />
+                  <mssgle:LineSegment
+                    End="11.4999995902187,26.9035096798686" />
+                  <mssgle:CubicBezierSegment
+                    Point1="11.4999995902187,26.9035096798686"
+                    Point2="15.4999995902187,26.9035096798686"
+                    Point3="15.4999995902187,30.9035096798686" />
+                  <mssgle:LineSegment
+                    End="15.4999995902187,46.3070193597372" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 16]"
+          TopLeft="1082.47915269217,284.192987002274">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,64.7543879868474"
+              Start="0,0"
+              End="0,57.2543879868474">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,57.2543879868474" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 17]"
+          TopLeft="1340.3749819044,290.350881855023">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="22.9583332495138,47.6491245069884"
+              Start="0,0"
+              End="22.9583332495138,40.1491245069884">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.8245622534942" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.8245622534942"
+                    Point2="0,23.8245622534942"
+                    Point3="4,23.8245622534942" />
+                  <mssgle:LineSegment
+                    End="18.9583332495138,23.8245622534942" />
+                  <mssgle:CubicBezierSegment
+                    Point1="18.9583332495138,23.8245622534942"
+                    Point2="22.9583332495138,23.8245622534942"
+                    Point3="22.9583332495138,27.8245622534942" />
+                  <mssgle:LineSegment
+                    End="22.9583332495138,40.1491245069884" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 18]"
+          TopLeft="1080.64581961961,391.614041655788">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44.2280718110163"
+              Start="0,0"
+              End="0,36.7280718110163">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.7280718110163" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 19]"
+          TopLeft="1363.33331515392,380.666673028678">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-13.4999995902174,37.3859664190733"
+              Start="0,0"
+              End="-13.4999995902174,29.8859664190733">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.6929832095367" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.6929832095367"
+                    Point2="0,18.6929832095367"
+                    Point3="-4,18.6929832095367" />
+                  <mssgle:LineSegment
+                    End="-9.49999959021739,18.6929832095367" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-9.49999959021739,18.6929832095367"
+                    Point2="-13.4999995902174,18.6929832095367"
+                    Point3="-13.4999995902174,22.6929832095367" />
+                  <mssgle:LineSegment
+                    End="-13.4999995902174,29.8859664190733" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="181.521428845123,194.129413062396">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43.282354131619"
+              Start="0,0"
+              End="0,35.782354131619">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.782354131619" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3200,294 +3483,6 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhap &gt;= ? AND NgayCapNha
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="205.333333333334,42.6666666666667"
-          Id="Package\Set CET for LoaiSanPham"
-          TopLeft="946.416647835325,65.6842117626582" />
-        <NodeLayout
-          Size="185.333333333334,42.6666666666667"
-          Id="Package\Set CET for SanPham"
-          TopLeft="1205.49998513609,64.3157906842694" />
-        <NodeLayout
-          Size="252,42.6666666666667"
-          Id="Package\Truncate table LoaiSanPham_Stage"
-          TopLeft="937.499986030162,150.526318622758" />
-        <NodeLayout
-          Size="230.666666666667,42.6666666666667"
-          Id="Package\Truncate table SanPham_Stage"
-          TopLeft="1209.54164898085,151.210529161953" />
-        <NodeLayout
-          Size="212,42.6666666666667"
-          Id="Package\Get LSET for LoaiSanPham"
-          TopLeft="976.874985890463,241.526320335607" />
-        <NodeLayout
-          Size="192,42.6666666666667"
-          Id="Package\Get LSET for SanPham"
-          TopLeft="1244.3749819044,247.684215188356" />
-        <NodeLayout
-          Size="197.333333333334,42.6666666666667"
-          Id="Package\Data Flow LoaiSanPham"
-          TopLeft="983.416652827214,348.947374989122" />
-        <NodeLayout
-          Size="177.333333333334,42.6666666666667"
-          Id="Package\Data Flow SanPham"
-          TopLeft="1274.66664848725,338.000006362011" />
-        <NodeLayout
-          Size="210.666666666667,42.6666666666667"
-          Id="Package\Set LSET for LoaiSanPham"
-          TopLeft="973.874986412004,435.842113466805" />
-        <NodeLayout
-          Size="190.666666666667,42.6666666666667"
-          Id="Package\Set LSET for SanPham"
-          TopLeft="1254.49998223037,418.052639447751" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 12]"
-          TopLeft="1049.08331450199,108.350878429325">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="14.4166715281704,42.1754401934336"
-              Start="0,0"
-              End="14.4166715281704,34.6754401934336">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,17.0877200967168" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,17.0877200967168"
-                    Point2="0,21.0877200967168"
-                    Point3="4,21.0877200967168" />
-                  <mssgle:LineSegment
-                    End="10.4166715281704,21.0877200967168" />
-                  <mssgle:CubicBezierSegment
-                    Point1="10.4166715281704,21.0877200967168"
-                    Point2="14.4166715281704,21.0877200967168"
-                    Point3="14.4166715281704,25.0877200967168" />
-                  <mssgle:LineSegment
-                    End="14.4166715281704,34.6754401934336" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 13]"
-          TopLeft="1298.16665180276,106.982457350936">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="26.7083305114254,44.2280718110165"
-              Start="0,0"
-              End="26.7083305114254,36.7280718110165">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,18.1140359055082" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,18.1140359055082"
-                    Point2="0,22.1140359055082"
-                    Point3="4,22.1140359055082" />
-                  <mssgle:LineSegment
-                    End="22.7083305114254,22.1140359055082" />
-                  <mssgle:CubicBezierSegment
-                    Point1="22.7083305114254,22.1140359055082"
-                    Point2="26.7083305114254,22.1140359055082"
-                    Point3="26.7083305114254,26.1140359055082" />
-                  <mssgle:LineSegment
-                    End="26.7083305114254,36.7280718110165" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 14]"
-          TopLeft="1063.49998603016,193.192985289425">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="19.3749998603016,48.3333350461825"
-              Start="0,0"
-              End="19.3749998603016,40.8333350461825">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.1666675230912" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.1666675230912"
-                    Point2="0,24.1666675230912"
-                    Point3="4,24.1666675230912" />
-                  <mssgle:LineSegment
-                    End="15.3749998603016,24.1666675230912" />
-                  <mssgle:CubicBezierSegment
-                    Point1="15.3749998603016,24.1666675230912"
-                    Point2="19.3749998603016,24.1666675230912"
-                    Point3="19.3749998603016,28.1666675230912" />
-                  <mssgle:LineSegment
-                    End="19.3749998603016,40.8333350461825" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 15]"
-          TopLeft="1324.87498231418,193.877195828619">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="15.4999995902187,53.8070193597372"
-              Start="0,0"
-              End="15.4999995902187,46.3070193597372">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,22.9035096798686" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,22.9035096798686"
-                    Point2="0,26.9035096798686"
-                    Point3="4,26.9035096798686" />
-                  <mssgle:LineSegment
-                    End="11.4999995902187,26.9035096798686" />
-                  <mssgle:CubicBezierSegment
-                    Point1="11.4999995902187,26.9035096798686"
-                    Point2="15.4999995902187,26.9035096798686"
-                    Point3="15.4999995902187,30.9035096798686" />
-                  <mssgle:LineSegment
-                    End="15.4999995902187,46.3070193597372" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 17]"
-          TopLeft="1340.3749819044,290.350881855023">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="22.9583332495138,47.6491245069884"
-              Start="0,0"
-              End="22.9583332495138,40.1491245069884">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19.8245622534942" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,19.8245622534942"
-                    Point2="0,23.8245622534942"
-                    Point3="4,23.8245622534942" />
-                  <mssgle:LineSegment
-                    End="18.9583332495138,23.8245622534942" />
-                  <mssgle:CubicBezierSegment
-                    Point1="18.9583332495138,23.8245622534942"
-                    Point2="22.9583332495138,23.8245622534942"
-                    Point3="22.9583332495138,27.8245622534942" />
-                  <mssgle:LineSegment
-                    End="22.9583332495138,40.1491245069884" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 18]"
-          TopLeft="1080.64581961961,391.614041655788">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,44.2280718110163"
-              Start="0,0"
-              End="0,36.7280718110163">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,36.7280718110163" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 19]"
-          TopLeft="1363.33331515392,380.666673028678">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-13.4999995902174,37.3859664190733"
-              Start="0,0"
-              End="-13.4999995902174,29.8859664190733">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,14.6929832095367" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,14.6929832095367"
-                    Point2="0,18.6929832095367"
-                    Point3="-4,18.6929832095367" />
-                  <mssgle:LineSegment
-                    End="-9.49999959021739,18.6929832095367" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-9.49999959021739,18.6929832095367"
-                    Point2="-13.4999995902174,18.6929832095367"
-                    Point3="-13.4999995902174,22.6929832095367" />
-                  <mssgle:LineSegment
-                    End="-13.4999995902174,29.8859664190733" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 16]"
-          TopLeft="1082.47915269217,284.192987002274">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,64.7543879868474"
-              Start="0,0"
-              End="0,57.2543879868474">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,57.2543879868474" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -3568,13 +3563,13 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhap &gt;= ? AND NgayCapNha
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="196.8,41.6"
-          Id="Package\Data Flow Loai Cua Hang\LoaiCuaHang_Jupiter Source"
-          TopLeft="198.57143195308,48.9411771569698" />
-        <NodeLayout
           Size="170.4,41.6"
           Id="Package\Data Flow Loai Cua Hang\Loai Cua Hang Stage"
           TopLeft="216,162" />
+        <NodeLayout
+          Size="196.8,41.6"
+          Id="Package\Data Flow Loai Cua Hang\LoaiCuaHang_Jupiter Source"
+          TopLeft="198.57143195308,48.9411771569698" />
         <EdgeLayout
           Id="Package\Data Flow Loai Cua Hang.Paths[OLE DB Source Output]"
           TopLeft="299.08571597654,90.5411771569698">
@@ -3622,16 +3617,77 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhap &gt;= ? AND NgayCapNha
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
+    design-time-name="Package\Data Flow LoaiSanPham">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="218.4,42.4"
+          Id="Package\Data Flow LoaiSanPham\LoaiSanPham_Jupiter_Stage"
+          TopLeft="239.374996433035,162.842108328257" />
+        <NodeLayout
+          Size="224,42.4"
+          Id="Package\Data Flow LoaiSanPham\LoaiSanPham_Jupiter_Source"
+          TopLeft="237.499996460974,73.8947382329904" />
+        <EdgeLayout
+          Id="Package\Data Flow LoaiSanPham.Paths[OLE DB Source Output]"
+          TopLeft="349.104163113671,116.561404899657">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46.2807034285995"
+              Start="0,0"
+              End="0,38.7807034285995">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.7807034285995" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow LoaiSanPham\LoaiSanPham_Jupiter_Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow LoaiSanPham\LoaiSanPham_Jupiter_Stage">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
     design-time-name="Package\Data Flow Nuoc (Quoc Gia)">
     <LayoutInfo>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="179.333333333334,41.3333333333334"
+          Size="179.2,41.6"
           Id="Package\Data Flow Nuoc (Quoc Gia)\Nuoc_Stage"
           TopLeft="230,158" />
         <NodeLayout
-          Size="196.666666666667,41.3333333333334"
+          Size="196.8,41.6"
           Id="Package\Data Flow Nuoc (Quoc Gia)\Nuoc_Jupiter Source"
           TopLeft="198.57143195308,48.9411771569698" />
         <EdgeLayout
@@ -3693,56 +3749,18 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhap &gt;= ? AND NgayCapNha
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\Data Flow LoaiSanPham">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="218.666666666667,42.6666666666667"
-          Id="Package\Data Flow LoaiSanPham\LoaiSanPham_Jupiter_Stage"
-          TopLeft="239.374996433035,162.842108328257" />
-        <NodeLayout
-          Size="224,42.6666666666667"
-          Id="Package\Data Flow LoaiSanPham\LoaiSanPham_Jupiter_Source"
-          TopLeft="237.499996460974,73.8947382329904" />
-        <EdgeLayout
-          Id="Package\Data Flow LoaiSanPham.Paths[OLE DB Source Output]"
-          TopLeft="349.104163113671,116.561404899657">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,46.2807034285995"
-              Start="0,0"
-              End="0,38.7807034285995">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,38.7807034285995" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <TaskHost
     design-time-name="Package\Data Flow SanPham">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="186.666666666667,42.6666666666667"
-          Id="Package\Data Flow SanPham\SanPham_Jupiter_Src"
-          TopLeft="477,56" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="198.666666666667,42.6666666666667"
           Id="Package\Data Flow SanPham\SanPham_Jupiter_Stage"
           TopLeft="476.5,154.5" />
+        <NodeLayout
+          Size="186.666666666667,42.6666666666667"
+          Id="Package\Data Flow SanPham\SanPham_Jupiter_Src"
+          TopLeft="477,56" />
         <EdgeLayout
           Id="Package\Data Flow SanPham.Paths[OLE DB Source Output]"
           TopLeft="573.083333333333,98.6666666666667">
@@ -3762,33 +3780,14 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhap &gt;= ? AND NgayCapNha
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow LoaiSanPham\LoaiSanPham_Jupiter_Stage">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow LoaiSanPham\LoaiSanPham_Jupiter_Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Data Flow SanPham\SanPham_Jupiter_Src">
     <Properties>

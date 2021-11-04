@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="71"
-  DTS:VersionGUID="{709C8547-0BC0-4414-B740-FD3095AA1173}">
+  DTS:VersionBuild="74"
+  DTS:VersionGUID="{79A868BA-0C54-4E49-A5FA-FF714DB718FD}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -652,7 +652,6 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNha
       DTS:refId="Package\Data Flow HoaDon"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:Disabled="True"
       DTS:DTSID="{eed90dfb-afc5-4068-b8b5-4ea9086dec78}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -1604,7 +1603,7 @@ WHERE (NgayTao &gt;= ? AND NgayTao &lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNh
       DTS:LocaleID="-1"
       DTS:ObjectName="Get LSET for ChiTietHoaDon"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1624,13 +1623,12 @@ WHERE (NgayTao &gt;= ? AND NgayTao &lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNh
       DTS:refId="Package\Get LSET for HoaDon"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:Disabled="True"
       DTS:DTSID="{65c9e994-19e2-4621-b3bd-65d063a2e697}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get LSET for HoaDon"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1682,7 +1680,7 @@ WHERE (NgayTao &gt;= ? AND NgayTao &lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNh
       DTS:LocaleID="-1"
       DTS:ObjectName="Set CET for ChiTietHoaDon"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1694,13 +1692,12 @@ WHERE (NgayTao &gt;= ? AND NgayTao &lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNh
       DTS:refId="Package\Set CET for HoaDon"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:Disabled="True"
       DTS:DTSID="{da2ec394-fc5f-4617-b436-fc5421639a7d}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set CET for HoaDon"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1736,7 +1733,7 @@ WHERE (NgayTao &gt;= ? AND NgayTao &lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNh
       DTS:LocaleID="-1"
       DTS:ObjectName="Set LSET for ChiTietHoaDon"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1748,13 +1745,12 @@ WHERE (NgayTao &gt;= ? AND NgayTao &lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNh
       DTS:refId="Package\Set LSET for HoaDon"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:Disabled="True"
       DTS:DTSID="{9a3629d5-1ece-4ca0-bcd9-1fb233d661fd}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set LSET for HoaDon"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1790,7 +1786,7 @@ WHERE (NgayTao &gt;= ? AND NgayTao &lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNh
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate table ChiTietHoaDon_stage"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1802,13 +1798,12 @@ WHERE (NgayTao &gt;= ? AND NgayTao &lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNh
       DTS:refId="Package\Truncate table HoaDon_Stage"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:Disabled="True"
       DTS:DTSID="{3e7ac15d-0c54-462c-bad2-315cf83c6192}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate table HoaDon_Stage"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1946,63 +1941,63 @@ WHERE (NgayTao &gt;= ? AND NgayTao &lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNh
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="166.333333333334,41.6666666666667"
+          Size="166.4,41.6"
           Id="Package\Data Flow ChiTietHoaDon"
           TopLeft="616.285714784447,279.372552526217" />
         <NodeLayout
-          Size="166.333333333334,41.6666666666667"
+          Size="166.4,41.6"
           Id="Package\Data Flow HoaDon"
           TopLeft="343.142857945695,287.529415797198" />
         <NodeLayout
-          Size="182.333333333334,41.6666666666667"
+          Size="182.4,41.6"
           Id="Package\Data Flow KhachHang"
           TopLeft="47.1428579456953,287.529415797197" />
         <NodeLayout
-          Size="214.333333333334,41.6666666666667"
+          Size="214.4,41.6"
           Id="Package\Get LSET for ChiTietHoaDon"
           TopLeft="617.000000510897,196.78431607383" />
         <NodeLayout
-          Size="178.333333333334,41.6666666666667"
+          Size="178.4,41.6"
           Id="Package\Get LSET for HoaDon"
           TopLeft="346.000000851495,198.058826307112" />
         <NodeLayout
-          Size="162.333333333334,41.6666666666667"
+          Size="162.4,41.6"
           Id="Package\Get LSET for KhachHang"
           TopLeft="50.000000851495,198.058826307112" />
         <NodeLayout
-          Size="172.666666666667,41.6666666666667"
+          Size="172.8,41.6"
           Id="Package\Set CET for ChiTietHoaDon"
           TopLeft="621.285714869597,21.6666665590472" />
         <NodeLayout
-          Size="172.666666666667,41.6666666666667"
+          Size="172.8,41.6"
           Id="Package\Set CET for HoaDon"
           TopLeft="350.285715210194,20.6470591130966" />
         <NodeLayout
-          Size="162.333333333334,41.6666666666667"
+          Size="162.4,41.6"
           Id="Package\Set CET for KhachHang"
           TopLeft="55.0000009366444,20.6470591130966" />
         <NodeLayout
-          Size="213.666666666667,41.6666666666667"
+          Size="213.6,41.6"
           Id="Package\Set LSET for ChiTietHoaDon"
           TopLeft="609.857143246398,381.137258601615" />
         <NodeLayout
-          Size="162.333333333334,41.6666666666667"
+          Size="162.4,41.6"
           Id="Package\Set LSET for HoaDon"
           TopLeft="336.714286407646,389.294121872596" />
         <NodeLayout
-          Size="162.333333333334,41.6666666666667"
+          Size="162.4,41.6"
           Id="Package\Set LSET for KhachHang"
           TopLeft="40.714286407646,389.294121872595" />
         <NodeLayout
-          Size="252,41.6666666666667"
+          Size="252,41.6"
           Id="Package\Truncate table ChiTietHoaDon_stage"
           TopLeft="587,105.019608904512" />
         <NodeLayout
-          Size="236,41.6666666666667"
+          Size="236,41.6"
           Id="Package\Truncate table HoaDon_Stage"
           TopLeft="313.857143161248,113.176472175493" />
         <NodeLayout
-          Size="236.666666666667,41.6666666666667"
+          Size="236.8,41.6"
           Id="Package\Truncate table KhachHang_Stage"
           TopLeft="17.3571431612482,113.176472175493" />
         <EdgeLayout
@@ -2348,7 +2343,7 @@ WHERE (NgayTao &gt;= ? AND NgayTao &lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNh
     design-time-name="Package\Data Flow ChiTietHoaDon">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="196.8,41.6"
           Id="Package\Data Flow ChiTietHoaDon\ChiTietHoaDon_Jade Source"
@@ -2376,7 +2371,9 @@ WHERE (NgayTao &gt;= ? AND NgayTao &lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNh
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -2483,7 +2480,7 @@ WHERE (NgayTao &gt;= ? AND NgayTao &lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNh
     design-time-name="Package\Data Flow KhachHang">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="170.4,41.6"
           Id="Package\Data Flow KhachHang\KhachHang_Stage"
@@ -2523,7 +2520,9 @@ WHERE (NgayTao &gt;= ? AND NgayTao &lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNh
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
