@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="26"
-  DTS:VersionGUID="{8BF8E2DB-A38A-47E7-B2E9-E329225541A7}">
+  DTS:VersionBuild="99"
+  DTS:VersionGUID="{CB4FEC08-280A-4D51-980C-9B6BBAAA5064}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -58,6 +58,218 @@
           version="1">
           <components>
             <component
+              refId="Package\Stage To NDS\Chuyển đổi kiểu dữ liệu cho cột TenThanhPho và TenQG"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Chuyển đổi kiểu dữ liệu cho cột TenThanhPho và TenQG"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Stage To NDS\Chuyển đổi kiểu dữ liệu cho cột TenThanhPho và TenQG.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Stage To NDS\Chuyển đổi kiểu dữ liệu cho cột TenThanhPho và TenQG.Inputs[Data Conversion Input].Columns[TenQuocGia]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="TenQuocGia"
+                      lineageId="Package\Stage To NDS\Thêm cột Tên Thành Phố.Outputs[Derived Column Output].Columns[TenQuocGia]" />
+                    <inputColumn
+                      refId="Package\Stage To NDS\Chuyển đổi kiểu dữ liệu cho cột TenThanhPho và TenQG.Inputs[Data Conversion Input].Columns[TenThanhPho]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="TenThanhPho"
+                      lineageId="Package\Stage To NDS\Thêm cột Tên Thành Phố.Outputs[Derived Column Output].Columns[TenThanhPho]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Stage To NDS\Chuyển đổi kiểu dữ liệu cho cột TenThanhPho và TenQG.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Stage To NDS\Chuyển đổi kiểu dữ liệu cho cột TenThanhPho và TenQG.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Stage To NDS\Chuyển đổi kiểu dữ liệu cho cột TenThanhPho và TenQG.Outputs[Data Conversion Output].Columns[QGName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Stage To NDS\Chuyển đổi kiểu dữ liệu cho cột TenThanhPho và TenQG.Outputs[Data Conversion Output].Columns[QGName]"
+                      name="QGName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Stage To NDS\Thêm cột Tên Thành Phố.Outputs[Derived Column Output].Columns[TenQuocGia]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Stage To NDS\Chuyển đổi kiểu dữ liệu cho cột TenThanhPho và TenQG.Outputs[Data Conversion Output].Columns[CityName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="100"
+                      lineageId="Package\Stage To NDS\Chuyển đổi kiểu dữ liệu cho cột TenThanhPho và TenQG.Outputs[Data Conversion Output].Columns[CityName]"
+                      name="CityName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Stage To NDS\Thêm cột Tên Thành Phố.Outputs[Derived Column Output].Columns[TenThanhPho]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Stage To NDS\Chuyển đổi kiểu dữ liệu cho cột TenThanhPho và TenQG.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Stage To NDS\Chuyển đổi kiểu dữ liệu cho cột TenThanhPho và TenQG.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Stage To NDS\Chuyển đổi kiểu dữ liệu cho cột TenThanhPho và TenQG.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Stage To NDS\Chuyển đổi kiểu dữ liệu cho cột TenThanhPho và TenQG.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Stage To NDS\Chuyển đổi kiểu dữ liệu cho cột TenThanhPho và TenQG.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Stage To NDS\Chuyển đổi kiểu dữ liệu cho cột TenThanhPho và TenQG.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Stage To NDS\Chuyển đổi kiểu dữ liệu cho cột TenThanhPho và TenQG 1"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Chuyển đổi kiểu dữ liệu cho cột TenThanhPho và TenQG 1"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Stage To NDS\Chuyển đổi kiểu dữ liệu cho cột TenThanhPho và TenQG 1.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Stage To NDS\Chuyển đổi kiểu dữ liệu cho cột TenThanhPho và TenQG 1.Inputs[Data Conversion Input].Columns[TenQuocGia]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="TenQuocGia"
+                      lineageId="Package\Stage To NDS\Thêm cột Tên Thành Phố.Outputs[Derived Column Output].Columns[TenQuocGia]" />
+                    <inputColumn
+                      refId="Package\Stage To NDS\Chuyển đổi kiểu dữ liệu cho cột TenThanhPho và TenQG 1.Inputs[Data Conversion Input].Columns[TenThanhPho]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="TenThanhPho"
+                      lineageId="Package\Stage To NDS\Thêm cột Tên Thành Phố.Outputs[Derived Column Output].Columns[TenThanhPho]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Stage To NDS\Chuyển đổi kiểu dữ liệu cho cột TenThanhPho và TenQG 1.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Stage To NDS\Chuyển đổi kiểu dữ liệu cho cột TenThanhPho và TenQG 1.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Stage To NDS\Chuyển đổi kiểu dữ liệu cho cột TenThanhPho và TenQG 1.Outputs[Data Conversion Output].Columns[TenQG]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Stage To NDS\Chuyển đổi kiểu dữ liệu cho cột TenThanhPho và TenQG 1.Outputs[Data Conversion Output].Columns[TenQG]"
+                      name="TenQG"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Stage To NDS\Thêm cột Tên Thành Phố.Outputs[Derived Column Output].Columns[TenQuocGia]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Stage To NDS\Chuyển đổi kiểu dữ liệu cho cột TenThanhPho và TenQG 1.Outputs[Data Conversion Output].Columns[ThanhPho]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="100"
+                      lineageId="Package\Stage To NDS\Chuyển đổi kiểu dữ liệu cho cột TenThanhPho và TenQG 1.Outputs[Data Conversion Output].Columns[ThanhPho]"
+                      name="ThanhPho"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Stage To NDS\Thêm cột Tên Thành Phố.Outputs[Derived Column Output].Columns[TenThanhPho]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Stage To NDS\Chuyển đổi kiểu dữ liệu cho cột TenThanhPho và TenQG 1.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Stage To NDS\Chuyển đổi kiểu dữ liệu cho cột TenThanhPho và TenQG 1.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Stage To NDS\Chuyển đổi kiểu dữ liệu cho cột TenThanhPho và TenQG 1.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Stage To NDS\Chuyển đổi kiểu dữ liệu cho cột TenThanhPho và TenQG 1.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Stage To NDS\Chuyển đổi kiểu dữ liệu cho cột TenThanhPho và TenQG 1.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Stage To NDS\Chuyển đổi kiểu dữ liệu cho cột TenThanhPho và TenQG 1.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Stage To NDS\Cập nhật dữ liệu"
               componentClassID="Microsoft.OLEDBCommand"
               contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
@@ -76,7 +288,7 @@
                   expressionType="Notify"
                   name="SqlCommand"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE QuocGia
-SET NgayCapNhat = GETDATE(),TenQG = ?,MaTrangThai = ? 
+SET NgayCapNhat = GETDATE(),TenQG = ?,TenThanhPho = ?,MaTrangThai = ? 
 WHERE MaQG = ? AND MaNguon = ?</property>
                 <property
                   dataType="System.Int32"
@@ -100,18 +312,26 @@ WHERE MaQG = ? AND MaNguon = ?</property>
                   name="OLE DB Command Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Stage To NDS\Cập nhật dữ liệu.Inputs[OLE DB Command Input].Columns[TenNuoc]"
+                      refId="Package\Stage To NDS\Cập nhật dữ liệu.Inputs[OLE DB Command Input].Columns[QGName]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
-                      cachedName="TenNuoc"
+                      cachedName="QGName"
                       externalMetadataColumnId="Package\Stage To NDS\Cập nhật dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                      lineageId="Package\Stage To NDS\Nuoc_Stage.Outputs[OLE DB Source Output].Columns[TenNuoc]" />
+                      lineageId="Package\Stage To NDS\Chuyển đổi kiểu dữ liệu cho cột TenThanhPho và TenQG.Outputs[Data Conversion Output].Columns[QGName]" />
+                    <inputColumn
+                      refId="Package\Stage To NDS\Cập nhật dữ liệu.Inputs[OLE DB Command Input].Columns[CityName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="CityName"
+                      externalMetadataColumnId="Package\Stage To NDS\Cập nhật dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Stage To NDS\Chuyển đổi kiểu dữ liệu cho cột TenThanhPho và TenQG.Outputs[Data Conversion Output].Columns[CityName]" />
                     <inputColumn
                       refId="Package\Stage To NDS\Cập nhật dữ liệu.Inputs[OLE DB Command Input].Columns[TrangThai]"
                       cachedDataType="i4"
                       cachedName="TrangThai"
-                      externalMetadataColumnId="Package\Stage To NDS\Cập nhật dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      externalMetadataColumnId="Package\Stage To NDS\Cập nhật dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                       lineageId="Package\Stage To NDS\Nuoc_Stage.Outputs[OLE DB Source Output].Columns[TrangThai]" />
                     <inputColumn
                       refId="Package\Stage To NDS\Cập nhật dữ liệu.Inputs[OLE DB Command Input].Columns[MaNuoc]"
@@ -119,13 +339,13 @@ WHERE MaQG = ? AND MaNguon = ?</property>
                       cachedDataType="str"
                       cachedLength="4"
                       cachedName="MaNuoc"
-                      externalMetadataColumnId="Package\Stage To NDS\Cập nhật dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      externalMetadataColumnId="Package\Stage To NDS\Cập nhật dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
                       lineageId="Package\Stage To NDS\Nuoc_Stage.Outputs[OLE DB Source Output].Columns[MaNuoc]" />
                     <inputColumn
                       refId="Package\Stage To NDS\Cập nhật dữ liệu.Inputs[OLE DB Command Input].Columns[MaNguon]"
                       cachedDataType="i4"
                       cachedName="MaNguon"
-                      externalMetadataColumnId="Package\Stage To NDS\Cập nhật dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      externalMetadataColumnId="Package\Stage To NDS\Cập nhật dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
                       lineageId="Package\Stage To NDS\Thêm cột MaNguonDL trong pipeline.Outputs[Derived Column Output].Columns[MaNguon]" />
                   </inputColumns>
                   <externalMetadataColumns
@@ -145,21 +365,10 @@ WHERE MaQG = ? AND MaNguon = ?</property>
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Stage To NDS\Cập nhật dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                      dataType="i4"
-                      name="Param_1">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">81</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Stage To NDS\Cập nhật dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                       codePage="1252"
                       dataType="str"
-                      length="4"
-                      name="Param_2">
+                      length="100"
+                      name="Param_1">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -168,9 +377,33 @@ WHERE MaQG = ? AND MaNguon = ?</property>
                       </properties>
                     </externalMetadataColumn>
                     <externalMetadataColumn
-                      refId="Package\Stage To NDS\Cập nhật dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      refId="Package\Stage To NDS\Cập nhật dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                       dataType="i4"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Stage To NDS\Cập nhật dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
                       name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Stage To NDS\Cập nhật dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      dataType="i4"
+                      name="Param_4">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -206,6 +439,103 @@ WHERE MaQG = ? AND MaNguon = ?</property>
                       refId="Package\Stage To NDS\Cập nhật dữ liệu.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\Stage To NDS\Cập nhật dữ liệu.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Stage To NDS\Cập nhật ngày tạo và ngày cập nhật"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Cập nhật ngày tạo và ngày cập nhật"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Stage To NDS\Cập nhật ngày tạo và ngày cập nhật.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Stage To NDS\Cập nhật ngày tạo và ngày cập nhật.Inputs[Derived Column Input].Columns[NgayTao]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="NgayTao"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Stage To NDS\Nuoc_Stage.Outputs[OLE DB Source Output].Columns[NgayTao]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Stage To NDS\Cập nhật ngày tạo và ngày cập nhật.Inputs[Derived Column Input].Columns[NgayCapNhat]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="NgayCapNhat"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Stage To NDS\Nuoc_Stage.Outputs[OLE DB Source Output].Columns[NgayCapNhat]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Stage To NDS\Cập nhật ngày tạo và ngày cập nhật.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Stage To NDS\Cập nhật ngày tạo và ngày cập nhật.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Stage To NDS\Cập nhật ngày tạo và ngày cập nhật.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Stage To NDS\Cập nhật ngày tạo và ngày cập nhật.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Stage To NDS\Cập nhật ngày tạo và ngày cập nhật.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Stage To NDS\Cập nhật ngày tạo và ngày cập nhật.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Stage To NDS\Cập nhật ngày tạo và ngày cập nhật.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Stage To NDS\Cập nhật ngày tạo và ngày cập nhật.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -786,6 +1116,28 @@ where [refTable].[SKMaTrangThai] = ?</property>
                       externalMetadataColumnId="Package\Stage To NDS\Quoc Gia NDS.Inputs[OLE DB Destination Input].ExternalColumns[MaNguon]"
                       lineageId="Package\Stage To NDS\Thêm cột MaNguonDL trong pipeline.Outputs[Derived Column Output].Columns[MaNguon]" />
                     <inputColumn
+                      refId="Package\Stage To NDS\Quoc Gia NDS.Inputs[OLE DB Destination Input].Columns[TrangThai]"
+                      cachedDataType="i4"
+                      cachedName="TrangThai"
+                      externalMetadataColumnId="Package\Stage To NDS\Quoc Gia NDS.Inputs[OLE DB Destination Input].ExternalColumns[MaTrangThai]"
+                      lineageId="Package\Stage To NDS\Nuoc_Stage.Outputs[OLE DB Source Output].Columns[TrangThai]" />
+                    <inputColumn
+                      refId="Package\Stage To NDS\Quoc Gia NDS.Inputs[OLE DB Destination Input].Columns[TenQG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TenQG"
+                      externalMetadataColumnId="Package\Stage To NDS\Quoc Gia NDS.Inputs[OLE DB Destination Input].ExternalColumns[TenQG]"
+                      lineageId="Package\Stage To NDS\Chuyển đổi kiểu dữ liệu cho cột TenThanhPho và TenQG 1.Outputs[Data Conversion Output].Columns[TenQG]" />
+                    <inputColumn
+                      refId="Package\Stage To NDS\Quoc Gia NDS.Inputs[OLE DB Destination Input].Columns[ThanhPho]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="ThanhPho"
+                      externalMetadataColumnId="Package\Stage To NDS\Quoc Gia NDS.Inputs[OLE DB Destination Input].ExternalColumns[TenThanhPho]"
+                      lineageId="Package\Stage To NDS\Chuyển đổi kiểu dữ liệu cho cột TenThanhPho và TenQG 1.Outputs[Data Conversion Output].Columns[ThanhPho]" />
+                    <inputColumn
                       refId="Package\Stage To NDS\Quoc Gia NDS.Inputs[OLE DB Destination Input].Columns[MaNuoc]"
                       cachedCodepage="1252"
                       cachedDataType="str"
@@ -793,20 +1145,6 @@ where [refTable].[SKMaTrangThai] = ?</property>
                       cachedName="MaNuoc"
                       externalMetadataColumnId="Package\Stage To NDS\Quoc Gia NDS.Inputs[OLE DB Destination Input].ExternalColumns[MaQG]"
                       lineageId="Package\Stage To NDS\Nuoc_Stage.Outputs[OLE DB Source Output].Columns[MaNuoc]" />
-                    <inputColumn
-                      refId="Package\Stage To NDS\Quoc Gia NDS.Inputs[OLE DB Destination Input].Columns[TenNuoc]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="TenNuoc"
-                      externalMetadataColumnId="Package\Stage To NDS\Quoc Gia NDS.Inputs[OLE DB Destination Input].ExternalColumns[TenQG]"
-                      lineageId="Package\Stage To NDS\Nuoc_Stage.Outputs[OLE DB Source Output].Columns[TenNuoc]" />
-                    <inputColumn
-                      refId="Package\Stage To NDS\Quoc Gia NDS.Inputs[OLE DB Destination Input].Columns[TrangThai]"
-                      cachedDataType="i4"
-                      cachedName="TrangThai"
-                      externalMetadataColumnId="Package\Stage To NDS\Quoc Gia NDS.Inputs[OLE DB Destination Input].ExternalColumns[MaTrangThai]"
-                      lineageId="Package\Stage To NDS\Nuoc_Stage.Outputs[OLE DB Source Output].Columns[TrangThai]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -826,6 +1164,12 @@ where [refTable].[SKMaTrangThai] = ?</property>
                       dataType="str"
                       length="50"
                       name="TenQG" />
+                    <externalMetadataColumn
+                      refId="Package\Stage To NDS\Quoc Gia NDS.Inputs[OLE DB Destination Input].ExternalColumns[TenThanhPho]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="TenThanhPho" />
                     <externalMetadataColumn
                       refId="Package\Stage To NDS\Quoc Gia NDS.Inputs[OLE DB Destination Input].ExternalColumns[NgayTao]"
                       dataType="dbTimeStamp"
@@ -944,47 +1288,104 @@ where [refTable].[SKMaTrangThai] = ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\Stage To NDS\Tách cột tennuoc thành các giá trị khác nhau"
+              refId="Package\Stage To NDS\Thêm cột Tên Thành Phố"
               componentClassID="Microsoft.DerivedColumn"
               contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
-              name="Tách cột tennuoc thành các giá trị khác nhau"
+              name="Thêm cột Tên Thành Phố"
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\Stage To NDS\Tách cột tennuoc thành các giá trị khác nhau.Inputs[Derived Column Input]"
+                  refId="Package\Stage To NDS\Thêm cột Tên Thành Phố.Inputs[Derived Column Input]"
                   description="Input to the Derived Column Transformation"
                   name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Stage To NDS\Thêm cột Tên Thành Phố.Inputs[Derived Column Input].Columns[TenNuoc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TenNuoc"
+                      lineageId="Package\Stage To NDS\Nuoc_Stage.Outputs[OLE DB Source Output].Columns[TenNuoc]" />
+                  </inputColumns>
                   <externalMetadataColumns />
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Stage To NDS\Tách cột tennuoc thành các giá trị khác nhau.Outputs[Derived Column Output]"
+                  refId="Package\Stage To NDS\Thêm cột Tên Thành Phố.Outputs[Derived Column Output]"
                   description="Default Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   name="Derived Column Output"
-                  synchronousInputId="Package\Stage To NDS\Tách cột tennuoc thành các giá trị khác nhau.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\Stage To NDS\Thêm cột Tên Thành Phố.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Stage To NDS\Thêm cột Tên Thành Phố.Outputs[Derived Column Output].Columns[TenQuocGia]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Stage To NDS\Thêm cột Tên Thành Phố.Outputs[Derived Column Output].Columns[TenQuocGia]"
+                      name="TenQuocGia"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[SUBSTRING](#{Package\Stage To NDS\Nuoc_Stage.Outputs[OLE DB Source Output].Columns[TenNuoc]},1,[FINDSTRING](#{Package\Stage To NDS\Nuoc_Stage.Outputs[OLE DB Source Output].Columns[TenNuoc]} + " - "," - ",1))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">SUBSTRING(TenNuoc,1,FINDSTRING(TenNuoc + " - "," - ",1))</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Stage To NDS\Thêm cột Tên Thành Phố.Outputs[Derived Column Output].Columns[TenThanhPho]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Stage To NDS\Thêm cột Tên Thành Phố.Outputs[Derived Column Output].Columns[TenThanhPho]"
+                      name="TenThanhPho"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[SUBSTRING](#{Package\Stage To NDS\Nuoc_Stage.Outputs[OLE DB Source Output].Columns[TenNuoc]},[FINDSTRING](#{Package\Stage To NDS\Nuoc_Stage.Outputs[OLE DB Source Output].Columns[TenNuoc]} + " - "," - ",1) + 2,[LEN](#{Package\Stage To NDS\Nuoc_Stage.Outputs[OLE DB Source Output].Columns[TenNuoc]}))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">SUBSTRING(TenNuoc,FINDSTRING(TenNuoc + " - "," - ",1) + 2,LEN(TenNuoc))</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Stage To NDS\Tách cột tennuoc thành các giá trị khác nhau.Outputs[Derived Column Error Output]"
+                  refId="Package\Stage To NDS\Thêm cột Tên Thành Phố.Outputs[Derived Column Error Output]"
                   description="Error Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Derived Column Error Output"
-                  synchronousInputId="Package\Stage To NDS\Tách cột tennuoc thành các giá trị khác nhau.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\Stage To NDS\Thêm cột Tên Thành Phố.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Stage To NDS\Tách cột tennuoc thành các giá trị khác nhau.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      refId="Package\Stage To NDS\Thêm cột Tên Thành Phố.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Stage To NDS\Tách cột tennuoc thành các giá trị khác nhau.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Stage To NDS\Thêm cột Tên Thành Phố.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Stage To NDS\Tách cột tennuoc thành các giá trị khác nhau.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      refId="Package\Stage To NDS\Thêm cột Tên Thành Phố.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Stage To NDS\Tách cột tennuoc thành các giá trị khác nhau.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Stage To NDS\Thêm cột Tên Thành Phố.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -995,13 +1396,33 @@ where [refTable].[SKMaTrangThai] = ?</property>
           </components>
           <paths>
             <path
+              refId="Package\Stage To NDS.Paths[Data Conversion Output]"
+              endId="Package\Stage To NDS\Quoc Gia NDS.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Stage To NDS\Chuyển đổi kiểu dữ liệu cho cột TenThanhPho và TenQG 1.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Stage To NDS.Paths[Data Conversion Output1]"
+              endId="Package\Stage To NDS\Cập nhật dữ liệu.Inputs[OLE DB Command Input]"
+              name="Data Conversion Output"
+              startId="Package\Stage To NDS\Chuyển đổi kiểu dữ liệu cho cột TenThanhPho và TenQG.Outputs[Data Conversion Output]" />
+            <path
               refId="Package\Stage To NDS.Paths[Derived Column Output]"
-              endId="Package\Stage To NDS\Kiểm tra xem TrangThai của từng dòng có tồn tại trong TrangThai_NDS chưa.Inputs[Lookup Input]"
+              endId="Package\Stage To NDS\Thêm cột Tên Thành Phố.Inputs[Derived Column Input]"
               name="Derived Column Output"
               startId="Package\Stage To NDS\Thêm cột MaNguonDL trong pipeline.Outputs[Derived Column Output]" />
             <path
+              refId="Package\Stage To NDS.Paths[Derived Column Output1]"
+              endId="Package\Stage To NDS\Kiểm tra xem TrangThai của từng dòng có tồn tại trong TrangThai_NDS chưa.Inputs[Lookup Input]"
+              name="Derived Column Output"
+              startId="Package\Stage To NDS\Thêm cột Tên Thành Phố.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Stage To NDS.Paths[Derived Column Output2]"
+              endId="Package\Stage To NDS\Chuyển đổi kiểu dữ liệu cho cột TenThanhPho và TenQG 1.Inputs[Data Conversion Input]"
+              name="Derived Column Output"
+              startId="Package\Stage To NDS\Cập nhật ngày tạo và ngày cập nhật.Outputs[Derived Column Output]" />
+            <path
               refId="Package\Stage To NDS.Paths[Lookup Error Output]"
-              endId="Package\Stage To NDS\Quoc Gia NDS.Inputs[OLE DB Destination Input]"
+              endId="Package\Stage To NDS\Cập nhật ngày tạo và ngày cập nhật.Inputs[Derived Column Input]"
               name="Lookup Error Output"
               startId="Package\Stage To NDS\Kiểm tra xem MaNuoc của từng dòng có tồn tại trong QuocGia_NDS chưa.Outputs[Lookup Error Output]" />
             <path
@@ -1011,7 +1432,7 @@ where [refTable].[SKMaTrangThai] = ?</property>
               startId="Package\Stage To NDS\Kiểm tra xem TrangThai của từng dòng có tồn tại trong TrangThai_NDS chưa.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Stage To NDS.Paths[Lookup Match Output1]"
-              endId="Package\Stage To NDS\Cập nhật dữ liệu.Inputs[OLE DB Command Input]"
+              endId="Package\Stage To NDS\Chuyển đổi kiểu dữ liệu cho cột TenThanhPho và TenQG.Inputs[Data Conversion Input]"
               name="Lookup Match Output"
               startId="Package\Stage To NDS\Kiểm tra xem MaNuoc của từng dòng có tồn tại trong QuocGia_NDS chưa.Outputs[Lookup Match Output]" />
             <path
@@ -1037,7 +1458,7 @@ where [refTable].[SKMaTrangThai] = ?</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="150.4,41.6"
+          Size="144,41.6"
           Id="Package\Stage To NDS"
           TopLeft="230.000003916877,164.411767011695" />
       </GraphLayout>
@@ -1047,83 +1468,41 @@ where [refTable].[SKMaTrangThai] = ?</property>
     design-time-name="Package\Stage To NDS">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="197.6,41.6"
+          Id="Package\Stage To NDS\Thêm cột Tên Thành Phố"
+          TopLeft="356.428577498514,306.352943621705" />
         <NodeLayout
           Size="149.6,41.6"
           Id="Package\Stage To NDS\Nuoc_Stage"
-          TopLeft="342.142862969515,102.470589672405" />
+          TopLeft="360.000006130763,99.4117661000944" />
         <NodeLayout
           Size="251.2,41.6"
           Id="Package\Stage To NDS\Thêm cột MaNguonDL trong pipeline"
-          TopLeft="279.285719041921,206.364707351638" />
-        <EdgeLayout
-          Id="Package\Stage To NDS.Paths[OLE DB Source Output]"
-          TopLeft="416.942862969515,144.070589672405">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-12.0571439275937,62.294117679233"
-              Start="0,0"
-              End="-12.0571439275937,54.794117679233">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,27.1470588396165" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,27.1470588396165"
-                    Point2="0,31.1470588396165"
-                    Point3="-4,31.1470588396165" />
-                  <mssgle:LineSegment
-                    End="-8.0571439275937,31.1470588396165" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-8.0571439275937,31.1470588396165"
-                    Point2="-12.0571439275937,31.1470588396165"
-                    Point3="-12.0571439275937,35.1470588396165" />
-                  <mssgle:LineSegment
-                    End="-12.0571439275937,54.794117679233" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="310.714291005718,206.364707351638" />
         <NodeLayout
           Size="456,41.6"
           Id="Package\Stage To NDS\Kiểm tra xem TrangThai của từng dòng có tồn tại trong TrangThai_NDS chưa"
-          TopLeft="207.857146396929,314.082354496259" />
+          TopLeft="212.857146482079,435.588235176145" />
         <NodeLayout
           Size="424.8,41.6"
           Id="Package\Stage To NDS\Kiểm tra xem MaNuoc của từng dòng có tồn tại trong QuocGia_NDS chưa"
-          TopLeft="200.628573496488,417.317650061742" />
+          TopLeft="212.771430846137,559.470589854725" />
         <EdgeLayout
-          Id="Package\Stage To NDS.Paths[Derived Column Output]"
-          TopLeft="404.885719041922,247.964707351638">
+          Id="Package\Stage To NDS.Paths[OLE DB Source Output]"
+          TopLeft="435.557148568241,141.011766100094">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="30.9714273550074,66.1176471446212"
+              EndConnector="0,65.3529412515436"
               Start="0,0"
-              End="30.9714273550074,58.6176471446212">
+              End="0,57.8529412515436">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,29.0588235723106" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,29.0588235723106"
-                    Point2="0,33.0588235723106"
-                    Point3="4,33.0588235723106" />
-                  <mssgle:LineSegment
-                    End="26.9714273550074,33.0588235723106" />
-                  <mssgle:CubicBezierSegment
-                    Point1="26.9714273550074,33.0588235723106"
-                    Point2="30.9714273550074,33.0588235723106"
-                    Point3="30.9714273550074,37.0588235723106" />
-                  <mssgle:LineSegment
-                    End="30.9714273550074,58.6176471446212" />
+                    End="0,57.8529412515436" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1134,124 +1513,278 @@ where [refTable].[SKMaTrangThai] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Stage To NDS.Paths[Lookup Match Output]"
-          TopLeft="435.857146396929,355.682354496259">
+          TopLeft="440.857146482079,477.188235176145">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-22.828572900441,61.635295565483"
+              EndConnector="-15.6857156359415,82.2823546785797"
               Start="0,0"
-              End="-22.828572900441,54.135295565483">
+              End="-15.6857156359415,74.7823546785797">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.8176477827415" />
+                    End="0,37.1411773392898" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,26.8176477827415"
-                    Point2="0,30.8176477827415"
-                    Point3="-4,30.8176477827415" />
+                    Point1="0,37.1411773392898"
+                    Point2="0,41.1411773392898"
+                    Point3="-4,41.1411773392898" />
                   <mssgle:LineSegment
-                    End="-18.828572900441,30.8176477827415" />
+                    End="-11.6857156359415,41.1411773392898" />
                   <mssgle:CubicBezierSegment
-                    Point1="-18.828572900441,30.8176477827415"
-                    Point2="-22.828572900441,30.8176477827415"
-                    Point3="-22.828572900441,34.8176477827415" />
+                    Point1="-11.6857156359415,41.1411773392898"
+                    Point2="-15.6857156359415,41.1411773392898"
+                    Point3="-15.6857156359415,45.1411773392898" />
                   <mssgle:LineSegment
-                    End="-22.828572900441,54.135295565483" />
+                    End="-15.6857156359415,74.7823546785797" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-59.6056731689705,35.8176477827415,96.3827734375,11.609375"
+              BoundingBox="-56.0342445367208,46.1411773392898,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Stage To NDS.Paths[Derived Column Output]"
+          TopLeft="436.314291005718,247.964707351638">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="18.914286492796,58.388236270067"
+              Start="0,0"
+              End="18.914286492796,50.888236270067">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.1941181350335" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.1941181350335"
+                    Point2="0,29.1941181350335"
+                    Point3="4,29.1941181350335" />
+                  <mssgle:LineSegment
+                    End="14.914286492796,29.1941181350335" />
+                  <mssgle:CubicBezierSegment
+                    Point1="14.914286492796,29.1941181350335"
+                    Point2="18.914286492796,29.1941181350335"
+                    Point3="18.914286492796,33.1941181350335" />
+                  <mssgle:LineSegment
+                    End="18.914286492796,50.888236270067" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Stage To NDS.Paths[Derived Column Output1]"
+          TopLeft="455.228577498514,347.952943621705">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-14.3714310164352,87.63529155444"
+              Start="0,0"
+              End="-14.3714310164352,80.13529155444">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.81764577722" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,39.81764577722"
+                    Point2="0,43.81764577722"
+                    Point3="-4,43.81764577722" />
+                  <mssgle:LineSegment
+                    End="-10.3714310164352,43.81764577722" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-10.3714310164352,43.81764577722"
+                    Point2="-14.3714310164352,43.81764577722"
+                    Point3="-14.3714310164352,47.81764577722" />
+                  <mssgle:LineSegment
+                    End="-14.3714310164352,80.13529155444" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <NodeLayout
-          Size="156,41.6"
-          Id="Package\Stage To NDS\Cập nhật dữ liệu"
-          TopLeft="238.571432634276,508.929418531999" />
+          Size="345.6,41.6"
+          Id="Package\Stage To NDS\Chuyển đổi kiểu dữ liệu cho cột TenThanhPho và TenQG"
+          TopLeft="92.1428587120407,684.211771934338" />
         <EdgeLayout
           Id="Package\Stage To NDS.Paths[Lookup Match Output1]"
-          TopLeft="413.028573496488,458.917650061742">
+          TopLeft="425.171430846137,601.070589854725">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-96.4571408622118,50.0117684702565"
+              EndConnector="-160.228572134097,83.141182079613"
               Start="0,0"
-              End="-96.4571408622118,42.5117684702565">
+              End="-160.228572134097,75.641182079613">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,21.0058842351283" />
+                    End="0,37.5705910398065" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,21.0058842351283"
-                    Point2="0,25.0058842351283"
-                    Point3="-4,25.0058842351283" />
+                    Point1="0,37.5705910398065"
+                    Point2="0,41.5705910398065"
+                    Point3="-4,41.5705910398065" />
                   <mssgle:LineSegment
-                    End="-92.4571408622118,25.0058842351283" />
+                    End="-156.228572134097,41.5705910398065" />
                   <mssgle:CubicBezierSegment
-                    Point1="-92.4571408622118,25.0058842351283"
-                    Point2="-96.4571408622118,25.0058842351283"
-                    Point3="-96.4571408622118,29.0058842351283" />
+                    Point1="-156.228572134097,41.5705910398065"
+                    Point2="-160.228572134097,41.5705910398065"
+                    Point3="-160.228572134097,45.5705910398065" />
                   <mssgle:LineSegment
-                    End="-96.4571408622118,42.5117684702565" />
+                    End="-160.228572134097,75.641182079613" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-96.4199571498559,30.0058842351283,96.3827734375,11.609375"
+              BoundingBox="-128.305672785798,46.5705910398065,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="144.8,41.6"
-          Id="Package\Stage To NDS\Quoc Gia NDS"
-          TopLeft="487.142865438851,510.694123148836" />
+          Size="249.6,41.6"
+          Id="Package\Stage To NDS\Cập nhật ngày tạo và ngày cập nhật"
+          TopLeft="480.685722022154,684.10588815501" />
         <EdgeLayout
           Id="Package\Stage To NDS.Paths[Lookup Error Output]"
-          TopLeft="482.495240163155,458.917650061742">
+          TopLeft="494.638097512804,601.070589854725">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="77.0476252756963,51.7764730870936"
+              EndConnector="110.84762450935,83.0352983002853"
               Start="0,0"
-              End="77.0476252756963,44.2764730870936">
+              End="110.84762450935,75.5352983002853">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,16.8271591554838" />
+                    End="0,29.4010655827039" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,16.8271591554838"
-                    Point2="0,20.8271591554838"
-                    Point3="4,20.8271591554838" />
+                    Point1="0,29.4010655827039"
+                    Point2="0,33.4010655827039"
+                    Point3="4,33.4010655827039" />
                   <mssgle:LineSegment
-                    End="73.0476252756963,20.8271591554838" />
+                    End="106.84762450935,33.4010655827039" />
                   <mssgle:CubicBezierSegment
-                    Point1="73.0476252756963,20.8271591554838"
-                    Point2="77.0476252756963,20.8271591554838"
-                    Point3="77.0476252756963,24.8271591554838" />
+                    Point1="106.84762450935,33.4010655827039"
+                    Point2="110.84762450935,33.4010655827039"
+                    Point3="110.84762450935,37.4010655827039" />
                   <mssgle:LineSegment
-                    End="77.0476252756963,44.2764730870936" />
+                    End="110.84762450935,75.5352983002853" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-7.34257408090185,25.8271591554838,91.7327734375,11.609375"
+              BoundingBox="9.55742553592499,38.4010655827039,91.7327734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="243.2,41.6"
-          Id="Package\Stage To NDS\Tách cột tennuoc thành các giá trị khác nhau"
-          TopLeft="31.4285719637971,37.5882348115057" />
+          Size="345.6,41.6"
+          Id="Package\Stage To NDS\Chuyển đổi kiểu dữ liệu cho cột TenThanhPho và TenQG 1"
+          TopLeft="429.685721426108,782.752948362027" />
+        <EdgeLayout
+          Id="Package\Stage To NDS.Paths[Derived Column Output2]"
+          TopLeft="603.985721724131,725.70588815501">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,57.0470602070172"
+              Start="0,0"
+              End="0,49.5470602070172">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.5470602070172" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Stage To NDS\Quoc Gia NDS"
+          TopLeft="523.469396669733,880.924379538029" />
+        <EdgeLayout
+          Id="Package\Stage To NDS.Paths[Data Conversion Output]"
+          TopLeft="605.57755904792,824.352948362027">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,56.5714311760013"
+              Start="0,0"
+              End="0,49.0714311760013">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.0714311760013" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\Stage To NDS\Cập nhật dữ liệu"
+          TopLeft="169.387757986697,793.495805504885" />
+        <EdgeLayout
+          Id="Package\Stage To NDS.Paths[Data Conversion Output1]"
+          TopLeft="264.942858712041,725.811771934338">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-13.1551007253436,67.6840335705467"
+              Start="0,0"
+              End="-13.1551007253436,60.1840335705467">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.8420167852734" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29.8420167852734"
+                    Point2="0,33.8420167852734"
+                    Point3="-4,33.8420167852734" />
+                  <mssgle:LineSegment
+                    End="-9.15510072534357,33.8420167852734" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-9.15510072534357,33.8420167852734"
+                    Point2="-13.1551007253436,33.8420167852734"
+                    Point3="-13.1551007253436,37.8420167852734" />
+                  <mssgle:LineSegment
+                    End="-13.1551007253436,60.1840335705467" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -1274,7 +1807,7 @@ where [refTable].[SKMaTrangThai] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -1294,7 +1827,7 @@ where [refTable].[SKMaTrangThai] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>

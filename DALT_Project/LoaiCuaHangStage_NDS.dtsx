@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="54"
-  DTS:VersionGUID="{CB8CE433-FAE6-4CBF-8D5A-6BD4C3E4BBC5}">
+  DTS:VersionBuild="65"
+  DTS:VersionGUID="{ED754494-5CE5-4DE4-BDDB-6C5C318EE62A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -206,6 +206,103 @@ WHERE MaLoaiCH = ? AND MaNguon = ?</property>
                       refId="Package\Stage to NDS\Cập nhật dữ liệu.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\Stage to NDS\Cập nhật dữ liệu.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Stage to NDS\Cập nhật lại ngày tạo và ngày cập nhật"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Cập nhật lại ngày tạo và ngày cập nhật"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Stage to NDS\Cập nhật lại ngày tạo và ngày cập nhật.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Stage to NDS\Cập nhật lại ngày tạo và ngày cập nhật.Inputs[Derived Column Input].Columns[NgayTao]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="NgayTao"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Stage to NDS\LoaiCuaHang_Stage.Outputs[OLE DB Source Output].Columns[NgayTao]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Stage to NDS\Cập nhật lại ngày tạo và ngày cập nhật.Inputs[Derived Column Input].Columns[NgayCapNhat]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="NgayCapNhat"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Stage to NDS\LoaiCuaHang_Stage.Outputs[OLE DB Source Output].Columns[NgayCapNhat]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Stage to NDS\Cập nhật lại ngày tạo và ngày cập nhật.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Stage to NDS\Cập nhật lại ngày tạo và ngày cập nhật.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Stage to NDS\Cập nhật lại ngày tạo và ngày cập nhật.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Stage to NDS\Cập nhật lại ngày tạo và ngày cập nhật.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Stage to NDS\Cập nhật lại ngày tạo và ngày cập nhật.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Stage to NDS\Cập nhật lại ngày tạo và ngày cập nhật.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Stage to NDS\Cập nhật lại ngày tạo và ngày cập nhật.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Stage to NDS\Cập nhật lại ngày tạo và ngày cập nhật.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -951,8 +1048,13 @@ where [refTable].[SKMaTrangThai] = ?</property>
               name="Derived Column Output"
               startId="Package\Stage to NDS\Thêm cột MaNguonDL trong pipeline.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Stage to NDS.Paths[Lookup Error Output]"
+              refId="Package\Stage to NDS.Paths[Derived Column Output1]"
               endId="Package\Stage to NDS\LoaiCuaHang_NDS.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Stage to NDS\Cập nhật lại ngày tạo và ngày cập nhật.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Stage to NDS.Paths[Lookup Error Output]"
+              endId="Package\Stage to NDS\Cập nhật lại ngày tạo và ngày cập nhật.Inputs[Derived Column Input]"
               name="Lookup Error Output"
               startId="Package\Stage to NDS\Kiểm tra xem MaLoaiCH của từng dòng có tồn tại trong LoaiCuaHang_NDS chưa.Outputs[Lookup Error Output]" />
             <path
@@ -1004,9 +1106,25 @@ where [refTable].[SKMaTrangThai] = ?</property>
           Id="Package\Stage to NDS\LoaiCuaHang_Stage"
           TopLeft="220.000003746578,71.8823539492993" />
         <NodeLayout
+          Size="156,41.6"
+          Id="Package\Stage to NDS\Cập nhật dữ liệu"
+          TopLeft="89.2857158062411,481.000006745844" />
+        <NodeLayout
           Size="251.2,41.6"
           Id="Package\Stage to NDS\Thêm cột MaNguonDL trong pipeline"
           TopLeft="218.571432293678,175.88235540786" />
+        <NodeLayout
+          Size="456,41.6"
+          Id="Package\Stage to NDS\Kiểm tra xem TrangThai của từng dòng có tồn tại trong TrangThai_NDS chưa"
+          TopLeft="92.1428587120406,263.058827218712" />
+        <NodeLayout
+          Size="456.8,41.6"
+          Id="Package\Stage to NDS\Kiểm tra xem MaLoaiCH của từng dòng có tồn tại trong LoaiCuaHang_NDS chưa"
+          TopLeft="37.0571421394544,341.823534205711" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Stage to NDS\LoaiCuaHang_NDS"
+          TopLeft="329.285719893417,538.552947450427" />
         <EdgeLayout
           Id="Package\Stage to NDS.Paths[OLE DB Source Output]"
           TopLeft="306.400003746578,113.482353949299">
@@ -1033,56 +1151,6 @@ where [refTable].[SKMaTrangThai] = ?</property>
                     Point3="-9.42857145289986,35.2000007292804" />
                   <mssgle:LineSegment
                     End="-9.42857145289986,54.9000014585608" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="456.8,41.6"
-          Id="Package\Stage to NDS\Kiểm tra xem MaLoaiCH của từng dòng có tồn tại trong LoaiCuaHang_NDS chưa"
-          TopLeft="37.0571421394544,341.823534205711" />
-        <NodeLayout
-          Size="156,41.6"
-          Id="Package\Stage to NDS\Cập nhật dữ liệu"
-          TopLeft="89.2857158062411,481.000006745844" />
-        <NodeLayout
-          Size="170.4,41.6"
-          Id="Package\Stage to NDS\LoaiCuaHang_NDS"
-          TopLeft="386.428578009411,482.694123148836" />
-        <NodeLayout
-          Size="456,41.6"
-          Id="Package\Stage to NDS\Kiểm tra xem TrangThai của từng dòng có tồn tại trong TrangThai_NDS chưa"
-          TopLeft="92.1428587120406,263.058827218712" />
-        <EdgeLayout
-          Id="Package\Stage to NDS.Paths[Derived Column Output]"
-          TopLeft="344.171432293678,217.48235540786">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-24.0285735816374,45.5764718108523"
-              Start="0,0"
-              End="-24.0285735816374,38.0764718108523">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,18.7882359054262" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,18.7882359054262"
-                    Point2="0,22.7882359054262"
-                    Point3="-4,22.7882359054262" />
-                  <mssgle:LineSegment
-                    End="-20.0285735816374,22.7882359054262" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-20.0285735816374,22.7882359054262"
-                    Point2="-24.0285735816374,22.7882359054262"
-                    Point3="-24.0285735816374,26.7882359054262" />
-                  <mssgle:LineSegment
-                    End="-24.0285735816374,38.0764718108523" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1128,38 +1196,76 @@ where [refTable].[SKMaTrangThai] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Stage to NDS.Paths[Lookup Match Output1]"
-          TopLeft="190.657142139454,383.423534205711">
+          Id="Package\Stage to NDS.Paths[Derived Column Output]"
+          TopLeft="344.171432293678,217.48235540786">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-23.3714263332134,97.5764725401328"
+              EndConnector="-24.0285735816374,45.5764718108523"
               Start="0,0"
-              End="-23.3714263332134,90.0764725401328">
+              End="-24.0285735816374,38.0764718108523">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35.234937649645" />
+                    End="0,18.7882359054262" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,35.234937649645"
-                    Point2="0,39.234937649645"
-                    Point3="-4,39.234937649645" />
+                    Point1="0,18.7882359054262"
+                    Point2="0,22.7882359054262"
+                    Point3="-4,22.7882359054262" />
                   <mssgle:LineSegment
-                    End="-19.3714263332134,39.234937649645" />
+                    End="-20.0285735816374,22.7882359054262" />
                   <mssgle:CubicBezierSegment
-                    Point1="-19.3714263332134,39.234937649645"
-                    Point2="-23.3714263332134,39.234937649645"
-                    Point3="-23.3714263332134,43.234937649645" />
+                    Point1="-20.0285735816374,22.7882359054262"
+                    Point2="-24.0285735816374,22.7882359054262"
+                    Point3="-24.0285735816374,26.7882359054262" />
                   <mssgle:LineSegment
-                    End="-23.3714263332134,90.0764725401328" />
+                    End="-24.0285735816374,38.0764718108523" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="220,48.8"
+          Id="Package\Stage to NDS\Cập nhật lại ngày tạo và ngày cập nhật"
+          TopLeft="321.428576902467,447.000004193362" />
+        <EdgeLayout
+          Id="Package\Stage to NDS.Paths[Lookup Match Output1]"
+          TopLeft="265.457142139454,383.423534205711">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-98.1714263332133,97.576472540133"
+              Start="0,0"
+              End="-98.1714263332133,90.076472540133">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.7882362700665" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,44.7882362700665"
+                    Point2="0,48.7882362700665"
+                    Point3="-4,48.7882362700665" />
+                  <mssgle:LineSegment
+                    End="-94.1714263332133,48.7882362700665" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-94.1714263332133,48.7882362700665"
+                    Point2="-98.1714263332133,48.7882362700665"
+                    Point3="-98.1714263332133,52.7882362700665" />
+                  <mssgle:LineSegment
+                    End="-98.1714263332133,90.076472540133" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-59.8770998853567,44.234937649645,96.3827734375,11.609375"
+              BoundingBox="-97.2770998853566,53.7882362700665,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -1169,34 +1275,68 @@ where [refTable].[SKMaTrangThai] = ?</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="131.371435869957,99.2705889431247"
+              EndConnector="91.1714347630131,63.5764699876511"
               Start="0,0"
-              End="131.371435869957,91.7705889431247">
+              End="91.1714347630131,56.0764699876511">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35.9161320985967" />
+                    End="0,21.5637324348252" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,35.9161320985967"
-                    Point2="0,39.9161320985967"
-                    Point3="4,39.9161320985967" />
+                    Point1="0,21.5637324348252"
+                    Point2="0,25.5637324348252"
+                    Point3="4,25.5637324348252" />
                   <mssgle:LineSegment
-                    End="127.371435869957,39.9161320985967" />
+                    End="87.1714347630131,25.5637324348252" />
                   <mssgle:CubicBezierSegment
-                    Point1="127.371435869957,39.9161320985967"
-                    Point2="131.371435869957,39.9161320985967"
-                    Point3="131.371435869957,43.9161320985967" />
+                    Point1="87.1714347630131,25.5637324348252"
+                    Point2="91.1714347630131,25.5637324348252"
+                    Point3="91.1714347630131,29.5637324348252" />
                   <mssgle:LineSegment
-                    End="131.371435869957,91.7705889431247" />
+                    End="91.1714347630131,56.0764699876511" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="19.8193312162283,44.9161320985967,91.7327734375,11.609375"
+              BoundingBox="-0.280669337243481,30.5637324348252,91.7327734375,11.609375"
               RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Stage to NDS.Paths[Derived Column Output1]"
+          TopLeft="431.428576902467,495.800004193362">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-16.9428570090507,42.7529432570649"
+              Start="0,0"
+              End="-16.9428570090507,35.2529432570649">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.3764716285324" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.3764716285324"
+                    Point2="0,21.3764716285324"
+                    Point3="-4,21.3764716285324" />
+                  <mssgle:LineSegment
+                    End="-12.9428570090507,21.3764716285324" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-12.9428570090507,21.3764716285324"
+                    Point2="-16.9428570090507,21.3764716285324"
+                    Point3="-16.9428570090507,25.3764716285324" />
+                  <mssgle:LineSegment
+                    End="-16.9428570090507,35.2529432570649" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -1216,12 +1356,22 @@ where [refTable].[SKMaTrangThai] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\Stage to NDS\Kiểm tra xem TrangThai của từng dòng có tồn tại trong TrangThai_NDS chưa">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Stage to NDS\Kiểm tra xem MaLoaiCH của từng dòng có tồn tại trong LoaiCuaHang_NDS chưa">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -1231,7 +1381,7 @@ where [refTable].[SKMaTrangThai] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1248,16 +1398,6 @@ where [refTable].[SKMaTrangThai] = ?</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Stage to NDS\Kiểm tra xem TrangThai của từng dòng có tồn tại trong TrangThai_NDS chưa">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

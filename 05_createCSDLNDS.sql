@@ -27,8 +27,12 @@ CREATE TABLE TrangThai (
   [NgayCapNhat] [datetime]
 );
 
+--UPDATE TrangThai
+--SET TenTrangThai = 'Unknown'
+--WHERE SKMaTrangThai = 2;
+
 INSERT INTO TrangThai VALUES(1,'Normal',GETDATE(),GETDATE());
-INSERT INTO TrangThai VALUES(2,'Soft-deleted',GETDATE(),GETDATE());
+INSERT INTO TrangThai VALUES(2,'Unknown',GETDATE(),GETDATE());
 
 IF OBJECT_ID(N'dbo.NguonDuLieu', N'U') IS NOT NULL
 BEGIN
@@ -150,7 +154,7 @@ CREATE TABLE KhachHang (
   [GioiTinh] char(1),
   [SoThich] varchar(30),
   [NgheNghiep] varchar(30),
-  [ThanhPho] varchar(255),
+  -- [ThanhPho] varchar(255),
   [MaQG] int,
   [MaTrangThai] int,
   [MaNguon] int
@@ -206,6 +210,7 @@ CREATE TABLE QuocGia (
   SKMaQG INTEGER IDENTITY(1,1) PRIMARY KEY NOT NULL,
   [MaQG] [varchar](4) NOT NULL,
   [TenQG] [varchar](50),
+  [TenThanhPho] [varchar](100),
   [NgayTao] [datetime],
   [NgayCapNhat] [datetime] ,
   [MaTrangThai] int,
