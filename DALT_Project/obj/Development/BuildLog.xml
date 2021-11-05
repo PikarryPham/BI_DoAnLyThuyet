@@ -2,18 +2,18 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>DALT_Project</Name>
-    <LastWriteTime>2021-11-04T01:44:11.9366942Z</LastWriteTime>
+    <LastWriteTime>2021-11-05T01:03:18.3705994Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>MainPackage.dtsx</Name>
-      <LastWriteTime>2021-11-04T01:54:13.5932865Z</LastWriteTime>
+      <LastWriteTime>2021-11-04T23:24:13.1633924Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Stage_NDS.dtsx</Name>
-      <LastWriteTime>2021-10-31T06:00:01.6734179Z</LastWriteTime>
+      <LastWriteTime>2021-11-04T23:24:29.869032Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -23,12 +23,32 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Source_Jupiter_To_Stage.dtsx</Name>
-      <LastWriteTime>2021-11-04T01:59:46.7964125Z</LastWriteTime>
+      <LastWriteTime>2021-11-04T23:14:01.5676966Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Source_Webtower_To_Stage.dtsx</Name>
       <LastWriteTime>2021-11-03T14:18:49.2006848Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>LoaiCuaHangStage_NDS.dtsx</Name>
+      <LastWriteTime>2021-11-04T23:04:02.1455241Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>LoaiSanPhamStage_NDS.dtsx</Name>
+      <LastWriteTime>2021-11-04T23:11:06.3677331Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>QuocGiaStage_NDS.dtsx</Name>
+      <LastWriteTime>2021-11-05T00:57:10.8689924Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>HoaDonStage_NDS.dtsx</Name>
+      <LastWriteTime>2021-11-04T23:41:08.7482636Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

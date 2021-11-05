@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="63"
-  DTS:VersionGUID="{C0613CB3-A8FF-4EBE-8688-E2D4981FF157}">
+  DTS:VersionBuild="70"
+  DTS:VersionGUID="{054C0A2A-C7F0-413B-B411-D01D8DB50034}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -198,6 +198,7 @@
       DTS:refId="Package\Data Flow Cua Hang"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
+      DTS:Disabled="True"
       DTS:DTSID="{7de48131-263f-4621-97b3-93f8eef18f51}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -1028,7 +1029,6 @@ WHERE (NgayTao &gt;= ? AND NgayTao &lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNh
       DTS:refId="Package\Data Flow LoaiSanPham"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:Disabled="True"
       DTS:DTSID="{12b58950-97c1-4a71-b0aa-f132c0967e09}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -1091,8 +1091,8 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNha
               <connections>
                 <connection
                   refId="Package\Data Flow LoaiSanPham\LoaiSanPham_Jupiter_Source.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[LocalHost.DALT_Jupiter]"
-                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.DALT_Jupiter]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_Jupiter]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_Jupiter]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1289,8 +1289,8 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNha
               <connections>
                 <connection
                   refId="Package\Data Flow LoaiSanPham\LoaiSanPham_Jupiter_Stage.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[LocalHost.DALT_STAGE 1]"
-                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.DALT_STAGE 1]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_STAGE]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_STAGE]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -2228,12 +2228,13 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhap &gt;= ? AND NgayCapNha
       DTS:refId="Package\Get LSET for CuaHang"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{47ae1394-21bc-4201-ab4e-a7d4ba0a5db8}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get LSET for CuaHang"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2258,7 +2259,7 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhap &gt;= ? AND NgayCapNha
       DTS:LocaleID="-1"
       DTS:ObjectName="Get LSET for Loai Cua Hang"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2278,17 +2279,16 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhap &gt;= ? AND NgayCapNha
       DTS:refId="Package\Get LSET for LoaiSanPham"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:Disabled="True"
       DTS:DTSID="{6c877b37-9a89-432c-ae19-2ce8c8900ff3}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get LSET for LoaiSanPham"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{9704ADBB-4747-4E93-B2EB-80F9B449185C}"
+          SQLTask:Connection="{BB467BB8-63D5-4C2F-A5F3-0B4EE1918787}"
           SQLTask:SqlStatementSource="SELECT LSET,CET FROM Metadata_Table WHERE Name_DataFlow = 'LoaiSanPham_Jupiter'"
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
@@ -2309,7 +2309,7 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhap &gt;= ? AND NgayCapNha
       DTS:LocaleID="-1"
       DTS:ObjectName="Get LSET for Nuoc (Quoc gia)"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="4">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2335,7 +2335,7 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhap &gt;= ? AND NgayCapNha
       DTS:LocaleID="-1"
       DTS:ObjectName="Get LSET for SanPham"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="4">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2355,12 +2355,13 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhap &gt;= ? AND NgayCapNha
       DTS:refId="Package\Set CET for CuaHang"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{d6a18398-bc6a-4430-9622-b3ec697ae26b}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set CET for CuaHang"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2377,7 +2378,7 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhap &gt;= ? AND NgayCapNha
       DTS:LocaleID="-1"
       DTS:ObjectName="Set CET for LoaiCH"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2389,17 +2390,16 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhap &gt;= ? AND NgayCapNha
       DTS:refId="Package\Set CET for LoaiSanPham"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:Disabled="True"
       DTS:DTSID="{bf0f6193-b8a8-4b36-84b2-58e364206456}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set CET for LoaiSanPham"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{9704ADBB-4747-4E93-B2EB-80F9B449185C}"
+          SQLTask:Connection="{BB467BB8-63D5-4C2F-A5F3-0B4EE1918787}"
           SQLTask:SqlStatementSource="UPDATE Metadata_Table&#xA;SET CET = GETDATE()&#xA;WHERE Name_DataFlow = 'LoaiSanPham_Jupiter'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -2412,7 +2412,7 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhap &gt;= ? AND NgayCapNha
       DTS:LocaleID="-1"
       DTS:ObjectName="Set CET for Nuoc (Quoc Gia)"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="4">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2430,7 +2430,7 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhap &gt;= ? AND NgayCapNha
       DTS:LocaleID="-1"
       DTS:ObjectName="Set CET for SanPham"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="4">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2442,12 +2442,13 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhap &gt;= ? AND NgayCapNha
       DTS:refId="Package\Set LSET for CuaHang"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{fb5fb077-6ab8-43cc-a69c-39a1fb61c5a6}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set LSET for CuaHang"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2464,7 +2465,7 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhap &gt;= ? AND NgayCapNha
       DTS:LocaleID="-1"
       DTS:ObjectName="Set LSET for Loai Cua Hang"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2476,17 +2477,16 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhap &gt;= ? AND NgayCapNha
       DTS:refId="Package\Set LSET for LoaiSanPham"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:Disabled="True"
       DTS:DTSID="{785314b9-6772-4660-b84a-0e98446ddab0}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set LSET for LoaiSanPham"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{9704ADBB-4747-4E93-B2EB-80F9B449185C}"
+          SQLTask:Connection="{BB467BB8-63D5-4C2F-A5F3-0B4EE1918787}"
           SQLTask:SqlStatementSource="UPDATE Metadata_Table&#xA;SET LSET  = CET&#xA;WHERE Name_DataFlow = 'LoaiSanPham_Jupiter';" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -2499,7 +2499,7 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhap &gt;= ? AND NgayCapNha
       DTS:LocaleID="-1"
       DTS:ObjectName="Set LSET for Nuoc (Quoc Gia)"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="4">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2517,7 +2517,7 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhap &gt;= ? AND NgayCapNha
       DTS:LocaleID="-1"
       DTS:ObjectName="Set LSET for SanPham"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="4">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2529,12 +2529,13 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhap &gt;= ? AND NgayCapNha
       DTS:refId="Package\Truncate table CuaHang_Jupiter"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{c18ce2ec-dad8-46d5-9b62-ae2680f2be29}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate table CuaHang_Jupiter"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2551,7 +2552,7 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhap &gt;= ? AND NgayCapNha
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate table LoaiCH_Stage"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2563,17 +2564,16 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhap &gt;= ? AND NgayCapNha
       DTS:refId="Package\Truncate table LoaiSanPham_Stage"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:Disabled="True"
       DTS:DTSID="{ab85e2c7-4345-4bd5-ba54-096137c8bef6}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate table LoaiSanPham_Stage"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{69F0A2E8-9439-42F5-8641-7CBE4374508A}"
+          SQLTask:Connection="{4D01EDB2-FE6B-4FAD-BB0A-21FD30141A80}"
           SQLTask:SqlStatementSource="TRUNCATE TABLE LoaiSanPham_Stage" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -2586,7 +2586,7 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhap &gt;= ? AND NgayCapNha
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate table Nuoc_Stage"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="4">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2604,7 +2604,7 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhap &gt;= ? AND NgayCapNha
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate table SanPham_Stage"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="4">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3620,37 +3620,35 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhap &gt;= ? AND NgayCapNha
     design-time-name="Package\Data Flow LoaiSanPham">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="218.4,42.4"
           Id="Package\Data Flow LoaiSanPham\LoaiSanPham_Jupiter_Stage"
           TopLeft="239.374996433035,162.842108328257" />
         <NodeLayout
-          Size="224,42.4"
+          Size="216.8,41.6"
           Id="Package\Data Flow LoaiSanPham\LoaiSanPham_Jupiter_Source"
           TopLeft="237.499996460974,73.8947382329904" />
         <EdgeLayout
           Id="Package\Data Flow LoaiSanPham.Paths[OLE DB Source Output]"
-          TopLeft="349.104163113671,116.561404899657">
+          TopLeft="347.237496447004,115.49473823299">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,46.2807034285995"
+              EndConnector="0,47.3473700952666"
               Start="0,0"
-              End="0,38.7807034285995">
+              End="0,39.8473700952666">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,38.7807034285995" />
+                    End="0,39.8473700952666" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
