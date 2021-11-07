@@ -39,4 +39,5 @@ INSERT INTO Metadata_Table(Name_DataFlow,LSET,CET) VALUES ('LoaiCuaHang_Jupiter'
 INSERT INTO Metadata_Table(Name_DataFlow,LSET,CET) VALUES ('SanPham_Jupiter','1900-01-01',NULL);
 INSERT INTO Metadata_Table(Name_DataFlow,LSET,CET) VALUES ('LoaiSanPham_Jupiter','1900-01-01',NULL);
 INSERT INTO Metadata_Table(Name_DataFlow,LSET,CET) VALUES ('Nuoc_Jupiter','1900-01-01',NULL);
+
 SELECT * FROM Metadata_Table;

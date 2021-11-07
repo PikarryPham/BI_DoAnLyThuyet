@@ -11,33 +11,33 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="21"
-  DTS:VersionGUID="{39DC8348-0068-45B7-9E08-04C48B0B708E}">
+  DTS:VersionBuild="23"
+  DTS:VersionGUID="{CE4A862B-3F7F-492F-9A3E-F07F1AFA223D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_NDS]"
+      DTS:refId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_NDS]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{53F4E985-713D-438A-9324-E8C07BD8B0D5}"
-      DTS:ObjectName="DESKTOP-ED2S73F\TRANGPHAM.DALT_NDS">
+      DTS:DTSID="{29BF49BD-4432-4DC8-BC0D-513F816C3C8E}"
+      DTS:ObjectName="DESKTOP-LATGDUJ.DALT_NDS">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DESKTOP-ED2S73F\TRANGPHAM;Initial Catalog=DALT_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=DESKTOP-LATGDUJ;Initial Catalog=DALT_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_STAGE]"
+      DTS:refId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_STAGE]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{83C93F73-9B04-4053-81CE-F1F1F80693E0}"
-      DTS:ObjectName="DESKTOP-ED2S73F\TRANGPHAM.DALT_STAGE">
+      DTS:DTSID="{8AB99381-7B49-4858-B7FA-B7B0B690E605}"
+      DTS:ObjectName="DESKTOP-LATGDUJ.DALT_STAGE">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DESKTOP-ED2S73F\TRANGPHAM;Initial Catalog=DALT_STAGE;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=DESKTOP-LATGDUJ;Initial Catalog=DALT_STAGE;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -47,6 +47,7 @@
       DTS:refId="Package\Stage to NDS"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
+      DTS:Disabled="True"
       DTS:DTSID="{1ECD5EA4-66BD-4044-B611-2E6ACDF4DEDB}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -86,8 +87,8 @@ WHERE MaLoaiSP = ? AND MaNguon = ?</property>
               <connections>
                 <connection
                   refId="Package\Stage to NDS\Cập nhật dữ liệu.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_NDS]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_NDS]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_NDS]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -324,18 +325,14 @@ WHERE MaLoaiSP = ? AND MaNguon = ?</property>
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT maloaisp
-FROM LoaiSanPham
-WHERE MaNguon  = 1;</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select MaLoaiSP from loaisanpham</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT maloaisp
-FROM LoaiSanPham
-WHERE MaNguon  = 1;) [refTable]
-where [refTable].[maloaisp] = ?</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select MaLoaiSP from loaisanpham) [refTable]
+where [refTable].[MaLoaiSP] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the type of connection used to access the reference dataset."
@@ -366,7 +363,7 @@ where [refTable].[maloaisp] = ?</property>
                 <property
                   dataType="System.String"
                   description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="maloaisp" dataType="DT_STR" length="4" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="MaLoaiSP" dataType="DT_STR" length="4" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                 <property
                   containsID="true"
                   dataType="System.String"
@@ -384,8 +381,8 @@ where [refTable].[maloaisp] = ?</property>
               <connections>
                 <connection
                   refId="Package\Stage to NDS\Kiểm tra xem MaLoaiSP của từng dòng có tồn tại trong LoaiSanPham_NDS chưa.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_NDS]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_NDS]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_NDS]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -405,7 +402,7 @@ where [refTable].[maloaisp] = ?</property>
                         <property
                           dataType="System.String"
                           description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">maloaisp</property>
+                          name="JoinToReferenceColumn">MaLoaiSP</property>
                         <property
                           dataType="System.Null"
                           description="Specifies the column in the reference table from which a column is copied."
@@ -472,16 +469,14 @@ where [refTable].[maloaisp] = ?</property>
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT SKMaTrangThai 
-FROM TrangThai</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select skmatrangthai from trangthai</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT SKMaTrangThai 
-FROM TrangThai) [refTable]
-where [refTable].[SKMaTrangThai] = ?</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select skmatrangthai from trangthai) [refTable]
+where [refTable].[skmatrangthai] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the type of connection used to access the reference dataset."
@@ -512,7 +507,7 @@ where [refTable].[SKMaTrangThai] = ?</property>
                 <property
                   dataType="System.String"
                   description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="SKMaTrangThai" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="skmatrangthai" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                 <property
                   containsID="true"
                   dataType="System.String"
@@ -530,8 +525,8 @@ where [refTable].[SKMaTrangThai] = ?</property>
               <connections>
                 <connection
                   refId="Package\Stage to NDS\Kiểm tra xem TrangThai của từng dòng có tồn tại trong TrangThai_NDS chưa.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_NDS]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_NDS]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_NDS]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -549,7 +544,7 @@ where [refTable].[SKMaTrangThai] = ?</property>
                         <property
                           dataType="System.String"
                           description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">SKMaTrangThai</property>
+                          name="JoinToReferenceColumn">skmatrangthai</property>
                         <property
                           dataType="System.Null"
                           description="Specifies the column in the reference table from which a column is copied."
@@ -661,8 +656,8 @@ where [refTable].[SKMaTrangThai] = ?</property>
               <connections>
                 <connection
                   refId="Package\Stage to NDS\Loai San Pham NDS.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_NDS]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_NDS]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_NDS]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -828,8 +823,8 @@ where [refTable].[SKMaTrangThai] = ?</property>
               <connections>
                 <connection
                   refId="Package\Stage to NDS\Loai San Pham Stage.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_STAGE]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_STAGE]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_STAGE]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_STAGE]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1090,7 +1085,7 @@ where [refTable].[SKMaTrangThai] = ?</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="150.4,41.6"
+          Size="150.333333333334,41.6666666666667"
           Id="Package\Stage to NDS"
           TopLeft="242.857146992975,141.470590219366" />
       </GraphLayout>
@@ -1102,31 +1097,31 @@ where [refTable].[SKMaTrangThai] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="170.4,41.6"
+          Size="170.333333333334,41.6666666666667"
           Id="Package\Stage to NDS\Loai San Pham NDS"
           TopLeft="372.142863480413,581.011771205057" />
         <NodeLayout
-          Size="156,41.6"
+          Size="156,41.6666666666667"
           Id="Package\Stage to NDS\Cập nhật dữ liệu"
           TopLeft="90.8000028950827,481.658828859594" />
         <NodeLayout
-          Size="178.4,41.6"
+          Size="178.333333333334,41.6666666666667"
           Id="Package\Stage to NDS\Loai San Pham Stage"
           TopLeft="220.000003746578,75.7058834146876" />
         <NodeLayout
-          Size="456,41.6"
+          Size="456,41.6666666666667"
           Id="Package\Stage to NDS\Kiểm tra xem TrangThai của từng dòng có tồn tại trong TrangThai_NDS chưa"
           TopLeft="109.371431782781,265.247061118618" />
         <NodeLayout
-          Size="249.6,41.6"
+          Size="249.666666666667,41.6666666666667"
           Id="Package\Stage to NDS\Cập nhật ngày tạo và ngày cập nhật"
           TopLeft="330.65714792962,479.04706494734" />
         <NodeLayout
-          Size="251.2,41.6"
+          Size="251.333333333334,41.6666666666667"
           Id="Package\Stage to NDS\Thêm cột MaNguonDL trong pipeline"
           TopLeft="212.22857639157,172.717648056222" />
         <NodeLayout
-          Size="456,41.6"
+          Size="456,41.6666666666667"
           Id="Package\Stage to NDS\Kiểm tra xem MaLoaiSP của từng dòng có tồn tại trong LoaiSanPham_NDS chưa"
           TopLeft="102.14285888234,368.482356684101" />
         <EdgeLayout
@@ -1338,7 +1333,7 @@ where [refTable].[SKMaTrangThai] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -1348,7 +1343,7 @@ where [refTable].[SKMaTrangThai] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1361,7 +1356,7 @@ where [refTable].[SKMaTrangThai] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -1371,7 +1366,7 @@ where [refTable].[SKMaTrangThai] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>

@@ -11,11 +11,23 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="19"
-  DTS:VersionGUID="{92A499BA-DE39-4BF9-A40C-338E38FA36C8}">
+  DTS:VersionBuild="28"
+  DTS:VersionGUID="{9409C36B-7DF9-43B9-9BE6-266D9AFEA521}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_Jade]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{BD0E1386-BC22-4517-B749-39282691DD56}"
+      DTS:ObjectName="DESKTOP-LATGDUJ.DALT_Jade">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-LATGDUJ;Initial Catalog=DALT_Jade;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_METADATA]"
       DTS:CreationName="OLEDB"
@@ -53,15 +65,15 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_STAGE_Webtower]"
+      DTS:refId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_STAGE 1]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{892FE846-EA15-45A3-88C1-C0ED4A982BF5}"
-      DTS:ObjectName="DESKTOP-LATGDUJ.DALT_STAGE_Webtower">
+      DTS:DTSID="{CF9D9E47-F6A3-444F-B20A-9C357660F49B}"
+      DTS:ObjectName="DESKTOP-LATGDUJ.DALT_STAGE 1">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DESKTOP-LATGDUJ;Initial Catalog=DALT_STAGE_Webtower;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=DESKTOP-LATGDUJ;Initial Catalog=DALT_STAGE;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -426,8 +438,8 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNha
               <connections>
                 <connection
                   refId="Package\Data Flow ChiTietHoaDon\ChiTietHoaDon_Stage.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_STAGE_Webtower]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_STAGE_Webtower]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_STAGE]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_STAGE]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -623,8 +635,8 @@ WHERE (NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNha
               <connections>
                 <connection
                   refId="Package\Data Flow HoaDon\HoaDon_Stage.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_STAGE_Webtower]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_STAGE_Webtower]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_STAGE]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_STAGE]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -969,7 +981,6 @@ WHERE (NgayBan &gt;= ? AND NgayBan &lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNh
       DTS:refId="Package\Data Flow KhachHang"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:Disabled="True"
       DTS:DTSID="{a44a5612-6839-47d5-978a-8f3b12432a12}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -981,11 +992,404 @@ WHERE (NgayBan &gt;= ? AND NgayBan &lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNh
           version="1">
           <components>
             <component
-              refId="Package\Data Flow KhachHang\KhachHang_Stage"
+              refId="Package\Data Flow KhachHang\Chuyển đổi kiểu dữ liệu cho cột TenThanhPho và TenQG"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Chuyển đổi kiểu dữ liệu cho cột TenThanhPho và TenQG"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow KhachHang\Chuyển đổi kiểu dữ liệu cho cột TenThanhPho và TenQG.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow KhachHang\Chuyển đổi kiểu dữ liệu cho cột TenThanhPho và TenQG.Inputs[Data Conversion Input].Columns[TenQuocGia]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="TenQuocGia"
+                      lineageId="Package\Data Flow KhachHang\Thêm cột Tên Thành Phố.Outputs[Derived Column Output].Columns[TenQuocGia]" />
+                    <inputColumn
+                      refId="Package\Data Flow KhachHang\Chuyển đổi kiểu dữ liệu cho cột TenThanhPho và TenQG.Inputs[Data Conversion Input].Columns[TenThanhPho]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="TenThanhPho"
+                      lineageId="Package\Data Flow KhachHang\Thêm cột Tên Thành Phố.Outputs[Derived Column Output].Columns[TenThanhPho]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow KhachHang\Chuyển đổi kiểu dữ liệu cho cột TenThanhPho và TenQG.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Data Flow KhachHang\Chuyển đổi kiểu dữ liệu cho cột TenThanhPho và TenQG.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow KhachHang\Chuyển đổi kiểu dữ liệu cho cột TenThanhPho và TenQG.Outputs[Data Conversion Output].Columns[QGName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Data Flow KhachHang\Chuyển đổi kiểu dữ liệu cho cột TenThanhPho và TenQG.Outputs[Data Conversion Output].Columns[QGName]"
+                      name="QGName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow KhachHang\Thêm cột Tên Thành Phố.Outputs[Derived Column Output].Columns[TenQuocGia]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow KhachHang\Chuyển đổi kiểu dữ liệu cho cột TenThanhPho và TenQG.Outputs[Data Conversion Output].Columns[CityName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="100"
+                      lineageId="Package\Data Flow KhachHang\Chuyển đổi kiểu dữ liệu cho cột TenThanhPho và TenQG.Outputs[Data Conversion Output].Columns[CityName]"
+                      name="CityName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow KhachHang\Thêm cột Tên Thành Phố.Outputs[Derived Column Output].Columns[TenThanhPho]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow KhachHang\Chuyển đổi kiểu dữ liệu cho cột TenThanhPho và TenQG.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Data Flow KhachHang\Chuyển đổi kiểu dữ liệu cho cột TenThanhPho và TenQG.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow KhachHang\Chuyển đổi kiểu dữ liệu cho cột TenThanhPho và TenQG.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow KhachHang\Chuyển đổi kiểu dữ liệu cho cột TenThanhPho và TenQG.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow KhachHang\Chuyển đổi kiểu dữ liệu cho cột TenThanhPho và TenQG.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow KhachHang\Chuyển đổi kiểu dữ liệu cho cột TenThanhPho và TenQG.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow KhachHang\KhachHang_Jade Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="KhachHang_Jade Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[KhachHang_Jade]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT * FROM KhachHang_WebTower9
+WHERE (NgayTao &gt;= ? AND NgayTao &lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNhat &lt; ?)</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping">"Parameter0:Input",{420052DA-DD28-4221-BCC3-18742C869CDE};"Parameter1:Input",{5345BCD2-0666-48AF-9BA2-52432519F092};"Parameter2:Input",{420052DA-DD28-4221-BCC3-18742C869CDE};"Parameter3:Input",{5345BCD2-0666-48AF-9BA2-52432519F092};</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow KhachHang\KhachHang_Jade Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_Webtower]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_Webtower]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Output].Columns[MaKH]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Output].ExternalColumns[MaKH]"
+                      length="4"
+                      lineageId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Output].Columns[MaKH]"
+                      name="MaKH"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Output].Columns[TenKH]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Output].ExternalColumns[TenKH]"
+                      length="50"
+                      lineageId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Output].Columns[TenKH]"
+                      name="TenKH"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Output].Columns[NgayTao]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Output].ExternalColumns[NgayTao]"
+                      lineageId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Output].Columns[NgayTao]"
+                      name="NgayTao"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Output].Columns[NgayCapNhat]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Output].ExternalColumns[NgayCapNhat]"
+                      lineageId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Output].Columns[NgayCapNhat]"
+                      name="NgayCapNhat"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Output].Columns[TrangThai]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Output].ExternalColumns[TrangThai]"
+                      lineageId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Output].Columns[TrangThai]"
+                      name="TrangThai"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Output].Columns[GioiTinh]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Output].ExternalColumns[GioiTinh]"
+                      length="1"
+                      lineageId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Output].Columns[GioiTinh]"
+                      name="GioiTinh"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Output].Columns[SoThich]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Output].ExternalColumns[SoThich]"
+                      length="30"
+                      lineageId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Output].Columns[SoThich]"
+                      name="SoThich"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Output].Columns[NgheNghiep]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Output].ExternalColumns[NgheNghiep]"
+                      length="30"
+                      lineageId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Output].Columns[NgheNghiep]"
+                      name="NgheNghiep"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Output].Columns[TenNuoc]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Output].ExternalColumns[TenNuoc]"
+                      length="50"
+                      lineageId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Output].Columns[TenNuoc]"
+                      name="TenNuoc"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Output].ExternalColumns[MaKH]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="MaKH" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Output].ExternalColumns[TenKH]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TenKH" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Output].ExternalColumns[NgayTao]"
+                      dataType="dbTimeStamp"
+                      name="NgayTao" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Output].ExternalColumns[NgayCapNhat]"
+                      dataType="dbTimeStamp"
+                      name="NgayCapNhat" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Output].ExternalColumns[TrangThai]"
+                      dataType="i4"
+                      name="TrangThai" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Output].ExternalColumns[GioiTinh]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="GioiTinh" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Output].ExternalColumns[SoThich]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="SoThich" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Output].ExternalColumns[NgheNghiep]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="NgheNghiep" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Output].ExternalColumns[TenNuoc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TenNuoc" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Error Output].Columns[MaKH]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Error Output].Columns[MaKH]"
+                      name="MaKH" />
+                    <outputColumn
+                      refId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Error Output].Columns[TenKH]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Error Output].Columns[TenKH]"
+                      name="TenKH" />
+                    <outputColumn
+                      refId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Error Output].Columns[TenNuoc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Error Output].Columns[TenNuoc]"
+                      name="TenNuoc" />
+                    <outputColumn
+                      refId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Error Output].Columns[NgayTao]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Error Output].Columns[NgayTao]"
+                      name="NgayTao" />
+                    <outputColumn
+                      refId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Error Output].Columns[NgayCapNhat]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Error Output].Columns[NgayCapNhat]"
+                      name="NgayCapNhat" />
+                    <outputColumn
+                      refId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Error Output].Columns[TrangThai]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Error Output].Columns[TrangThai]"
+                      name="TrangThai" />
+                    <outputColumn
+                      refId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Error Output].Columns[GioiTinh]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Error Output].Columns[GioiTinh]"
+                      name="GioiTinh" />
+                    <outputColumn
+                      refId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Error Output].Columns[SoThich]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      lineageId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Error Output].Columns[SoThich]"
+                      name="SoThich" />
+                    <outputColumn
+                      refId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Error Output].Columns[NgheNghiep]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      lineageId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Error Output].Columns[NgheNghiep]"
+                      name="NgheNghiep" />
+                    <outputColumn
+                      refId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow KhachHang\KhachHang_Stage 1"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
-              name="KhachHang_Stage"
+              name="KhachHang_Stage 1"
               usesDispositions="true"
               version="4">
               <properties>
@@ -1038,158 +1442,172 @@ WHERE (NgayBan &gt;= ? AND NgayBan &lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNh
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow KhachHang\KhachHang_Stage.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_STAGE_Webtower]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_STAGE_Webtower]"
+                  refId="Package\Data Flow KhachHang\KhachHang_Stage 1.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_STAGE]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_STAGE]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
               <inputs>
                 <input
-                  refId="Package\Data Flow KhachHang\KhachHang_Stage.Inputs[OLE DB Destination Input]"
+                  refId="Package\Data Flow KhachHang\KhachHang_Stage 1.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow KhachHang\KhachHang_Stage.Inputs[OLE DB Destination Input].Columns[MaKH]"
+                      refId="Package\Data Flow KhachHang\KhachHang_Stage 1.Inputs[OLE DB Destination Input].Columns[MaKH]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="4"
                       cachedName="MaKH"
-                      externalMetadataColumnId="Package\Data Flow KhachHang\KhachHang_Stage.Inputs[OLE DB Destination Input].ExternalColumns[MaKH]"
-                      lineageId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Output].Columns[MaKH]" />
+                      externalMetadataColumnId="Package\Data Flow KhachHang\KhachHang_Stage 1.Inputs[OLE DB Destination Input].ExternalColumns[MaKH]"
+                      lineageId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Output].Columns[MaKH]" />
                     <inputColumn
-                      refId="Package\Data Flow KhachHang\KhachHang_Stage.Inputs[OLE DB Destination Input].Columns[TenKH]"
+                      refId="Package\Data Flow KhachHang\KhachHang_Stage 1.Inputs[OLE DB Destination Input].Columns[TenKH]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="TenKH"
-                      externalMetadataColumnId="Package\Data Flow KhachHang\KhachHang_Stage.Inputs[OLE DB Destination Input].ExternalColumns[TenKH]"
-                      lineageId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Output].Columns[TenKH]" />
+                      externalMetadataColumnId="Package\Data Flow KhachHang\KhachHang_Stage 1.Inputs[OLE DB Destination Input].ExternalColumns[TenKH]"
+                      lineageId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Output].Columns[TenKH]" />
                     <inputColumn
-                      refId="Package\Data Flow KhachHang\KhachHang_Stage.Inputs[OLE DB Destination Input].Columns[NgayTao]"
+                      refId="Package\Data Flow KhachHang\KhachHang_Stage 1.Inputs[OLE DB Destination Input].Columns[NgayTao]"
                       cachedDataType="dbTimeStamp"
                       cachedName="NgayTao"
-                      externalMetadataColumnId="Package\Data Flow KhachHang\KhachHang_Stage.Inputs[OLE DB Destination Input].ExternalColumns[NgayTao]"
-                      lineageId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Output].Columns[NgayTao]" />
+                      externalMetadataColumnId="Package\Data Flow KhachHang\KhachHang_Stage 1.Inputs[OLE DB Destination Input].ExternalColumns[NgayTao]"
+                      lineageId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Output].Columns[NgayTao]" />
                     <inputColumn
-                      refId="Package\Data Flow KhachHang\KhachHang_Stage.Inputs[OLE DB Destination Input].Columns[NgayCapNhat]"
+                      refId="Package\Data Flow KhachHang\KhachHang_Stage 1.Inputs[OLE DB Destination Input].Columns[NgayCapNhat]"
                       cachedDataType="dbTimeStamp"
                       cachedName="NgayCapNhat"
-                      externalMetadataColumnId="Package\Data Flow KhachHang\KhachHang_Stage.Inputs[OLE DB Destination Input].ExternalColumns[NgayCapNhat]"
-                      lineageId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Output].Columns[NgayCapNhat]" />
+                      externalMetadataColumnId="Package\Data Flow KhachHang\KhachHang_Stage 1.Inputs[OLE DB Destination Input].ExternalColumns[NgayCapNhat]"
+                      lineageId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Output].Columns[NgayCapNhat]" />
                     <inputColumn
-                      refId="Package\Data Flow KhachHang\KhachHang_Stage.Inputs[OLE DB Destination Input].Columns[TrangThai]"
+                      refId="Package\Data Flow KhachHang\KhachHang_Stage 1.Inputs[OLE DB Destination Input].Columns[TrangThai]"
                       cachedDataType="i4"
                       cachedName="TrangThai"
-                      externalMetadataColumnId="Package\Data Flow KhachHang\KhachHang_Stage.Inputs[OLE DB Destination Input].ExternalColumns[TrangThai]"
-                      lineageId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Output].Columns[TrangThai]" />
+                      externalMetadataColumnId="Package\Data Flow KhachHang\KhachHang_Stage 1.Inputs[OLE DB Destination Input].ExternalColumns[TrangThai]"
+                      lineageId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Output].Columns[TrangThai]" />
                     <inputColumn
-                      refId="Package\Data Flow KhachHang\KhachHang_Stage.Inputs[OLE DB Destination Input].Columns[GioiTinh]"
+                      refId="Package\Data Flow KhachHang\KhachHang_Stage 1.Inputs[OLE DB Destination Input].Columns[GioiTinh]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="1"
                       cachedName="GioiTinh"
-                      externalMetadataColumnId="Package\Data Flow KhachHang\KhachHang_Stage.Inputs[OLE DB Destination Input].ExternalColumns[GioiTinh]"
-                      lineageId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Output].Columns[GioiTinh]" />
+                      externalMetadataColumnId="Package\Data Flow KhachHang\KhachHang_Stage 1.Inputs[OLE DB Destination Input].ExternalColumns[GioiTinh]"
+                      lineageId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Output].Columns[GioiTinh]" />
                     <inputColumn
-                      refId="Package\Data Flow KhachHang\KhachHang_Stage.Inputs[OLE DB Destination Input].Columns[SoThich]"
+                      refId="Package\Data Flow KhachHang\KhachHang_Stage 1.Inputs[OLE DB Destination Input].Columns[SoThich]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="30"
                       cachedName="SoThich"
-                      externalMetadataColumnId="Package\Data Flow KhachHang\KhachHang_Stage.Inputs[OLE DB Destination Input].ExternalColumns[SoThich]"
-                      lineageId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Output].Columns[SoThich]" />
+                      externalMetadataColumnId="Package\Data Flow KhachHang\KhachHang_Stage 1.Inputs[OLE DB Destination Input].ExternalColumns[SoThich]"
+                      lineageId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Output].Columns[SoThich]" />
                     <inputColumn
-                      refId="Package\Data Flow KhachHang\KhachHang_Stage.Inputs[OLE DB Destination Input].Columns[NgheNghiep]"
+                      refId="Package\Data Flow KhachHang\KhachHang_Stage 1.Inputs[OLE DB Destination Input].Columns[NgheNghiep]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="30"
                       cachedName="NgheNghiep"
-                      externalMetadataColumnId="Package\Data Flow KhachHang\KhachHang_Stage.Inputs[OLE DB Destination Input].ExternalColumns[NgheNghiep]"
-                      lineageId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Output].Columns[NgheNghiep]" />
+                      externalMetadataColumnId="Package\Data Flow KhachHang\KhachHang_Stage 1.Inputs[OLE DB Destination Input].ExternalColumns[NgheNghiep]"
+                      lineageId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Output].Columns[NgheNghiep]" />
                     <inputColumn
-                      refId="Package\Data Flow KhachHang\KhachHang_Stage.Inputs[OLE DB Destination Input].Columns[TenNuoc]"
+                      refId="Package\Data Flow KhachHang\KhachHang_Stage 1.Inputs[OLE DB Destination Input].Columns[CityName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="CityName"
+                      externalMetadataColumnId="Package\Data Flow KhachHang\KhachHang_Stage 1.Inputs[OLE DB Destination Input].ExternalColumns[ThanhPho]"
+                      lineageId="Package\Data Flow KhachHang\Chuyển đổi kiểu dữ liệu cho cột TenThanhPho và TenQG.Outputs[Data Conversion Output].Columns[CityName]" />
+                    <inputColumn
+                      refId="Package\Data Flow KhachHang\KhachHang_Stage 1.Inputs[OLE DB Destination Input].Columns[QGName]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
-                      cachedName="TenNuoc"
-                      externalMetadataColumnId="Package\Data Flow KhachHang\KhachHang_Stage.Inputs[OLE DB Destination Input].ExternalColumns[DiaChi]"
-                      lineageId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Output].Columns[TenNuoc]" />
+                      cachedName="QGName"
+                      externalMetadataColumnId="Package\Data Flow KhachHang\KhachHang_Stage 1.Inputs[OLE DB Destination Input].ExternalColumns[QuocGia]"
+                      lineageId="Package\Data Flow KhachHang\Chuyển đổi kiểu dữ liệu cho cột TenThanhPho và TenQG.Outputs[Data Conversion Output].Columns[QGName]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow KhachHang\KhachHang_Stage.Inputs[OLE DB Destination Input].ExternalColumns[MaKH]"
+                      refId="Package\Data Flow KhachHang\KhachHang_Stage 1.Inputs[OLE DB Destination Input].ExternalColumns[MaKH]"
                       codePage="1252"
                       dataType="str"
                       length="4"
                       name="MaKH" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow KhachHang\KhachHang_Stage.Inputs[OLE DB Destination Input].ExternalColumns[TenKH]"
+                      refId="Package\Data Flow KhachHang\KhachHang_Stage 1.Inputs[OLE DB Destination Input].ExternalColumns[TenKH]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="TenKH" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow KhachHang\KhachHang_Stage.Inputs[OLE DB Destination Input].ExternalColumns[DiaChi]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="DiaChi" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow KhachHang\KhachHang_Stage.Inputs[OLE DB Destination Input].ExternalColumns[NgayTao]"
+                      refId="Package\Data Flow KhachHang\KhachHang_Stage 1.Inputs[OLE DB Destination Input].ExternalColumns[NgayTao]"
                       dataType="dbTimeStamp"
                       name="NgayTao" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow KhachHang\KhachHang_Stage.Inputs[OLE DB Destination Input].ExternalColumns[NgayCapNhat]"
+                      refId="Package\Data Flow KhachHang\KhachHang_Stage 1.Inputs[OLE DB Destination Input].ExternalColumns[NgayCapNhat]"
                       dataType="dbTimeStamp"
                       name="NgayCapNhat" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow KhachHang\KhachHang_Stage.Inputs[OLE DB Destination Input].ExternalColumns[TrangThai]"
+                      refId="Package\Data Flow KhachHang\KhachHang_Stage 1.Inputs[OLE DB Destination Input].ExternalColumns[TrangThai]"
                       dataType="i4"
                       name="TrangThai" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow KhachHang\KhachHang_Stage.Inputs[OLE DB Destination Input].ExternalColumns[GioiTinh]"
+                      refId="Package\Data Flow KhachHang\KhachHang_Stage 1.Inputs[OLE DB Destination Input].ExternalColumns[GioiTinh]"
                       codePage="1252"
                       dataType="str"
                       length="1"
                       name="GioiTinh" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow KhachHang\KhachHang_Stage.Inputs[OLE DB Destination Input].ExternalColumns[SoThich]"
+                      refId="Package\Data Flow KhachHang\KhachHang_Stage 1.Inputs[OLE DB Destination Input].ExternalColumns[SoThich]"
                       codePage="1252"
                       dataType="str"
                       length="30"
                       name="SoThich" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow KhachHang\KhachHang_Stage.Inputs[OLE DB Destination Input].ExternalColumns[NgheNghiep]"
+                      refId="Package\Data Flow KhachHang\KhachHang_Stage 1.Inputs[OLE DB Destination Input].ExternalColumns[NgheNghiep]"
                       codePage="1252"
                       dataType="str"
                       length="30"
                       name="NgheNghiep" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow KhachHang\KhachHang_Stage 1.Inputs[OLE DB Destination Input].ExternalColumns[ThanhPho]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="ThanhPho" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow KhachHang\KhachHang_Stage 1.Inputs[OLE DB Destination Input].ExternalColumns[QuocGia]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="QuocGia" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow KhachHang\KhachHang_Stage.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Data Flow KhachHang\KhachHang_Stage 1.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Data Flow KhachHang\KhachHang_Stage.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\Data Flow KhachHang\KhachHang_Stage 1.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow KhachHang\KhachHang_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Data Flow KhachHang\KhachHang_Stage 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow KhachHang\KhachHang_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Data Flow KhachHang\KhachHang_Stage 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow KhachHang\KhachHang_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Data Flow KhachHang\KhachHang_Stage 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow KhachHang\KhachHang_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Data Flow KhachHang\KhachHang_Stage 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1198,285 +1616,104 @@ WHERE (NgayBan &gt;= ? AND NgayBan &lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNh
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow KhachHang\KhachHang_Webtower Source"
-              componentClassID="Microsoft.OLEDBSource"
-              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
-              description="OLE DB Source"
-              name="KhachHang_Webtower Source"
-              usesDispositions="true"
-              version="7">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[KhachHang_Jade]</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT * FROM KhachHang_WebTower9
-WHERE (NgayTao &gt;= ? AND NgayTao &lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNhat &lt; ?)</property>
-                <property
-                  dataType="System.String"
-                  description="The variable that contains the SQL command to be executed."
-                  name="SqlCommandVariable"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">2</property>
-                <property
-                  dataType="System.String"
-                  description="The mappings between the parameters in the SQL command and variables."
-                  name="ParameterMapping">"Parameter0:Input",{420052DA-DD28-4221-BCC3-18742C869CDE};"Parameter1:Input",{5345BCD2-0666-48AF-9BA2-52432519F092};"Parameter2:Input",{420052DA-DD28-4221-BCC3-18742C869CDE};"Parameter3:Input",{5345BCD2-0666-48AF-9BA2-52432519F092};</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_Webtower]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_Webtower]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
+              refId="Package\Data Flow KhachHang\Thêm cột Tên Thành Phố"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Thêm cột Tên Thành Phố"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow KhachHang\Thêm cột Tên Thành Phố.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow KhachHang\Thêm cột Tên Thành Phố.Inputs[Derived Column Input].Columns[TenNuoc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TenNuoc"
+                      lineageId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Output].Columns[TenNuoc]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Output]"
-                  name="OLE DB Source Output">
+                  refId="Package\Data Flow KhachHang\Thêm cột Tên Thành Phố.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Data Flow KhachHang\Thêm cột Tên Thành Phố.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Output].Columns[MaKH]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
+                      refId="Package\Data Flow KhachHang\Thêm cột Tên Thành Phố.Outputs[Derived Column Output].Columns[TenQuocGia]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Output].ExternalColumns[MaKH]"
-                      length="4"
-                      lineageId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Output].Columns[MaKH]"
-                      name="MaKH"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Output].Columns[TenKH]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Output].ExternalColumns[TenKH]"
                       length="50"
-                      lineageId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Output].Columns[TenKH]"
-                      name="TenKH"
-                      truncationRowDisposition="FailComponent" />
+                      lineageId="Package\Data Flow KhachHang\Thêm cột Tên Thành Phố.Outputs[Derived Column Output].Columns[TenQuocGia]"
+                      name="TenQuocGia"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[SUBSTRING](#{Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Output].Columns[TenNuoc]},1,[FINDSTRING](#{Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Output].Columns[TenNuoc]} + " - "," - ",1))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">SUBSTRING(TenNuoc,1,FINDSTRING(TenNuoc + " - "," - ",1))</property>
+                      </properties>
+                    </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Output].Columns[NgayTao]"
-                      dataType="dbTimeStamp"
-                      errorOrTruncationOperation="Conversion"
+                      refId="Package\Data Flow KhachHang\Thêm cột Tên Thành Phố.Outputs[Derived Column Output].Columns[TenThanhPho]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Output].ExternalColumns[NgayTao]"
-                      lineageId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Output].Columns[NgayTao]"
-                      name="NgayTao"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Output].Columns[NgayCapNhat]"
-                      dataType="dbTimeStamp"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Output].ExternalColumns[NgayCapNhat]"
-                      lineageId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Output].Columns[NgayCapNhat]"
-                      name="NgayCapNhat"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Output].Columns[TrangThai]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Output].ExternalColumns[TrangThai]"
-                      lineageId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Output].Columns[TrangThai]"
-                      name="TrangThai"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Output].Columns[GioiTinh]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Output].ExternalColumns[GioiTinh]"
-                      length="1"
-                      lineageId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Output].Columns[GioiTinh]"
-                      name="GioiTinh"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Output].Columns[SoThich]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Output].ExternalColumns[SoThich]"
-                      length="30"
-                      lineageId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Output].Columns[SoThich]"
-                      name="SoThich"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Output].Columns[NgheNghiep]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Output].ExternalColumns[NgheNghiep]"
-                      length="30"
-                      lineageId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Output].Columns[NgheNghiep]"
-                      name="NgheNghiep"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Output].Columns[TenNuoc]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Output].ExternalColumns[TenNuoc]"
                       length="50"
-                      lineageId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Output].Columns[TenNuoc]"
-                      name="TenNuoc"
-                      truncationRowDisposition="FailComponent" />
+                      lineageId="Package\Data Flow KhachHang\Thêm cột Tên Thành Phố.Outputs[Derived Column Output].Columns[TenThanhPho]"
+                      name="TenThanhPho"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[SUBSTRING](#{Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Output].Columns[TenNuoc]},[FINDSTRING](#{Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Output].Columns[TenNuoc]} + " - "," - ",1) + 2,[LEN](#{Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Output].Columns[TenNuoc]}))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">SUBSTRING(TenNuoc,FINDSTRING(TenNuoc + " - "," - ",1) + 2,LEN(TenNuoc))</property>
+                      </properties>
+                    </outputColumn>
                   </outputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Output].ExternalColumns[MaKH]"
-                      codePage="1252"
-                      dataType="str"
-                      length="4"
-                      name="MaKH" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Output].ExternalColumns[TenKH]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="TenKH" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Output].ExternalColumns[NgayTao]"
-                      dataType="dbTimeStamp"
-                      name="NgayTao" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Output].ExternalColumns[NgayCapNhat]"
-                      dataType="dbTimeStamp"
-                      name="NgayCapNhat" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Output].ExternalColumns[TrangThai]"
-                      dataType="i4"
-                      name="TrangThai" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Output].ExternalColumns[GioiTinh]"
-                      codePage="1252"
-                      dataType="str"
-                      length="1"
-                      name="GioiTinh" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Output].ExternalColumns[SoThich]"
-                      codePage="1252"
-                      dataType="str"
-                      length="30"
-                      name="SoThich" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Output].ExternalColumns[NgheNghiep]"
-                      codePage="1252"
-                      dataType="str"
-                      length="30"
-                      name="NgheNghiep" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Output].ExternalColumns[TenNuoc]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="TenNuoc" />
-                  </externalMetadataColumns>
+                  <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Error Output]"
+                  refId="Package\Data Flow KhachHang\Thêm cột Tên Thành Phố.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
                   isErrorOut="true"
-                  name="OLE DB Source Error Output">
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Data Flow KhachHang\Thêm cột Tên Thành Phố.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Error Output].Columns[MaKH]"
-                      codePage="1252"
-                      dataType="str"
-                      length="4"
-                      lineageId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Error Output].Columns[MaKH]"
-                      name="MaKH" />
-                    <outputColumn
-                      refId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Error Output].Columns[TenKH]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      lineageId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Error Output].Columns[TenKH]"
-                      name="TenKH" />
-                    <outputColumn
-                      refId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Error Output].Columns[TenNuoc]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      lineageId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Error Output].Columns[TenNuoc]"
-                      name="TenNuoc" />
-                    <outputColumn
-                      refId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Error Output].Columns[NgayTao]"
-                      dataType="dbTimeStamp"
-                      lineageId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Error Output].Columns[NgayTao]"
-                      name="NgayTao" />
-                    <outputColumn
-                      refId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Error Output].Columns[NgayCapNhat]"
-                      dataType="dbTimeStamp"
-                      lineageId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Error Output].Columns[NgayCapNhat]"
-                      name="NgayCapNhat" />
-                    <outputColumn
-                      refId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Error Output].Columns[TrangThai]"
+                      refId="Package\Data Flow KhachHang\Thêm cột Tên Thành Phố.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Error Output].Columns[TrangThai]"
-                      name="TrangThai" />
-                    <outputColumn
-                      refId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Error Output].Columns[GioiTinh]"
-                      codePage="1252"
-                      dataType="str"
-                      length="1"
-                      lineageId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Error Output].Columns[GioiTinh]"
-                      name="GioiTinh" />
-                    <outputColumn
-                      refId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Error Output].Columns[SoThich]"
-                      codePage="1252"
-                      dataType="str"
-                      length="30"
-                      lineageId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Error Output].Columns[SoThich]"
-                      name="SoThich" />
-                    <outputColumn
-                      refId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Error Output].Columns[NgheNghiep]"
-                      codePage="1252"
-                      dataType="str"
-                      length="30"
-                      lineageId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Error Output].Columns[NgheNghiep]"
-                      name="NgheNghiep" />
-                    <outputColumn
-                      refId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Data Flow KhachHang\Thêm cột Tên Thành Phố.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Data Flow KhachHang\Thêm cột Tên Thành Phố.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Data Flow KhachHang\Thêm cột Tên Thành Phố.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1487,10 +1724,20 @@ WHERE (NgayTao &gt;= ? AND NgayTao &lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNh
           </components>
           <paths>
             <path
+              refId="Package\Data Flow KhachHang.Paths[Data Conversion Output]"
+              endId="Package\Data Flow KhachHang\KhachHang_Stage 1.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Data Flow KhachHang\Chuyển đổi kiểu dữ liệu cho cột TenThanhPho và TenQG.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Data Flow KhachHang.Paths[Derived Column Output]"
+              endId="Package\Data Flow KhachHang\Chuyển đổi kiểu dữ liệu cho cột TenThanhPho và TenQG.Inputs[Data Conversion Input]"
+              name="Derived Column Output"
+              startId="Package\Data Flow KhachHang\Thêm cột Tên Thành Phố.Outputs[Derived Column Output]" />
+            <path
               refId="Package\Data Flow KhachHang.Paths[OLE DB Source Output]"
-              endId="Package\Data Flow KhachHang\KhachHang_Stage.Inputs[OLE DB Destination Input]"
+              endId="Package\Data Flow KhachHang\Thêm cột Tên Thành Phố.Inputs[Derived Column Input]"
               name="OLE DB Source Output"
-              startId="Package\Data Flow KhachHang\KhachHang_Webtower Source.Outputs[OLE DB Source Output]" />
+              startId="Package\Data Flow KhachHang\KhachHang_Jade Source.Outputs[OLE DB Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -1505,7 +1752,7 @@ WHERE (NgayTao &gt;= ? AND NgayTao &lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNh
       DTS:LocaleID="-1"
       DTS:ObjectName="Get LSET for ChiTietHoaDon"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1531,7 +1778,7 @@ WHERE (NgayTao &gt;= ? AND NgayTao &lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNh
       DTS:LocaleID="-1"
       DTS:ObjectName="Get LSET for HoaDon"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1551,13 +1798,12 @@ WHERE (NgayTao &gt;= ? AND NgayTao &lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNh
       DTS:refId="Package\Get LSET for KhachHang"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:Disabled="True"
       DTS:DTSID="{bf50d432-c08a-4b8a-b595-91d4ba8067a5}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get LSET for KhachHang"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1583,7 +1829,7 @@ WHERE (NgayTao &gt;= ? AND NgayTao &lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNh
       DTS:LocaleID="-1"
       DTS:ObjectName="Set CET for ChiTietHoaDon"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1601,7 +1847,7 @@ WHERE (NgayTao &gt;= ? AND NgayTao &lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNh
       DTS:LocaleID="-1"
       DTS:ObjectName="Set CET for HoaDon"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1613,13 +1859,12 @@ WHERE (NgayTao &gt;= ? AND NgayTao &lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNh
       DTS:refId="Package\Set CET for KhachHang"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:Disabled="True"
       DTS:DTSID="{4774abc1-7fc6-4827-983a-f3b2777c6e72}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set CET for KhachHang"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1637,7 +1882,7 @@ WHERE (NgayTao &gt;= ? AND NgayTao &lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNh
       DTS:LocaleID="-1"
       DTS:ObjectName="Set LSET for ChiTietHoaDon"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1655,7 +1900,7 @@ WHERE (NgayTao &gt;= ? AND NgayTao &lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNh
       DTS:LocaleID="-1"
       DTS:ObjectName="Set LSET for HoaDon"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1667,13 +1912,12 @@ WHERE (NgayTao &gt;= ? AND NgayTao &lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNh
       DTS:refId="Package\Set LSET for KhachHang"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:Disabled="True"
       DTS:DTSID="{3bc31936-dd0e-4cba-b9d6-d02908c7fc51}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set LSET for KhachHang"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1691,7 +1935,7 @@ WHERE (NgayTao &gt;= ? AND NgayTao &lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNh
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate table ChiTietHoaDon_stage"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1709,7 +1953,7 @@ WHERE (NgayTao &gt;= ? AND NgayTao &lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNh
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate table HoaDon_Stage"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1721,17 +1965,16 @@ WHERE (NgayTao &gt;= ? AND NgayTao &lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNh
       DTS:refId="Package\Truncate table KhachHang_Stage"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:Disabled="True"
       DTS:DTSID="{334f0ea9-e2fc-45c8-8775-48b2ff07aca0}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate table KhachHang_Stage"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{892FE846-EA15-45A3-88C1-C0ED4A982BF5}"
+          SQLTask:Connection="{706A00F6-C23F-44D6-96F7-17DE56ABFB4A}"
           SQLTask:SqlStatementSource="TRUNCATE TABLE KhachHang_STAGE_Webtower;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -1847,63 +2090,63 @@ WHERE (NgayTao &gt;= ? AND NgayTao &lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNh
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="166.4,41.6"
+          Size="166.333333333334,41.6666666666667"
           Id="Package\Data Flow ChiTietHoaDon"
           TopLeft="725.261904956532,301.590359935247" />
         <NodeLayout
-          Size="166.4,41.6"
+          Size="166.333333333334,41.6666666666667"
           Id="Package\Data Flow HoaDon"
           TopLeft="452.11904811778,309.747223206228" />
         <NodeLayout
-          Size="182.4,41.6"
+          Size="182.333333333334,41.6666666666667"
           Id="Package\Data Flow KhachHang"
           TopLeft="156.11904811778,309.747223206227" />
         <NodeLayout
-          Size="214.4,41.6"
+          Size="214.333333333334,41.6666666666667"
           Id="Package\Get LSET for ChiTietHoaDon"
           TopLeft="725.976190682982,219.00212348286" />
         <NodeLayout
-          Size="178.4,41.6"
+          Size="178.333333333334,41.6666666666667"
           Id="Package\Get LSET for HoaDon"
           TopLeft="454.97619102358,220.276633716142" />
         <NodeLayout
-          Size="162.4,41.6"
+          Size="162.333333333334,41.6666666666667"
           Id="Package\Get LSET for KhachHang"
           TopLeft="158.97619102358,220.276633716142" />
         <NodeLayout
-          Size="172.8,41.6"
+          Size="172.666666666667,41.6666666666667"
           Id="Package\Set CET for ChiTietHoaDon"
           TopLeft="730.261905041682,43.8844739680772" />
         <NodeLayout
-          Size="172.8,41.6"
+          Size="172.666666666667,41.6666666666667"
           Id="Package\Set CET for HoaDon"
           TopLeft="459.261905382279,42.8648665221266" />
         <NodeLayout
-          Size="162.4,41.6"
+          Size="162.333333333334,41.6666666666667"
           Id="Package\Set CET for KhachHang"
           TopLeft="163.976191108729,42.8648665221266" />
         <NodeLayout
-          Size="213.6,41.6"
+          Size="213.666666666667,41.6666666666667"
           Id="Package\Set LSET for ChiTietHoaDon"
           TopLeft="718.833333418483,403.355066010645" />
         <NodeLayout
-          Size="162.4,41.6"
+          Size="162.333333333334,41.6666666666667"
           Id="Package\Set LSET for HoaDon"
           TopLeft="445.690476579731,411.511929281626" />
         <NodeLayout
-          Size="162.4,41.6"
+          Size="162.333333333334,41.6666666666667"
           Id="Package\Set LSET for KhachHang"
           TopLeft="149.690476579731,411.511929281625" />
         <NodeLayout
-          Size="252,41.6"
+          Size="252,41.6666666666667"
           Id="Package\Truncate table ChiTietHoaDon_stage"
           TopLeft="695.976190172085,127.237416313542" />
         <NodeLayout
-          Size="236,41.6"
+          Size="236,41.6666666666667"
           Id="Package\Truncate table HoaDon_Stage"
           TopLeft="422.833333333333,135.394279584523" />
         <NodeLayout
-          Size="236.8,41.6"
+          Size="236.666666666667,41.6666666666667"
           Id="Package\Truncate table KhachHang_Stage"
           TopLeft="126.333333333333,135.394279584523" />
         <EdgeLayout
@@ -2249,7 +2492,7 @@ WHERE (NgayTao &gt;= ? AND NgayTao &lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNh
     design-time-name="Package\Data Flow ChiTietHoaDon">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="196.666666666667,41.6666666666667"
           Id="Package\Data Flow ChiTietHoaDon\ChiTietHoaDon_Jade Source"
@@ -2277,7 +2520,9 @@ WHERE (NgayTao &gt;= ? AND NgayTao &lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNh
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -2308,47 +2553,49 @@ WHERE (NgayTao &gt;= ? AND NgayTao &lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNh
     design-time-name="Package\Data Flow HoaDon">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="196.666666666667,41.6666666666667"
           Id="Package\Data Flow HoaDon\HoaDon_Webtower Source"
-          TopLeft="198.57143195308,48.9411771569698" />
+          TopLeft="218.57143195308,45.9411771569698" />
         <NodeLayout
           Size="170.333333333334,41.6666666666667"
           Id="Package\Data Flow HoaDon\HoaDon_Stage"
           TopLeft="199.28571767953,281.411768652576" />
         <EdgeLayout
           Id="Package\Data Flow HoaDon.Paths[OLE DB Source Output]"
-          TopLeft="296.97143195308,90.5411771569698">
+          TopLeft="316.904765286413,87.6078438236365">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-12.48571427355,190.870591495606"
+              EndConnector="-32.4523809402167,193.80392482894"
               Start="0,0"
-              End="-12.48571427355,183.370591495606">
+              End="-32.4523809402167,186.30392482894">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,91.4352957478031" />
+                    End="0,92.9019624144698" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,91.4352957478031"
-                    Point2="0,95.4352957478031"
-                    Point3="-4,95.4352957478031" />
+                    Point1="0,92.9019624144698"
+                    Point2="0,96.9019624144698"
+                    Point3="-4,96.9019624144698" />
                   <mssgle:LineSegment
-                    End="-8.48571427355,95.4352957478031" />
+                    End="-28.4523809402167,96.9019624144698" />
                   <mssgle:CubicBezierSegment
-                    Point1="-8.48571427355,95.4352957478031"
-                    Point2="-12.48571427355,95.4352957478031"
-                    Point3="-12.48571427355,99.4352957478031" />
+                    Point1="-28.4523809402167,96.9019624144698"
+                    Point2="-32.4523809402167,96.9019624144698"
+                    Point3="-32.4523809402167,100.90196241447" />
                   <mssgle:LineSegment
-                    End="-12.48571427355,183.370591495606" />
+                    End="-32.4523809402167,186.30392482894" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -2379,29 +2626,105 @@ WHERE (NgayTao &gt;= ? AND NgayTao &lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNh
     design-time-name="Package\Data Flow KhachHang">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="170.333333333334,41.6666666666667"
-          Id="Package\Data Flow KhachHang\KhachHang_Stage"
-          TopLeft="231.619051012863,160.546899114776" />
+          Id="Package\Data Flow KhachHang\KhachHang_Stage 1"
+          TopLeft="453.952384346197,461.655018864469" />
         <NodeLayout
-          Size="225.333333333334,42"
-          Id="Package\Data Flow KhachHang\KhachHang_Webtower Source"
-          TopLeft="198.57143195308,48.9411771569698" />
+          Size="199.333333333334,42"
+          Id="Package\Data Flow KhachHang\Thêm cột Tên Thành Phố"
+          TopLeft="476.238098619747,262.213565781443" />
+        <NodeLayout
+          Size="349,42"
+          Id="Package\Data Flow KhachHang\Chuyển đổi kiểu dữ liệu cho cột TenThanhPho và TenQG"
+          TopLeft="381.904765286414,356.024380219211" />
         <EdgeLayout
-          Id="Package\Data Flow KhachHang.Paths[OLE DB Source Output]"
-          TopLeft="314.011908149638,90.9411771569698">
+          Id="Package\Data Flow KhachHang.Paths[Derived Column Output]"
+          TopLeft="575.904765286413,304.213565781443">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,69.6057219578067"
+              EndConnector="-19.4999999999999,51.8108144377688"
               Start="0,0"
-              End="0,62.1057219578067">
+              End="-19.4999999999999,44.3108144377688">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,62.1057219578067" />
+                    End="0,21.9054072188844" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.9054072188844"
+                    Point2="0,25.9054072188844"
+                    Point3="-4,25.9054072188844" />
+                  <mssgle:LineSegment
+                    End="-15.4999999999999,25.9054072188844" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-15.4999999999999,25.9054072188844"
+                    Point2="-19.4999999999999,25.9054072188844"
+                    Point3="-19.4999999999999,29.9054072188844" />
+                  <mssgle:LineSegment
+                    End="-19.4999999999999,44.3108144377688" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow KhachHang.Paths[Data Conversion Output]"
+          TopLeft="556.404765286414,398.024380219212">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-17.2857142735503,63.6306386452569"
+              Start="0,0"
+              End="-17.2857142735503,56.1306386452569">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.8153193226285" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.8153193226285"
+                    Point2="0,31.8153193226285"
+                    Point3="-4,31.8153193226285" />
+                  <mssgle:LineSegment
+                    End="-13.2857142735503,31.8153193226285" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-13.2857142735503,31.8153193226285"
+                    Point2="-17.2857142735503,31.8153193226285"
+                    Point3="-17.2857142735503,35.8153193226285" />
+                  <mssgle:LineSegment
+                    End="-17.2857142735503,56.1306386452569" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="149.666666666667,41.6666666666667"
+          Id="Package\Data Flow KhachHang\KhachHang_Jade Source"
+          TopLeft="198.57143195308,264.670915227344" />
+        <EdgeLayout
+          Id="Package\Data Flow KhachHang.Paths[OLE DB Source Output]"
+          TopLeft="348.238098619747,284.35890717106">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="128,0"
+              Start="0,0"
+              End="120.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="120.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2414,7 +2737,7 @@ WHERE (NgayTao &gt;= ? AND NgayTao &lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNh
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow KhachHang\KhachHang_Stage">
+    design-time-name="Package\Data Flow KhachHang\KhachHang_Stage 1">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2427,7 +2750,7 @@ WHERE (NgayTao &gt;= ? AND NgayTao &lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNh
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow KhachHang\KhachHang_Webtower Source">
+    design-time-name="Package\Data Flow KhachHang\KhachHang_Jade Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

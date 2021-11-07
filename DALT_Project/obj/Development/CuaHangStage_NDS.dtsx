@@ -1,0 +1,2164 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/6/2021 7:15:26 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-LATGDUJ"
+  DTS:CreatorName="DESKTOP-LATGDUJ\Jane Hwang"
+  DTS:DTSID="{7DCDEC39-79A5-4604-B819-07758AD291DF}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.170"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="33"
+  DTS:VersionGUID="{2E044F74-158E-4782-AFB0-DA2F5AED6A94}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_NDS]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{8E6491ED-8D82-4A59-9A23-71558765DEEE}"
+      DTS:ObjectName="DESKTOP-LATGDUJ.DALT_NDS">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-LATGDUJ;Initial Catalog=DALT_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_NDS 2]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{EF02C38D-26DD-45F6-A4F6-FCFF9051D245}"
+      DTS:ObjectName="DESKTOP-LATGDUJ.DALT_NDS 2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-LATGDUJ;Initial Catalog=DALT_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_STAGE]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{2DCE579E-32E6-4146-8B2D-BFDA884909C2}"
+      DTS:ObjectName="DESKTOP-LATGDUJ.DALT_STAGE">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-LATGDUJ;Initial Catalog=DALT_STAGE;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Stage to NDS - CuaHang"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{07AD5A68-79AE-44E2-8878-CDCE7BD2A679}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Stage to NDS - CuaHang"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Stage to NDS - CuaHang\Cua Hang NDS"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Cua Hang NDS"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[CuaHang]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Stage to NDS - CuaHang\Cua Hang NDS.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_NDS]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Stage to NDS - CuaHang\Cua Hang NDS.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Stage to NDS - CuaHang\Cua Hang NDS.Inputs[OLE DB Destination Input].Columns[NgayTao]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="NgayTao"
+                      externalMetadataColumnId="Package\Stage to NDS - CuaHang\Cua Hang NDS.Inputs[OLE DB Destination Input].ExternalColumns[NgayTao]"
+                      lineageId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Output].Columns[NgayTao]" />
+                    <inputColumn
+                      refId="Package\Stage to NDS - CuaHang\Cua Hang NDS.Inputs[OLE DB Destination Input].Columns[NgayCapNhat]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="NgayCapNhat"
+                      externalMetadataColumnId="Package\Stage to NDS - CuaHang\Cua Hang NDS.Inputs[OLE DB Destination Input].ExternalColumns[NgayCapNhat]"
+                      lineageId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Output].Columns[NgayCapNhat]" />
+                    <inputColumn
+                      refId="Package\Stage to NDS - CuaHang\Cua Hang NDS.Inputs[OLE DB Destination Input].Columns[MaNguon]"
+                      cachedDataType="i4"
+                      cachedName="MaNguon"
+                      externalMetadataColumnId="Package\Stage to NDS - CuaHang\Cua Hang NDS.Inputs[OLE DB Destination Input].ExternalColumns[MaNguon]"
+                      lineageId="Package\Stage to NDS - CuaHang\Thêm cột MaNguonDL trong pipeline.Outputs[Derived Column Output].Columns[MaNguon]" />
+                    <inputColumn
+                      refId="Package\Stage to NDS - CuaHang\Cua Hang NDS.Inputs[OLE DB Destination Input].Columns[TrangThai]"
+                      cachedDataType="i4"
+                      cachedName="TrangThai"
+                      externalMetadataColumnId="Package\Stage to NDS - CuaHang\Cua Hang NDS.Inputs[OLE DB Destination Input].ExternalColumns[MaTrangThai]"
+                      lineageId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Output].Columns[TrangThai]" />
+                    <inputColumn
+                      refId="Package\Stage to NDS - CuaHang\Cua Hang NDS.Inputs[OLE DB Destination Input].Columns[MaCH]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="MaCH"
+                      externalMetadataColumnId="Package\Stage to NDS - CuaHang\Cua Hang NDS.Inputs[OLE DB Destination Input].ExternalColumns[MaCH]"
+                      lineageId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Output].Columns[MaCH]" />
+                    <inputColumn
+                      refId="Package\Stage to NDS - CuaHang\Cua Hang NDS.Inputs[OLE DB Destination Input].Columns[TenCH]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TenCH"
+                      externalMetadataColumnId="Package\Stage to NDS - CuaHang\Cua Hang NDS.Inputs[OLE DB Destination Input].ExternalColumns[TenCH]"
+                      lineageId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Output].Columns[TenCH]" />
+                    <inputColumn
+                      refId="Package\Stage to NDS - CuaHang\Cua Hang NDS.Inputs[OLE DB Destination Input].Columns[skmaqg]"
+                      cachedDataType="i4"
+                      cachedName="skmaqg"
+                      externalMetadataColumnId="Package\Stage to NDS - CuaHang\Cua Hang NDS.Inputs[OLE DB Destination Input].ExternalColumns[MaQG]"
+                      lineageId="Package\Stage to NDS - CuaHang\Kiểm tra xem MaNuoc của từng dòng có tồn tại trong QuocGia_NDS chưa.Outputs[Lookup Match Output].Columns[skmaqg]" />
+                    <inputColumn
+                      refId="Package\Stage to NDS - CuaHang\Cua Hang NDS.Inputs[OLE DB Destination Input].Columns[skmaloaich]"
+                      cachedDataType="i4"
+                      cachedName="skmaloaich"
+                      externalMetadataColumnId="Package\Stage to NDS - CuaHang\Cua Hang NDS.Inputs[OLE DB Destination Input].ExternalColumns[MaLoaiCH]"
+                      lineageId="Package\Stage to NDS - CuaHang\Kiểm tra MaLoaiCuaHang của từng dòng có tồn tại trong MaLoaiCuaHang_NDS chưa.Outputs[Lookup Match Output].Columns[skmaloaich]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Stage to NDS - CuaHang\Cua Hang NDS.Inputs[OLE DB Destination Input].ExternalColumns[MaQG]"
+                      dataType="i4"
+                      name="MaQG" />
+                    <externalMetadataColumn
+                      refId="Package\Stage to NDS - CuaHang\Cua Hang NDS.Inputs[OLE DB Destination Input].ExternalColumns[NgayTao]"
+                      dataType="dbTimeStamp"
+                      name="NgayTao" />
+                    <externalMetadataColumn
+                      refId="Package\Stage to NDS - CuaHang\Cua Hang NDS.Inputs[OLE DB Destination Input].ExternalColumns[NgayCapNhat]"
+                      dataType="dbTimeStamp"
+                      name="NgayCapNhat" />
+                    <externalMetadataColumn
+                      refId="Package\Stage to NDS - CuaHang\Cua Hang NDS.Inputs[OLE DB Destination Input].ExternalColumns[MaTrangThai]"
+                      dataType="i4"
+                      name="MaTrangThai" />
+                    <externalMetadataColumn
+                      refId="Package\Stage to NDS - CuaHang\Cua Hang NDS.Inputs[OLE DB Destination Input].ExternalColumns[MaNguon]"
+                      dataType="i4"
+                      name="MaNguon" />
+                    <externalMetadataColumn
+                      refId="Package\Stage to NDS - CuaHang\Cua Hang NDS.Inputs[OLE DB Destination Input].ExternalColumns[SKMaCH]"
+                      dataType="i4"
+                      name="SKMaCH" />
+                    <externalMetadataColumn
+                      refId="Package\Stage to NDS - CuaHang\Cua Hang NDS.Inputs[OLE DB Destination Input].ExternalColumns[MaCH]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="MaCH" />
+                    <externalMetadataColumn
+                      refId="Package\Stage to NDS - CuaHang\Cua Hang NDS.Inputs[OLE DB Destination Input].ExternalColumns[TenCH]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TenCH" />
+                    <externalMetadataColumn
+                      refId="Package\Stage to NDS - CuaHang\Cua Hang NDS.Inputs[OLE DB Destination Input].ExternalColumns[MaLoaiCH]"
+                      dataType="i4"
+                      name="MaLoaiCH" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Stage to NDS - CuaHang\Cua Hang NDS.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Stage to NDS - CuaHang\Cua Hang NDS.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Stage to NDS - CuaHang\Cua Hang NDS.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Stage to NDS - CuaHang\Cua Hang NDS.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Stage to NDS - CuaHang\Cua Hang NDS.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Stage to NDS - CuaHang\Cua Hang NDS.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Stage to NDS - CuaHang\CuaHang_Stage"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="CuaHang_Stage"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[CuaHang_Stage]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_STAGE]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_STAGE]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Output].Columns[NgayTao]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Output].ExternalColumns[NgayTao]"
+                      lineageId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Output].Columns[NgayTao]"
+                      name="NgayTao"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Output].Columns[NgayCapNhat]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Output].ExternalColumns[NgayCapNhat]"
+                      lineageId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Output].Columns[NgayCapNhat]"
+                      name="NgayCapNhat"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Output].Columns[TrangThai]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Output].ExternalColumns[TrangThai]"
+                      lineageId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Output].Columns[TrangThai]"
+                      name="TrangThai"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Output].Columns[MaCH]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Output].ExternalColumns[MaCH]"
+                      length="4"
+                      lineageId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Output].Columns[MaCH]"
+                      name="MaCH"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Output].Columns[TenCH]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Output].ExternalColumns[TenCH]"
+                      length="50"
+                      lineageId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Output].Columns[TenCH]"
+                      name="TenCH"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Output].Columns[LoaiCH]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Output].ExternalColumns[LoaiCH]"
+                      length="4"
+                      lineageId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Output].Columns[LoaiCH]"
+                      name="LoaiCH"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Output].Columns[Nuoc]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Output].ExternalColumns[Nuoc]"
+                      length="4"
+                      lineageId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Output].Columns[Nuoc]"
+                      name="Nuoc"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Output].ExternalColumns[NgayTao]"
+                      dataType="dbTimeStamp"
+                      name="NgayTao" />
+                    <externalMetadataColumn
+                      refId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Output].ExternalColumns[NgayCapNhat]"
+                      dataType="dbTimeStamp"
+                      name="NgayCapNhat" />
+                    <externalMetadataColumn
+                      refId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Output].ExternalColumns[TrangThai]"
+                      dataType="i4"
+                      name="TrangThai" />
+                    <externalMetadataColumn
+                      refId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Output].ExternalColumns[MaCH]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="MaCH" />
+                    <externalMetadataColumn
+                      refId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Output].ExternalColumns[TenCH]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TenCH" />
+                    <externalMetadataColumn
+                      refId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Output].ExternalColumns[LoaiCH]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="LoaiCH" />
+                    <externalMetadataColumn
+                      refId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Output].ExternalColumns[Nuoc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="Nuoc" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Error Output].Columns[MaCH]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Error Output].Columns[MaCH]"
+                      name="MaCH" />
+                    <outputColumn
+                      refId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Error Output].Columns[TenCH]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Error Output].Columns[TenCH]"
+                      name="TenCH" />
+                    <outputColumn
+                      refId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Error Output].Columns[LoaiCH]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Error Output].Columns[LoaiCH]"
+                      name="LoaiCH" />
+                    <outputColumn
+                      refId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Error Output].Columns[Nuoc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Error Output].Columns[Nuoc]"
+                      name="Nuoc" />
+                    <outputColumn
+                      refId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Error Output].Columns[NgayTao]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Error Output].Columns[NgayTao]"
+                      name="NgayTao" />
+                    <outputColumn
+                      refId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Error Output].Columns[NgayCapNhat]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Error Output].Columns[NgayCapNhat]"
+                      name="NgayCapNhat" />
+                    <outputColumn
+                      refId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Error Output].Columns[TrangThai]"
+                      dataType="i4"
+                      lineageId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Error Output].Columns[TrangThai]"
+                      name="TrangThai" />
+                    <outputColumn
+                      refId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Stage to NDS - CuaHang\Cập nhật dữ liệu"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="Cập nhật dữ liệu"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE CuaHang
+SET NgayCapNhat = GETDATE(), TenCH = ?, MaTrangThai = ? 
+WHERE MaQG = ? AND MaNguon = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Stage to NDS - CuaHang\Cập nhật dữ liệu.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_NDS]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Stage to NDS - CuaHang\Cập nhật dữ liệu.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Stage to NDS - CuaHang\Cập nhật dữ liệu.Inputs[OLE DB Command Input].Columns[TenCH]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TenCH"
+                      externalMetadataColumnId="Package\Stage to NDS - CuaHang\Cập nhật dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Output].Columns[TenCH]" />
+                    <inputColumn
+                      refId="Package\Stage to NDS - CuaHang\Cập nhật dữ liệu.Inputs[OLE DB Command Input].Columns[TrangThai]"
+                      cachedDataType="i4"
+                      cachedName="TrangThai"
+                      externalMetadataColumnId="Package\Stage to NDS - CuaHang\Cập nhật dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Output].Columns[TrangThai]" />
+                    <inputColumn
+                      refId="Package\Stage to NDS - CuaHang\Cập nhật dữ liệu.Inputs[OLE DB Command Input].Columns[MaNguon]"
+                      cachedDataType="i4"
+                      cachedName="MaNguon"
+                      externalMetadataColumnId="Package\Stage to NDS - CuaHang\Cập nhật dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\Stage to NDS - CuaHang\Thêm cột MaNguonDL trong pipeline.Outputs[Derived Column Output].Columns[MaNguon]" />
+                    <inputColumn
+                      refId="Package\Stage to NDS - CuaHang\Cập nhật dữ liệu.Inputs[OLE DB Command Input].Columns[skmaqg]"
+                      cachedDataType="i4"
+                      cachedName="skmaqg"
+                      externalMetadataColumnId="Package\Stage to NDS - CuaHang\Cập nhật dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\Stage to NDS - CuaHang\Kiểm tra xem MaNuoc của từng dòng có tồn tại trong QuocGia_NDS chưa.Outputs[Lookup Match Output].Columns[skmaqg]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Stage to NDS - CuaHang\Cập nhật dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Stage to NDS - CuaHang\Cập nhật dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="i4"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Stage to NDS - CuaHang\Cập nhật dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      dataType="i4"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Stage to NDS - CuaHang\Cập nhật dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      dataType="i4"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Stage to NDS - CuaHang\Cập nhật dữ liệu.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Stage to NDS - CuaHang\Cập nhật dữ liệu.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Stage to NDS - CuaHang\Cập nhật dữ liệu.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Stage to NDS - CuaHang\Cập nhật dữ liệu.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Stage to NDS - CuaHang\Cập nhật dữ liệu.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Stage to NDS - CuaHang\Cập nhật dữ liệu.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Stage to NDS - CuaHang\Cập nhật dữ liệu.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Stage to NDS - CuaHang\Cập nhật dữ liệu.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Stage to NDS - CuaHang\Cập nhật ngày tạo và ngày cập nhật"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Cập nhật ngày tạo và ngày cập nhật"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Stage to NDS - CuaHang\Cập nhật ngày tạo và ngày cập nhật.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Stage to NDS - CuaHang\Cập nhật ngày tạo và ngày cập nhật.Inputs[Derived Column Input].Columns[NgayTao]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="NgayTao"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Output].Columns[NgayTao]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Stage to NDS - CuaHang\Cập nhật ngày tạo và ngày cập nhật.Inputs[Derived Column Input].Columns[NgayCapNhat]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="NgayCapNhat"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Output].Columns[NgayCapNhat]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Stage to NDS - CuaHang\Cập nhật ngày tạo và ngày cập nhật.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Stage to NDS - CuaHang\Cập nhật ngày tạo và ngày cập nhật.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Stage to NDS - CuaHang\Cập nhật ngày tạo và ngày cập nhật.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Stage to NDS - CuaHang\Cập nhật ngày tạo và ngày cập nhật.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Stage to NDS - CuaHang\Cập nhật ngày tạo và ngày cập nhật.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Stage to NDS - CuaHang\Cập nhật ngày tạo và ngày cập nhật.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Stage to NDS - CuaHang\Cập nhật ngày tạo và ngày cập nhật.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Stage to NDS - CuaHang\Cập nhật ngày tạo và ngày cập nhật.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Stage to NDS - CuaHang\Kiểm tra MaLoaiCuaHang của từng dòng có tồn tại trong MaLoaiCuaHang_NDS chưa"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Kiểm tra MaLoaiCuaHang của từng dòng có tồn tại trong MaLoaiCuaHang_NDS chưa"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select MaLoaiCH, skmaloaich from loaicuahang</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select MaLoaiCH, skmaloaich from loaicuahang) [refTable]
+where [refTable].[MaLoaiCH] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="MaLoaiCH" dataType="DT_STR" length="4" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="skmaloaich" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Output].Columns[LoaiCH]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Stage to NDS - CuaHang\Kiểm tra MaLoaiCuaHang của từng dòng có tồn tại trong MaLoaiCuaHang_NDS chưa.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_NDS]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Stage to NDS - CuaHang\Kiểm tra MaLoaiCuaHang của từng dòng có tồn tại trong MaLoaiCuaHang_NDS chưa.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Stage to NDS - CuaHang\Kiểm tra MaLoaiCuaHang của từng dòng có tồn tại trong MaLoaiCuaHang_NDS chưa.Inputs[Lookup Input].Columns[LoaiCH]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="LoaiCH"
+                      lineageId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Output].Columns[LoaiCH]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">MaLoaiCH</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Stage to NDS - CuaHang\Kiểm tra MaLoaiCuaHang của từng dòng có tồn tại trong MaLoaiCuaHang_NDS chưa.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Stage to NDS - CuaHang\Kiểm tra MaLoaiCuaHang của từng dòng có tồn tại trong MaLoaiCuaHang_NDS chưa.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Stage to NDS - CuaHang\Kiểm tra MaLoaiCuaHang của từng dòng có tồn tại trong MaLoaiCuaHang_NDS chưa.Outputs[Lookup Match Output].Columns[skmaloaich]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Stage to NDS - CuaHang\Kiểm tra MaLoaiCuaHang của từng dòng có tồn tại trong MaLoaiCuaHang_NDS chưa.Outputs[Lookup Match Output].Columns[skmaloaich]"
+                      name="skmaloaich"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">skmaloaich</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Stage to NDS - CuaHang\Kiểm tra MaLoaiCuaHang của từng dòng có tồn tại trong MaLoaiCuaHang_NDS chưa.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Stage to NDS - CuaHang\Kiểm tra MaLoaiCuaHang của từng dòng có tồn tại trong MaLoaiCuaHang_NDS chưa.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Stage to NDS - CuaHang\Kiểm tra MaLoaiCuaHang của từng dòng có tồn tại trong MaLoaiCuaHang_NDS chưa.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Stage to NDS - CuaHang\Kiểm tra MaLoaiCuaHang của từng dòng có tồn tại trong MaLoaiCuaHang_NDS chưa.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Stage to NDS - CuaHang\Kiểm tra MaLoaiCuaHang của từng dòng có tồn tại trong MaLoaiCuaHang_NDS chưa.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Stage to NDS - CuaHang\Kiểm tra MaLoaiCuaHang của từng dòng có tồn tại trong MaLoaiCuaHang_NDS chưa.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Stage to NDS - CuaHang\Kiểm tra MaLoaiCuaHang của từng dòng có tồn tại trong MaLoaiCuaHang_NDS chưa.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Stage to NDS - CuaHang\Kiểm tra MaLoaiCuaHang của từng dòng có tồn tại trong MaLoaiCuaHang_NDS chưa.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Stage to NDS - CuaHang\Kiểm tra xem MaCH của từng dòng có tồn tại trong CuaHang_NDS chưa"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Kiểm tra xem MaCH của từng dòng có tồn tại trong CuaHang_NDS chưa"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select MaCH, skmach from cuahang</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select MaCH, skmach from cuahang) [refTable]
+where [refTable].[MaCH] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="MaCH" dataType="DT_STR" length="4" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="skmach" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Output].Columns[MaCH]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Stage to NDS - CuaHang\Kiểm tra xem MaCH của từng dòng có tồn tại trong CuaHang_NDS chưa.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_NDS]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Stage to NDS - CuaHang\Kiểm tra xem MaCH của từng dòng có tồn tại trong CuaHang_NDS chưa.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Stage to NDS - CuaHang\Kiểm tra xem MaCH của từng dòng có tồn tại trong CuaHang_NDS chưa.Inputs[Lookup Input].Columns[MaCH]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="MaCH"
+                      lineageId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Output].Columns[MaCH]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">MaCH</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Stage to NDS - CuaHang\Kiểm tra xem MaCH của từng dòng có tồn tại trong CuaHang_NDS chưa.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="RedirectRow"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Stage to NDS - CuaHang\Kiểm tra xem MaCH của từng dòng có tồn tại trong CuaHang_NDS chưa.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Stage to NDS - CuaHang\Kiểm tra xem MaCH của từng dòng có tồn tại trong CuaHang_NDS chưa.Outputs[Lookup Match Output].Columns[skmach]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Stage to NDS - CuaHang\Kiểm tra xem MaCH của từng dòng có tồn tại trong CuaHang_NDS chưa.Outputs[Lookup Match Output].Columns[skmach]"
+                      name="skmach"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">skmach</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Stage to NDS - CuaHang\Kiểm tra xem MaCH của từng dòng có tồn tại trong CuaHang_NDS chưa.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Stage to NDS - CuaHang\Kiểm tra xem MaCH của từng dòng có tồn tại trong CuaHang_NDS chưa.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Stage to NDS - CuaHang\Kiểm tra xem MaCH của từng dòng có tồn tại trong CuaHang_NDS chưa.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Stage to NDS - CuaHang\Kiểm tra xem MaCH của từng dòng có tồn tại trong CuaHang_NDS chưa.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Stage to NDS - CuaHang\Kiểm tra xem MaCH của từng dòng có tồn tại trong CuaHang_NDS chưa.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Stage to NDS - CuaHang\Kiểm tra xem MaCH của từng dòng có tồn tại trong CuaHang_NDS chưa.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Stage to NDS - CuaHang\Kiểm tra xem MaCH của từng dòng có tồn tại trong CuaHang_NDS chưa.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Stage to NDS - CuaHang\Kiểm tra xem MaCH của từng dòng có tồn tại trong CuaHang_NDS chưa.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Stage to NDS - CuaHang\Kiểm tra xem MaNuoc của từng dòng có tồn tại trong QuocGia_NDS chưa"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Kiểm tra xem MaNuoc của từng dòng có tồn tại trong QuocGia_NDS chưa"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT maqg,skmaqg 
+FROM QuocGia
+ WHERE MaNguon  = 1;</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT maqg,skmaqg 
+FROM QuocGia
+ WHERE MaNguon  = 1;) [refTable]
+where [refTable].[maqg] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="maqg" dataType="DT_STR" length="4" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="skmaqg" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Output].Columns[Nuoc]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Stage to NDS - CuaHang\Kiểm tra xem MaNuoc của từng dòng có tồn tại trong QuocGia_NDS chưa.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_NDS]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Stage to NDS - CuaHang\Kiểm tra xem MaNuoc của từng dòng có tồn tại trong QuocGia_NDS chưa.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Stage to NDS - CuaHang\Kiểm tra xem MaNuoc của từng dòng có tồn tại trong QuocGia_NDS chưa.Inputs[Lookup Input].Columns[Nuoc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="Nuoc"
+                      lineageId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Output].Columns[Nuoc]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">maqg</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Stage to NDS - CuaHang\Kiểm tra xem MaNuoc của từng dòng có tồn tại trong QuocGia_NDS chưa.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Stage to NDS - CuaHang\Kiểm tra xem MaNuoc của từng dòng có tồn tại trong QuocGia_NDS chưa.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Stage to NDS - CuaHang\Kiểm tra xem MaNuoc của từng dòng có tồn tại trong QuocGia_NDS chưa.Outputs[Lookup Match Output].Columns[skmaqg]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Stage to NDS - CuaHang\Kiểm tra xem MaNuoc của từng dòng có tồn tại trong QuocGia_NDS chưa.Outputs[Lookup Match Output].Columns[skmaqg]"
+                      name="skmaqg"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">skmaqg</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Stage to NDS - CuaHang\Kiểm tra xem MaNuoc của từng dòng có tồn tại trong QuocGia_NDS chưa.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Stage to NDS - CuaHang\Kiểm tra xem MaNuoc của từng dòng có tồn tại trong QuocGia_NDS chưa.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Stage to NDS - CuaHang\Kiểm tra xem MaNuoc của từng dòng có tồn tại trong QuocGia_NDS chưa.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Stage to NDS - CuaHang\Kiểm tra xem MaNuoc của từng dòng có tồn tại trong QuocGia_NDS chưa.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Stage to NDS - CuaHang\Kiểm tra xem MaNuoc của từng dòng có tồn tại trong QuocGia_NDS chưa.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Stage to NDS - CuaHang\Kiểm tra xem MaNuoc của từng dòng có tồn tại trong QuocGia_NDS chưa.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Stage to NDS - CuaHang\Kiểm tra xem MaNuoc của từng dòng có tồn tại trong QuocGia_NDS chưa.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Stage to NDS - CuaHang\Kiểm tra xem MaNuoc của từng dòng có tồn tại trong QuocGia_NDS chưa.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Stage to NDS - CuaHang\Kiểm tra xem TrangThai của từng dòng có tồn tại trong TrangThai_NDS chưa"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Kiểm tra xem TrangThai của từng dòng có tồn tại trong TrangThai_NDS chưa"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT SKMaTrangThai 
+FROM TrangThai</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT SKMaTrangThai 
+FROM TrangThai) [refTable]
+where [refTable].[SKMaTrangThai] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="SKMaTrangThai" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Output].Columns[TrangThai]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Stage to NDS - CuaHang\Kiểm tra xem TrangThai của từng dòng có tồn tại trong TrangThai_NDS chưa.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_NDS]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Stage to NDS - CuaHang\Kiểm tra xem TrangThai của từng dòng có tồn tại trong TrangThai_NDS chưa.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Stage to NDS - CuaHang\Kiểm tra xem TrangThai của từng dòng có tồn tại trong TrangThai_NDS chưa.Inputs[Lookup Input].Columns[TrangThai]"
+                      cachedDataType="i4"
+                      cachedName="TrangThai"
+                      lineageId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Output].Columns[TrangThai]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">SKMaTrangThai</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Stage to NDS - CuaHang\Kiểm tra xem TrangThai của từng dòng có tồn tại trong TrangThai_NDS chưa.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="IgnoreFailure"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Stage to NDS - CuaHang\Kiểm tra xem TrangThai của từng dòng có tồn tại trong TrangThai_NDS chưa.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Stage to NDS - CuaHang\Kiểm tra xem TrangThai của từng dòng có tồn tại trong TrangThai_NDS chưa.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Stage to NDS - CuaHang\Kiểm tra xem TrangThai của từng dòng có tồn tại trong TrangThai_NDS chưa.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Stage to NDS - CuaHang\Kiểm tra xem TrangThai của từng dòng có tồn tại trong TrangThai_NDS chưa.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Stage to NDS - CuaHang\Kiểm tra xem TrangThai của từng dòng có tồn tại trong TrangThai_NDS chưa.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Stage to NDS - CuaHang\Kiểm tra xem TrangThai của từng dòng có tồn tại trong TrangThai_NDS chưa.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Stage to NDS - CuaHang\Kiểm tra xem TrangThai của từng dòng có tồn tại trong TrangThai_NDS chưa.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Stage to NDS - CuaHang\Kiểm tra xem TrangThai của từng dòng có tồn tại trong TrangThai_NDS chưa.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Stage to NDS - CuaHang\Kiểm tra xem TrangThai của từng dòng có tồn tại trong TrangThai_NDS chưa.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Stage to NDS - CuaHang\Thêm cột MaNguonDL trong pipeline"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Thêm cột MaNguonDL trong pipeline"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Stage to NDS - CuaHang\Thêm cột MaNguonDL trong pipeline.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Stage to NDS - CuaHang\Thêm cột MaNguonDL trong pipeline.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Stage to NDS - CuaHang\Thêm cột MaNguonDL trong pipeline.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Stage to NDS - CuaHang\Thêm cột MaNguonDL trong pipeline.Outputs[Derived Column Output].Columns[MaNguon]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Stage to NDS - CuaHang\Thêm cột MaNguonDL trong pipeline.Outputs[Derived Column Output].Columns[MaNguon]"
+                      name="MaNguon"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">1</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">1</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Stage to NDS - CuaHang\Thêm cột MaNguonDL trong pipeline.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Stage to NDS - CuaHang\Thêm cột MaNguonDL trong pipeline.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Stage to NDS - CuaHang\Thêm cột MaNguonDL trong pipeline.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Stage to NDS - CuaHang\Thêm cột MaNguonDL trong pipeline.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Stage to NDS - CuaHang\Thêm cột MaNguonDL trong pipeline.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Stage to NDS - CuaHang\Thêm cột MaNguonDL trong pipeline.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Stage to NDS - CuaHang\Thêm dữ liệu vào bảng NoMatch-QuocGia"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Thêm dữ liệu vào bảng NoMatch-QuocGia"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[NoMatch_CuaHang]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Stage to NDS - CuaHang\Thêm dữ liệu vào bảng NoMatch-QuocGia.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_NDS]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Stage to NDS - CuaHang\Thêm dữ liệu vào bảng NoMatch-QuocGia.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Stage to NDS - CuaHang\Thêm dữ liệu vào bảng NoMatch-QuocGia.Inputs[OLE DB Destination Input].Columns[NgayTao]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="NgayTao"
+                      externalMetadataColumnId="Package\Stage to NDS - CuaHang\Thêm dữ liệu vào bảng NoMatch-QuocGia.Inputs[OLE DB Destination Input].ExternalColumns[NgayTao]"
+                      lineageId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Output].Columns[NgayTao]" />
+                    <inputColumn
+                      refId="Package\Stage to NDS - CuaHang\Thêm dữ liệu vào bảng NoMatch-QuocGia.Inputs[OLE DB Destination Input].Columns[NgayCapNhat]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="NgayCapNhat"
+                      externalMetadataColumnId="Package\Stage to NDS - CuaHang\Thêm dữ liệu vào bảng NoMatch-QuocGia.Inputs[OLE DB Destination Input].ExternalColumns[NgayCapNhat]"
+                      lineageId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Output].Columns[NgayCapNhat]" />
+                    <inputColumn
+                      refId="Package\Stage to NDS - CuaHang\Thêm dữ liệu vào bảng NoMatch-QuocGia.Inputs[OLE DB Destination Input].Columns[TrangThai]"
+                      cachedDataType="i4"
+                      cachedName="TrangThai"
+                      externalMetadataColumnId="Package\Stage to NDS - CuaHang\Thêm dữ liệu vào bảng NoMatch-QuocGia.Inputs[OLE DB Destination Input].ExternalColumns[TrangThai]"
+                      lineageId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Output].Columns[TrangThai]" />
+                    <inputColumn
+                      refId="Package\Stage to NDS - CuaHang\Thêm dữ liệu vào bảng NoMatch-QuocGia.Inputs[OLE DB Destination Input].Columns[MaCH]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="MaCH"
+                      externalMetadataColumnId="Package\Stage to NDS - CuaHang\Thêm dữ liệu vào bảng NoMatch-QuocGia.Inputs[OLE DB Destination Input].ExternalColumns[MaCH]"
+                      lineageId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Output].Columns[MaCH]" />
+                    <inputColumn
+                      refId="Package\Stage to NDS - CuaHang\Thêm dữ liệu vào bảng NoMatch-QuocGia.Inputs[OLE DB Destination Input].Columns[TenCH]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TenCH"
+                      externalMetadataColumnId="Package\Stage to NDS - CuaHang\Thêm dữ liệu vào bảng NoMatch-QuocGia.Inputs[OLE DB Destination Input].ExternalColumns[TenCH]"
+                      lineageId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Output].Columns[TenCH]" />
+                    <inputColumn
+                      refId="Package\Stage to NDS - CuaHang\Thêm dữ liệu vào bảng NoMatch-QuocGia.Inputs[OLE DB Destination Input].Columns[LoaiCH]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="LoaiCH"
+                      externalMetadataColumnId="Package\Stage to NDS - CuaHang\Thêm dữ liệu vào bảng NoMatch-QuocGia.Inputs[OLE DB Destination Input].ExternalColumns[LoaiCH]"
+                      lineageId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Output].Columns[LoaiCH]" />
+                    <inputColumn
+                      refId="Package\Stage to NDS - CuaHang\Thêm dữ liệu vào bảng NoMatch-QuocGia.Inputs[OLE DB Destination Input].Columns[Nuoc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="Nuoc"
+                      externalMetadataColumnId="Package\Stage to NDS - CuaHang\Thêm dữ liệu vào bảng NoMatch-QuocGia.Inputs[OLE DB Destination Input].ExternalColumns[Nuoc]"
+                      lineageId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Output].Columns[Nuoc]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Stage to NDS - CuaHang\Thêm dữ liệu vào bảng NoMatch-QuocGia.Inputs[OLE DB Destination Input].ExternalColumns[MaCH]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="MaCH" />
+                    <externalMetadataColumn
+                      refId="Package\Stage to NDS - CuaHang\Thêm dữ liệu vào bảng NoMatch-QuocGia.Inputs[OLE DB Destination Input].ExternalColumns[TenCH]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TenCH" />
+                    <externalMetadataColumn
+                      refId="Package\Stage to NDS - CuaHang\Thêm dữ liệu vào bảng NoMatch-QuocGia.Inputs[OLE DB Destination Input].ExternalColumns[LoaiCH]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="LoaiCH" />
+                    <externalMetadataColumn
+                      refId="Package\Stage to NDS - CuaHang\Thêm dữ liệu vào bảng NoMatch-QuocGia.Inputs[OLE DB Destination Input].ExternalColumns[Nuoc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="Nuoc" />
+                    <externalMetadataColumn
+                      refId="Package\Stage to NDS - CuaHang\Thêm dữ liệu vào bảng NoMatch-QuocGia.Inputs[OLE DB Destination Input].ExternalColumns[NgayTao]"
+                      dataType="dbTimeStamp"
+                      name="NgayTao" />
+                    <externalMetadataColumn
+                      refId="Package\Stage to NDS - CuaHang\Thêm dữ liệu vào bảng NoMatch-QuocGia.Inputs[OLE DB Destination Input].ExternalColumns[NgayCapNhat]"
+                      dataType="dbTimeStamp"
+                      name="NgayCapNhat" />
+                    <externalMetadataColumn
+                      refId="Package\Stage to NDS - CuaHang\Thêm dữ liệu vào bảng NoMatch-QuocGia.Inputs[OLE DB Destination Input].ExternalColumns[TrangThai]"
+                      dataType="i4"
+                      name="TrangThai" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Stage to NDS - CuaHang\Thêm dữ liệu vào bảng NoMatch-QuocGia.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Stage to NDS - CuaHang\Thêm dữ liệu vào bảng NoMatch-QuocGia.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Stage to NDS - CuaHang\Thêm dữ liệu vào bảng NoMatch-QuocGia.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Stage to NDS - CuaHang\Thêm dữ liệu vào bảng NoMatch-QuocGia.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Stage to NDS - CuaHang\Thêm dữ liệu vào bảng NoMatch-QuocGia.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Stage to NDS - CuaHang\Thêm dữ liệu vào bảng NoMatch-QuocGia.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Stage to NDS - CuaHang.Paths[Derived Column Output]"
+              endId="Package\Stage to NDS - CuaHang\Kiểm tra xem TrangThai của từng dòng có tồn tại trong TrangThai_NDS chưa.Inputs[Lookup Input]"
+              name="Derived Column Output"
+              startId="Package\Stage to NDS - CuaHang\Thêm cột MaNguonDL trong pipeline.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Stage to NDS - CuaHang.Paths[Derived Column Output1]"
+              endId="Package\Stage to NDS - CuaHang\Cua Hang NDS.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Stage to NDS - CuaHang\Cập nhật ngày tạo và ngày cập nhật.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Stage to NDS - CuaHang.Paths[Lookup Error Output]"
+              endId="Package\Stage to NDS - CuaHang\Cập nhật ngày tạo và ngày cập nhật.Inputs[Derived Column Input]"
+              name="Lookup Error Output"
+              startId="Package\Stage to NDS - CuaHang\Kiểm tra xem MaCH của từng dòng có tồn tại trong CuaHang_NDS chưa.Outputs[Lookup Error Output]" />
+            <path
+              refId="Package\Stage to NDS - CuaHang.Paths[Lookup Match Output]"
+              endId="Package\Stage to NDS - CuaHang\Kiểm tra MaLoaiCuaHang của từng dòng có tồn tại trong MaLoaiCuaHang_NDS chưa.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Stage to NDS - CuaHang\Kiểm tra xem TrangThai của từng dòng có tồn tại trong TrangThai_NDS chưa.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Stage to NDS - CuaHang.Paths[Lookup Match Output1]"
+              endId="Package\Stage to NDS - CuaHang\Kiểm tra xem MaNuoc của từng dòng có tồn tại trong QuocGia_NDS chưa.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Stage to NDS - CuaHang\Kiểm tra MaLoaiCuaHang của từng dòng có tồn tại trong MaLoaiCuaHang_NDS chưa.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Stage to NDS - CuaHang.Paths[Lookup Match Output2]"
+              endId="Package\Stage to NDS - CuaHang\Kiểm tra xem MaCH của từng dòng có tồn tại trong CuaHang_NDS chưa.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Stage to NDS - CuaHang\Kiểm tra xem MaNuoc của từng dòng có tồn tại trong QuocGia_NDS chưa.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Stage to NDS - CuaHang.Paths[Lookup Match Output3]"
+              endId="Package\Stage to NDS - CuaHang\Cập nhật dữ liệu.Inputs[OLE DB Command Input]"
+              name="Lookup Match Output"
+              startId="Package\Stage to NDS - CuaHang\Kiểm tra xem MaCH của từng dòng có tồn tại trong CuaHang_NDS chưa.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Stage to NDS - CuaHang.Paths[Lookup No Match Output]"
+              endId="Package\Stage to NDS - CuaHang\Thêm dữ liệu vào bảng NoMatch-QuocGia.Inputs[OLE DB Destination Input]"
+              name="Lookup No Match Output"
+              startId="Package\Stage to NDS - CuaHang\Kiểm tra xem MaNuoc của từng dòng có tồn tại trong QuocGia_NDS chưa.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\Stage to NDS - CuaHang.Paths[OLE DB Source Output]"
+              endId="Package\Stage to NDS - CuaHang\Thêm cột MaNguonDL trong pipeline.Inputs[Derived Column Input]"
+              name="OLE DB Source Output"
+              startId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="198.333333333334,42"
+          Id="Package\Stage to NDS - CuaHang"
+          TopLeft="292,113.135139509219" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Stage to NDS - CuaHang">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="152.333333333334,42"
+          Id="Package\Stage to NDS - CuaHang\Cua Hang NDS"
+          TopLeft="607.993204624359,634.188280827303" />
+        <NodeLayout
+          Size="420.333333333334,42"
+          Id="Package\Stage to NDS - CuaHang\Kiểm tra xem MaCH của từng dòng có tồn tại trong CuaHang_NDS chưa"
+          TopLeft="51.3333333333333,463.594598561155" />
+        <NodeLayout
+          Size="456,41.6666666666667"
+          Id="Package\Stage to NDS - CuaHang\Kiểm tra xem TrangThai của từng dòng có tồn tại trong TrangThai_NDS chưa"
+          TopLeft="305.714287770037,204.338623821288" />
+        <NodeLayout
+          Size="249.666666666667,41.6666666666667"
+          Id="Package\Stage to NDS - CuaHang\Cập nhật ngày tạo và ngày cập nhật"
+          TopLeft="562.20952997678,565.964389010664" />
+        <NodeLayout
+          Size="482.333333333334,42"
+          Id="Package\Stage to NDS - CuaHang\Kiểm tra MaLoaiCuaHang của từng dòng có tồn tại trong MaLoaiCuaHang_NDS chưa"
+          TopLeft="285.999999999999,276.837842741702" />
+        <NodeLayout
+          Size="278.333333333334,42"
+          Id="Package\Stage to NDS - CuaHang\Thêm dữ liệu vào bảng NoMatch-QuocGia"
+          TopLeft="652.666666666667,444.729735054702" />
+        <NodeLayout
+          Size="156.333333333334,42"
+          Id="Package\Stage to NDS - CuaHang\Cập nhật dữ liệu"
+          TopLeft="198.666666666667,552.018028586458" />
+        <NodeLayout
+          Size="427,42"
+          Id="Package\Stage to NDS - CuaHang\Kiểm tra xem MaNuoc của từng dòng có tồn tại trong QuocGia_NDS chưa"
+          TopLeft="320.295238800762,353.518276775222" />
+        <NodeLayout
+          Size="158,42"
+          Id="Package\Stage to NDS - CuaHang\CuaHang_Stage"
+          TopLeft="446.190480752055,60" />
+        <NodeLayout
+          Size="251.333333333334,41.6666666666667"
+          Id="Package\Stage to NDS - CuaHang\Thêm cột MaNguonDL trong pipeline"
+          TopLeft="399.238098960343,133.223210217739" />
+        <EdgeLayout
+          Id="Package\Stage to NDS - CuaHang.Paths[OLE DB Source Output]"
+          TopLeft="525.047623189532,102">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.2232102177394"
+              Start="0,0"
+              End="0,23.7232102177394">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.7232102177394" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Stage to NDS - CuaHang.Paths[Lookup No Match Output]"
+          TopLeft="603.628572134095,395.518276775222">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="188.204761199238,49.2114582794798"
+              Start="0,0"
+              End="188.204761199238,41.7114582794798">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.7948096299168" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.7948096299168"
+                    Point2="0,19.7948096299168"
+                    Point3="4,19.7948096299168" />
+                  <mssgle:LineSegment
+                    End="184.204761199238,19.7948096299168" />
+                  <mssgle:CubicBezierSegment
+                    Point1="184.204761199238,19.7948096299168"
+                    Point2="188.204761199238,19.7948096299168"
+                    Point3="188.204761199238,23.7948096299168" />
+                  <mssgle:LineSegment
+                    End="188.204761199238,41.7114582794798" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="38.295993880869,24.7948096299168,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Stage to NDS - CuaHang.Paths[Lookup Match Output3]"
+          TopLeft="192.777777777778,505.594598561155">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="84.0555555555559,46.4234300253029"
+              Start="0,0"
+              End="84.0555555555559,38.9234300253029">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.6749964993555" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.6749964993555"
+                    Point2="0,18.6749964993555"
+                    Point3="4,18.6749964993555" />
+                  <mssgle:LineSegment
+                    End="80.0555555555559,18.6749964993555" />
+                  <mssgle:CubicBezierSegment
+                    Point1="80.0555555555559,18.6749964993555"
+                    Point2="84.0555555555559,18.6749964993555"
+                    Point3="84.0555555555559,22.6749964993555" />
+                  <mssgle:LineSegment
+                    End="84.0555555555559,38.9234300253029" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-6.16360894097203,23.6749964993555,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Stage to NDS - CuaHang.Paths[Lookup Match Output2]"
+          TopLeft="533.795238800762,395.518276775222">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-272.295238800762,68.076321785933"
+              Start="0,0"
+              End="-272.295238800762,60.576321785933">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.0381608929665" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30.0381608929665"
+                    Point2="0,34.0381608929665"
+                    Point3="-4,34.0381608929665" />
+                  <mssgle:LineSegment
+                    End="-268.295238800762,34.0381608929665" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-268.295238800762,34.0381608929665"
+                    Point2="-272.295238800762,34.0381608929665"
+                    Point3="-272.295238800762,38.0381608929665" />
+                  <mssgle:LineSegment
+                    End="-272.295238800762,60.576321785933" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-184.339006119131,39.0381608929665,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Stage to NDS - CuaHang.Paths[Lookup Match Output1]"
+          TopLeft="530.480952733714,318.837842741702">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34.68043403352"
+              Start="0,0"
+              End="0,27.18043403352">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.18043403352" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,7.78552951675999,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Stage to NDS - CuaHang.Paths[Lookup Match Output]"
+          TopLeft="530.440477218352,246.005290487954">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30.8325522537479"
+              Start="0,0"
+              End="0,23.3325522537479">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.3325522537479" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,5.86158862687395,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Stage to NDS - CuaHang.Paths[Lookup Error Output]"
+          TopLeft="330.222222222222,505.594598561155">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="356.820641087891,60.3697904495086"
+              Start="0,0"
+              End="356.820641087891,52.8697904495086">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2852719994389" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2852719994389"
+                    Point2="0,24.2852719994389"
+                    Point3="4,24.2852719994389" />
+                  <mssgle:LineSegment
+                    End="352.820641087891,24.2852719994389" />
+                  <mssgle:CubicBezierSegment
+                    Point1="352.820641087891,24.2852719994389"
+                    Point2="356.820641087891,24.2852719994389"
+                    Point3="356.820641087891,28.2852719994389" />
+                  <mssgle:LineSegment
+                    End="356.820641087891,52.8697904495086" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="132.543933825195,29.2852719994389,91.7327734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Stage to NDS - CuaHang.Paths[Derived Column Output1]"
+          TopLeft="685.601367300569,607.63105567733">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,26.5572251499724"
+              Start="0,0"
+              End="0,19.0572251499724">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.0572251499724" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Stage to NDS - CuaHang.Paths[Derived Column Output]"
+          TopLeft="524.90476562701,174.889876884406">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="8.80952214302732,29.4487469368817"
+              Start="0,0"
+              End="8.80952214302732,21.9487469368817">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.7243734684408" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.7243734684408"
+                    Point2="0,14.7243734684408"
+                    Point3="4,14.7243734684408" />
+                  <mssgle:LineSegment
+                    End="4.80952214302732,14.7243734684408" />
+                  <mssgle:CubicBezierSegment
+                    Point1="4.80952214302732,14.7243734684408"
+                    Point2="8.80952214302732,14.7243734684408"
+                    Point3="8.80952214302732,18.7243734684408" />
+                  <mssgle:LineSegment
+                    End="8.80952214302732,21.9487469368817" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Stage to NDS - CuaHang\Cua Hang NDS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Stage to NDS - CuaHang\Kiểm tra xem MaCH của từng dòng có tồn tại trong CuaHang_NDS chưa">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Stage to NDS - CuaHang\Kiểm tra xem TrangThai của từng dòng có tồn tại trong TrangThai_NDS chưa">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Stage to NDS - CuaHang\Kiểm tra MaLoaiCuaHang của từng dòng có tồn tại trong MaLoaiCuaHang_NDS chưa">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Stage to NDS - CuaHang\Thêm dữ liệu vào bảng NoMatch-QuocGia">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Stage to NDS - CuaHang\Kiểm tra xem MaNuoc của từng dòng có tồn tại trong QuocGia_NDS chưa">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Stage to NDS - CuaHang\CuaHang_Stage">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -68,9 +68,10 @@ END;
 
 /* Create new table */
 CREATE TABLE KhachHang_Stage (
-	[MaKH] varchar(4) NOT NULL,
+  [MaKH] varchar(4) NOT NULL,
   [TenKH] varchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-  [DiaChi] varchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+  [ThanhPho] varchar(100) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+  [QuocGia] varchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
   [NgayTao] datetime NULL,
   [NgayCapNhat] datetime NULL,
   [TrangThai] int NULL,

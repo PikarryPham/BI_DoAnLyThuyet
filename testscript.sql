@@ -88,6 +88,13 @@ FROM Nuoc_Jupiter;
 
 USE DALT_Jade
 GO
+select top 10 * from KhachHang_Jade;
+
+use DALT_NDS
+GO
+select * from khachhang
+select * from quocgia
+select * from trangthai
 
 SELECT * FROM KhachHang_Jade
 WHERE DiaChi LIKE '%Kazakhstan%'
