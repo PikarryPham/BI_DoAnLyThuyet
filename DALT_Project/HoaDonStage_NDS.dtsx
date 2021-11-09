@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="11/8/2021 12:18:46 PM"
@@ -4346,40 +4346,40 @@ where [refTable].[SKMaTrangThai] = ?</property>
               name="Derived Column Output"
               startId="Package\Stage to NDS\Thêm cột MaNguonDL trong pipeline.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Stage to NDS.Paths[Lookup Error Output6]"
-              endId="Package\Stage to NDS\Thêm vào bảng NoMatch_HoaDon 1 1.Inputs[OLE DB Destination Input]"
-              name="Lookup Error Output"
-              startId="Package\Stage to NDS\Kiểm tra MaCH có trong CuaHangNDS không.Outputs[Lookup Error Output]" />
-            <path
               refId="Package\Stage to NDS.Paths[Lookup Error Output5]"
+              endId="Package\Stage to NDS\Thêm vào bảng NoMatch_HoaDon 1 3.Inputs[OLE DB Destination Input]"
+              name="Lookup Error Output"
+              startId="Package\Stage to NDS\Kiểm tra xem TrangThai của từng dòng có tồn tại trong TrangThai_NDS chưa.Outputs[Lookup Error Output]" />
+            <path
+              refId="Package\Stage to NDS.Paths[Lookup Error Output4]"
+              endId="Package\Stage to NDS\Cập nhật lại ngaytao và ngaycapnhat trong NDS.Inputs[Derived Column Input]"
+              name="Lookup Error Output"
+              startId="Package\Stage to NDS\Kiểm tra mã hóa đơn có trong HoaDonNDS không.Outputs[Lookup Error Output]" />
+            <path
+              refId="Package\Stage to NDS.Paths[Lookup Error Output6]"
+              endId="Package\Stage to NDS\Thêm vào bảng NoMatch_HoaDon 1 2 1.Inputs[OLE DB Destination Input]"
+              name="Lookup Error Output"
+              startId="Package\Stage to NDS\Kiểm tra mã khách hàng có trong KhachHangNDS không.Outputs[Lookup Error Output]" />
+            <path
+              refId="Package\Stage to NDS.Paths[Lookup Error Output2]"
+              endId="Package\Stage to NDS\Thêm vào bảng NoMatch_HoaDon 1 2.Inputs[OLE DB Destination Input]"
+              name="Lookup Error Output"
+              startId="Package\Stage to NDS\Kiểm tra MaKH trong KhachHangNDS chưa.Outputs[Lookup Error Output]" />
+            <path
+              refId="Package\Stage to NDS.Paths[Lookup Error Output1]"
+              endId="Package\Stage to NDS\Cập nhật ngaycapnhat trong nds.Inputs[Derived Column Input]"
+              name="Lookup Error Output"
+              startId="Package\Stage to NDS\Kiểm tra MaHD đã có trong HoaDonNDS chưa.Outputs[Lookup Error Output]" />
+            <path
+              refId="Package\Stage to NDS.Paths[Lookup Error Output]"
               endId="Package\Stage to NDS\Thêm vào bảng NoMatch_HoaDon 1 1 1.Inputs[OLE DB Destination Input]"
               name="Lookup Error Output"
               startId="Package\Stage to NDS\Kiểm tra mã cửa hàng có trong CuaHangNDS không.Outputs[Lookup Error Output]" />
             <path
               refId="Package\Stage to NDS.Paths[Lookup Error Output3]"
-              endId="Package\Stage to NDS\Thêm vào bảng NoMatch_HoaDon 1 2.Inputs[OLE DB Destination Input]"
+              endId="Package\Stage to NDS\Thêm vào bảng NoMatch_HoaDon 1 1.Inputs[OLE DB Destination Input]"
               name="Lookup Error Output"
-              startId="Package\Stage to NDS\Kiểm tra MaKH trong KhachHangNDS chưa.Outputs[Lookup Error Output]" />
-            <path
-              refId="Package\Stage to NDS.Paths[Lookup Error Output4]"
-              endId="Package\Stage to NDS\Cập nhật ngaycapnhat trong nds.Inputs[Derived Column Input]"
-              name="Lookup Error Output"
-              startId="Package\Stage to NDS\Kiểm tra MaHD đã có trong HoaDonNDS chưa.Outputs[Lookup Error Output]" />
-            <path
-              refId="Package\Stage to NDS.Paths[Lookup Error Output1]"
-              endId="Package\Stage to NDS\Cập nhật lại ngaytao và ngaycapnhat trong NDS.Inputs[Derived Column Input]"
-              name="Lookup Error Output"
-              startId="Package\Stage to NDS\Kiểm tra mã hóa đơn có trong HoaDonNDS không.Outputs[Lookup Error Output]" />
-            <path
-              refId="Package\Stage to NDS.Paths[Lookup Error Output]"
-              endId="Package\Stage to NDS\Thêm vào bảng NoMatch_HoaDon 1 3.Inputs[OLE DB Destination Input]"
-              name="Lookup Error Output"
-              startId="Package\Stage to NDS\Kiểm tra xem TrangThai của từng dòng có tồn tại trong TrangThai_NDS chưa.Outputs[Lookup Error Output]" />
-            <path
-              refId="Package\Stage to NDS.Paths[Lookup Error Output2]"
-              endId="Package\Stage to NDS\Thêm vào bảng NoMatch_HoaDon 1 2 1.Inputs[OLE DB Destination Input]"
-              name="Lookup Error Output"
-              startId="Package\Stage to NDS\Kiểm tra mã khách hàng có trong KhachHangNDS không.Outputs[Lookup Error Output]" />
+              startId="Package\Stage to NDS\Kiểm tra MaCH có trong CuaHangNDS không.Outputs[Lookup Error Output]" />
             <path
               refId="Package\Stage to NDS.Paths[Lookup Match Output]"
               endId="Package\Stage to NDS\Kiểm tra MaHD đã có trong HoaDonNDS chưa.Inputs[Lookup Input]"
@@ -4421,15 +4421,15 @@ where [refTable].[SKMaTrangThai] = ?</property>
               name="Lookup Match Output"
               startId="Package\Stage to NDS\Kiểm tra xem TrangThai của từng dòng có tồn tại trong TrangThai_NDS chưa.Outputs[Lookup Match Output]" />
             <path
-              refId="Package\Stage to NDS.Paths[OLE DB Source Output1]"
-              endId="Package\Stage to NDS\Thêm cột MaNguonDL trong pipeline, thay số bằng 2 hoặc 3 tùy nguồn 1.Inputs[Derived Column Input]"
-              name="OLE DB Source Output"
-              startId="Package\Stage to NDS\Webtower_Stage.Outputs[OLE DB Source Output]" />
-            <path
               refId="Package\Stage to NDS.Paths[OLE DB Source Output]"
               endId="Package\Stage to NDS\Thêm cột MaNguonDL trong pipeline.Inputs[Derived Column Input]"
               name="OLE DB Source Output"
               startId="Package\Stage to NDS\Jade_Stage.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Stage to NDS.Paths[OLE DB Source Output1]"
+              endId="Package\Stage to NDS\Thêm cột MaNguonDL trong pipeline, thay số bằng 2 hoặc 3 tùy nguồn 1.Inputs[Derived Column Input]"
+              name="OLE DB Source Output"
+              startId="Package\Stage to NDS\Webtower_Stage.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\Stage to NDS.Paths[Union All Output 1]"
               endId="Package\Stage to NDS\OLE DB Destination.Inputs[OLE DB Destination Input]"
@@ -4885,7 +4885,7 @@ where [refTable].[SKMaTrangThai] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Stage to NDS.Paths[Lookup Error Output2]"
+          Id="Package\Stage to NDS.Paths[Lookup Error Output6]"
           TopLeft="934.569436574769,543.385974249242">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4921,7 +4921,7 @@ where [refTable].[SKMaTrangThai] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Stage to NDS.Paths[Lookup Error Output]"
+          Id="Package\Stage to NDS.Paths[Lookup Error Output5]"
           TopLeft="923.180548319179,371.649128911458">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4957,7 +4957,7 @@ where [refTable].[SKMaTrangThai] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Stage to NDS.Paths[Lookup Error Output1]"
+          Id="Package\Stage to NDS.Paths[Lookup Error Output4]"
           TopLeft="1052.87499226071,621.973694345958">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4993,7 +4993,7 @@ where [refTable].[SKMaTrangThai] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Stage to NDS.Paths[Lookup Error Output6]"
+          Id="Package\Stage to NDS.Paths[Lookup Error Output3]"
           TopLeft="1569.33331724008,463.333341163502">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -5029,7 +5029,7 @@ where [refTable].[SKMaTrangThai] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Stage to NDS.Paths[Lookup Error Output3]"
+          Id="Package\Stage to NDS.Paths[Lookup Error Output2]"
           TopLeft="1560.31942832325,544.280707343684">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -5065,7 +5065,7 @@ where [refTable].[SKMaTrangThai] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Stage to NDS.Paths[Lookup Error Output4]"
+          Id="Package\Stage to NDS.Paths[Lookup Error Output1]"
           TopLeft="1565.19442836982,612.70176126312">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -5101,7 +5101,7 @@ where [refTable].[SKMaTrangThai] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Stage to NDS.Paths[Lookup Error Output5]"
+          Id="Package\Stage to NDS.Paths[Lookup Error Output]"
           TopLeft="944.111102989978,468.807025477057">
           <EdgeLayout.Curve>
             <mssgle:Curve

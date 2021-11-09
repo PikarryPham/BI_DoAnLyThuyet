@@ -87,7 +87,7 @@ END;
 /* Create new table */
 CREATE TABLE HoaDon (
   SKMaHD INTEGER IDENTITY(1,1) PRIMARY KEY NOT NULL,
-  MaHD int,
+  MaHD varchar(4) ,
   [NgayBan] datetime NULL,
   [NgayCapNhat] datetime NULL,
   MaKH int,

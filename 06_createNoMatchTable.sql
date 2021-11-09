@@ -34,7 +34,8 @@ CREATE TABLE NoMatch_HoaDon (
 	[MaCH] [varchar](4) NULL,
 	[NgayBan] [datetime] NULL,
 	[NgayCapNhat] [datetime] NULL,
-	[TrangThai] [int] NULL
+	[TrangThai] [int] NULL,
+	[MaNguon] int
 );
 
 IF OBJECT_ID(N'dbo.NoMatch_CuaHang', N'U') IS NOT NULL
@@ -53,3 +54,35 @@ CREATE TABLE NoMatch_CuaHang (
 	[NgayCapNhat] [datetime] NULL,
 	[TrangThai] [int] NULL
 );
+IF OBJECT_ID(N'dbo.NoMatch_ChiTietHoaDon', N'U') IS NOT NULL
+BEGIN
+    PRINT 'Table Exists';
+	DROP TABLE dbo.NoMatch_ChiTietHoaDon;
+	PRINT 'Delete Table Successfully';
+END;
+CREATE TABLE NoMatch_ChiTietHoaDon(
+	[MaChiTiet] [int] NOT NULL,
+	[MaHD] [varchar](4) NULL,
+	[MaSP] [varchar](4) NULL,
+	[NgayTao] [datetime] NULL,
+	[NgayCapNhat] [datetime] NULL,
+	[TrangThai] [int] NULL,
+	[MaNguon] int
+);
+IF OBJECT_ID(N'dbo.NoMatch_SanPham', N'U') IS NOT NULL
+BEGIN
+    PRINT 'Table Exists';
+	DROP TABLE dbo.NoMatch_SanPham;
+	PRINT 'Delete Table Successfully';
+END;
+CREATE TABLE NoMatch_SanPham (
+	[MaSP] [varchar](4) NOT NULL,
+	[TenSP] [varchar](50) NULL,
+	[GiaSP] [int] NULL,
+	[LoaiSP] [varchar](4) NULL,
+	[NgayTao] [datetime] NULL,
+	[NgayCapNhap] [datetime] NULL,
+	[TrangThai] [nchar](10) NULL
+);
+
+
