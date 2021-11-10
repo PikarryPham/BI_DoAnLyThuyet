@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="20"
-  DTS:VersionGUID="{A4475DAA-051D-44AE-BCB2-C2EDE333F6BE}">
+  DTS:VersionBuild="22"
+  DTS:VersionGUID="{EBB1304A-95CA-4BEE-A7E3-BA5B881E3A01}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1562,7 +1562,7 @@ where [refTable].[MakH] = ?</property>
                   dataType="System.Int32"
                   description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
                   name="NoMatchBehavior"
-                  typeConverter="LookupNoMatchBehavior">0</property>
+                  typeConverter="LookupNoMatchBehavior">1</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
@@ -1632,7 +1632,6 @@ where [refTable].[MakH] = ?</property>
                 <output
                   refId="Package\Stage to NDS\Kiểm tra xem MaKH của từng dòng có tồn tại trong KhachHang_NDS chưa.Outputs[Lookup Match Output]"
                   errorOrTruncationOperation="Lookup"
-                  errorRowDisposition="RedirectRow"
                   exclusionGroup="1"
                   name="Lookup Match Output"
                   synchronousInputId="Package\Stage to NDS\Kiểm tra xem MaKH của từng dòng có tồn tại trong KhachHang_NDS chưa.Inputs[Lookup Input]">
@@ -1722,7 +1721,7 @@ where [refTable].[MakH] = ?</property>
                   dataType="System.Int32"
                   description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
                   name="NoMatchBehavior"
-                  typeConverter="LookupNoMatchBehavior">0</property>
+                  typeConverter="LookupNoMatchBehavior">1</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
@@ -1792,7 +1791,6 @@ where [refTable].[MakH] = ?</property>
                 <output
                   refId="Package\Stage to NDS\Kiểm tra xem MaKH của từng dòng có tồn tại trong KhachHang_NDS không.Outputs[Lookup Match Output]"
                   errorOrTruncationOperation="Lookup"
-                  errorRowDisposition="RedirectRow"
                   exclusionGroup="1"
                   name="Lookup Match Output"
                   synchronousInputId="Package\Stage to NDS\Kiểm tra xem MaKH của từng dòng có tồn tại trong KhachHang_NDS không.Inputs[Lookup Input]">
@@ -3109,11 +3107,12 @@ where [refTable].[SKMaTrangThai] = ?</property>
               version="1">
               <inputs>
                 <input
-                  refId="Package\Stage to NDS\Union All.Inputs[Union All Input 1]"
-                  name="Union All Input 1">
+                  refId="Package\Stage to NDS\Union All.Inputs[Union All Input 3]"
+                  hasSideEffects="true"
+                  name="Union All Input 3">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Stage to NDS\Union All.Inputs[Union All Input 1].Columns[NgayTao]"
+                      refId="Package\Stage to NDS\Union All.Inputs[Union All Input 3].Columns[NgayTao]"
                       cachedDataType="dbTimeStamp"
                       cachedName="NgayTao"
                       lineageId="Package\Stage to NDS\KhachHang_Stage_Jade.Outputs[OLE DB Source Output].Columns[NgayTao]">
@@ -3126,7 +3125,7 @@ where [refTable].[SKMaTrangThai] = ?</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Stage to NDS\Union All.Inputs[Union All Input 1].Columns[NgayCapNhat]"
+                      refId="Package\Stage to NDS\Union All.Inputs[Union All Input 3].Columns[NgayCapNhat]"
                       cachedDataType="dbTimeStamp"
                       cachedName="NgayCapNhat"
                       lineageId="Package\Stage to NDS\KhachHang_Stage_Jade.Outputs[OLE DB Source Output].Columns[NgayCapNhat]">
@@ -3139,7 +3138,7 @@ where [refTable].[SKMaTrangThai] = ?</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Stage to NDS\Union All.Inputs[Union All Input 1].Columns[TrangThai]"
+                      refId="Package\Stage to NDS\Union All.Inputs[Union All Input 3].Columns[TrangThai]"
                       cachedDataType="i4"
                       cachedName="TrangThai"
                       lineageId="Package\Stage to NDS\KhachHang_Stage_Jade.Outputs[OLE DB Source Output].Columns[TrangThai]">
@@ -3152,7 +3151,7 @@ where [refTable].[SKMaTrangThai] = ?</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Stage to NDS\Union All.Inputs[Union All Input 1].Columns[MaKH]"
+                      refId="Package\Stage to NDS\Union All.Inputs[Union All Input 3].Columns[MaKH]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="4"
@@ -3167,7 +3166,7 @@ where [refTable].[SKMaTrangThai] = ?</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Stage to NDS\Union All.Inputs[Union All Input 1].Columns[TenKH]"
+                      refId="Package\Stage to NDS\Union All.Inputs[Union All Input 3].Columns[TenKH]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
@@ -3182,7 +3181,7 @@ where [refTable].[SKMaTrangThai] = ?</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Stage to NDS\Union All.Inputs[Union All Input 1].Columns[ThanhPho]"
+                      refId="Package\Stage to NDS\Union All.Inputs[Union All Input 3].Columns[ThanhPho]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="100"
@@ -3197,7 +3196,7 @@ where [refTable].[SKMaTrangThai] = ?</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Stage to NDS\Union All.Inputs[Union All Input 1].Columns[QuocGia]"
+                      refId="Package\Stage to NDS\Union All.Inputs[Union All Input 3].Columns[QuocGia]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
@@ -3212,7 +3211,7 @@ where [refTable].[SKMaTrangThai] = ?</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Stage to NDS\Union All.Inputs[Union All Input 1].Columns[GioiTinh]"
+                      refId="Package\Stage to NDS\Union All.Inputs[Union All Input 3].Columns[GioiTinh]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="1"
@@ -3227,7 +3226,7 @@ where [refTable].[SKMaTrangThai] = ?</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Stage to NDS\Union All.Inputs[Union All Input 1].Columns[SoThich]"
+                      refId="Package\Stage to NDS\Union All.Inputs[Union All Input 3].Columns[SoThich]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="30"
@@ -3242,7 +3241,7 @@ where [refTable].[SKMaTrangThai] = ?</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Stage to NDS\Union All.Inputs[Union All Input 1].Columns[NgheNghiep]"
+                      refId="Package\Stage to NDS\Union All.Inputs[Union All Input 3].Columns[NgheNghiep]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="30"
@@ -3257,20 +3256,7 @@ where [refTable].[SKMaTrangThai] = ?</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Stage to NDS\Union All.Inputs[Union All Input 1].Columns[MaNguonDL]"
-                      cachedDataType="i4"
-                      cachedName="MaNguonDL"
-                      lineageId="Package\Stage to NDS\Thêm cột MaNguonDL trong pipeline.Outputs[Derived Column Output].Columns[MaNguonDL]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Stage to NDS\Union All.Outputs[Union All Output 1].Columns[MaNguon]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Stage to NDS\Union All.Inputs[Union All Input 1].Columns[skmaqg]"
+                      refId="Package\Stage to NDS\Union All.Inputs[Union All Input 3].Columns[skmaqg]"
                       cachedDataType="i4"
                       cachedName="skmaqg"
                       lineageId="Package\Stage to NDS\Kiểm tra xem MaNuoc của từng dòng có tồn tại trong QuocGia_NDS chưa.Outputs[Lookup Match Output].Columns[skmaqg]">
@@ -3282,42 +3268,16 @@ where [refTable].[SKMaTrangThai] = ?</property>
                           name="OutputColumnLineageID">#{Package\Stage to NDS\Union All.Outputs[Union All Output 1].Columns[skmaqg]}</property>
                       </properties>
                     </inputColumn>
-                    <inputColumn
-                      refId="Package\Stage to NDS\Union All.Inputs[Union All Input 1].Columns[ErrorCode]"
-                      cachedDataType="i4"
-                      cachedName="ErrorCode"
-                      lineageId="Package\Stage to NDS\Kiểm tra xem MaKH của từng dòng có tồn tại trong KhachHang_NDS chưa.Outputs[Lookup Error Output].Columns[ErrorCode]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Stage to NDS\Union All.Outputs[Union All Output 1].Columns[ErrorCode]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Stage to NDS\Union All.Inputs[Union All Input 1].Columns[ErrorColumn]"
-                      cachedDataType="i4"
-                      cachedName="ErrorColumn"
-                      lineageId="Package\Stage to NDS\Kiểm tra xem MaKH của từng dòng có tồn tại trong KhachHang_NDS chưa.Outputs[Lookup Error Output].Columns[ErrorColumn]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Stage to NDS\Union All.Outputs[Union All Output 1].Columns[ErrorColumn]}</property>
-                      </properties>
-                    </inputColumn>
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
                 <input
-                  refId="Package\Stage to NDS\Union All.Inputs[Union All Input 2]"
+                  refId="Package\Stage to NDS\Union All.Inputs[Union All Input 1]"
                   hasSideEffects="true"
-                  name="Union All Input 2">
+                  name="Union All Input 1">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Stage to NDS\Union All.Inputs[Union All Input 2].Columns[NgayTao]"
+                      refId="Package\Stage to NDS\Union All.Inputs[Union All Input 1].Columns[NgayTao]"
                       cachedDataType="dbTimeStamp"
                       cachedName="NgayTao"
                       lineageId="Package\Stage to NDS\KhachHang_Stage_Webtower.Outputs[OLE DB Source Output].Columns[NgayTao]">
@@ -3330,7 +3290,7 @@ where [refTable].[SKMaTrangThai] = ?</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Stage to NDS\Union All.Inputs[Union All Input 2].Columns[NgayCapNhat]"
+                      refId="Package\Stage to NDS\Union All.Inputs[Union All Input 1].Columns[NgayCapNhat]"
                       cachedDataType="dbTimeStamp"
                       cachedName="NgayCapNhat"
                       lineageId="Package\Stage to NDS\KhachHang_Stage_Webtower.Outputs[OLE DB Source Output].Columns[NgayCapNhat]">
@@ -3343,7 +3303,7 @@ where [refTable].[SKMaTrangThai] = ?</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Stage to NDS\Union All.Inputs[Union All Input 2].Columns[TrangThai]"
+                      refId="Package\Stage to NDS\Union All.Inputs[Union All Input 1].Columns[TrangThai]"
                       cachedDataType="i4"
                       cachedName="TrangThai"
                       lineageId="Package\Stage to NDS\KhachHang_Stage_Webtower.Outputs[OLE DB Source Output].Columns[TrangThai]">
@@ -3356,7 +3316,7 @@ where [refTable].[SKMaTrangThai] = ?</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Stage to NDS\Union All.Inputs[Union All Input 2].Columns[MaKH]"
+                      refId="Package\Stage to NDS\Union All.Inputs[Union All Input 1].Columns[MaKH]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="4"
@@ -3371,7 +3331,7 @@ where [refTable].[SKMaTrangThai] = ?</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Stage to NDS\Union All.Inputs[Union All Input 2].Columns[TenKH]"
+                      refId="Package\Stage to NDS\Union All.Inputs[Union All Input 1].Columns[TenKH]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
@@ -3386,7 +3346,7 @@ where [refTable].[SKMaTrangThai] = ?</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Stage to NDS\Union All.Inputs[Union All Input 2].Columns[ThanhPho]"
+                      refId="Package\Stage to NDS\Union All.Inputs[Union All Input 1].Columns[ThanhPho]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="100"
@@ -3401,7 +3361,7 @@ where [refTable].[SKMaTrangThai] = ?</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Stage to NDS\Union All.Inputs[Union All Input 2].Columns[QuocGia]"
+                      refId="Package\Stage to NDS\Union All.Inputs[Union All Input 1].Columns[QuocGia]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
@@ -3416,7 +3376,7 @@ where [refTable].[SKMaTrangThai] = ?</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Stage to NDS\Union All.Inputs[Union All Input 2].Columns[GioiTinh]"
+                      refId="Package\Stage to NDS\Union All.Inputs[Union All Input 1].Columns[GioiTinh]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="1"
@@ -3431,7 +3391,7 @@ where [refTable].[SKMaTrangThai] = ?</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Stage to NDS\Union All.Inputs[Union All Input 2].Columns[SoThich]"
+                      refId="Package\Stage to NDS\Union All.Inputs[Union All Input 1].Columns[SoThich]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="30"
@@ -3446,7 +3406,7 @@ where [refTable].[SKMaTrangThai] = ?</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Stage to NDS\Union All.Inputs[Union All Input 2].Columns[NgheNghiep]"
+                      refId="Package\Stage to NDS\Union All.Inputs[Union All Input 1].Columns[NgheNghiep]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="30"
@@ -3461,7 +3421,7 @@ where [refTable].[SKMaTrangThai] = ?</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Stage to NDS\Union All.Inputs[Union All Input 2].Columns[MaNguon]"
+                      refId="Package\Stage to NDS\Union All.Inputs[Union All Input 1].Columns[MaNguon]"
                       cachedDataType="i4"
                       cachedName="MaNguon"
                       lineageId="Package\Stage to NDS\Thêm cột MaNguonDL trong pipeline Webtower.Outputs[Derived Column Output].Columns[MaNguon]">
@@ -3474,7 +3434,7 @@ where [refTable].[SKMaTrangThai] = ?</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Stage to NDS\Union All.Inputs[Union All Input 2].Columns[skmaqg]"
+                      refId="Package\Stage to NDS\Union All.Inputs[Union All Input 1].Columns[skmaqg]"
                       cachedDataType="i4"
                       cachedName="skmaqg"
                       lineageId="Package\Stage to NDS\Kiểm tra xem MaNuoc của từng dòng có tồn tại trong QuocGia_NDS không.Outputs[Lookup Match Output].Columns[skmaqg]">
@@ -3486,40 +3446,14 @@ where [refTable].[SKMaTrangThai] = ?</property>
                           name="OutputColumnLineageID">#{Package\Stage to NDS\Union All.Outputs[Union All Output 1].Columns[skmaqg]}</property>
                       </properties>
                     </inputColumn>
-                    <inputColumn
-                      refId="Package\Stage to NDS\Union All.Inputs[Union All Input 2].Columns[ErrorCode]"
-                      cachedDataType="i4"
-                      cachedName="ErrorCode"
-                      lineageId="Package\Stage to NDS\Kiểm tra xem MaKH của từng dòng có tồn tại trong KhachHang_NDS không.Outputs[Lookup Error Output].Columns[ErrorCode]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Stage to NDS\Union All.Outputs[Union All Output 1].Columns[ErrorCode]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Stage to NDS\Union All.Inputs[Union All Input 2].Columns[ErrorColumn]"
-                      cachedDataType="i4"
-                      cachedName="ErrorColumn"
-                      lineageId="Package\Stage to NDS\Kiểm tra xem MaKH của từng dòng có tồn tại trong KhachHang_NDS không.Outputs[Lookup Error Output].Columns[ErrorColumn]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Stage to NDS\Union All.Outputs[Union All Output 1].Columns[ErrorColumn]}</property>
-                      </properties>
-                    </inputColumn>
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
                 <input
-                  refId="Package\Stage to NDS\Union All.Inputs[Union All Input 3]"
+                  refId="Package\Stage to NDS\Union All.Inputs[Union All Input 2]"
                   dangling="true"
                   hasSideEffects="true"
-                  name="Union All Input 3">
+                  name="Union All Input 2">
                   <externalMetadataColumns />
                 </input>
               </inputs>
@@ -3602,16 +3536,6 @@ where [refTable].[SKMaTrangThai] = ?</property>
                       dataType="i4"
                       lineageId="Package\Stage to NDS\Union All.Outputs[Union All Output 1].Columns[skmaqg]"
                       name="skmaqg" />
-                    <outputColumn
-                      refId="Package\Stage to NDS\Union All.Outputs[Union All Output 1].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Stage to NDS\Union All.Outputs[Union All Output 1].Columns[ErrorCode]"
-                      name="ErrorCode" />
-                    <outputColumn
-                      refId="Package\Stage to NDS\Union All.Outputs[Union All Output 1].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Stage to NDS\Union All.Outputs[Union All Output 1].Columns[ErrorColumn]"
-                      name="ErrorColumn" />
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -3626,12 +3550,12 @@ where [refTable].[SKMaTrangThai] = ?</property>
               startId="Package\Stage to NDS\Thêm cột MaNguonDL trong pipeline.Outputs[Derived Column Output]" />
             <path
               refId="Package\Stage to NDS.Paths[Derived Column Output2]"
-              endId="Package\Stage to NDS\Union All.Inputs[Union All Input 1]"
+              endId="Package\Stage to NDS\Union All.Inputs[Union All Input 3]"
               name="Derived Column Output"
               startId="Package\Stage to NDS\Cập nhật ngày tạo và ngày cập nhật.Outputs[Derived Column Output]" />
             <path
               refId="Package\Stage to NDS.Paths[Derived Column Output3]"
-              endId="Package\Stage to NDS\Union All.Inputs[Union All Input 2]"
+              endId="Package\Stage to NDS\Union All.Inputs[Union All Input 1]"
               name="Derived Column Output"
               startId="Package\Stage to NDS\Cập nhật ngày tạo và ngày cập nhật mới.Outputs[Derived Column Output]" />
             <path
@@ -3640,32 +3564,17 @@ where [refTable].[SKMaTrangThai] = ?</property>
               name="Derived Column Output"
               startId="Package\Stage to NDS\Thêm cột MaNguonDL trong pipeline Webtower.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Stage to NDS.Paths[Lookup Error Output]"
-              endId="Package\Stage to NDS\Cập nhật ngày tạo và ngày cập nhật.Inputs[Derived Column Input]"
-              name="Lookup Error Output"
-              startId="Package\Stage to NDS\Kiểm tra xem MaKH của từng dòng có tồn tại trong KhachHang_NDS chưa.Outputs[Lookup Error Output]" />
-            <path
-              refId="Package\Stage to NDS.Paths[Lookup Error Output1]"
-              endId="Package\Stage to NDS\Cập nhật ngày tạo và ngày cập nhật mới.Inputs[Derived Column Input]"
-              name="Lookup Error Output"
-              startId="Package\Stage to NDS\Kiểm tra xem MaKH của từng dòng có tồn tại trong KhachHang_NDS không.Outputs[Lookup Error Output]" />
-            <path
-              refId="Package\Stage to NDS.Paths[Lookup Match Output3]"
-              endId="Package\Stage to NDS\Cập nhật dữ liệu mới.Inputs[OLE DB Command Input]"
-              name="Lookup Match Output"
-              startId="Package\Stage to NDS\Kiểm tra xem MaKH của từng dòng có tồn tại trong KhachHang_NDS không.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\Stage to NDS.Paths[Lookup Match Output]"
+              refId="Package\Stage to NDS.Paths[Lookup Match Output1]"
               endId="Package\Stage to NDS\Cập nhật dữ liệu.Inputs[OLE DB Command Input]"
               name="Lookup Match Output"
               startId="Package\Stage to NDS\Kiểm tra xem MaKH của từng dòng có tồn tại trong KhachHang_NDS chưa.Outputs[Lookup Match Output]" />
             <path
-              refId="Package\Stage to NDS.Paths[Lookup Match Output1]"
+              refId="Package\Stage to NDS.Paths[Lookup Match Output2]"
               endId="Package\Stage to NDS\Kiểm tra xem MaNuoc của từng dòng có tồn tại trong QuocGia_NDS chưa.Inputs[Lookup Input]"
               name="Lookup Match Output"
               startId="Package\Stage to NDS\Kiểm tra xem TrangThai của từng dòng có tồn tại trong TrangThai_NDS chưa.Outputs[Lookup Match Output]" />
             <path
-              refId="Package\Stage to NDS.Paths[Lookup Match Output2]"
+              refId="Package\Stage to NDS.Paths[Lookup Match Output3]"
               endId="Package\Stage to NDS\Kiểm tra xem MaKH của từng dòng có tồn tại trong KhachHang_NDS chưa.Inputs[Lookup Input]"
               name="Lookup Match Output"
               startId="Package\Stage to NDS\Kiểm tra xem MaNuoc của từng dòng có tồn tại trong QuocGia_NDS chưa.Outputs[Lookup Match Output]" />
@@ -3680,15 +3589,30 @@ where [refTable].[SKMaTrangThai] = ?</property>
               name="Lookup Match Output"
               startId="Package\Stage to NDS\Kiểm tra xem MaNuoc của từng dòng có tồn tại trong QuocGia_NDS không.Outputs[Lookup Match Output]" />
             <path
-              refId="Package\Stage to NDS.Paths[Lookup No Match Output]"
-              endId="Package\Stage to NDS\Thêm dữ liệu vào bảng NoMatch-KhachHang.Inputs[OLE DB Destination Input]"
+              refId="Package\Stage to NDS.Paths[Lookup Match Output]"
+              endId="Package\Stage to NDS\Cập nhật dữ liệu mới.Inputs[OLE DB Command Input]"
+              name="Lookup Match Output"
+              startId="Package\Stage to NDS\Kiểm tra xem MaKH của từng dòng có tồn tại trong KhachHang_NDS không.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Stage to NDS.Paths[Lookup No Match Output3]"
+              endId="Package\Stage to NDS\Cập nhật ngày tạo và ngày cập nhật mới.Inputs[Derived Column Input]"
               name="Lookup No Match Output"
-              startId="Package\Stage to NDS\Kiểm tra xem MaNuoc của từng dòng có tồn tại trong QuocGia_NDS chưa.Outputs[Lookup No Match Output]" />
+              startId="Package\Stage to NDS\Kiểm tra xem MaKH của từng dòng có tồn tại trong KhachHang_NDS không.Outputs[Lookup No Match Output]" />
             <path
               refId="Package\Stage to NDS.Paths[Lookup No Match Output1]"
               endId="Package\Stage to NDS\Thêm dữ liệu vào NoMatch-KhachHang.Inputs[OLE DB Destination Input]"
               name="Lookup No Match Output"
               startId="Package\Stage to NDS\Kiểm tra xem MaNuoc của từng dòng có tồn tại trong QuocGia_NDS không.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\Stage to NDS.Paths[Lookup No Match Output2]"
+              endId="Package\Stage to NDS\Cập nhật ngày tạo và ngày cập nhật.Inputs[Derived Column Input]"
+              name="Lookup No Match Output"
+              startId="Package\Stage to NDS\Kiểm tra xem MaKH của từng dòng có tồn tại trong KhachHang_NDS chưa.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\Stage to NDS.Paths[Lookup No Match Output]"
+              endId="Package\Stage to NDS\Thêm dữ liệu vào bảng NoMatch-KhachHang.Inputs[OLE DB Destination Input]"
+              name="Lookup No Match Output"
+              startId="Package\Stage to NDS\Kiểm tra xem MaNuoc của từng dòng có tồn tại trong QuocGia_NDS chưa.Outputs[Lookup No Match Output]" />
             <path
               refId="Package\Stage to NDS.Paths[OLE DB Source Output]"
               endId="Package\Stage to NDS\Thêm cột MaNguonDL trong pipeline.Inputs[Derived Column Input]"
@@ -3734,37 +3658,121 @@ where [refTable].[SKMaTrangThai] = ?</property>
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="427,42"
-          Id="Package\Stage to NDS\Kiểm tra xem MaNuoc của từng dòng có tồn tại trong QuocGia_NDS chưa"
-          TopLeft="362.295238800762,285.004760612807" />
+          Size="432.666666666667,42"
+          Id="Package\Stage to NDS\Kiểm tra xem MaNuoc của từng dòng có tồn tại trong QuocGia_NDS không"
+          TopLeft="1195.6285721341,276.202945892515" />
         <NodeLayout
-          Size="163,42"
-          Id="Package\Stage to NDS\Khach Hang NDS"
-          TopLeft="857.326537957693,782.67477220407" />
+          Size="176.666666666667,42"
+          Id="Package\Stage to NDS\Cập nhật dữ liệu mới"
+          TopLeft="1059,577.648647629841" />
         <NodeLayout
-          Size="156.333333333334,42"
-          Id="Package\Stage to NDS\Cập nhật dữ liệu"
-          TopLeft="225.666666666667,586.450462350133" />
+          Size="251.333333333334,41.6666666666667"
+          Id="Package\Stage to NDS\Thêm cột MaNguonDL trong pipeline"
+          TopLeft="441.238098960343,133.223210217739" />
         <NodeLayout
           Size="430.333333333334,42"
           Id="Package\Stage to NDS\Kiểm tra xem MaKH của từng dòng có tồn tại trong KhachHang_NDS chưa"
           TopLeft="93.3333333333333,463.594598561155" />
         <NodeLayout
+          Size="249.666666666667,41.6666666666667"
+          Id="Package\Stage to NDS\Cập nhật ngày tạo và ngày cập nhật"
+          TopLeft="600.876196643447,577.91033541847" />
+        <NodeLayout
           Size="456,41.6666666666667"
           Id="Package\Stage to NDS\Kiểm tra xem TrangThai của từng dòng có tồn tại trong TrangThai_NDS chưa"
           TopLeft="347.714287770037,204.338623821288" />
         <NodeLayout
-          Size="249.666666666667,41.6666666666667"
-          Id="Package\Stage to NDS\Cập nhật ngày tạo và ngày cập nhật"
-          TopLeft="600.876196643447,577.91033541847" />
+          Size="222.333333333334,42"
+          Id="Package\Stage to NDS\KhachHang_Stage_Webtower"
+          TopLeft="1321.52381408539,51.1981852797074" />
+        <NodeLayout
+          Size="304,42"
+          Id="Package\Stage to NDS\Thêm cột MaNguonDL trong pipeline Webtower"
+          TopLeft="1274.57143229368,124.421395497446" />
+        <NodeLayout
+          Size="436.333333333334,42"
+          Id="Package\Stage to NDS\Kiểm tra xem MaKH của từng dòng có tồn tại trong KhachHang_NDS không"
+          TopLeft="926.666666666667,454.792783840863" />
+        <NodeLayout
+          Size="265.333333333334,42"
+          Id="Package\Stage to NDS\Thêm dữ liệu vào NoMatch-KhachHang"
+          TopLeft="834,318.144134200574" />
+        <NodeLayout
+          Size="292,42"
+          Id="Package\Stage to NDS\Thêm dữ liệu vào bảng NoMatch-KhachHang"
+          TopLeft="0.666666666666686,326.945948920866" />
         <NodeLayout
           Size="197.666666666667,42"
           Id="Package\Stage to NDS\KhachHang_Stage_Jade"
           TopLeft="488.190480752055,60" />
         <NodeLayout
-          Size="251.333333333334,41.6666666666667"
-          Id="Package\Stage to NDS\Thêm cột MaNguonDL trong pipeline"
-          TopLeft="441.238098960343,133.223210217739" />
+          Size="163,42"
+          Id="Package\Stage to NDS\Khach Hang NDS"
+          TopLeft="857.326537957693,782.67477220407" />
+        <NodeLayout
+          Size="448.333333333334,42"
+          Id="Package\Stage to NDS\Kiểm tra xem TrangThai của từng dòng có tồn tại trong TrangThai_NDS không"
+          TopLeft="1181.04762110337,195.536809100995" />
+        <NodeLayout
+          Size="269.666666666667,42"
+          Id="Package\Stage to NDS\Cập nhật ngày tạo và ngày cập nhật mới"
+          TopLeft="1437.54286331011,577.540953456629" />
+        <NodeLayout
+          Size="427,42"
+          Id="Package\Stage to NDS\Kiểm tra xem MaNuoc của từng dòng có tồn tại trong QuocGia_NDS chưa"
+          TopLeft="362.295238800762,285.004760612807" />
+        <NodeLayout
+          Size="156.333333333334,42"
+          Id="Package\Stage to NDS\Cập nhật dữ liệu"
+          TopLeft="225.666666666667,586.450462350133" />
+        <NodeLayout
+          Size="121.666666666667,42"
+          Id="Package\Stage to NDS\Union All"
+          TopLeft="875.333333333333,689.063086482073" />
+        <EdgeLayout
+          Id="Package\Stage to NDS.Paths[Union All Output 1]"
+          TopLeft="937.49660231218,731.063086482073">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,51.611685721997"
+              Start="0,0"
+              End="0,44.111685721997">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.111685721997" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Stage to NDS.Paths[OLE DB Source Output1]"
+          TopLeft="1429.63095652287,93.1981852797074">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.223210217739"
+              Start="0,0"
+              End="0,23.723210217739">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.723210217739" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Stage to NDS.Paths[OLE DB Source Output]"
           TopLeft="587.023814085389,102">
@@ -3800,175 +3808,41 @@ where [refTable].[SKMaTrangThai] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Stage to NDS.Paths[Lookup Match Output]"
-          TopLeft="238.111111111111,505.594598561155">
+          Id="Package\Stage to NDS.Paths[Lookup No Match Output1]"
+          TopLeft="1195.6285721341,297.202945892515">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="65.7222222222229,80.8558637889784"
+              EndConnector="-96.2952388007625,41.9411883080589"
               Start="0,0"
-              End="65.7222222222229,73.3558637889784">
+              End="-88.7952388007625,41.9411883080589">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,28.5220529455283" />
+                    End="-44.1476194003812,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,28.5220529455283"
-                    Point2="0,32.5220529455283"
-                    Point3="4,32.5220529455283" />
+                    Point1="-44.1476194003812,0"
+                    Point2="-48.1476194003812,0"
+                    Point3="-48.1476194003812,4" />
                   <mssgle:LineSegment
-                    End="61.7222222222229,32.5220529455283" />
+                    End="-48.1476194003812,37.9411883080589" />
                   <mssgle:CubicBezierSegment
-                    Point1="61.7222222222229,32.5220529455283"
-                    Point2="65.7222222222229,32.5220529455283"
-                    Point3="65.7222222222229,36.5220529455283" />
+                    Point1="-48.1476194003812,37.9411883080589"
+                    Point2="-48.1476194003812,41.9411883080589"
+                    Point3="-52.1476194003812,41.9411883080589" />
                   <mssgle:LineSegment
-                    End="65.7222222222229,73.3558637889784" />
+                    End="-88.7952388007625,41.9411883080589" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-15.3302756076386,37.5220529455283,96.3827734375,11.609375"
+              BoundingBox="-103.954006119131,-17.609375,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Stage to NDS.Paths[Lookup Error Output]"
-          TopLeft="378.888888888889,505.594598561155">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="346.820641087892,72.3157368573148"
-              Start="0,0"
-              End="346.820641087892,64.8157368573148">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,25.0870211838497" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,25.0870211838497"
-                    Point2="0,29.0870211838497"
-                    Point3="4,29.0870211838497" />
-                  <mssgle:LineSegment
-                    End="342.820641087892,29.0870211838497" />
-                  <mssgle:CubicBezierSegment
-                    Point1="342.820641087892,29.0870211838497"
-                    Point2="346.820641087892,29.0870211838497"
-                    Point3="346.820641087892,33.0870211838497" />
-                  <mssgle:LineSegment
-                    End="346.820641087892,64.8157368573148" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="127.543933825196,34.0870211838497,91.7327734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Stage to NDS.Paths[Derived Column Output]"
-          TopLeft="566.90476562701,174.889876884406">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="8.80952214302732,29.4487469368817"
-              Start="0,0"
-              End="8.80952214302732,21.9487469368817">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,10.7243734684408" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,10.7243734684408"
-                    Point2="0,14.7243734684408"
-                    Point3="4,14.7243734684408" />
-                  <mssgle:LineSegment
-                    End="4.80952214302732,14.7243734684408" />
-                  <mssgle:CubicBezierSegment
-                    Point1="4.80952214302732,14.7243734684408"
-                    Point2="8.80952214302732,14.7243734684408"
-                    Point3="8.80952214302732,18.7243734684408" />
-                  <mssgle:LineSegment
-                    End="8.80952214302732,21.9487469368817" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Stage to NDS.Paths[Lookup Match Output1]"
-          TopLeft="575.7547632854,246.005290487955">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,38.9994701248519"
-              Start="0,0"
-              End="0,31.4994701248519">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.4994701248519" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,9.94504756242594,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Stage to NDS.Paths[Lookup Match Output2]"
-          TopLeft="575.795238800762,327.004760612807">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-267.295238800762,136.589837948348"
-              Start="0,0"
-              End="-267.295238800762,129.089837948348">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,64.2949189741742" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,64.2949189741742"
-                    Point2="0,68.2949189741742"
-                    Point3="-4,68.2949189741742" />
-                  <mssgle:LineSegment
-                    End="-263.295238800762,68.2949189741742" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-263.295238800762,68.2949189741742"
-                    Point2="-267.295238800762,68.2949189741742"
-                    Point3="-267.295238800762,72.2949189741742" />
-                  <mssgle:LineSegment
-                    End="-267.295238800762,129.089837948348" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-181.839006119131,73.2949189741742,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="292,42"
-          Id="Package\Stage to NDS\Thêm dữ liệu vào bảng NoMatch-KhachHang"
-          TopLeft="0.666666666666686,326.945948920866" />
         <EdgeLayout
           Id="Package\Stage to NDS.Paths[Lookup No Match Output]"
           TopLeft="362.295238800762,306.004760612807">
@@ -4002,190 +3876,6 @@ where [refTable].[SKMaTrangThai] = ?</property>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="-90.6206727857979,-17.609375,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="432.666666666667,42"
-          Id="Package\Stage to NDS\Kiểm tra xem MaNuoc của từng dòng có tồn tại trong QuocGia_NDS không"
-          TopLeft="1195.6285721341,276.202945892515" />
-        <NodeLayout
-          Size="176.666666666667,42"
-          Id="Package\Stage to NDS\Cập nhật dữ liệu mới"
-          TopLeft="1059,577.648647629841" />
-        <NodeLayout
-          Size="436.333333333334,42"
-          Id="Package\Stage to NDS\Kiểm tra xem MaKH của từng dòng có tồn tại trong KhachHang_NDS không"
-          TopLeft="926.666666666667,454.792783840863" />
-        <NodeLayout
-          Size="448.333333333334,42"
-          Id="Package\Stage to NDS\Kiểm tra xem TrangThai của từng dòng có tồn tại trong TrangThai_NDS không"
-          TopLeft="1181.04762110337,195.536809100995" />
-        <NodeLayout
-          Size="269.666666666667,42"
-          Id="Package\Stage to NDS\Cập nhật ngày tạo và ngày cập nhật mới"
-          TopLeft="1437.54286331011,577.540953456629" />
-        <NodeLayout
-          Size="222.333333333334,42"
-          Id="Package\Stage to NDS\KhachHang_Stage_Webtower"
-          TopLeft="1321.52381408539,51.1981852797074" />
-        <NodeLayout
-          Size="304,42"
-          Id="Package\Stage to NDS\Thêm cột MaNguonDL trong pipeline Webtower"
-          TopLeft="1274.57143229368,124.421395497446" />
-        <NodeLayout
-          Size="265.333333333334,42"
-          Id="Package\Stage to NDS\Thêm dữ liệu vào NoMatch-KhachHang"
-          TopLeft="834,318.144134200574" />
-        <EdgeLayout
-          Id="Package\Stage to NDS.Paths[OLE DB Source Output1]"
-          TopLeft="1429.63095652287,93.1981852797074">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,31.223210217739"
-              Start="0,0"
-              End="0,23.723210217739">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,23.723210217739" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Stage to NDS.Paths[Lookup Match Output3]"
-          TopLeft="1073.44444444444,496.792783840863">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="73.8888888888896,80.8558637889779"
-              Start="0,0"
-              End="73.8888888888896,73.3558637889779">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.5195908251605" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,28.5195908251605"
-                    Point2="0,32.5195908251605"
-                    Point3="4,32.5195908251605" />
-                  <mssgle:LineSegment
-                    End="69.8888888888896,32.5195908251605" />
-                  <mssgle:CubicBezierSegment
-                    Point1="69.8888888888896,32.5195908251605"
-                    Point2="73.8888888888896,32.5195908251605"
-                    Point3="73.8888888888896,36.5195908251605" />
-                  <mssgle:LineSegment
-                    End="73.8888888888896,73.3558637889779" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-11.2469422743052,37.5195908251605,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Stage to NDS.Paths[Lookup Error Output1]"
-          TopLeft="1216.22222222222,496.792783840863">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="356.153974421225,80.7481696157657"
-              Start="0,0"
-              End="356.153974421225,73.2481696157657">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.4762770779195" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,28.4762770779195"
-                    Point2="0,32.4762770779195"
-                    Point3="4,32.4762770779195" />
-                  <mssgle:LineSegment
-                    End="352.153974421225,32.4762770779195" />
-                  <mssgle:CubicBezierSegment
-                    Point1="352.153974421225,32.4762770779195"
-                    Point2="356.153974421225,32.4762770779195"
-                    Point3="356.153974421225,36.4762770779195" />
-                  <mssgle:LineSegment
-                    End="356.153974421225,73.2481696157657" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="132.210600491862,37.4762770779195,91.7327734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Stage to NDS.Paths[Derived Column Output1]"
-          TopLeft="1426.57143229368,166.421395497446">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-21.3571445236394,29.115413603549"
-              Start="0,0"
-              End="-21.3571445236394,21.615413603549">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,10.5577068017745" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,10.5577068017745"
-                    Point2="0,14.5577068017745"
-                    Point3="-4,14.5577068017745" />
-                  <mssgle:LineSegment
-                    End="-17.3571445236394,14.5577068017745" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-17.3571445236394,14.5577068017745"
-                    Point2="-21.3571445236394,14.5577068017745"
-                    Point3="-21.3571445236394,18.5577068017745" />
-                  <mssgle:LineSegment
-                    End="-21.3571445236394,21.615413603549" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Stage to NDS.Paths[Lookup Match Output4]"
-          TopLeft="1408.58809661873,237.536809100995">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,38.6661367915195"
-              Start="0,0"
-              End="0,31.1661367915195">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.1661367915195" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,9.77838089575977,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -4226,48 +3916,268 @@ where [refTable].[SKMaTrangThai] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Stage to NDS.Paths[Lookup No Match Output1]"
-          TopLeft="1195.6285721341,297.202945892515">
+          Id="Package\Stage to NDS.Paths[Lookup Match Output4]"
+          TopLeft="1408.58809661873,237.536809100995">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-96.2952388007625,41.9411883080589"
+              EndConnector="0,38.6661367915195"
               Start="0,0"
-              End="-88.7952388007625,41.9411883080589">
+              End="0,31.1661367915195">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-44.1476194003812,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-44.1476194003812,0"
-                    Point2="-48.1476194003812,0"
-                    Point3="-48.1476194003812,4" />
-                  <mssgle:LineSegment
-                    End="-48.1476194003812,37.9411883080589" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-48.1476194003812,37.9411883080589"
-                    Point2="-48.1476194003812,41.9411883080589"
-                    Point3="-52.1476194003812,41.9411883080589" />
-                  <mssgle:LineSegment
-                    End="-88.7952388007625,41.9411883080589" />
+                    End="0,31.1661367915195" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-103.954006119131,-17.609375,111.6127734375,11.609375"
+              BoundingBox="-48.19138671875,9.77838089575977,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="121.666666666667,42"
-          Id="Package\Stage to NDS\Union All"
-          TopLeft="875.333333333333,689.063086482073" />
+        <EdgeLayout
+          Id="Package\Stage to NDS.Paths[Lookup Match Output3]"
+          TopLeft="575.795238800762,327.004760612807">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-267.295238800762,136.589837948348"
+              Start="0,0"
+              End="-267.295238800762,129.089837948348">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,64.2949189741742" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,64.2949189741742"
+                    Point2="0,68.2949189741742"
+                    Point3="-4,68.2949189741742" />
+                  <mssgle:LineSegment
+                    End="-263.295238800762,68.2949189741742" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-263.295238800762,68.2949189741742"
+                    Point2="-267.295238800762,68.2949189741742"
+                    Point3="-267.295238800762,72.2949189741742" />
+                  <mssgle:LineSegment
+                    End="-267.295238800762,129.089837948348" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-181.839006119131,73.2949189741742,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Stage to NDS.Paths[Lookup Match Output2]"
+          TopLeft="575.7547632854,246.005290487955">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38.9994701248519"
+              Start="0,0"
+              End="0,31.4994701248519">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.4994701248519" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,9.94504756242594,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Stage to NDS.Paths[Lookup Match Output1]"
+          TopLeft="238.111111111111,505.594598561155">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="65.7222222222229,80.8558637889784"
+              Start="0,0"
+              End="65.7222222222229,73.3558637889784">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5220529455283" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.5220529455283"
+                    Point2="0,32.5220529455283"
+                    Point3="4,32.5220529455283" />
+                  <mssgle:LineSegment
+                    End="61.7222222222229,32.5220529455283" />
+                  <mssgle:CubicBezierSegment
+                    Point1="61.7222222222229,32.5220529455283"
+                    Point2="65.7222222222229,32.5220529455283"
+                    Point3="65.7222222222229,36.5220529455283" />
+                  <mssgle:LineSegment
+                    End="65.7222222222229,73.3558637889784" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-15.3302756076386,37.5220529455283,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Stage to NDS.Paths[Lookup Match Output]"
+          TopLeft="1073.44444444444,496.792783840863">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="73.8888888888896,80.8558637889779"
+              Start="0,0"
+              End="73.8888888888896,73.3558637889779">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5195908251605" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.5195908251605"
+                    Point2="0,32.5195908251605"
+                    Point3="4,32.5195908251605" />
+                  <mssgle:LineSegment
+                    End="69.8888888888896,32.5195908251605" />
+                  <mssgle:CubicBezierSegment
+                    Point1="69.8888888888896,32.5195908251605"
+                    Point2="73.8888888888896,32.5195908251605"
+                    Point3="73.8888888888896,36.5195908251605" />
+                  <mssgle:LineSegment
+                    End="73.8888888888896,73.3558637889779" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-11.2469422743052,37.5195908251605,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Stage to NDS.Paths[Derived Column Output1]"
+          TopLeft="1426.57143229368,166.421395497446">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-21.3571445236394,29.115413603549"
+              Start="0,0"
+              End="-21.3571445236394,21.615413603549">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.5577068017745" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.5577068017745"
+                    Point2="0,14.5577068017745"
+                    Point3="-4,14.5577068017745" />
+                  <mssgle:LineSegment
+                    End="-17.3571445236394,14.5577068017745" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-17.3571445236394,14.5577068017745"
+                    Point2="-21.3571445236394,14.5577068017745"
+                    Point3="-21.3571445236394,18.5577068017745" />
+                  <mssgle:LineSegment
+                    End="-21.3571445236394,21.615413603549" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Stage to NDS.Paths[Derived Column Output]"
+          TopLeft="566.90476562701,174.889876884406">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="8.80952214302732,29.4487469368817"
+              Start="0,0"
+              End="8.80952214302732,21.9487469368817">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.7243734684408" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.7243734684408"
+                    Point2="0,14.7243734684408"
+                    Point3="4,14.7243734684408" />
+                  <mssgle:LineSegment
+                    End="4.80952214302732,14.7243734684408" />
+                  <mssgle:CubicBezierSegment
+                    Point1="4.80952214302732,14.7243734684408"
+                    Point2="8.80952214302732,14.7243734684408"
+                    Point3="8.80952214302732,18.7243734684408" />
+                  <mssgle:LineSegment
+                    End="8.80952214302732,21.9487469368817" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Stage to NDS.Paths[Lookup No Match Output2]"
+          TopLeft="378.888888888889,505.594598561155">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="346.820641087892,72.315736857315"
+              Start="0,0"
+              End="346.820641087892,64.815736857315">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.0870211838498" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.0870211838498"
+                    Point2="0,29.0870211838498"
+                    Point3="4,29.0870211838498" />
+                  <mssgle:LineSegment
+                    End="342.820641087892,29.0870211838498" />
+                  <mssgle:CubicBezierSegment
+                    Point1="342.820641087892,29.0870211838498"
+                    Point2="346.820641087892,29.0870211838498"
+                    Point3="346.820641087892,33.0870211838498" />
+                  <mssgle:LineSegment
+                    End="346.820641087892,64.815736857315" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="117.603933825196,34.0870211838498,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Stage to NDS.Paths[Derived Column Output2]"
-          TopLeft="725.70952997678,619.577002085136">
+          TopLeft="725.70952997678,619.577002085137">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -4300,14 +4210,50 @@ where [refTable].[SKMaTrangThai] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Stage to NDS.Paths[Derived Column Output3]"
-          TopLeft="1572.37619664345,619.540953456629">
+          Id="Package\Stage to NDS.Paths[Lookup No Match Output3]"
+          TopLeft="1216.22222222222,496.792783840863">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-617.265085532336,69.522133025444"
+              EndConnector="356.153974421221,80.748169615766"
               Start="0,0"
-              End="-617.265085532336,62.022133025444">
+              End="356.153974421221,73.248169615766">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.4762770779196" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.4762770779196"
+                    Point2="0,32.4762770779196"
+                    Point3="4,32.4762770779196" />
+                  <mssgle:LineSegment
+                    End="352.153974421221,32.4762770779196" />
+                  <mssgle:CubicBezierSegment
+                    Point1="352.153974421221,32.4762770779196"
+                    Point2="356.153974421221,32.4762770779196"
+                    Point3="356.153974421221,36.4762770779196" />
+                  <mssgle:LineSegment
+                    End="356.153974421221,73.248169615766" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="122.27060049186,37.4762770779196,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Stage to NDS.Paths[Derived Column Output3]"
+          TopLeft="1572.37619664344,619.540953456629">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-617.265085532332,69.522133025444"
+              Start="0,0"
+              End="-617.265085532332,62.022133025444">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -4318,35 +4264,13 @@ where [refTable].[SKMaTrangThai] = ?</property>
                     Point2="0,41.1718418944625"
                     Point3="-4,41.1718418944625" />
                   <mssgle:LineSegment
-                    End="-613.265085532336,41.1718418944625" />
+                    End="-613.265085532332,41.1718418944625" />
                   <mssgle:CubicBezierSegment
-                    Point1="-613.265085532336,41.1718418944625"
-                    Point2="-617.265085532336,41.1718418944625"
-                    Point3="-617.265085532336,45.1718418944625" />
+                    Point1="-613.265085532332,41.1718418944625"
+                    Point2="-617.265085532332,41.1718418944625"
+                    Point3="-617.265085532332,45.1718418944625" />
                   <mssgle:LineSegment
-                    End="-617.265085532336,62.022133025444" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Stage to NDS.Paths[Union All Output 1]"
-          TopLeft="937.49660231218,731.063086482073">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,51.611685721997"
-              Start="0,0"
-              End="0,44.111685721997">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,44.111685721997" />
+                    End="-617.265085532332,62.022133025444" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4359,12 +4283,12 @@ where [refTable].[SKMaTrangThai] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Stage to NDS\Kiểm tra xem MaNuoc của từng dòng có tồn tại trong QuocGia_NDS chưa">
+    design-time-name="Package\Stage to NDS\Kiểm tra xem MaNuoc của từng dòng có tồn tại trong QuocGia_NDS không">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -4374,23 +4298,10 @@ where [refTable].[SKMaTrangThai] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Stage to NDS\Khach Hang NDS">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -4410,7 +4321,7 @@ where [refTable].[SKMaTrangThai] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -4419,6 +4330,42 @@ where [refTable].[SKMaTrangThai] = ?</property>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Stage to NDS\Kiểm tra xem TrangThai của từng dòng có tồn tại trong TrangThai_NDS chưa">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Stage to NDS\KhachHang_Stage_Webtower">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Stage to NDS\Kiểm tra xem MaKH của từng dòng có tồn tại trong KhachHang_NDS không">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -4433,7 +4380,7 @@ where [refTable].[SKMaTrangThai] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -4441,7 +4388,7 @@ where [refTable].[SKMaTrangThai] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Stage to NDS\KhachHang_Stage_Jade">
+    design-time-name="Package\Stage to NDS\Thêm dữ liệu vào NoMatch-KhachHang">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -4467,48 +4414,28 @@ where [refTable].[SKMaTrangThai] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Stage to NDS\Kiểm tra xem MaNuoc của từng dòng có tồn tại trong QuocGia_NDS không">
+    design-time-name="Package\Stage to NDS\KhachHang_Stage_Jade">
     <Properties>
       <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
+        <Name>DataSourceViewID</Name>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Stage to NDS\Kiểm tra xem MaKH của từng dòng có tồn tại trong KhachHang_NDS không">
+    design-time-name="Package\Stage to NDS\Khach Hang NDS">
     <Properties>
       <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
+        <Name>DataSourceViewID</Name>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -4518,7 +4445,7 @@ where [refTable].[SKMaTrangThai] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -4528,7 +4455,7 @@ where [refTable].[SKMaTrangThai] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -4536,28 +4463,25 @@ where [refTable].[SKMaTrangThai] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Stage to NDS\KhachHang_Stage_Webtower">
+    design-time-name="Package\Stage to NDS\Kiểm tra xem MaNuoc của từng dòng có tồn tại trong QuocGia_NDS chưa">
     <Properties>
       <Property>
-        <Name>DataSourceViewID</Name>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q2:string">Table</Value>
+          type="q4:string">0</Value>
       </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Stage to NDS\Thêm dữ liệu vào NoMatch-KhachHang">
-    <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
