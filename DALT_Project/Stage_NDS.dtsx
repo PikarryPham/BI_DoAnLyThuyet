@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="51"
-  DTS:VersionGUID="{DA0628AF-CB8E-44B4-AE25-435C0BDB9495}">
+  DTS:VersionBuild="52"
+  DTS:VersionGUID="{9F651642-C7EF-48D0-9178-D0FC3CE23A86}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -38,7 +38,6 @@
       DTS:refId="Package\NDS_CuaHang"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
-      DTS:Disabled="True"
       DTS:DTSID="{A31AC16E-4D7D-449C-966A-1D097205D302}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
@@ -56,7 +55,6 @@
       DTS:refId="Package\NDS_HoaDon"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
-      DTS:Disabled="True"
       DTS:DTSID="{327ACA69-5B53-42B1-B39F-B1DC65EB1879}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
@@ -74,7 +72,6 @@
       DTS:refId="Package\NDS_KhachHang"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
-      DTS:Disabled="True"
       DTS:DTSID="{F2491292-4F1D-42E2-8C7C-C7AB5EF4EC4A}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
@@ -92,7 +89,6 @@
       DTS:refId="Package\NDS_LoaiCuaHang"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="NDS_LoaiCuaHang"
-      DTS:Disabled="True"
       DTS:DTSID="{E831D760-1F1C-4D51-ACD5-6F8A6038A69B}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
@@ -110,7 +106,6 @@
       DTS:refId="Package\NDS_LoaiSanPham"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
-      DTS:Disabled="True"
       DTS:DTSID="{5DAC3973-E59D-458A-9057-9E7C05756E42}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
@@ -128,7 +123,6 @@
       DTS:refId="Package\NDS_QuocGia"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
-      DTS:Disabled="True"
       DTS:DTSID="{0DA1B97C-4CEB-4749-A195-00F9DE1B1B6C}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
@@ -146,7 +140,6 @@
       DTS:refId="Package\NDS_SanPham"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
-      DTS:Disabled="True"
       DTS:DTSID="{609CF07A-8543-4E0F-AB9F-E02835ABD5B8}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
@@ -240,35 +233,35 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="182.666666666667,42"
+          Size="182.4,41.6"
           Id="Package\NDS_ChiTietHoaDon"
           TopLeft="440.714289866844,537.021056697418" />
         <NodeLayout
-          Size="147.333333333334,42"
+          Size="147.2,41.6"
           Id="Package\NDS_CuaHang"
           TopLeft="117.142855785027,219.068114169634" />
         <NodeLayout
-          Size="146.666666666667,42.6666666666667"
+          Size="146.4,42.4"
           Id="Package\NDS_HoaDon"
           TopLeft="210.714285949967,444.844586162806" />
         <NodeLayout
-          Size="182.666666666667,42"
+          Size="182.4,41.6"
           Id="Package\NDS_KhachHang"
           TopLeft="270.714286971761,316.950468483573" />
         <NodeLayout
-          Size="182.666666666667,42"
+          Size="182.4,41.6"
           Id="Package\NDS_LoaiCuaHang"
           TopLeft="115.714284332127,40.8916410825412" />
         <NodeLayout
-          Size="167.333333333334,42"
+          Size="167.2,41.6"
           Id="Package\NDS_LoaiSanPham"
           TopLeft="530.000005673085,43.9504646548512" />
         <NodeLayout
-          Size="144,42"
+          Size="144,41.6"
           Id="Package\NDS_QuocGia"
           TopLeft="342.142859616754,43.9504646548512" />
         <NodeLayout
-          Size="154.666666666667,42.6666666666667"
+          Size="154.4,42.4"
           Id="Package\NDS_SanPham"
           TopLeft="502.142862341538,181.585760220334" />
         <EdgeLayout
