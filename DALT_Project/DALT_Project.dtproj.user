@@ -10,7 +10,7 @@
         <WinAuthDomain />
         <ServerName />
         <PathOnServer />
-        <StartObjectID>MainPackage.dtsx</StartObjectID>
+        <StartObjectID>NDS_DDS.dtsx</StartObjectID>
         <UserIDs />
         <UserPasswords />
         <OfflineMode>false</OfflineMode>

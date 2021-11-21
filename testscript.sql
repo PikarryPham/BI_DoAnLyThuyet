@@ -125,10 +125,10 @@ FROM LoaiSanPham
 WHERE MaNguon  = 1;
 
 
-DELETE FROM QuocGia WHERE MaNguon  = 1;
+DELETE FROM QuocGia WHERE MaNguon  = 1 AND MaQG = 'TRAN' AND TenQG = 'USA'
 SELECT *
 FROM QuocGia
-WHERE MaNguon  = 1;
+WHERE MaTrangThai = 1;
 
 --UPDATE LoaiCuaHang
 --SET NgayCapNhat = GETDATE(),TenLoaiCH = ?,MaTrangThai = ? 
@@ -138,6 +138,26 @@ WHERE MaNguon  = 1;
 --SET NgayCapNhat = GETDATE(),TenLoaiSP = ?,MaTrangThai = ? 
 --WHERE MaLoaiSP = ? AND MaNguon = ?
 
+INSERT INTO QuocGia VALUES('TRAN','USA','Boston',GETDATE(),GETDATE(),1,1);
+
 UPDATE QuocGia
 SET NgayCapNhat = GETDATE(),TenQG = ?,TenThanhPho = ?,MaTrangThai = ? 
 WHERE MaQG = ? AND MaNguon = ?
+
+------------------
+USE DALT_DW
+
+DELETE FROM Dim_QuocGia;
+SELECT * FROM Dim_QuocGia;
+
+Use DALT_METADATA
+GO
+SELECT * FROM Metadata_Table;
+
+UPDATE Metadata_Table
+SET LSET = '1900-01-01', CET = NULL
+WHERE Name_DataFlow  = 'Dim_QuocGia_NDStoDDS';
+
+
+
+

@@ -11,11 +11,35 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="23"
-  DTS:VersionGUID="{CE4A862B-3F7F-492F-9A3E-F07F1AFA223D}">
+  DTS:VersionBuild="33"
+  DTS:VersionGUID="{E7ABFFBA-05E1-41D9-9984-DEC8E47BA002}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_NDS]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{7BFADCF5-AF2E-4F4A-832B-D3B2F01A371D}"
+      DTS:ObjectName="DESKTOP-ED2S73F\TRANGPHAM.DALT_NDS">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-ED2S73F\TRANGPHAM;Initial Catalog=DALT_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_STAGE]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{FF235ED0-BD08-46B9-B1D7-BE03BBF26F1B}"
+      DTS:ObjectName="DESKTOP-ED2S73F\TRANGPHAM.DALT_STAGE">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-ED2S73F\TRANGPHAM;Initial Catalog=DALT_STAGE;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_NDS]"
       DTS:CreationName="OLEDB"
@@ -47,7 +71,6 @@
       DTS:refId="Package\Stage to NDS"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:Disabled="True"
       DTS:DTSID="{1ECD5EA4-66BD-4044-B611-2E6ACDF4DEDB}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -59,11 +82,11 @@
           version="1">
           <components>
             <component
-              refId="Package\Stage to NDS\Cập nhật dữ liệu"
+              refId="Package\Stage to NDS\Cập nhật dữ liệu cho LoaiSP"
               componentClassID="Microsoft.OLEDBCommand"
               contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
               description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
-              name="Cập nhật dữ liệu"
+              name="Cập nhật dữ liệu cho LoaiSP"
               usesDispositions="true"
               version="2">
               <properties>
@@ -86,53 +109,53 @@ WHERE MaLoaiSP = ? AND MaNguon = ?</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Stage to NDS\Cập nhật dữ liệu.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_NDS]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_NDS]"
+                  refId="Package\Stage to NDS\Cập nhật dữ liệu cho LoaiSP.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_NDS]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
               <inputs>
                 <input
-                  refId="Package\Stage to NDS\Cập nhật dữ liệu.Inputs[OLE DB Command Input]"
+                  refId="Package\Stage to NDS\Cập nhật dữ liệu cho LoaiSP.Inputs[OLE DB Command Input]"
                   errorOrTruncationOperation="Command Execution"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Command Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Stage to NDS\Cập nhật dữ liệu.Inputs[OLE DB Command Input].Columns[TrangThai]"
-                      cachedDataType="i4"
-                      cachedName="TrangThai"
-                      externalMetadataColumnId="Package\Stage to NDS\Cập nhật dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                      lineageId="Package\Stage to NDS\Loai San Pham Stage.Outputs[OLE DB Source Output].Columns[TrangThai]" />
-                    <inputColumn
-                      refId="Package\Stage to NDS\Cập nhật dữ liệu.Inputs[OLE DB Command Input].Columns[MaNguon]"
-                      cachedDataType="i4"
-                      cachedName="MaNguon"
-                      externalMetadataColumnId="Package\Stage to NDS\Cập nhật dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
-                      lineageId="Package\Stage to NDS\Thêm cột MaNguonDL trong pipeline.Outputs[Derived Column Output].Columns[MaNguon]" />
-                    <inputColumn
-                      refId="Package\Stage to NDS\Cập nhật dữ liệu.Inputs[OLE DB Command Input].Columns[TenLoaiSP]"
+                      refId="Package\Stage to NDS\Cập nhật dữ liệu cho LoaiSP.Inputs[OLE DB Command Input].Columns[TenLoaiSP]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="TenLoaiSP"
-                      externalMetadataColumnId="Package\Stage to NDS\Cập nhật dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      externalMetadataColumnId="Package\Stage to NDS\Cập nhật dữ liệu cho LoaiSP.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
                       lineageId="Package\Stage to NDS\Loai San Pham Stage.Outputs[OLE DB Source Output].Columns[TenLoaiSP]" />
                     <inputColumn
-                      refId="Package\Stage to NDS\Cập nhật dữ liệu.Inputs[OLE DB Command Input].Columns[MaLoaiSP]"
+                      refId="Package\Stage to NDS\Cập nhật dữ liệu cho LoaiSP.Inputs[OLE DB Command Input].Columns[skmatrangthai]"
+                      cachedDataType="i4"
+                      cachedName="skmatrangthai"
+                      externalMetadataColumnId="Package\Stage to NDS\Cập nhật dữ liệu cho LoaiSP.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Stage to NDS\Kiểm tra xem TrangThai của từng dòng có tồn tại trong TrangThai_NDS chưa.Outputs[Lookup Match Output].Columns[skmatrangthai]" />
+                    <inputColumn
+                      refId="Package\Stage to NDS\Cập nhật dữ liệu cho LoaiSP.Inputs[OLE DB Command Input].Columns[MaNguon]"
+                      cachedDataType="i4"
+                      cachedName="MaNguon"
+                      externalMetadataColumnId="Package\Stage to NDS\Cập nhật dữ liệu cho LoaiSP.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\Stage to NDS\Thêm cột MaNguonDL trong pipeline.Outputs[Derived Column Output].Columns[MaNguon]" />
+                    <inputColumn
+                      refId="Package\Stage to NDS\Cập nhật dữ liệu cho LoaiSP.Inputs[OLE DB Command Input].Columns[MaLoaiSP]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="4"
                       cachedName="MaLoaiSP"
-                      externalMetadataColumnId="Package\Stage to NDS\Cập nhật dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                      lineageId="Package\Stage to NDS\Loai San Pham Stage.Outputs[OLE DB Source Output].Columns[MaLoaiSP]" />
+                      externalMetadataColumnId="Package\Stage to NDS\Cập nhật dữ liệu cho LoaiSP.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\Stage to NDS\Kiểm tra xem MaLoaiSP của từng dòng có tồn tại trong LoaiSanPham_NDS chưa.Outputs[Lookup Match Output].Columns[MaLoaiSP]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Stage to NDS\Cập nhật dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      refId="Package\Stage to NDS\Cập nhật dữ liệu cho LoaiSP.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
                       codePage="1252"
                       dataType="str"
                       length="50"
@@ -145,7 +168,7 @@ WHERE MaLoaiSP = ? AND MaNguon = ?</property>
                       </properties>
                     </externalMetadataColumn>
                     <externalMetadataColumn
-                      refId="Package\Stage to NDS\Cập nhật dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      refId="Package\Stage to NDS\Cập nhật dữ liệu cho LoaiSP.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
                       dataType="i4"
                       name="Param_1">
                       <properties>
@@ -156,7 +179,7 @@ WHERE MaLoaiSP = ? AND MaNguon = ?</property>
                       </properties>
                     </externalMetadataColumn>
                     <externalMetadataColumn
-                      refId="Package\Stage to NDS\Cập nhật dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      refId="Package\Stage to NDS\Cập nhật dữ liệu cho LoaiSP.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                       codePage="1252"
                       dataType="str"
                       length="4"
@@ -169,7 +192,7 @@ WHERE MaLoaiSP = ? AND MaNguon = ?</property>
                       </properties>
                     </externalMetadataColumn>
                     <externalMetadataColumn
-                      refId="Package\Stage to NDS\Cập nhật dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      refId="Package\Stage to NDS\Cập nhật dữ liệu cho LoaiSP.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
                       dataType="i4"
                       name="Param_3">
                       <properties>
@@ -184,29 +207,29 @@ WHERE MaLoaiSP = ? AND MaNguon = ?</property>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Stage to NDS\Cập nhật dữ liệu.Outputs[OLE DB Command Output]"
+                  refId="Package\Stage to NDS\Cập nhật dữ liệu cho LoaiSP.Outputs[OLE DB Command Output]"
                   exclusionGroup="1"
                   name="OLE DB Command Output"
-                  synchronousInputId="Package\Stage to NDS\Cập nhật dữ liệu.Inputs[OLE DB Command Input]">
+                  synchronousInputId="Package\Stage to NDS\Cập nhật dữ liệu cho LoaiSP.Inputs[OLE DB Command Input]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Stage to NDS\Cập nhật dữ liệu.Outputs[OLE DB Command Error Output]"
+                  refId="Package\Stage to NDS\Cập nhật dữ liệu cho LoaiSP.Outputs[OLE DB Command Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Command Error Output"
-                  synchronousInputId="Package\Stage to NDS\Cập nhật dữ liệu.Inputs[OLE DB Command Input]">
+                  synchronousInputId="Package\Stage to NDS\Cập nhật dữ liệu cho LoaiSP.Inputs[OLE DB Command Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Stage to NDS\Cập nhật dữ liệu.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      refId="Package\Stage to NDS\Cập nhật dữ liệu cho LoaiSP.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Stage to NDS\Cập nhật dữ liệu.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Stage to NDS\Cập nhật dữ liệu cho LoaiSP.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Stage to NDS\Cập nhật dữ liệu.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      refId="Package\Stage to NDS\Cập nhật dữ liệu cho LoaiSP.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Stage to NDS\Cập nhật dữ liệu.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Stage to NDS\Cập nhật dữ liệu cho LoaiSP.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -381,8 +404,8 @@ where [refTable].[MaLoaiSP] = ?</property>
               <connections>
                 <connection
                   refId="Package\Stage to NDS\Kiểm tra xem MaLoaiSP của từng dòng có tồn tại trong LoaiSanPham_NDS chưa.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_NDS]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_NDS]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_NDS]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -421,6 +444,24 @@ where [refTable].[MaLoaiSP] = ?</property>
                   exclusionGroup="1"
                   name="Lookup Match Output"
                   synchronousInputId="Package\Stage to NDS\Kiểm tra xem MaLoaiSP của từng dòng có tồn tại trong LoaiSanPham_NDS chưa.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Stage to NDS\Kiểm tra xem MaLoaiSP của từng dòng có tồn tại trong LoaiSanPham_NDS chưa.Outputs[Lookup Match Output].Columns[MaLoaiSP]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Copy Column"
+                      length="4"
+                      lineageId="Package\Stage to NDS\Kiểm tra xem MaLoaiSP của từng dòng có tồn tại trong LoaiSanPham_NDS chưa.Outputs[Lookup Match Output].Columns[MaLoaiSP]"
+                      name="MaLoaiSP"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">MaLoaiSP</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
                   <externalMetadataColumns />
                 </output>
                 <output
@@ -525,8 +566,8 @@ where [refTable].[skmatrangthai] = ?</property>
               <connections>
                 <connection
                   refId="Package\Stage to NDS\Kiểm tra xem TrangThai của từng dòng có tồn tại trong TrangThai_NDS chưa.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_NDS]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_NDS]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_NDS]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -563,6 +604,22 @@ where [refTable].[skmatrangthai] = ?</property>
                   exclusionGroup="1"
                   name="Lookup Match Output"
                   synchronousInputId="Package\Stage to NDS\Kiểm tra xem TrangThai của từng dòng có tồn tại trong TrangThai_NDS chưa.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Stage to NDS\Kiểm tra xem TrangThai của từng dòng có tồn tại trong TrangThai_NDS chưa.Outputs[Lookup Match Output].Columns[skmatrangthai]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Stage to NDS\Kiểm tra xem TrangThai của từng dòng có tồn tại trong TrangThai_NDS chưa.Outputs[Lookup Match Output].Columns[skmatrangthai]"
+                      name="skmatrangthai"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">skmatrangthai</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
                   <externalMetadataColumns />
                 </output>
                 <output
@@ -656,8 +713,8 @@ where [refTable].[skmatrangthai] = ?</property>
               <connections>
                 <connection
                   refId="Package\Stage to NDS\Loai San Pham NDS.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_NDS]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_NDS]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_NDS]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -704,11 +761,11 @@ where [refTable].[skmatrangthai] = ?</property>
                       externalMetadataColumnId="Package\Stage to NDS\Loai San Pham NDS.Inputs[OLE DB Destination Input].ExternalColumns[MaNguon]"
                       lineageId="Package\Stage to NDS\Thêm cột MaNguonDL trong pipeline.Outputs[Derived Column Output].Columns[MaNguon]" />
                     <inputColumn
-                      refId="Package\Stage to NDS\Loai San Pham NDS.Inputs[OLE DB Destination Input].Columns[TrangThai]"
+                      refId="Package\Stage to NDS\Loai San Pham NDS.Inputs[OLE DB Destination Input].Columns[skmatrangthai]"
                       cachedDataType="i4"
-                      cachedName="TrangThai"
+                      cachedName="skmatrangthai"
                       externalMetadataColumnId="Package\Stage to NDS\Loai San Pham NDS.Inputs[OLE DB Destination Input].ExternalColumns[MaTrangThai]"
-                      lineageId="Package\Stage to NDS\Loai San Pham Stage.Outputs[OLE DB Source Output].Columns[TrangThai]" />
+                      lineageId="Package\Stage to NDS\Kiểm tra xem TrangThai của từng dòng có tồn tại trong TrangThai_NDS chưa.Outputs[Lookup Match Output].Columns[skmatrangthai]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -823,8 +880,8 @@ where [refTable].[skmatrangthai] = ?</property>
               <connections>
                 <connection
                   refId="Package\Stage to NDS\Loai San Pham Stage.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_STAGE]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_STAGE]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_STAGE]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_STAGE]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1059,7 +1116,7 @@ where [refTable].[skmatrangthai] = ?</property>
               startId="Package\Stage to NDS\Kiểm tra xem TrangThai của từng dòng có tồn tại trong TrangThai_NDS chưa.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Stage to NDS.Paths[Lookup Match Output1]"
-              endId="Package\Stage to NDS\Cập nhật dữ liệu.Inputs[OLE DB Command Input]"
+              endId="Package\Stage to NDS\Cập nhật dữ liệu cho LoaiSP.Inputs[OLE DB Command Input]"
               name="Lookup Match Output"
               startId="Package\Stage to NDS\Kiểm tra xem MaLoaiSP của từng dòng có tồn tại trong LoaiSanPham_NDS chưa.Outputs[Lookup Match Output]" />
             <path
@@ -1085,7 +1142,7 @@ where [refTable].[skmatrangthai] = ?</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="150.333333333334,41.6666666666667"
+          Size="150.4,41.6"
           Id="Package\Stage to NDS"
           TopLeft="242.857146992975,141.470590219366" />
       </GraphLayout>
@@ -1097,77 +1154,33 @@ where [refTable].[skmatrangthai] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="170.333333333334,41.6666666666667"
-          Id="Package\Stage to NDS\Loai San Pham NDS"
-          TopLeft="372.142863480413,581.011771205057" />
-        <NodeLayout
-          Size="156,41.6666666666667"
-          Id="Package\Stage to NDS\Cập nhật dữ liệu"
-          TopLeft="90.8000028950827,481.658828859594" />
-        <NodeLayout
-          Size="178.333333333334,41.6666666666667"
+          Size="178.4,41.6"
           Id="Package\Stage to NDS\Loai San Pham Stage"
           TopLeft="220.000003746578,75.7058834146876" />
         <NodeLayout
-          Size="456,41.6666666666667"
+          Size="210.4,41.6"
+          Id="Package\Stage to NDS\Cập nhật dữ liệu cho LoaiSP"
+          TopLeft="61.4285724746939,475.647063306459" />
+        <NodeLayout
+          Size="456,41.6"
           Id="Package\Stage to NDS\Kiểm tra xem TrangThai của từng dòng có tồn tại trong TrangThai_NDS chưa"
           TopLeft="109.371431782781,265.247061118618" />
         <NodeLayout
-          Size="249.666666666667,41.6666666666667"
+          Size="249.6,41.6"
           Id="Package\Stage to NDS\Cập nhật ngày tạo và ngày cập nhật"
           TopLeft="330.65714792962,479.04706494734" />
         <NodeLayout
-          Size="251.333333333334,41.6666666666667"
+          Size="251.2,41.6"
           Id="Package\Stage to NDS\Thêm cột MaNguonDL trong pipeline"
           TopLeft="212.22857639157,172.717648056222" />
         <NodeLayout
-          Size="456,41.6666666666667"
+          Size="456,41.6"
           Id="Package\Stage to NDS\Kiểm tra xem MaLoaiSP của từng dòng có tồn tại trong LoaiSanPham_NDS chưa"
           TopLeft="102.14285888234,368.482356684101" />
-        <EdgeLayout
-          Id="Package\Stage to NDS.Paths[Derived Column Output1]"
-          TopLeft="456.400005705017,520.64706494734">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60.364706257717"
-              Start="0,0"
-              End="0,52.864706257717">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.864706257717" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Stage to NDS.Paths[Derived Column Output]"
-          TopLeft="337.600004087175,214.317648056222">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,50.9294130623958"
-              Start="0,0"
-              End="0,43.4294130623958">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,43.4294130623958" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Stage to NDS\Loai San Pham NDS"
+          TopLeft="372.142863480413,581.011771205057" />
         <EdgeLayout
           Id="Package\Stage to NDS.Paths[OLE DB Source Output]"
           TopLeft="309.200003746578,117.305883414688">
@@ -1204,37 +1217,37 @@ where [refTable].[skmatrangthai] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Stage to NDS.Paths[Lookup Match Output1]"
-          TopLeft="330.14285888234,410.082356684101">
+          TopLeft="255.476192215673,410.082356684101">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-161.342855987257,71.5764721754928"
+              EndConnector="-88.8476197409794,65.564706622358"
               Start="0,0"
-              End="-161.342855987257,64.0764721754928">
+              End="-88.8476197409794,58.064706622358">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.7882360877464" />
+                    End="0,22.3634309845146" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,31.7882360877464"
-                    Point2="0,35.7882360877464"
-                    Point3="-4,35.7882360877464" />
+                    Point1="0,22.3634309845146"
+                    Point2="0,26.3634309845146"
+                    Point3="-4,26.3634309845146" />
                   <mssgle:LineSegment
-                    End="-157.342855987257,35.7882360877464" />
+                    End="-84.8476197409794,26.3634309845146" />
                   <mssgle:CubicBezierSegment
-                    Point1="-157.342855987257,35.7882360877464"
-                    Point2="-161.342855987257,35.7882360877464"
-                    Point3="-161.342855987257,39.7882360877464" />
+                    Point1="-84.8476197409794,26.3634309845146"
+                    Point2="-88.8476197409794,26.3634309845146"
+                    Point3="-88.8476197409794,30.3634309845146" />
                   <mssgle:LineSegment
-                    End="-161.342855987257,64.0764721754928" />
+                    End="-88.8476197409794,58.064706622358" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-128.862814712378,40.7882360877464,96.3827734375,11.609375"
+              BoundingBox="-92.6151965892397,31.3634309845146,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -1298,22 +1311,53 @@ where [refTable].[skmatrangthai] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Stage to NDS.Paths[Derived Column Output1]"
+          TopLeft="456.400005705017,520.64706494734">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.364706257717"
+              Start="0,0"
+              End="0,52.864706257717">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.864706257717" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Stage to NDS.Paths[Derived Column Output]"
+          TopLeft="337.600004087175,214.317648056222">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50.9294130623958"
+              Start="0,0"
+              End="0,43.4294130623958">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.4294130623958" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Stage to NDS\Loai San Pham NDS">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Stage to NDS\Loai San Pham Stage">
     <Properties>
@@ -1333,7 +1377,7 @@ where [refTable].[skmatrangthai] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -1343,7 +1387,7 @@ where [refTable].[skmatrangthai] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1356,7 +1400,7 @@ where [refTable].[skmatrangthai] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -1366,10 +1410,23 @@ where [refTable].[skmatrangthai] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Stage to NDS\Loai San Pham NDS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

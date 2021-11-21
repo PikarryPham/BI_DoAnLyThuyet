@@ -1,0 +1,795 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/21/2021 6:02:58 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-ED2S73F"
+  DTS:CreatorName="DESKTOP-ED2S73F\MON"
+  DTS:DTSID="{DBF5D8BA-CA98-476B-8C2E-93E1CFA6C53A}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.170"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="19"
+  DTS:VersionGUID="{B1443A39-40FE-4D82-804D-8BC76A4B0C5F}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_DW]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{BD4CB335-943A-4379-8F28-002288FCE737}"
+      DTS:ObjectName="DESKTOP-ED2S73F\TRANGPHAM.DALT_DW">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-ED2S73F\TRANGPHAM;Initial Catalog=DALT_DW;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_METADATA]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{5E45446C-3AB8-4D7C-9702-CFB2913F1E58}"
+      DTS:ObjectName="DESKTOP-ED2S73F\TRANGPHAM.DALT_METADATA">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-ED2S73F\TRANGPHAM;Initial Catalog=DALT_METADATA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_NDS]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{FA161FB9-F24B-4BCA-9C6D-13430776F718}"
+      DTS:ObjectName="DESKTOP-ED2S73F\TRANGPHAM.DALT_NDS">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-ED2S73F\TRANGPHAM;Initial Catalog=DALT_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{53D49DDE-CBCD-4EDF-91E8-3D0C88D27916}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="CETQuocGia_DimR">
+      <DTS:VariableValue
+        DTS:DataType="7">1/1/1900</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{AFC98995-1EB1-416F-88D8-3504968700E9}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="LSETQuocGia_DimR">
+      <DTS:VariableValue
+        DTS:DataType="7">1/1/1900</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow DIM_QuocGia"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{e3c48665-d8a4-4543-95c2-685b9b03ccc9}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow DIM_QuocGia"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow DIM_QuocGia\Dim_QuocGia in DDS"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Dim_QuocGia in DDS"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Dim_QuocGia]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">true</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow DIM_QuocGia\Dim_QuocGia in DDS.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_DW]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_DW]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow DIM_QuocGia\Dim_QuocGia in DDS.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow DIM_QuocGia\Dim_QuocGia in DDS.Inputs[OLE DB Destination Input].Columns[NgayTao]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="NgayTao"
+                      externalMetadataColumnId="Package\Data Flow DIM_QuocGia\Dim_QuocGia in DDS.Inputs[OLE DB Destination Input].ExternalColumns[NgayTao]"
+                      lineageId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Output].Columns[NgayTao]" />
+                    <inputColumn
+                      refId="Package\Data Flow DIM_QuocGia\Dim_QuocGia in DDS.Inputs[OLE DB Destination Input].Columns[NgayCapNhat]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="NgayCapNhat"
+                      externalMetadataColumnId="Package\Data Flow DIM_QuocGia\Dim_QuocGia in DDS.Inputs[OLE DB Destination Input].ExternalColumns[NgayCapNhat]"
+                      lineageId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Output].Columns[NgayCapNhat]" />
+                    <inputColumn
+                      refId="Package\Data Flow DIM_QuocGia\Dim_QuocGia in DDS.Inputs[OLE DB Destination Input].Columns[SKMaQG]"
+                      cachedDataType="i4"
+                      cachedName="SKMaQG"
+                      externalMetadataColumnId="Package\Data Flow DIM_QuocGia\Dim_QuocGia in DDS.Inputs[OLE DB Destination Input].ExternalColumns[SKMaQG]"
+                      lineageId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Output].Columns[SKMaQG]" />
+                    <inputColumn
+                      refId="Package\Data Flow DIM_QuocGia\Dim_QuocGia in DDS.Inputs[OLE DB Destination Input].Columns[MaQG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="MaQG"
+                      externalMetadataColumnId="Package\Data Flow DIM_QuocGia\Dim_QuocGia in DDS.Inputs[OLE DB Destination Input].ExternalColumns[MaQG]"
+                      lineageId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Output].Columns[MaQG]" />
+                    <inputColumn
+                      refId="Package\Data Flow DIM_QuocGia\Dim_QuocGia in DDS.Inputs[OLE DB Destination Input].Columns[TenQG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TenQG"
+                      externalMetadataColumnId="Package\Data Flow DIM_QuocGia\Dim_QuocGia in DDS.Inputs[OLE DB Destination Input].ExternalColumns[TenQG]"
+                      lineageId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Output].Columns[TenQG]" />
+                    <inputColumn
+                      refId="Package\Data Flow DIM_QuocGia\Dim_QuocGia in DDS.Inputs[OLE DB Destination Input].Columns[TenThanhPho]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="TenThanhPho"
+                      externalMetadataColumnId="Package\Data Flow DIM_QuocGia\Dim_QuocGia in DDS.Inputs[OLE DB Destination Input].ExternalColumns[TenThanhPho]"
+                      lineageId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Output].Columns[TenThanhPho]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow DIM_QuocGia\Dim_QuocGia in DDS.Inputs[OLE DB Destination Input].ExternalColumns[NgayTao]"
+                      dataType="dbTimeStamp"
+                      name="NgayTao" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow DIM_QuocGia\Dim_QuocGia in DDS.Inputs[OLE DB Destination Input].ExternalColumns[NgayCapNhat]"
+                      dataType="dbTimeStamp"
+                      name="NgayCapNhat" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow DIM_QuocGia\Dim_QuocGia in DDS.Inputs[OLE DB Destination Input].ExternalColumns[SKMaQG]"
+                      dataType="i4"
+                      name="SKMaQG" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow DIM_QuocGia\Dim_QuocGia in DDS.Inputs[OLE DB Destination Input].ExternalColumns[MaQG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="MaQG" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow DIM_QuocGia\Dim_QuocGia in DDS.Inputs[OLE DB Destination Input].ExternalColumns[TenQG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TenQG" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow DIM_QuocGia\Dim_QuocGia in DDS.Inputs[OLE DB Destination Input].ExternalColumns[TenThanhPho]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="TenThanhPho" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow DIM_QuocGia\Dim_QuocGia in DDS.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow DIM_QuocGia\Dim_QuocGia in DDS.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow DIM_QuocGia\Dim_QuocGia in DDS.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow DIM_QuocGia\Dim_QuocGia in DDS.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow DIM_QuocGia\Dim_QuocGia in DDS.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow DIM_QuocGia\Dim_QuocGia in DDS.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow DIM_QuocGia\QuocGia_NDS"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="QuocGia_NDS"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT * FROM QuocGia
+WHERE  MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNhat &lt; ?))</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping">"Parameter0:Input",{AFC98995-1EB1-416F-88D8-3504968700E9};"Parameter1:Input",{53D49DDE-CBCD-4EDF-91E8-3D0C88D27916};"Parameter2:Input",{AFC98995-1EB1-416F-88D8-3504968700E9};"Parameter3:Input",{53D49DDE-CBCD-4EDF-91E8-3D0C88D27916};</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_NDS]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Output].Columns[NgayTao]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Output].ExternalColumns[NgayTao]"
+                      lineageId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Output].Columns[NgayTao]"
+                      name="NgayTao"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Output].Columns[NgayCapNhat]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Output].ExternalColumns[NgayCapNhat]"
+                      lineageId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Output].Columns[NgayCapNhat]"
+                      name="NgayCapNhat"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Output].Columns[MaTrangThai]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Output].ExternalColumns[MaTrangThai]"
+                      lineageId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Output].Columns[MaTrangThai]"
+                      name="MaTrangThai"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Output].Columns[MaNguon]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Output].ExternalColumns[MaNguon]"
+                      lineageId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Output].Columns[MaNguon]"
+                      name="MaNguon"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Output].Columns[SKMaQG]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Output].ExternalColumns[SKMaQG]"
+                      lineageId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Output].Columns[SKMaQG]"
+                      name="SKMaQG"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Output].Columns[MaQG]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Output].ExternalColumns[MaQG]"
+                      length="4"
+                      lineageId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Output].Columns[MaQG]"
+                      name="MaQG"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Output].Columns[TenQG]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Output].ExternalColumns[TenQG]"
+                      length="50"
+                      lineageId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Output].Columns[TenQG]"
+                      name="TenQG"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Output].Columns[TenThanhPho]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Output].ExternalColumns[TenThanhPho]"
+                      length="100"
+                      lineageId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Output].Columns[TenThanhPho]"
+                      name="TenThanhPho"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Output].ExternalColumns[NgayTao]"
+                      dataType="dbTimeStamp"
+                      name="NgayTao" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Output].ExternalColumns[NgayCapNhat]"
+                      dataType="dbTimeStamp"
+                      name="NgayCapNhat" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Output].ExternalColumns[MaTrangThai]"
+                      dataType="i4"
+                      name="MaTrangThai" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Output].ExternalColumns[MaNguon]"
+                      dataType="i4"
+                      name="MaNguon" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Output].ExternalColumns[SKMaQG]"
+                      dataType="i4"
+                      name="SKMaQG" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Output].ExternalColumns[MaQG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="MaQG" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Output].ExternalColumns[TenQG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TenQG" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Output].ExternalColumns[TenThanhPho]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="TenThanhPho" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Error Output].Columns[SKMaQG]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Error Output].Columns[SKMaQG]"
+                      name="SKMaQG" />
+                    <outputColumn
+                      refId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Error Output].Columns[MaQG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Error Output].Columns[MaQG]"
+                      name="MaQG" />
+                    <outputColumn
+                      refId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Error Output].Columns[TenQG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Error Output].Columns[TenQG]"
+                      name="TenQG" />
+                    <outputColumn
+                      refId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Error Output].Columns[TenThanhPho]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Error Output].Columns[TenThanhPho]"
+                      name="TenThanhPho" />
+                    <outputColumn
+                      refId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Error Output].Columns[NgayTao]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Error Output].Columns[NgayTao]"
+                      name="NgayTao" />
+                    <outputColumn
+                      refId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Error Output].Columns[NgayCapNhat]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Error Output].Columns[NgayCapNhat]"
+                      name="NgayCapNhat" />
+                    <outputColumn
+                      refId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Error Output].Columns[MaTrangThai]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Error Output].Columns[MaTrangThai]"
+                      name="MaTrangThai" />
+                    <outputColumn
+                      refId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Error Output].Columns[MaNguon]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Error Output].Columns[MaNguon]"
+                      name="MaNguon" />
+                    <outputColumn
+                      refId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow DIM_QuocGia.Paths[OLE DB Source Output]"
+              endId="Package\Data Flow DIM_QuocGia\Dim_QuocGia in DDS.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Get CET, LSET for QuocGia_DIM"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{8df98f37-8c7c-475f-a209-f79a6628f60f}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Get CET, LSET for QuocGia_DIM"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{5E45446C-3AB8-4D7C-9702-CFB2913F1E58}"
+          SQLTask:SqlStatementSource="SELECT CET,LSET FROM Metadata_Table WHERE Name_DataFlow = 'Dim_QuocGia_NDStoDDS'"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="CET"
+            SQLTask:DtsVariableName="User::CETQuocGia_DimR" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="LSET"
+            SQLTask:DtsVariableName="User::LSETQuocGia_DimR" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Set CET for Dim_QuocGia"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{d555bc66-b20b-419d-b523-8e7d23f1c883}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Set CET for Dim_QuocGia"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{5E45446C-3AB8-4D7C-9702-CFB2913F1E58}"
+          SQLTask:SqlStatementSource="UPDATE Metadata_Table&#xA;SET CET = GETDATE()&#xA;WHERE Name_DataFlow = 'Dim_QuocGia_NDStoDDS'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Set LSET for QG_DIM"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{7849bd7f-1662-4b9c-972e-fc422ce28fdc}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Set LSET for QG_DIM"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{5E45446C-3AB8-4D7C-9702-CFB2913F1E58}"
+          SQLTask:SqlStatementSource="UPDATE Metadata_Table&#xA;SET LSET  = CET&#xA;WHERE Name_DataFlow = 'Dim_QuocGia_NDStoDDS';" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{DE775139-A0A8-44D0-A0CA-4ECB6CF46144}"
+      DTS:From="Package\Set CET for Dim_QuocGia"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Get CET, LSET for QuocGia_DIM" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{DD13E55F-8B03-471D-B8FC-05119F413986}"
+      DTS:From="Package\Get CET, LSET for QuocGia_DIM"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Data Flow DIM_QuocGia" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{C348BCFA-9C76-42F9-B333-CBBD09191BA9}"
+      DTS:From="Package\Data Flow DIM_QuocGia"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Set LSET for QG_DIM" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="190.4,41.6"
+          Id="Package\Set CET for Dim_QuocGia"
+          TopLeft="60.9702339086589,60" />
+        <NodeLayout
+          Size="212,42.4"
+          Id="Package\Get CET, LSET for QuocGia_DIM"
+          TopLeft="60,164.724460516727" />
+        <NodeLayout
+          Size="184.8,41.6"
+          Id="Package\Data Flow DIM_QuocGia"
+          TopLeft="65.8273812103011,272.91022106332" />
+        <NodeLayout
+          Size="228,41.6"
+          Id="Package\Set LSET for QG_DIM"
+          TopLeft="69.1428578711898,385.804959905643" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="156.170233908659,101.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="9.82976609134113,63.124460516727"
+              Start="0,0"
+              End="9.82976609134113,55.624460516727">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.5622302583635" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.5622302583635"
+                    Point2="0,31.5622302583635"
+                    Point3="4,31.5622302583635" />
+                  <mssgle:LineSegment
+                    End="5.82976609134113,31.5622302583635" />
+                  <mssgle:CubicBezierSegment
+                    Point1="5.82976609134113,31.5622302583635"
+                    Point2="9.82976609134113,31.5622302583635"
+                    Point3="9.82976609134113,35.5622302583635" />
+                  <mssgle:LineSegment
+                    End="9.82976609134113,55.624460516727" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="162.113690605151,207.124460516727">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,65.785760546593"
+              Start="0,0"
+              End="0,58.285760546593">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,58.285760546593" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="158.227381210301,314.51022106332">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="24.9154766608887,71.2947388423229"
+              Start="0,0"
+              End="24.9154766608887,63.7947388423229">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.6473694211615" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.6473694211615"
+                    Point2="0,35.6473694211615"
+                    Point3="4,35.6473694211615" />
+                  <mssgle:LineSegment
+                    End="20.9154766608887,35.6473694211615" />
+                  <mssgle:CubicBezierSegment
+                    Point1="20.9154766608887,35.6473694211615"
+                    Point2="24.9154766608887,35.6473694211615"
+                    Point3="24.9154766608887,39.6473694211615" />
+                  <mssgle:LineSegment
+                    End="24.9154766608887,63.7947388423229" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow DIM_QuocGia">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="216.8,41.6"
+          Id="Package\Data Flow DIM_QuocGia\QuocGia_NDS"
+          TopLeft="237.499996460974,73.8947382329904" />
+        <NodeLayout
+          Size="169.6,41.6"
+          Id="Package\Data Flow DIM_QuocGia\Dim_QuocGia in DDS"
+          TopLeft="262.142861607123,253.117650608703" />
+        <EdgeLayout
+          Id="Package\Data Flow DIM_QuocGia.Paths[OLE DB Source Output]"
+          TopLeft="346.421429034049,115.49473823299">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,137.622912375713"
+              Start="0,0"
+              End="0,130.122912375713">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,130.122912375713" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow DIM_QuocGia\QuocGia_NDS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow DIM_QuocGia\Dim_QuocGia in DDS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

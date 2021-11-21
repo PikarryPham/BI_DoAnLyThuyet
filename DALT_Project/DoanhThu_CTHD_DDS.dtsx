@@ -1,0 +1,1448 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/21/2021 6:07:08 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-ED2S73F"
+  DTS:CreatorName="DESKTOP-ED2S73F\MON"
+  DTS:DTSID="{D72F46D7-CAC0-4D9C-8D15-8C8FBD05D8BD}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.170"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="50"
+  DTS:VersionGUID="{1317DE9B-5E39-458A-BC97-95CC106BE1F5}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_DW]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{653EBAEC-536B-4A6D-9D82-B67B96C2BF1E}"
+      DTS:ObjectName="DESKTOP-ED2S73F\TRANGPHAM.DALT_DW">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-ED2S73F\TRANGPHAM;Initial Catalog=DALT_DW;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_METADATA]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{50B74FA9-C161-4EAD-908B-02D7739B742C}"
+      DTS:ObjectName="DESKTOP-ED2S73F\TRANGPHAM.DALT_METADATA">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-ED2S73F\TRANGPHAM;Initial Catalog=DALT_METADATA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_NDS]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{A890125C-0681-4041-BE46-667186D5E001}"
+      DTS:ObjectName="DESKTOP-ED2S73F\TRANGPHAM.DALT_NDS">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-ED2S73F\TRANGPHAM;Initial Catalog=DALT_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_NDS 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{9A38E71B-33EC-4A3C-A264-02BCFB8B49C1}"
+      DTS:ObjectName="DESKTOP-ED2S73F\TRANGPHAM.DALT_NDS 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-ED2S73F\TRANGPHAM;Initial Catalog=DALT_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{62ABD41F-BDA1-4C38-ABA9-8CCCD362BDF6}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="CET_CTHD_Fact">
+      <DTS:VariableValue
+        DTS:DataType="7">1/1/1900</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E6261A33-1FEC-4926-96F2-3194BAA5725A}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="LSET_CTHD_Fact">
+      <DTS:VariableValue
+        DTS:DataType="7">1/1/1900</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{443DD35B-AEFA-45B7-8088-FC04B256D7B7}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="SKDate_FromDimDate">
+      <DTS:VariableValue
+        DTS:DataType="2">1</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow FACT_DoanhThu"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{c51b7165-6125-497a-ba0b-3aa475979b31}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow FACT_DoanhThu"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow FACT_DoanhThu\Add Date Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Add Date Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow FACT_DoanhThu\Add Date Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow FACT_DoanhThu\Add Date Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Data Flow FACT_DoanhThu\Add Date Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\Add Date Column.Outputs[Derived Column Output].Columns[SKDate_Value]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow FACT_DoanhThu\Add Date Column.Outputs[Derived Column Output].Columns[SKDate_Value]"
+                      name="SKDate_Value"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">@[User::SKDate_FromDimDate]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">@[User::SKDate_FromDimDate]</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow FACT_DoanhThu\Add Date Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Data Flow FACT_DoanhThu\Add Date Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\Add Date Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow FACT_DoanhThu\Add Date Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\Add Date Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow FACT_DoanhThu\Add Date Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow FACT_DoanhThu\CTHD_NDS"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="CTHD_NDS"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT * FROM ChiTietHoaDon
+WHERE  MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNhat &lt; ?))</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping">"Parameter0:Input",{FEF6517B-63FD-40E8-9F5C-8B421919FE51};"Parameter1:Input",{A5945C7C-B808-4BEE-831D-1F5451946FCA};"Parameter2:Input",{FEF6517B-63FD-40E8-9F5C-8B421919FE51};"Parameter3:Input",{A5945C7C-B808-4BEE-831D-1F5451946FCA};</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_NDS]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Output].Columns[NgayTao]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Output].ExternalColumns[NgayTao]"
+                      lineageId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Output].Columns[NgayTao]"
+                      name="NgayTao"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Output].Columns[NgayCapNhat]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Output].ExternalColumns[NgayCapNhat]"
+                      lineageId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Output].Columns[NgayCapNhat]"
+                      name="NgayCapNhat"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Output].Columns[MaTrangThai]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Output].ExternalColumns[MaTrangThai]"
+                      lineageId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Output].Columns[MaTrangThai]"
+                      name="MaTrangThai"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Output].Columns[MaNguon]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Output].ExternalColumns[MaNguon]"
+                      lineageId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Output].Columns[MaNguon]"
+                      name="MaNguon"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Output].Columns[SKMaCTHD]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Output].ExternalColumns[SKMaCTHD]"
+                      lineageId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Output].Columns[SKMaCTHD]"
+                      name="SKMaCTHD"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Output].Columns[MaHD]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Output].ExternalColumns[MaHD]"
+                      lineageId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Output].Columns[MaHD]"
+                      name="MaHD"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Output].Columns[MaSP]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Output].ExternalColumns[MaSP]"
+                      lineageId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Output].Columns[MaSP]"
+                      name="MaSP"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Output].ExternalColumns[NgayTao]"
+                      dataType="dbTimeStamp"
+                      name="NgayTao" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Output].ExternalColumns[NgayCapNhat]"
+                      dataType="dbTimeStamp"
+                      name="NgayCapNhat" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Output].ExternalColumns[MaTrangThai]"
+                      dataType="i4"
+                      name="MaTrangThai" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Output].ExternalColumns[MaNguon]"
+                      dataType="i4"
+                      name="MaNguon" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Output].ExternalColumns[SKMaCTHD]"
+                      dataType="i4"
+                      name="SKMaCTHD" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Output].ExternalColumns[MaHD]"
+                      dataType="i4"
+                      name="MaHD" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Output].ExternalColumns[MaSP]"
+                      dataType="i4"
+                      name="MaSP" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Error Output].Columns[SKMaCTHD]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Error Output].Columns[SKMaCTHD]"
+                      name="SKMaCTHD" />
+                    <outputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Error Output].Columns[MaHD]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Error Output].Columns[MaHD]"
+                      name="MaHD" />
+                    <outputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Error Output].Columns[MaSP]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Error Output].Columns[MaSP]"
+                      name="MaSP" />
+                    <outputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Error Output].Columns[NgayTao]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Error Output].Columns[NgayTao]"
+                      name="NgayTao" />
+                    <outputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Error Output].Columns[NgayCapNhat]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Error Output].Columns[NgayCapNhat]"
+                      name="NgayCapNhat" />
+                    <outputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Error Output].Columns[MaTrangThai]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Error Output].Columns[MaTrangThai]"
+                      name="MaTrangThai" />
+                    <outputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Error Output].Columns[MaNguon]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Error Output].Columns[MaNguon]"
+                      name="MaNguon" />
+                    <outputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow FACT_DoanhThu\Fact_ABCDoanhThu in DDS"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Fact_ABCDoanhThu in DDS"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Fact_ABCDoanhThu]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">true</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow FACT_DoanhThu\Fact_ABCDoanhThu in DDS.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_DW]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_DW]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow FACT_DoanhThu\Fact_ABCDoanhThu in DDS.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\Fact_ABCDoanhThu in DDS.Inputs[OLE DB Destination Input].Columns[NgayTao]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="NgayTao"
+                      externalMetadataColumnId="Package\Data Flow FACT_DoanhThu\Fact_ABCDoanhThu in DDS.Inputs[OLE DB Destination Input].ExternalColumns[NgayTao]"
+                      lineageId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Output].Columns[NgayTao]" />
+                    <inputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\Fact_ABCDoanhThu in DDS.Inputs[OLE DB Destination Input].Columns[NgayCapNhat]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="NgayCapNhat"
+                      externalMetadataColumnId="Package\Data Flow FACT_DoanhThu\Fact_ABCDoanhThu in DDS.Inputs[OLE DB Destination Input].ExternalColumns[NgayCapNhat]"
+                      lineageId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Output].Columns[NgayCapNhat]" />
+                    <inputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\Fact_ABCDoanhThu in DDS.Inputs[OLE DB Destination Input].Columns[SKMaCTHD]"
+                      cachedDataType="i4"
+                      cachedName="SKMaCTHD"
+                      externalMetadataColumnId="Package\Data Flow FACT_DoanhThu\Fact_ABCDoanhThu in DDS.Inputs[OLE DB Destination Input].ExternalColumns[SKDoanhThu]"
+                      lineageId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Output].Columns[SKMaCTHD]" />
+                    <inputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\Fact_ABCDoanhThu in DDS.Inputs[OLE DB Destination Input].Columns[MaCH_From_HD]"
+                      cachedDataType="i4"
+                      cachedName="MaCH_From_HD"
+                      externalMetadataColumnId="Package\Data Flow FACT_DoanhThu\Fact_ABCDoanhThu in DDS.Inputs[OLE DB Destination Input].ExternalColumns[SKMaCH]"
+                      lineageId="Package\Data Flow FACT_DoanhThu\Find value for MaKH, MaCH based on MaHD.Outputs[Lookup Match Output].Columns[MaCH_From_HD]" />
+                    <inputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\Fact_ABCDoanhThu in DDS.Inputs[OLE DB Destination Input].Columns[MaKH_From_HD]"
+                      cachedDataType="i4"
+                      cachedName="MaKH_From_HD"
+                      externalMetadataColumnId="Package\Data Flow FACT_DoanhThu\Fact_ABCDoanhThu in DDS.Inputs[OLE DB Destination Input].ExternalColumns[SKMaKH]"
+                      lineageId="Package\Data Flow FACT_DoanhThu\Find value for MaKH, MaCH based on MaHD.Outputs[Lookup Match Output].Columns[MaKH_From_HD]" />
+                    <inputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\Fact_ABCDoanhThu in DDS.Inputs[OLE DB Destination Input].Columns[MaSP]"
+                      cachedDataType="i4"
+                      cachedName="MaSP"
+                      externalMetadataColumnId="Package\Data Flow FACT_DoanhThu\Fact_ABCDoanhThu in DDS.Inputs[OLE DB Destination Input].ExternalColumns[SKMaSP]"
+                      lineageId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Output].Columns[MaSP]" />
+                    <inputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\Fact_ABCDoanhThu in DDS.Inputs[OLE DB Destination Input].Columns[MaHD]"
+                      cachedDataType="i4"
+                      cachedName="MaHD"
+                      externalMetadataColumnId="Package\Data Flow FACT_DoanhThu\Fact_ABCDoanhThu in DDS.Inputs[OLE DB Destination Input].ExternalColumns[SKMaHD]"
+                      lineageId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Output].Columns[MaHD]" />
+                    <inputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\Fact_ABCDoanhThu in DDS.Inputs[OLE DB Destination Input].Columns[GiaSP_Real]"
+                      cachedDataType="i4"
+                      cachedName="GiaSP_Real"
+                      externalMetadataColumnId="Package\Data Flow FACT_DoanhThu\Fact_ABCDoanhThu in DDS.Inputs[OLE DB Destination Input].ExternalColumns[GiaSP]"
+                      lineageId="Package\Data Flow FACT_DoanhThu\Find value for Price Product column based on MaSP from SanPham.Outputs[Lookup Match Output].Columns[GiaSP_Real]" />
+                    <inputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\Fact_ABCDoanhThu in DDS.Inputs[OLE DB Destination Input].Columns[SKDate_Value]"
+                      cachedDataType="i2"
+                      cachedName="SKDate_Value"
+                      externalMetadataColumnId="Package\Data Flow FACT_DoanhThu\Fact_ABCDoanhThu in DDS.Inputs[OLE DB Destination Input].ExternalColumns[SKDate]"
+                      lineageId="Package\Data Flow FACT_DoanhThu\Add Date Column.Outputs[Derived Column Output].Columns[SKDate_Value]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow FACT_DoanhThu\Fact_ABCDoanhThu in DDS.Inputs[OLE DB Destination Input].ExternalColumns[NgayTao]"
+                      dataType="dbTimeStamp"
+                      name="NgayTao" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow FACT_DoanhThu\Fact_ABCDoanhThu in DDS.Inputs[OLE DB Destination Input].ExternalColumns[NgayCapNhat]"
+                      dataType="dbTimeStamp"
+                      name="NgayCapNhat" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow FACT_DoanhThu\Fact_ABCDoanhThu in DDS.Inputs[OLE DB Destination Input].ExternalColumns[SKDoanhThu]"
+                      dataType="i4"
+                      name="SKDoanhThu" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow FACT_DoanhThu\Fact_ABCDoanhThu in DDS.Inputs[OLE DB Destination Input].ExternalColumns[SKMaCH]"
+                      dataType="i4"
+                      name="SKMaCH" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow FACT_DoanhThu\Fact_ABCDoanhThu in DDS.Inputs[OLE DB Destination Input].ExternalColumns[SKMaKH]"
+                      dataType="i4"
+                      name="SKMaKH" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow FACT_DoanhThu\Fact_ABCDoanhThu in DDS.Inputs[OLE DB Destination Input].ExternalColumns[SKMaSP]"
+                      dataType="i4"
+                      name="SKMaSP" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow FACT_DoanhThu\Fact_ABCDoanhThu in DDS.Inputs[OLE DB Destination Input].ExternalColumns[SKMaHD]"
+                      dataType="i4"
+                      name="SKMaHD" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow FACT_DoanhThu\Fact_ABCDoanhThu in DDS.Inputs[OLE DB Destination Input].ExternalColumns[SKDate]"
+                      dataType="i4"
+                      name="SKDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow FACT_DoanhThu\Fact_ABCDoanhThu in DDS.Inputs[OLE DB Destination Input].ExternalColumns[GiaSP]"
+                      dataType="i4"
+                      name="GiaSP" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow FACT_DoanhThu\Fact_ABCDoanhThu in DDS.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow FACT_DoanhThu\Fact_ABCDoanhThu in DDS.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\Fact_ABCDoanhThu in DDS.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow FACT_DoanhThu\Fact_ABCDoanhThu in DDS.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\Fact_ABCDoanhThu in DDS.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow FACT_DoanhThu\Fact_ABCDoanhThu in DDS.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow FACT_DoanhThu\Find value for MaKH, MaCH based on MaHD"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Find value for MaKH, MaCH based on MaHD"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT SKMaHD, MaCH, MaKH
+FROM ChiTietHoaDon
+JOIN HoaDon
+ON SKMaHD = ChiTietHoaDon.MaHD</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT SKMaHD, MaCH, MaKH
+FROM ChiTietHoaDon
+JOIN HoaDon
+ON SKMaHD = ChiTietHoaDon.MaHD) [refTable]
+where [refTable].[SKMaHD] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="SKMaHD" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MaCH" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MaKH" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Output].Columns[MaHD]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow FACT_DoanhThu\Find value for MaKH, MaCH based on MaHD.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_NDS]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow FACT_DoanhThu\Find value for MaKH, MaCH based on MaHD.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\Find value for MaKH, MaCH based on MaHD.Inputs[Lookup Input].Columns[MaHD]"
+                      cachedDataType="i4"
+                      cachedName="MaHD"
+                      lineageId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Output].Columns[MaHD]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">SKMaHD</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow FACT_DoanhThu\Find value for MaKH, MaCH based on MaHD.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="IgnoreFailure"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Data Flow FACT_DoanhThu\Find value for MaKH, MaCH based on MaHD.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\Find value for MaKH, MaCH based on MaHD.Outputs[Lookup Match Output].Columns[MaCH_From_HD]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Data Flow FACT_DoanhThu\Find value for MaKH, MaCH based on MaHD.Outputs[Lookup Match Output].Columns[MaCH_From_HD]"
+                      name="MaCH_From_HD"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">MaCH</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\Find value for MaKH, MaCH based on MaHD.Outputs[Lookup Match Output].Columns[MaKH_From_HD]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Data Flow FACT_DoanhThu\Find value for MaKH, MaCH based on MaHD.Outputs[Lookup Match Output].Columns[MaKH_From_HD]"
+                      name="MaKH_From_HD"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">MaKH</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow FACT_DoanhThu\Find value for MaKH, MaCH based on MaHD.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Data Flow FACT_DoanhThu\Find value for MaKH, MaCH based on MaHD.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow FACT_DoanhThu\Find value for MaKH, MaCH based on MaHD.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Data Flow FACT_DoanhThu\Find value for MaKH, MaCH based on MaHD.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\Find value for MaKH, MaCH based on MaHD.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow FACT_DoanhThu\Find value for MaKH, MaCH based on MaHD.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\Find value for MaKH, MaCH based on MaHD.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow FACT_DoanhThu\Find value for MaKH, MaCH based on MaHD.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow FACT_DoanhThu\Find value for Price Product column based on MaSP from SanPham"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Find value for Price Product column based on MaSP from SanPham"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT SKMaSP, GiaSP
+FROM ChiTietHoaDon
+JOIN SanPham
+ON ChiTietHoaDon.MaSP = SanPham.SKMaSP</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT SKMaSP, GiaSP
+FROM ChiTietHoaDon
+JOIN SanPham
+ON ChiTietHoaDon.MaSP = SanPham.SKMaSP) [refTable]
+where [refTable].[SKMaSP] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="SKMaSP" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="GiaSP" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Output].Columns[MaSP]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow FACT_DoanhThu\Find value for Price Product column based on MaSP from SanPham.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_NDS]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow FACT_DoanhThu\Find value for Price Product column based on MaSP from SanPham.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\Find value for Price Product column based on MaSP from SanPham.Inputs[Lookup Input].Columns[MaSP]"
+                      cachedDataType="i4"
+                      cachedName="MaSP"
+                      lineageId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Output].Columns[MaSP]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">SKMaSP</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow FACT_DoanhThu\Find value for Price Product column based on MaSP from SanPham.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="IgnoreFailure"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Data Flow FACT_DoanhThu\Find value for Price Product column based on MaSP from SanPham.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\Find value for Price Product column based on MaSP from SanPham.Outputs[Lookup Match Output].Columns[GiaSP_Real]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Data Flow FACT_DoanhThu\Find value for Price Product column based on MaSP from SanPham.Outputs[Lookup Match Output].Columns[GiaSP_Real]"
+                      name="GiaSP_Real"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">GiaSP</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow FACT_DoanhThu\Find value for Price Product column based on MaSP from SanPham.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Data Flow FACT_DoanhThu\Find value for Price Product column based on MaSP from SanPham.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow FACT_DoanhThu\Find value for Price Product column based on MaSP from SanPham.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Data Flow FACT_DoanhThu\Find value for Price Product column based on MaSP from SanPham.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\Find value for Price Product column based on MaSP from SanPham.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow FACT_DoanhThu\Find value for Price Product column based on MaSP from SanPham.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\Find value for Price Product column based on MaSP from SanPham.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow FACT_DoanhThu\Find value for Price Product column based on MaSP from SanPham.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow FACT_DoanhThu.Paths[Derived Column Output]"
+              endId="Package\Data Flow FACT_DoanhThu\Fact_ABCDoanhThu in DDS.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Data Flow FACT_DoanhThu\Add Date Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Data Flow FACT_DoanhThu.Paths[Lookup Match Output]"
+              endId="Package\Data Flow FACT_DoanhThu\Find value for MaKH, MaCH based on MaHD.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Data Flow FACT_DoanhThu\Find value for Price Product column based on MaSP from SanPham.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Data Flow FACT_DoanhThu.Paths[Lookup Match Output1]"
+              endId="Package\Data Flow FACT_DoanhThu\Add Date Column.Inputs[Derived Column Input]"
+              name="Lookup Match Output"
+              startId="Package\Data Flow FACT_DoanhThu\Find value for MaKH, MaCH based on MaHD.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Data Flow FACT_DoanhThu.Paths[OLE DB Source Output]"
+              endId="Package\Data Flow FACT_DoanhThu\Find value for Price Product column based on MaSP from SanPham.Inputs[Lookup Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Get CET, LSET for Fact_DoanhThu"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{b65fbe33-b152-4e3a-9b09-75ae35671452}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Get CET, LSET for Fact_DoanhThu"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{50B74FA9-C161-4EAD-908B-02D7739B742C}"
+          SQLTask:SqlStatementSource="SELECT CET,LSET FROM Metadata_Table WHERE Name_DataFlow = 'Fact_CTHD_NDStoDDS'"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="CET"
+            SQLTask:DtsVariableName="User::CET_CTHD_Fact" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="LSET"
+            SQLTask:DtsVariableName="User::LSET_CTHD_Fact" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Get Random SKDate from DimDate for Fact_DoanhThu"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{80A7D575-60E7-4822-B50E-C133AFA5B638}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Get Random SKDate from DimDate for Fact_DoanhThu"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{653EBAEC-536B-4A6D-9D82-B67B96C2BF1E}"
+          SQLTask:SqlStatementSource="SELECT TOP 1 SKDate FROM DimDate"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="SKDate"
+            SQLTask:DtsVariableName="User::SKDate_FromDimDate" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Set CET for Fact_DoanhThu"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{d54caf41-343f-49ee-914d-da9408398f93}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Set CET for Fact_DoanhThu"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{50B74FA9-C161-4EAD-908B-02D7739B742C}"
+          SQLTask:SqlStatementSource="UPDATE Metadata_Table&#xA;SET CET = GETDATE()&#xA;WHERE Name_DataFlow = 'Fact_CTHD_NDStoDDS'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Set LSET for Fact_DoanhThu"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{1a751c76-eb3b-4e69-bd43-645dc30cd41a}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Set LSET for Fact_DoanhThu"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{50B74FA9-C161-4EAD-908B-02D7739B742C}"
+          SQLTask:SqlStatementSource="UPDATE Metadata_Table&#xA;SET LSET  = CET&#xA;WHERE Name_DataFlow = 'Fact_CTHD_NDStoDDS';" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{6CD3C8EE-1A6C-431E-937A-D526B9993C25}"
+      DTS:From="Package\Set CET for Fact_DoanhThu"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Get CET, LSET for Fact_DoanhThu" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{0F870B30-7F44-4327-937A-D49A41680396}"
+      DTS:From="Package\Get CET, LSET for Fact_DoanhThu"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Get Random SKDate from DimDate for Fact_DoanhThu" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{E8458F76-E51F-420E-BCC8-F038781893F7}"
+      DTS:From="Package\Data Flow FACT_DoanhThu"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Set LSET for Fact_DoanhThu" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{2D484D98-EAA5-4672-873A-067494A798A7}"
+      DTS:From="Package\Get Random SKDate from DimDate for Fact_DoanhThu"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Data Flow FACT_DoanhThu" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="186.4,41.6"
+          Id="Package\Data Flow FACT_DoanhThu"
+          TopLeft="78.6845242863997,378.439634308037" />
+        <NodeLayout
+          Size="212,42.4"
+          Id="Package\Get CET, LSET for Fact_DoanhThu"
+          TopLeft="73.5714288025486,171.606813554426" />
+        <NodeLayout
+          Size="209.6,41.6"
+          Id="Package\Set CET for Fact_DoanhThu"
+          TopLeft="60.970233908659,60" />
+        <NodeLayout
+          Size="228,41.6"
+          Id="Package\Set LSET for Fact_DoanhThu"
+          TopLeft="59.142857700891,474.510843502651" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="165.770233908659,101.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="13.8011948938896,70.0068135544259"
+              Start="0,0"
+              End="13.8011948938896,62.5068135544259">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.0034067772129" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.0034067772129"
+                    Point2="0,35.0034067772129"
+                    Point3="4,35.0034067772129" />
+                  <mssgle:LineSegment
+                    End="9.80119489388963,35.0034067772129" />
+                  <mssgle:CubicBezierSegment
+                    Point1="9.80119489388963,35.0034067772129"
+                    Point2="13.8011948938896,35.0034067772129"
+                    Point3="13.8011948938896,39.0034067772129" />
+                  <mssgle:LineSegment
+                    End="13.8011948938896,62.5068135544259" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="172.513690993645,420.039634308037">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,54.4712091946136"
+              Start="0,0"
+              End="0,46.9712091946136">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.9712091946136" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="311.2,56.8"
+          Id="Package\Get Random SKDate from DimDate for Fact_DoanhThu"
+          TopLeft="50.0000008514947,276.82353329411" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="179.571428802549,214.006813554426">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="26.0285720489461,62.8167197396839"
+              Start="0,0"
+              End="26.0285720489461,55.3167197396839">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.4083598698419" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.4083598698419"
+                    Point2="0,31.4083598698419"
+                    Point3="4,31.4083598698419" />
+                  <mssgle:LineSegment
+                    End="22.0285720489461,31.4083598698419" />
+                  <mssgle:CubicBezierSegment
+                    Point1="22.0285720489461,31.4083598698419"
+                    Point2="26.0285720489461,31.4083598698419"
+                    Point3="26.0285720489461,35.4083598698419" />
+                  <mssgle:LineSegment
+                    End="26.0285720489461,55.3167197396839" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="205.600000851495,333.62353329411">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-33.7154765650951,44.8161010139272"
+              Start="0,0"
+              End="-33.7154765650951,37.3161010139272">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.4080505069636" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.4080505069636"
+                    Point2="0,22.4080505069636"
+                    Point3="-4,22.4080505069636" />
+                  <mssgle:LineSegment
+                    End="-29.7154765650951,22.4080505069636" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-29.7154765650951,22.4080505069636"
+                    Point2="-33.7154765650951,22.4080505069636"
+                    Point3="-33.7154765650951,26.4080505069636" />
+                  <mssgle:LineSegment
+                    End="-33.7154765650951,37.3161010139272" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow FACT_DoanhThu">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="392.8,41.6"
+          Id="Package\Data Flow FACT_DoanhThu\Find value for Price Product column based on MaSP from SanPham"
+          TopLeft="157.142859818984,183.529414338637" />
+        <NodeLayout
+          Size="296,41.6"
+          Id="Package\Data Flow FACT_DoanhThu\Find value for MaKH, MaCH based on MaHD"
+          TopLeft="224.285718105277,279.117650973343" />
+        <NodeLayout
+          Size="169.6,41.6"
+          Id="Package\Data Flow FACT_DoanhThu\Fact_ABCDoanhThu in DDS"
+          TopLeft="287.142862032871,454.235300488126" />
+        <NodeLayout
+          Size="216.8,41.6"
+          Id="Package\Data Flow FACT_DoanhThu\CTHD_NDS"
+          TopLeft="256.071425348672,70.8359146606798" />
+        <EdgeLayout
+          Id="Package\Data Flow FACT_DoanhThu.Paths[Lookup Match Output]"
+          TopLeft="353.542859818984,225.129414338637">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="18.7428582862933,53.9882366347066"
+              Start="0,0"
+              End="18.7428582862933,46.4882366347066">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.9941183173533" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.9941183173533"
+                    Point2="0,26.9941183173533"
+                    Point3="4,26.9941183173533" />
+                  <mssgle:LineSegment
+                    End="14.7428582862933,26.9941183173533" />
+                  <mssgle:CubicBezierSegment
+                    Point1="14.7428582862933,26.9941183173533"
+                    Point2="18.7428582862933,26.9941183173533"
+                    Point3="18.7428582862933,30.9941183173533" />
+                  <mssgle:LineSegment
+                    End="18.7428582862933,46.4882366347066" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-38.8199575756034,31.9941183173533,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow FACT_DoanhThu.Paths[OLE DB Source Output]"
+          TopLeft="364.471425348672,112.43591466068">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-10.9285655296879,71.0934996779568"
+              Start="0,0"
+              End="-10.9285655296879,63.5934996779568">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5467498389784" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.5467498389784"
+                    Point2="0,35.5467498389784"
+                    Point3="-4,35.5467498389784" />
+                  <mssgle:LineSegment
+                    End="-6.92856552968794,35.5467498389784" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-6.92856552968794,35.5467498389784"
+                    Point2="-10.9285655296879,35.5467498389784"
+                    Point3="-10.9285655296879,39.5467498389784" />
+                  <mssgle:LineSegment
+                    End="-10.9285655296879,63.5934996779568" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\Data Flow FACT_DoanhThu\Add Date Column"
+          TopLeft="290.000004938671,374.70588760805" />
+        <EdgeLayout
+          Id="Package\Data Flow FACT_DoanhThu.Paths[Lookup Match Output1]"
+          TopLeft="369.342861521974,320.717650973343">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,53.9882366347067"
+              Start="0,0"
+              End="0,46.4882366347067">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.4882366347067" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,17.4394308173533,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow FACT_DoanhThu.Paths[Derived Column Output]"
+          TopLeft="369.171433485771,416.30588760805">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37.929412880076"
+              Start="0,0"
+              End="0,30.429412880076">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.429412880076" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow FACT_DoanhThu\Find value for Price Product column based on MaSP from SanPham">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow FACT_DoanhThu\Find value for MaKH, MaCH based on MaHD">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow FACT_DoanhThu\Fact_ABCDoanhThu in DDS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow FACT_DoanhThu\CTHD_NDS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

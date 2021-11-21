@@ -31,8 +31,16 @@ CREATE TABLE TrangThai (
 --SET TenTrangThai = 'Unknown'
 --WHERE SKMaTrangThai = 2;
 
-INSERT INTO TrangThai VALUES(1,'Normal',GETDATE(),GETDATE());
-INSERT INTO TrangThai VALUES(2,'Unknown',GETDATE(),GETDATE());
+INSERT INTO TrangThai VALUES(1,'Active',GETDATE(),GETDATE());
+INSERT INTO TrangThai VALUES(2,'Disabled',GETDATE(),GETDATE());
+
+--UPDATE TrangThai
+--SET TenTrangThai = 'Active'
+--WHERE SKMaTrangThai = 1;
+
+--UPDATE TrangThai
+--SET TenTrangThai = 'Disabled'
+--WHERE SKMaTrangThai = 2;
 
 IF OBJECT_ID(N'dbo.NguonDuLieu', N'U') IS NOT NULL
 BEGIN
@@ -112,6 +120,7 @@ CREATE TABLE CuaHang(
 	[NgayTao] [datetime] NULL,
 	[NgayCapNhat] [datetime] NULL,
 	[MaLoaiCH] int,
+	-- TinhTrang int,
 	[MaQG] int,
 	[MaTrangThai] int,
 	[MaNguon] int
@@ -155,6 +164,7 @@ CREATE TABLE KhachHang (
   [SoThich] varchar(30),
   [NgheNghiep] varchar(30),
   -- [ThanhPho] varchar(255),
+  -- TinhTrang int,
   [MaQG] int,
   [MaTrangThai] int,
   [MaNguon] int
@@ -420,3 +430,12 @@ FOREIGN KEY (MaCH) REFERENCES CuaHang;
 --GO
 
 --SELECT * FROM KhachHang_Jade
+--SELECT SKMaHD, MaCH, MaKH
+--FROM ChiTietHoaDon
+--JOIN HoaDon
+--ON SKMaHD = ChiTietHoaDon.MaHD
+
+Use DALT_DW
+
+SELECT TOP 1 SKDate FROM DimDate
+ORDER BY NEWID()
