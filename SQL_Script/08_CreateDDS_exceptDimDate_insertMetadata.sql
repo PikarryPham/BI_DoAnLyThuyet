@@ -1,5 +1,4 @@
 ﻿/*Tao script DDS*/
-
 Use DALT_NDS
 
 UPDATE TrangThai
@@ -41,7 +40,12 @@ BEGIN
 	DROP TABLE dbo.Dim_CuaHang;
 	PRINT 'Delete Table Successfully';
 END;
-
+IF OBJECT_ID(N'dbo.Dim_LoaiSanPham', N'U') IS NOT NULL
+BEGIN
+    PRINT 'Table Exists';
+	DROP TABLE dbo.Dim_LoaiSanPham;
+	PRINT 'Delete Table Successfully';
+END;
 IF OBJECT_ID(N'dbo.Dim_SanPham', N'U') IS NOT NULL
 BEGIN
     PRINT 'Table Exists';
@@ -52,11 +56,11 @@ END;
 IF OBJECT_ID(N'dbo.Dim_LoaiCuaHang', N'U') IS NOT NULL
 BEGIN
     PRINT 'Table Exists';
-	DROP TABLE dbo.Dim_CuaHang;
+	DROP TABLE dbo.Dim_LoaiCuaHang;
 	PRINT 'Delete Table Successfully';
 END;
 
-IF OBJECT_ID(N'dbo.Dim_LoaiSanPham', N'U') IS NOT NULL
+IF OBJECT_ID(N'dbo.Dim_CuaHang', N'U') IS NOT NULL
 BEGIN
     PRINT 'Table Exists';
 	DROP TABLE dbo.Dim_CuaHang;
@@ -73,7 +77,7 @@ END;
 /*----------------------- Tạo bảng Dimension ------------*/
 /*---------------------- Tạo bảng Fact ---------------- */
 CREATE TABLE Fact_ABCDoanhThu (
-	SKDoanhThu INTEGER IDENTITY(1,1) PRIMARY KEY NOT NULL,
+	SKDoanhThu INTEGER PRIMARY KEY NOT NULL,
 	SKMaCH INTEGER NOT NULL,
 	SKMaKH INTEGER NOT NULL,
 	SKMaSP INTEGER NOT NULL,
@@ -84,8 +88,9 @@ CREATE TABLE Fact_ABCDoanhThu (
 	GiaSP INT
 );
 
+
 CREATE TABLE Dim_HoaDon (
-   SKMaHD INTEGER IDENTITY(1,1) PRIMARY KEY NOT NULL,
+   SKMaHD INTEGER PRIMARY KEY NOT NULL,
    MaHD varchar(4) ,
    [NgayTao] datetime NULL,
    [NgayCapNhat] datetime NULL,
@@ -93,7 +98,7 @@ CREATE TABLE Dim_HoaDon (
 );
 
 CREATE TABLE Dim_KhachHang (
-  SKMaKH INTEGER IDENTITY(1,1) PRIMARY KEY NOT NULL,
+  SKMaKH INTEGER PRIMARY KEY NOT NULL,
   [MaKH] varchar(4) NOT NULL,
   [TenKH] varchar(50),
   [NgayTao] datetime,
@@ -105,7 +110,7 @@ CREATE TABLE Dim_KhachHang (
 );
 
 CREATE TABLE Dim_CuaHang (
-    SKMaCH INTEGER IDENTITY(1,1) PRIMARY KEY NOT NULL,
+    SKMaCH INTEGER PRIMARY KEY NOT NULL,
 	[MaCH] [varchar](4) NOT NULL,
 	[TenCH] [varchar](50) NULL,
 	[NgayTao] [datetime] NULL,
@@ -115,7 +120,7 @@ CREATE TABLE Dim_CuaHang (
 );
 
 CREATE TABLE Dim_SanPham (
-    SKMaSP INTEGER IDENTITY(1,1) PRIMARY KEY NOT NULL,
+    SKMaSP INTEGER PRIMARY KEY NOT NULL,
 	[MaSP] [varchar](4) NOT NULL,
 	[TenSP] [varchar](50),
 	[NgayTao] [datetime],
@@ -124,7 +129,7 @@ CREATE TABLE Dim_SanPham (
 );
 
 CREATE TABLE Dim_LoaiSanPham (
-	SKMaLoaiSP INTEGER IDENTITY(1,1) PRIMARY KEY NOT NULL,
+	SKMaLoaiSP INTEGER PRIMARY KEY NOT NULL,
 	[MaLoaiSP] [varchar](4) NOT NULL,
 	[TenLoaiSP] [varchar](50) ,
 	[NgayTao] [datetime] ,
@@ -132,7 +137,7 @@ CREATE TABLE Dim_LoaiSanPham (
 );
 
 CREATE TABLE Dim_LoaiCuaHang (
-	SKMaLoaiCH INTEGER IDENTITY(1,1) PRIMARY KEY NOT NULL,
+	SKMaLoaiCH INTEGER PRIMARY KEY NOT NULL,
 	[MaLoaiCH] [varchar](4) NOT NULL,
 	[TenLoaiCH] [varchar](50) NULL,
 	[NgayTao] [datetime] NULL,
@@ -140,13 +145,14 @@ CREATE TABLE Dim_LoaiCuaHang (
 );
 
 CREATE TABLE Dim_QuocGia (
-	SKMaQG INTEGER IDENTITY(1,1) PRIMARY KEY NOT NULL,
+	SKMaQG INTEGER PRIMARY KEY NOT NULL,
 	[MaQG] [varchar](4) NOT NULL,
 	[TenQG] [varchar](50),
 	[TenThanhPho] [varchar](100),
 	[NgayTao] [datetime],
 	[NgayCapNhat] [datetime]
 );
+
 
 ---------------- Doanh Thu
 

@@ -5,21 +5,21 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="DESKTOP-ED2S73F"
   DTS:CreatorName="DESKTOP-ED2S73F\MON"
-  DTS:DTSID="{CCFAFC04-1A51-4F44-8261-8BABA3EAF0F3}"
+  DTS:DTSID="{FD56ADBF-505A-46CB-A734-1AB0061F465A}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.170"
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="15"
-  DTS:VersionGUID="{B1E2B17A-5AFB-42C4-B0B0-EA5058F9657F}">
+  DTS:VersionBuild="27"
+  DTS:VersionGUID="{ED4D1F0F-9570-48D4-BB25-A4F54689C653}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_DW]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{50DDA812-83F1-4404-879F-A4B56A6088DD}"
+      DTS:DTSID="{07F1D187-5115-4206-A2F8-4493C44CF814}"
       DTS:ObjectName="DESKTOP-LATGDUJ.DALT_DW">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -31,7 +31,7 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_METADATA]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{A005AD91-3FF4-47E2-B0C3-76DBB26CC549}"
+      DTS:DTSID="{650CB726-A110-4530-A18D-38D745423F09}"
       DTS:ObjectName="DESKTOP-LATGDUJ.DALT_METADATA">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -43,7 +43,7 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_NDS]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{E841D5DD-2DD2-4EAE-B26C-279CF1DA3834}"
+      DTS:DTSID="{CE6E5531-DA2E-44E0-89EE-FD3B0A97D800}"
       DTS:ObjectName="DESKTOP-LATGDUJ.DALT_NDS">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -52,11 +52,83 @@
           DTS:ConnectionString="Data Source=DESKTOP-LATGDUJ;Initial Catalog=DALT_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.DALT_DW]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{30EEFB1A-152F-42DA-BC80-C6C925159DCF}"
+      DTS:ObjectName="LocalHost.DALT_DW">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=DALT_DW;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.DALT_DW 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{B6CBB09C-3768-49E2-8A29-DFAF8F8113A7}"
+      DTS:ObjectName="LocalHost.DALT_DW 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=DALT_DW;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.DALT_METADATA]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{4B405BC6-9E77-4F3D-B5C0-A4BE92AD946B}"
+      DTS:ObjectName="LocalHost.DALT_METADATA">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=DALT_METADATA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.DALT_NDS]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{75162CA2-C3C5-446A-8279-98F275E21578}"
+      DTS:ObjectName="LocalHost.DALT_NDS">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=DALT_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.DALT_NDS 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{CDDF3811-E426-4E58-B813-E78BED20F267}"
+      DTS:ObjectName="LocalHost.DALT_NDS 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=DALT_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.DALT_NDS 2]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{59798D9B-093B-4AEF-BAE6-A05DD9725DCF}"
+      DTS:ObjectName="LocalHost.DALT_NDS 2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=DALT_NDS;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{AC832405-168A-485F-B921-B70BE1068443}"
+      DTS:DTSID="{250CAAC5-DFC9-413F-A9AD-EBB3D90F8921}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="CETCuaHang_DimR">
@@ -65,7 +137,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{2C6E1A0B-2B76-4299-ABE1-D62727863D5F}"
+      DTS:DTSID="{BF12C665-90C8-4042-B884-A87DB94F9061}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="LSETCuaHang_DimR">
@@ -78,7 +150,7 @@
       DTS:refId="Package\Data Flow DIM_CuaHang"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{b1931e14-df75-4ade-b983-9a87c6b014c8}"
+      DTS:DTSID="{373428A5-0C29-479B-9E92-B1D9732EBA21}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Data Flow DIM_CuaHang"
@@ -158,8 +230,8 @@ where [refTable].[SKMaLoaiCH] = ?</property>
               <connections>
                 <connection
                   refId="Package\Data Flow DIM_CuaHang\Check MaLoaiCH exists or not in LoaiCuaHang_DDS_Table.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_DW]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_DW]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.DALT_DW]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.DALT_DW]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -198,11 +270,11 @@ where [refTable].[SKMaLoaiCH] = ?</property>
                   synchronousInputId="Package\Data Flow DIM_CuaHang\Check MaLoaiCH exists or not in LoaiCuaHang_DDS_Table.Inputs[Lookup Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow DIM_CuaHang\Check MaLoaiCH exists or not in LoaiCuaHang_DDS_Table.Outputs[Lookup Match Output].Columns[SKMaLoaiCH]"
+                      refId="Package\Data Flow DIM_CuaHang\Check MaLoaiCH exists or not in LoaiCuaHang_DDS_Table.Outputs[Lookup Match Output].Columns[SKMaLoaiCHinDDS]"
                       dataType="i4"
                       errorOrTruncationOperation="Copy Column"
-                      lineageId="Package\Data Flow DIM_CuaHang\Check MaLoaiCH exists or not in LoaiCuaHang_DDS_Table.Outputs[Lookup Match Output].Columns[SKMaLoaiCH]"
-                      name="SKMaLoaiCH"
+                      lineageId="Package\Data Flow DIM_CuaHang\Check MaLoaiCH exists or not in LoaiCuaHang_DDS_Table.Outputs[Lookup Match Output].Columns[SKMaLoaiCHinDDS]"
+                      name="SKMaLoaiCHinDDS"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -267,7 +339,7 @@ where [refTable].[SKMaLoaiCH] = ?</property>
                   expressionType="Notify"
                   name="SqlCommandParam"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Dim_QuocGia]) [refTable]
-where [refTable].[MaQG] = ?</property>
+where [refTable].[SKMaQG] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the type of connection used to access the reference dataset."
@@ -316,8 +388,8 @@ where [refTable].[MaQG] = ?</property>
               <connections>
                 <connection
                   refId="Package\Data Flow DIM_CuaHang\Check MaQG exists or not in QuocGia_DDS_Table.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_DW]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_DW]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.DALT_DW]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.DALT_DW]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -328,16 +400,14 @@ where [refTable].[MaQG] = ?</property>
                   <inputColumns>
                     <inputColumn
                       refId="Package\Data Flow DIM_CuaHang\Check MaQG exists or not in QuocGia_DDS_Table.Inputs[Lookup Input].Columns[MaQG]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="4"
+                      cachedDataType="i4"
                       cachedName="MaQG"
                       lineageId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Output].Columns[MaQG]">
                       <properties>
                         <property
                           dataType="System.String"
                           description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">MaQG</property>
+                          name="JoinToReferenceColumn">SKMaQG</property>
                         <property
                           dataType="System.Null"
                           description="Specifies the column in the reference table from which a column is copied."
@@ -358,11 +428,11 @@ where [refTable].[MaQG] = ?</property>
                   synchronousInputId="Package\Data Flow DIM_CuaHang\Check MaQG exists or not in QuocGia_DDS_Table.Inputs[Lookup Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow DIM_CuaHang\Check MaQG exists or not in QuocGia_DDS_Table.Outputs[Lookup Match Output].Columns[SKMaQG]"
+                      refId="Package\Data Flow DIM_CuaHang\Check MaQG exists or not in QuocGia_DDS_Table.Outputs[Lookup Match Output].Columns[SKMaQGinDDS]"
                       dataType="i4"
                       errorOrTruncationOperation="Copy Column"
-                      lineageId="Package\Data Flow DIM_CuaHang\Check MaQG exists or not in QuocGia_DDS_Table.Outputs[Lookup Match Output].Columns[SKMaQG]"
-                      name="SKMaQG"
+                      lineageId="Package\Data Flow DIM_CuaHang\Check MaQG exists or not in QuocGia_DDS_Table.Outputs[Lookup Match Output].Columns[SKMaQGinDDS]"
+                      name="SKMaQGinDDS"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -422,7 +492,7 @@ where [refTable].[MaQG] = ?</property>
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[KhachHang]</property>
+                  name="OpenRowset">[dbo].[CuaHang]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -431,8 +501,7 @@ where [refTable].[MaQG] = ?</property>
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT * FROM CuaHang
-WHERE  MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNhat &lt; ?))</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -449,17 +518,17 @@ WHERE  MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat 
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
                   name="AccessMode"
-                  typeConverter="AccessMode">2</property>
+                  typeConverter="AccessMode">0</property>
                 <property
                   dataType="System.String"
                   description="The mappings between the parameters in the SQL command and variables."
-                  name="ParameterMapping">"Parameter0:Input",{2C6E1A0B-2B76-4299-ABE1-D62727863D5F};"Parameter1:Input",{AC832405-168A-485F-B921-B70BE1068443};"Parameter2:Input",{2C6E1A0B-2B76-4299-ABE1-D62727863D5F};"Parameter3:Input",{AC832405-168A-485F-B921-B70BE1068443};</property>
+                  name="ParameterMapping"></property>
               </properties>
               <connections>
                 <connection
                   refId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_NDS]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_NDS]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.DALT_NDS 2]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.DALT_NDS 2]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -468,53 +537,6 @@ WHERE  MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat 
                   refId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Output]"
                   name="OLE DB Source Output">
                   <outputColumns>
-                    <outputColumn
-                      refId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Output].Columns[NgayTao]"
-                      dataType="dbTimeStamp"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Output].ExternalColumns[NgayTao]"
-                      lineageId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Output].Columns[NgayTao]"
-                      name="NgayTao"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Output].Columns[NgayCapNhat]"
-                      dataType="dbTimeStamp"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Output].ExternalColumns[NgayCapNhat]"
-                      lineageId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Output].Columns[NgayCapNhat]"
-                      name="NgayCapNhat"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Output].Columns[MaTrangThai]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Output].ExternalColumns[MaTrangThai]"
-                      lineageId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Output].Columns[MaTrangThai]"
-                      name="MaTrangThai"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Output].Columns[MaNguon]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Output].ExternalColumns[MaNguon]"
-                      lineageId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Output].Columns[MaNguon]"
-                      name="MaNguon"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Output].Columns[MaQG]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Output].ExternalColumns[MaQG]"
-                      length="4"
-                      lineageId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Output].Columns[MaQG]"
-                      name="MaQG"
-                      truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Output].Columns[SKMaCH]"
                       dataType="i4"
@@ -547,6 +569,24 @@ WHERE  MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat 
                       name="TenCH"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
+                      refId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Output].Columns[NgayTao]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Output].ExternalColumns[NgayTao]"
+                      lineageId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Output].Columns[NgayTao]"
+                      name="NgayTao"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Output].Columns[NgayCapNhat]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Output].ExternalColumns[NgayCapNhat]"
+                      lineageId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Output].Columns[NgayCapNhat]"
+                      name="NgayCapNhat"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
                       refId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Output].Columns[MaLoaiCH]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
@@ -555,29 +595,36 @@ WHERE  MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat 
                       lineageId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Output].Columns[MaLoaiCH]"
                       name="MaLoaiCH"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Output].Columns[MaQG]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Output].ExternalColumns[MaQG]"
+                      lineageId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Output].Columns[MaQG]"
+                      name="MaQG"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Output].Columns[MaTrangThai]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Output].ExternalColumns[MaTrangThai]"
+                      lineageId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Output].Columns[MaTrangThai]"
+                      name="MaTrangThai"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Output].Columns[MaNguon]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Output].ExternalColumns[MaNguon]"
+                      lineageId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Output].Columns[MaNguon]"
+                      name="MaNguon"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Output].ExternalColumns[NgayTao]"
-                      dataType="dbTimeStamp"
-                      name="NgayTao" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Output].ExternalColumns[NgayCapNhat]"
-                      dataType="dbTimeStamp"
-                      name="NgayCapNhat" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Output].ExternalColumns[MaTrangThai]"
-                      dataType="i4"
-                      name="MaTrangThai" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Output].ExternalColumns[MaNguon]"
-                      dataType="i4"
-                      name="MaNguon" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Output].ExternalColumns[MaQG]"
-                      dataType="i4"
-                      name="MaQG" />
                     <externalMetadataColumn
                       refId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Output].ExternalColumns[SKMaCH]"
                       dataType="i4"
@@ -595,9 +642,29 @@ WHERE  MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat 
                       length="50"
                       name="TenCH" />
                     <externalMetadataColumn
+                      refId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Output].ExternalColumns[NgayTao]"
+                      dataType="dbTimeStamp"
+                      name="NgayTao" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Output].ExternalColumns[NgayCapNhat]"
+                      dataType="dbTimeStamp"
+                      name="NgayCapNhat" />
+                    <externalMetadataColumn
                       refId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Output].ExternalColumns[MaLoaiCH]"
                       dataType="i4"
                       name="MaLoaiCH" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Output].ExternalColumns[MaQG]"
+                      dataType="i4"
+                      name="MaQG" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Output].ExternalColumns[MaTrangThai]"
+                      dataType="i4"
+                      name="MaTrangThai" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Output].ExternalColumns[MaNguon]"
+                      dataType="i4"
+                      name="MaNguon" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -625,25 +692,25 @@ WHERE  MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat 
                       lineageId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Error Output].Columns[TenCH]"
                       name="TenCH" />
                     <outputColumn
-                      refId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Error Output].Columns[MaQG]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Error Output].Columns[MaQG]"
-                      name="MaQG" />
-                    <outputColumn
                       refId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Error Output].Columns[NgayTao]"
                       dataType="dbTimeStamp"
                       lineageId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Error Output].Columns[NgayTao]"
                       name="NgayTao" />
+                    <outputColumn
+                      refId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Error Output].Columns[NgayCapNhat]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Error Output].Columns[NgayCapNhat]"
+                      name="NgayCapNhat" />
                     <outputColumn
                       refId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Error Output].Columns[MaLoaiCH]"
                       dataType="i4"
                       lineageId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Error Output].Columns[MaLoaiCH]"
                       name="MaLoaiCH" />
                     <outputColumn
-                      refId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Error Output].Columns[NgayCapNhat]"
-                      dataType="dbTimeStamp"
-                      lineageId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Error Output].Columns[NgayCapNhat]"
-                      name="NgayCapNhat" />
+                      refId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Error Output].Columns[MaQG]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Error Output].Columns[MaQG]"
+                      name="MaQG" />
                     <outputColumn
                       refId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Error Output].Columns[MaTrangThai]"
                       dataType="i4"
@@ -730,8 +797,8 @@ WHERE  MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat 
               <connections>
                 <connection
                   refId="Package\Data Flow DIM_CuaHang\Dim_CuaHang in DDS.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_DW]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_DW]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.DALT_DW 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.DALT_DW 1]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -743,18 +810,6 @@ WHERE  MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat 
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
-                    <inputColumn
-                      refId="Package\Data Flow DIM_CuaHang\Dim_CuaHang in DDS.Inputs[OLE DB Destination Input].Columns[NgayTao]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="NgayTao"
-                      externalMetadataColumnId="Package\Data Flow DIM_CuaHang\Dim_CuaHang in DDS.Inputs[OLE DB Destination Input].ExternalColumns[NgayTao]"
-                      lineageId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Output].Columns[NgayTao]" />
-                    <inputColumn
-                      refId="Package\Data Flow DIM_CuaHang\Dim_CuaHang in DDS.Inputs[OLE DB Destination Input].Columns[NgayCapNhat]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="NgayCapNhat"
-                      externalMetadataColumnId="Package\Data Flow DIM_CuaHang\Dim_CuaHang in DDS.Inputs[OLE DB Destination Input].ExternalColumns[NgayCapNhat]"
-                      lineageId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Output].Columns[NgayCapNhat]" />
                     <inputColumn
                       refId="Package\Data Flow DIM_CuaHang\Dim_CuaHang in DDS.Inputs[OLE DB Destination Input].Columns[SKMaCH]"
                       cachedDataType="i4"
@@ -778,32 +833,32 @@ WHERE  MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat 
                       externalMetadataColumnId="Package\Data Flow DIM_CuaHang\Dim_CuaHang in DDS.Inputs[OLE DB Destination Input].ExternalColumns[TenCH]"
                       lineageId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Output].Columns[TenCH]" />
                     <inputColumn
-                      refId="Package\Data Flow DIM_CuaHang\Dim_CuaHang in DDS.Inputs[OLE DB Destination Input].Columns[SKMaQG]"
-                      cachedDataType="i4"
-                      cachedName="SKMaQG"
-                      externalMetadataColumnId="Package\Data Flow DIM_CuaHang\Dim_CuaHang in DDS.Inputs[OLE DB Destination Input].ExternalColumns[SKMaQG]"
-                      lineageId="Package\Data Flow DIM_CuaHang\Check MaQG exists or not in QuocGia_DDS_Table.Outputs[Lookup Match Output].Columns[SKMaQG]" />
+                      refId="Package\Data Flow DIM_CuaHang\Dim_CuaHang in DDS.Inputs[OLE DB Destination Input].Columns[NgayTao]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="NgayTao"
+                      externalMetadataColumnId="Package\Data Flow DIM_CuaHang\Dim_CuaHang in DDS.Inputs[OLE DB Destination Input].ExternalColumns[NgayTao]"
+                      lineageId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Output].Columns[NgayTao]" />
                     <inputColumn
-                      refId="Package\Data Flow DIM_CuaHang\Dim_CuaHang in DDS.Inputs[OLE DB Destination Input].Columns[SKMaLoaiCH]"
+                      refId="Package\Data Flow DIM_CuaHang\Dim_CuaHang in DDS.Inputs[OLE DB Destination Input].Columns[NgayCapNhat]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="NgayCapNhat"
+                      externalMetadataColumnId="Package\Data Flow DIM_CuaHang\Dim_CuaHang in DDS.Inputs[OLE DB Destination Input].ExternalColumns[NgayCapNhat]"
+                      lineageId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Output].Columns[NgayCapNhat]" />
+                    <inputColumn
+                      refId="Package\Data Flow DIM_CuaHang\Dim_CuaHang in DDS.Inputs[OLE DB Destination Input].Columns[SKMaQGinDDS]"
                       cachedDataType="i4"
-                      cachedName="SKMaLoaiCH"
+                      cachedName="SKMaQGinDDS"
+                      externalMetadataColumnId="Package\Data Flow DIM_CuaHang\Dim_CuaHang in DDS.Inputs[OLE DB Destination Input].ExternalColumns[SKMaQG]"
+                      lineageId="Package\Data Flow DIM_CuaHang\Check MaQG exists or not in QuocGia_DDS_Table.Outputs[Lookup Match Output].Columns[SKMaQGinDDS]" />
+                    <inputColumn
+                      refId="Package\Data Flow DIM_CuaHang\Dim_CuaHang in DDS.Inputs[OLE DB Destination Input].Columns[SKMaLoaiCHinDDS]"
+                      cachedDataType="i4"
+                      cachedName="SKMaLoaiCHinDDS"
                       externalMetadataColumnId="Package\Data Flow DIM_CuaHang\Dim_CuaHang in DDS.Inputs[OLE DB Destination Input].ExternalColumns[SKMaLoaiCH]"
-                      lineageId="Package\Data Flow DIM_CuaHang\Check MaLoaiCH exists or not in LoaiCuaHang_DDS_Table.Outputs[Lookup Match Output].Columns[SKMaLoaiCH]" />
+                      lineageId="Package\Data Flow DIM_CuaHang\Check MaLoaiCH exists or not in LoaiCuaHang_DDS_Table.Outputs[Lookup Match Output].Columns[SKMaLoaiCHinDDS]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Data Flow DIM_CuaHang\Dim_CuaHang in DDS.Inputs[OLE DB Destination Input].ExternalColumns[NgayTao]"
-                      dataType="dbTimeStamp"
-                      name="NgayTao" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow DIM_CuaHang\Dim_CuaHang in DDS.Inputs[OLE DB Destination Input].ExternalColumns[NgayCapNhat]"
-                      dataType="dbTimeStamp"
-                      name="NgayCapNhat" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow DIM_CuaHang\Dim_CuaHang in DDS.Inputs[OLE DB Destination Input].ExternalColumns[SKMaQG]"
-                      dataType="i4"
-                      name="SKMaQG" />
                     <externalMetadataColumn
                       refId="Package\Data Flow DIM_CuaHang\Dim_CuaHang in DDS.Inputs[OLE DB Destination Input].ExternalColumns[SKMaCH]"
                       dataType="i4"
@@ -821,9 +876,21 @@ WHERE  MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat 
                       length="50"
                       name="TenCH" />
                     <externalMetadataColumn
+                      refId="Package\Data Flow DIM_CuaHang\Dim_CuaHang in DDS.Inputs[OLE DB Destination Input].ExternalColumns[NgayTao]"
+                      dataType="dbTimeStamp"
+                      name="NgayTao" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow DIM_CuaHang\Dim_CuaHang in DDS.Inputs[OLE DB Destination Input].ExternalColumns[NgayCapNhat]"
+                      dataType="dbTimeStamp"
+                      name="NgayCapNhat" />
+                    <externalMetadataColumn
                       refId="Package\Data Flow DIM_CuaHang\Dim_CuaHang in DDS.Inputs[OLE DB Destination Input].ExternalColumns[SKMaLoaiCH]"
                       dataType="i4"
                       name="SKMaLoaiCH" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow DIM_CuaHang\Dim_CuaHang in DDS.Inputs[OLE DB Destination Input].ExternalColumns[SKMaQG]"
+                      dataType="i4"
+                      name="SKMaQG" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -852,6 +919,184 @@ WHERE  MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat 
                 </output>
               </outputs>
             </component>
+            <component
+              refId="Package\Data Flow DIM_CuaHang\Get CuaHang_NDS has SKMaLoaiCH is not null"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Get CuaHang_NDS has SKMaLoaiCH is not null"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow DIM_CuaHang\Get CuaHang_NDS has SKMaLoaiCH is not null.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow DIM_CuaHang\Get CuaHang_NDS has SKMaLoaiCH is not null.Inputs[Conditional Split Input].Columns[SKMaLoaiCHinDDS]"
+                      cachedDataType="i4"
+                      cachedName="SKMaLoaiCHinDDS"
+                      lineageId="Package\Data Flow DIM_CuaHang\Check MaLoaiCH exists or not in LoaiCuaHang_DDS_Table.Outputs[Lookup Match Output].Columns[SKMaLoaiCHinDDS]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow DIM_CuaHang\Get CuaHang_NDS has SKMaLoaiCH is not null.Outputs[SKMaLoaiCHisnotnull]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="SKMaLoaiCHisnotnull"
+                  synchronousInputId="Package\Data Flow DIM_CuaHang\Get CuaHang_NDS has SKMaLoaiCH is not null.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">![ISNULL](#{Package\Data Flow DIM_CuaHang\Check MaLoaiCH exists or not in LoaiCuaHang_DDS_Table.Outputs[Lookup Match Output].Columns[SKMaLoaiCHinDDS]})</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">!ISNULL(SKMaLoaiCHinDDS)</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow DIM_CuaHang\Get CuaHang_NDS has SKMaLoaiCH is not null.Outputs[Conditional Split Default Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Conditional Split Default Output"
+                  synchronousInputId="Package\Data Flow DIM_CuaHang\Get CuaHang_NDS has SKMaLoaiCH is not null.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow DIM_CuaHang\Get CuaHang_NDS has SKMaLoaiCH is not null.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\Data Flow DIM_CuaHang\Get CuaHang_NDS has SKMaLoaiCH is not null.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow DIM_CuaHang\Get CuaHang_NDS has SKMaLoaiCH is not null.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow DIM_CuaHang\Get CuaHang_NDS has SKMaLoaiCH is not null.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow DIM_CuaHang\Get CuaHang_NDS has SKMaLoaiCH is not null.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow DIM_CuaHang\Get CuaHang_NDS has SKMaLoaiCH is not null.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow DIM_CuaHang\Get CuaHang_NDS has SKMaQG is not null"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Get CuaHang_NDS has SKMaQG is not null"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow DIM_CuaHang\Get CuaHang_NDS has SKMaQG is not null.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow DIM_CuaHang\Get CuaHang_NDS has SKMaQG is not null.Inputs[Conditional Split Input].Columns[SKMaQGinDDS]"
+                      cachedDataType="i4"
+                      cachedName="SKMaQGinDDS"
+                      lineageId="Package\Data Flow DIM_CuaHang\Check MaQG exists or not in QuocGia_DDS_Table.Outputs[Lookup Match Output].Columns[SKMaQGinDDS]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow DIM_CuaHang\Get CuaHang_NDS has SKMaQG is not null.Outputs[SKMaQGisnotnull]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="SKMaQGisnotnull"
+                  synchronousInputId="Package\Data Flow DIM_CuaHang\Get CuaHang_NDS has SKMaQG is not null.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">![ISNULL](#{Package\Data Flow DIM_CuaHang\Check MaQG exists or not in QuocGia_DDS_Table.Outputs[Lookup Match Output].Columns[SKMaQGinDDS]})</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">!ISNULL(SKMaQGinDDS)</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow DIM_CuaHang\Get CuaHang_NDS has SKMaQG is not null.Outputs[Conditional Split Default Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Conditional Split Default Output"
+                  synchronousInputId="Package\Data Flow DIM_CuaHang\Get CuaHang_NDS has SKMaQG is not null.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow DIM_CuaHang\Get CuaHang_NDS has SKMaQG is not null.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\Data Flow DIM_CuaHang\Get CuaHang_NDS has SKMaQG is not null.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow DIM_CuaHang\Get CuaHang_NDS has SKMaQG is not null.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow DIM_CuaHang\Get CuaHang_NDS has SKMaQG is not null.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow DIM_CuaHang\Get CuaHang_NDS has SKMaQG is not null.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow DIM_CuaHang\Get CuaHang_NDS has SKMaQG is not null.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
           </components>
           <paths>
             <path
@@ -861,7 +1106,7 @@ WHERE  MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat 
               startId="Package\Data Flow DIM_CuaHang\Check MaLoaiCH exists or not in LoaiCuaHang_DDS_Table.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Data Flow DIM_CuaHang.Paths[Lookup Match Output1]"
-              endId="Package\Data Flow DIM_CuaHang\Dim_CuaHang in DDS.Inputs[OLE DB Destination Input]"
+              endId="Package\Data Flow DIM_CuaHang\Get CuaHang_NDS has SKMaQG is not null.Inputs[Conditional Split Input]"
               name="Lookup Match Output"
               startId="Package\Data Flow DIM_CuaHang\Check MaQG exists or not in QuocGia_DDS_Table.Outputs[Lookup Match Output]" />
             <path
@@ -869,6 +1114,16 @@ WHERE  MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat 
               endId="Package\Data Flow DIM_CuaHang\Check MaLoaiCH exists or not in LoaiCuaHang_DDS_Table.Inputs[Lookup Input]"
               name="OLE DB Source Output"
               startId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Data Flow DIM_CuaHang.Paths[SKMaLoaiCHisnotnull]"
+              endId="Package\Data Flow DIM_CuaHang\Dim_CuaHang in DDS.Inputs[OLE DB Destination Input]"
+              name="SKMaLoaiCHisnotnull"
+              startId="Package\Data Flow DIM_CuaHang\Get CuaHang_NDS has SKMaLoaiCH is not null.Outputs[SKMaLoaiCHisnotnull]" />
+            <path
+              refId="Package\Data Flow DIM_CuaHang.Paths[SKMaQGisnotnull]"
+              endId="Package\Data Flow DIM_CuaHang\Get CuaHang_NDS has SKMaLoaiCH is not null.Inputs[Conditional Split Input]"
+              name="SKMaQGisnotnull"
+              startId="Package\Data Flow DIM_CuaHang\Get CuaHang_NDS has SKMaQG is not null.Outputs[SKMaQGisnotnull]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -877,7 +1132,7 @@ WHERE  MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat 
       DTS:refId="Package\Get CET, LSET for KhachHang_DIM"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{49c0171a-ae1b-4e3e-8295-f71d2479d0f4}"
+      DTS:DTSID="{801E4A79-E642-4A2F-9FBD-5C4C2B25B92D}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get CET, LSET for KhachHang_DIM"
@@ -886,7 +1141,7 @@ WHERE  MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat 
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{A005AD91-3FF4-47E2-B0C3-76DBB26CC549}"
+          SQLTask:Connection="{4B405BC6-9E77-4F3D-B5C0-A4BE92AD946B}"
           SQLTask:SqlStatementSource="SELECT CET,LSET FROM Metadata_Table WHERE Name_DataFlow = 'Dim_CuaHang_NDStoDDS'"
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
@@ -902,7 +1157,7 @@ WHERE  MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat 
       DTS:refId="Package\Set CET for Dim_KhachHang"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{7b1743bc-63eb-40db-9558-df68c7dcd1e4}"
+      DTS:DTSID="{E3219A23-F913-46ED-BD50-97A919F45F48}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set CET for Dim_KhachHang"
@@ -911,7 +1166,7 @@ WHERE  MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat 
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{A005AD91-3FF4-47E2-B0C3-76DBB26CC549}"
+          SQLTask:Connection="{4B405BC6-9E77-4F3D-B5C0-A4BE92AD946B}"
           SQLTask:SqlStatementSource="UPDATE Metadata_Table&#xA;SET CET = GETDATE()&#xA;WHERE Name_DataFlow = 'Dim_CuaHang_NDStoDDS'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -919,7 +1174,7 @@ WHERE  MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat 
       DTS:refId="Package\Set LSET for QG_DIM"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{f174905f-e7e4-4f1c-b1fa-fe1a238204bc}"
+      DTS:DTSID="{05BF4694-EC36-4DE1-BD7C-2B90740EF260}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set LSET for QG_DIM"
@@ -928,7 +1183,7 @@ WHERE  MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat 
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{A005AD91-3FF4-47E2-B0C3-76DBB26CC549}"
+          SQLTask:Connection="{4B405BC6-9E77-4F3D-B5C0-A4BE92AD946B}"
           SQLTask:SqlStatementSource="UPDATE Metadata_Table&#xA;SET LSET  = CET&#xA;WHERE Name_DataFlow = 'Dim_CuaHang_NDStoDDS';" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -937,7 +1192,7 @@ WHERE  MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat 
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{09fd820f-dce3-4637-85a5-fafbe62c8d82}"
+      DTS:DTSID="{BED06A28-2FD3-42FE-8CDF-3A213813CAA3}"
       DTS:From="Package\Set CET for Dim_KhachHang"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
@@ -945,7 +1200,7 @@ WHERE  MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat 
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{6d14612a-c4d8-4fd9-a1da-726d0512389f}"
+      DTS:DTSID="{20252359-8B4D-4DE1-AC94-B7EA52D064EE}"
       DTS:From="Package\Get CET, LSET for KhachHang_DIM"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
@@ -953,7 +1208,7 @@ WHERE  MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat 
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{8630c2ae-9cda-4d01-9e24-ae9356c5633b}"
+      DTS:DTSID="{757891A8-A97C-4323-A00B-3FAE991F76D8}"
       DTS:From="Package\Data Flow DIM_CuaHang"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
@@ -976,15 +1231,15 @@ WHERE  MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat 
           Id="Package\Data Flow DIM_CuaHang"
           TopLeft="65.8273812103011,272.91022106332" />
         <NodeLayout
-          Size="212,42.3333333333334"
+          Size="212,42.6666666666667"
           Id="Package\Get CET, LSET for KhachHang_DIM"
           TopLeft="60,164.724460516727" />
         <NodeLayout
-          Size="190.333333333334,41.6666666666667"
+          Size="190.666666666667,42"
           Id="Package\Set CET for Dim_KhachHang"
           TopLeft="60.9702339086589,60" />
         <NodeLayout
-          Size="228,41.6666666666667"
+          Size="228,42"
           Id="Package\Set LSET for QG_DIM"
           TopLeft="69.1428578711898,385.804959905643" />
         <EdgeLayout
@@ -1084,49 +1339,93 @@ WHERE  MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat 
     design-time-name="Package\Data Flow DIM_CuaHang">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="181.666666666667,42"
-          Id="Package\Data Flow DIM_CuaHang\Dim_CuaHang in DDS"
-          TopLeft="262.142861607123,253.117650608703" />
+          Size="298.666666666667,42.6666666666667"
+          Id="Package\Data Flow DIM_CuaHang\Get CuaHang_NDS has SKMaLoaiCH is not null"
+          TopLeft="351.249994765967,451.149993363321" />
         <NodeLayout
-          Size="312.666666666667,42"
+          Size="313.333333333334,42.6666666666667"
           Id="Package\Data Flow DIM_CuaHang\Check MaQG exists or not in QuocGia_DDS_Table"
-          TopLeft="209.062496884726,162.333333333333" />
+          TopLeft="348.74999480322,253.499995467067" />
         <NodeLayout
-          Size="353,42"
-          Id="Package\Data Flow DIM_CuaHang\Check MaLoaiCH exists or not in LoaiCuaHang_DDS_Table"
-          TopLeft="677.18748990912,160.333333333333" />
+          Size="182.666666666667,42.6666666666667"
+          Id="Package\Data Flow DIM_CuaHang\Dim_CuaHang in DDS"
+          TopLeft="419.374993750826,531.81665724049" />
         <NodeLayout
-          Size="147.666666666667,42"
+          Size="148,42.6666666666667"
           Id="Package\Data Flow DIM_CuaHang\CuaHang_NDS"
-          TopLeft="237.499996460974,73.8947382329904" />
+          TopLeft="411.874993862584,85.1499984773994" />
+        <NodeLayout
+          Size="353.333333333334,42.6666666666667"
+          Id="Package\Data Flow DIM_CuaHang\Check MaLoaiCH exists or not in LoaiCuaHang_DDS_Table"
+          TopLeft="333.124995036051,161.849997105897" />
+        <NodeLayout
+          Size="281.333333333334,42.6666666666667"
+          Id="Package\Data Flow DIM_CuaHang\Get CuaHang_NDS has SKMaQG is not null"
+          TopLeft="362.083328285565,358.799993584156" />
         <EdgeLayout
-          Id="Package\Data Flow DIM_CuaHang.Paths[OLE DB Source Output]"
-          TopLeft="311.333329794307,115.89473823299">
+          Id="Package\Data Flow DIM_CuaHang.Paths[SKMaLoaiCHisnotnull]"
+          TopLeft="500.5833280993,493.816660029988">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="542.354160114813,44.4385951003429"
+              EndConnector="10.124998984859,37.9999972105021"
               Start="0,0"
-              End="542.354160114813,36.9385951003429">
+              End="10.124998984859,30.4999972105021">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,18.2192975501715" />
+                    End="0,14.9999986052511" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,18.2192975501715"
-                    Point2="0,22.2192975501715"
-                    Point3="4,22.2192975501715" />
+                    Point1="0,14.9999986052511"
+                    Point2="0,18.9999986052511"
+                    Point3="4,18.9999986052511" />
                   <mssgle:LineSegment
-                    End="538.354160114813,22.2192975501715" />
+                    End="6.12499898485902,18.9999986052511" />
                   <mssgle:CubicBezierSegment
-                    Point1="538.354160114813,22.2192975501715"
-                    Point2="542.354160114813,22.2192975501715"
-                    Point3="542.354160114813,26.2192975501715" />
+                    Point1="6.12499898485902,18.9999986052511"
+                    Point2="10.124998984859,18.9999986052511"
+                    Point3="10.124998984859,22.9999986052511" />
                   <mssgle:LineSegment
-                    End="542.354160114813,36.9385951003429" />
+                    End="10.124998984859,30.4999972105021" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-41.3852934763205,23.9999986052511,92.8955859375,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow DIM_CuaHang.Paths[OLE DB Source Output]"
+          TopLeft="485.874993862584,127.816665144066">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="23.9166678401336,34.0333319618309"
+              Start="0,0"
+              End="23.9166678401336,26.5333319618309">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.0166659809155" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.0166659809155"
+                    Point2="0,17.0166659809155"
+                    Point3="4,17.0166659809155" />
+                  <mssgle:LineSegment
+                    End="19.9166678401336,17.0166659809155" />
+                  <mssgle:CubicBezierSegment
+                    Point1="19.9166678401336,17.0166659809155"
+                    Point2="23.9166678401336,17.0166659809155"
+                    Point3="23.9166678401336,21.0166659809155" />
+                  <mssgle:LineSegment
+                    End="23.9166678401336,26.5333319618309" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1137,61 +1436,73 @@ WHERE  MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat 
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow DIM_CuaHang.Paths[Lookup Match Output1]"
-          TopLeft="365.395830218059,204.333333333333">
+          TopLeft="504.083328211059,296.166662133734">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-12.419635277603,48.78431727537"
+              EndConnector="0,62.6333314504228"
               Start="0,0"
-              End="-12.419635277603,41.28431727537">
+              End="0,55.1333314504228">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20.392158637685" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.392158637685"
-                    Point2="0,24.392158637685"
-                    Point3="-4,24.392158637685" />
-                  <mssgle:LineSegment
-                    End="-8.41963527760305,24.392158637685" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-8.41963527760305,24.392158637685"
-                    Point2="-12.419635277603,24.392158637685"
-                    Point3="-12.419635277603,28.392158637685" />
-                  <mssgle:LineSegment
-                    End="-12.419635277603,41.28431727537" />
+                    End="0,55.1333314504228" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-54.4012043575515,29.392158637685,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,21.7619782252114,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow DIM_CuaHang.Paths[Lookup Match Output]"
-          TopLeft="677.18748990912,182.333333333333">
+          TopLeft="507.604161586302,204.516663772563">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-155.458326357727,0"
+              EndConnector="0,48.9833316945036"
               Start="0,0"
-              End="-147.958326357727,0">
+              End="0,41.4833316945036">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-147.958326357727,0" />
+                    End="0,41.4833316945036" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-122.170549897614,5,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,14.9369783472518,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow DIM_CuaHang.Paths[SKMaQGisnotnull]"
+          TopLeft="501.666661525766,401.466660250823">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49.6833331124981"
+              Start="0,0"
+              End="0,42.1833331124981">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.1833331124981" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-37.96779296875,15.3358071812491,75.9355859375,11.51171875"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -1199,25 +1510,12 @@ WHERE  MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat 
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow DIM_CuaHang\Dim_CuaHang in DDS">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Data Flow DIM_CuaHang\Check MaQG exists or not in QuocGia_DDS_Table">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -1235,12 +1533,38 @@ WHERE  MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat 
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\Data Flow DIM_CuaHang\Dim_CuaHang in DDS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow DIM_CuaHang\CuaHang_NDS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Data Flow DIM_CuaHang\Check MaLoaiCH exists or not in LoaiCuaHang_DDS_Table">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -1252,14 +1576,6 @@ WHERE  MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat 
         <Value
           type="q4:string">0</Value>
       </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow DIM_CuaHang\CuaHang_NDS">
-    <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>

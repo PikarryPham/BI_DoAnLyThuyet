@@ -1,19 +1,805 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="11/21/2021 6:06:34 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="DESKTOP-ED2S73F"
   DTS:CreatorName="DESKTOP-ED2S73F\MON"
-  DTS:DTSID="{B76DD0BB-FDE1-496D-8EE8-8EA726671FE6}"
+  DTS:DTSID="{CC9E96EC-28C3-4C54-BF69-BA79B4BCE706}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.170"
   DTS:LocaleID="1033"
-  DTS:ObjectName="Package1"
+  DTS:ObjectName="HoaDon_DDS"
   DTS:PackageType="5"
-  DTS:VersionGUID="{AA04EBDD-3CE4-47A2-B84E-4D0689335AE0}">
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{9EE2C32B-B5CC-4A2F-B44A-3695355A4D72}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
-  <DTS:Variables />
-  <DTS:Executables />
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.DALT_DW]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{0A8702CD-8482-4CBC-8290-EBE62CD883BF}"
+      DTS:ObjectName="LocalHost.DALT_DW">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=DALT_DW;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.DALT_DW 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{5C340648-6223-46D3-9283-B29D0E87F77A}"
+      DTS:ObjectName="LocalHost.DALT_DW 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=DALT_DW;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.DALT_METADATA]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{0CBFB452-40A4-42B0-8E20-5060BD02A5D8}"
+      DTS:ObjectName="LocalHost.DALT_METADATA">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=DALT_METADATA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.DALT_NDS]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{0B396025-54F3-4205-A7FF-B45ECA8261C0}"
+      DTS:ObjectName="LocalHost.DALT_NDS">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=DALT_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.DALT_NDS 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{603A87CE-B5D4-4679-9CB8-7A886839B923}"
+      DTS:ObjectName="LocalHost.DALT_NDS 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=DALT_NDS;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6DA88641-F774-4F6A-B813-E464D0F826FA}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="CET_LSP_DIM">
+      <DTS:VariableValue
+        DTS:DataType="7">1/1/1900</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F51684D6-711E-466F-8329-61C01C4DEE17}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="LSET_LSP_DIM">
+      <DTS:VariableValue
+        DTS:DataType="7">1/1/1900</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task_ HoaDon_Dim"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{7399B8D6-3060-43FF-B4DE-6D02607F60B4}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task_ HoaDon_Dim"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_Dim in DDS"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="HoaDon_Dim in DDS"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Dim_HoaDon]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">true</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_Dim in DDS.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.DALT_DW 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.DALT_DW 1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_Dim in DDS.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_Dim in DDS.Inputs[OLE DB Destination Input].Columns[SKMaHD]"
+                      cachedDataType="i4"
+                      cachedName="SKMaHD"
+                      externalMetadataColumnId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_Dim in DDS.Inputs[OLE DB Destination Input].ExternalColumns[SKMaHD]"
+                      lineageId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Output].Columns[SKMaHD]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_Dim in DDS.Inputs[OLE DB Destination Input].Columns[MaHD]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="MaHD"
+                      externalMetadataColumnId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_Dim in DDS.Inputs[OLE DB Destination Input].ExternalColumns[MaHD]"
+                      lineageId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Output].Columns[MaHD]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_Dim in DDS.Inputs[OLE DB Destination Input].Columns[NgayCapNhat]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="NgayCapNhat"
+                      externalMetadataColumnId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_Dim in DDS.Inputs[OLE DB Destination Input].ExternalColumns[NgayCapNhat]"
+                      lineageId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Output].Columns[NgayCapNhat]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_Dim in DDS.Inputs[OLE DB Destination Input].Columns[LoaiHoaDon]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="LoaiHoaDon"
+                      externalMetadataColumnId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_Dim in DDS.Inputs[OLE DB Destination Input].ExternalColumns[LoaiHoaDon]"
+                      lineageId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Output].Columns[LoaiHoaDon]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_Dim in DDS.Inputs[OLE DB Destination Input].Columns[NgayBan]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="NgayBan"
+                      externalMetadataColumnId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_Dim in DDS.Inputs[OLE DB Destination Input].ExternalColumns[NgayTao]"
+                      lineageId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Output].Columns[NgayBan]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_Dim in DDS.Inputs[OLE DB Destination Input].ExternalColumns[SKMaHD]"
+                      dataType="i4"
+                      name="SKMaHD" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_Dim in DDS.Inputs[OLE DB Destination Input].ExternalColumns[MaHD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="MaHD" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_Dim in DDS.Inputs[OLE DB Destination Input].ExternalColumns[NgayTao]"
+                      dataType="dbTimeStamp"
+                      name="NgayTao" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_Dim in DDS.Inputs[OLE DB Destination Input].ExternalColumns[NgayCapNhat]"
+                      dataType="dbTimeStamp"
+                      name="NgayCapNhat" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_Dim in DDS.Inputs[OLE DB Destination Input].ExternalColumns[LoaiHoaDon]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="LoaiHoaDon" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_Dim in DDS.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_Dim in DDS.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_Dim in DDS.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_Dim in DDS.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_Dim in DDS.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_Dim in DDS.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="HoaDon_NDS"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT * FROM HoaDon
+WHERE MaTrangThai = 1 AND ((NgayBan &gt;= ? AND NgayBan&lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNhat &lt; ?))</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping">"Parameter0:Input",{F51684D6-711E-466F-8329-61C01C4DEE17};"Parameter1:Input",{6DA88641-F774-4F6A-B813-E464D0F826FA};"Parameter2:Input",{F51684D6-711E-466F-8329-61C01C4DEE17};"Parameter3:Input",{6DA88641-F774-4F6A-B813-E464D0F826FA};</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.DALT_NDS 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.DALT_NDS 1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Output].Columns[SKMaHD]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Output].ExternalColumns[SKMaHD]"
+                      lineageId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Output].Columns[SKMaHD]"
+                      name="SKMaHD"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Output].Columns[MaHD]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Output].ExternalColumns[MaHD]"
+                      length="4"
+                      lineageId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Output].Columns[MaHD]"
+                      name="MaHD"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Output].Columns[NgayBan]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Output].ExternalColumns[NgayBan]"
+                      lineageId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Output].Columns[NgayBan]"
+                      name="NgayBan"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Output].Columns[NgayCapNhat]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Output].ExternalColumns[NgayCapNhat]"
+                      lineageId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Output].Columns[NgayCapNhat]"
+                      name="NgayCapNhat"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Output].Columns[MaKH]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Output].ExternalColumns[MaKH]"
+                      lineageId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Output].Columns[MaKH]"
+                      name="MaKH"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Output].Columns[MaCH]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Output].ExternalColumns[MaCH]"
+                      lineageId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Output].Columns[MaCH]"
+                      name="MaCH"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Output].Columns[LoaiHoaDon]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Output].ExternalColumns[LoaiHoaDon]"
+                      length="5"
+                      lineageId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Output].Columns[LoaiHoaDon]"
+                      name="LoaiHoaDon"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Output].Columns[MaTrangThai]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Output].ExternalColumns[MaTrangThai]"
+                      lineageId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Output].Columns[MaTrangThai]"
+                      name="MaTrangThai"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Output].Columns[MaNguon]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Output].ExternalColumns[MaNguon]"
+                      lineageId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Output].Columns[MaNguon]"
+                      name="MaNguon"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Output].ExternalColumns[SKMaHD]"
+                      dataType="i4"
+                      name="SKMaHD" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Output].ExternalColumns[MaHD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="MaHD" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Output].ExternalColumns[NgayBan]"
+                      dataType="dbTimeStamp"
+                      name="NgayBan" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Output].ExternalColumns[NgayCapNhat]"
+                      dataType="dbTimeStamp"
+                      name="NgayCapNhat" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Output].ExternalColumns[MaKH]"
+                      dataType="i4"
+                      name="MaKH" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Output].ExternalColumns[MaCH]"
+                      dataType="i4"
+                      name="MaCH" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Output].ExternalColumns[LoaiHoaDon]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="LoaiHoaDon" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Output].ExternalColumns[MaTrangThai]"
+                      dataType="i4"
+                      name="MaTrangThai" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Output].ExternalColumns[MaNguon]"
+                      dataType="i4"
+                      name="MaNguon" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Error Output].Columns[SKMaHD]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Error Output].Columns[SKMaHD]"
+                      name="SKMaHD" />
+                    <outputColumn
+                      refId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Error Output].Columns[MaHD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Error Output].Columns[MaHD]"
+                      name="MaHD" />
+                    <outputColumn
+                      refId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Error Output].Columns[NgayBan]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Error Output].Columns[NgayBan]"
+                      name="NgayBan" />
+                    <outputColumn
+                      refId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Error Output].Columns[NgayCapNhat]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Error Output].Columns[NgayCapNhat]"
+                      name="NgayCapNhat" />
+                    <outputColumn
+                      refId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Error Output].Columns[MaKH]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Error Output].Columns[MaKH]"
+                      name="MaKH" />
+                    <outputColumn
+                      refId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Error Output].Columns[MaCH]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Error Output].Columns[MaCH]"
+                      name="MaCH" />
+                    <outputColumn
+                      refId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Error Output].Columns[LoaiHoaDon]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      lineageId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Error Output].Columns[LoaiHoaDon]"
+                      name="LoaiHoaDon" />
+                    <outputColumn
+                      refId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Error Output].Columns[MaTrangThai]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Error Output].Columns[MaTrangThai]"
+                      name="MaTrangThai" />
+                    <outputColumn
+                      refId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Error Output].Columns[MaNguon]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Error Output].Columns[MaNguon]"
+                      name="MaNguon" />
+                    <outputColumn
+                      refId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task_ HoaDon_Dim.Paths[OLE DB Source Output]"
+              endId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_Dim in DDS.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Get LSET, CET from HoaDon_Dim"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{3A55B318-DE95-4A82-8076-CB70ACADE484}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Get LSET, CET from HoaDon_Dim"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{0CBFB452-40A4-42B0-8E20-5060BD02A5D8}"
+          SQLTask:SqlStatementSource="SELECT CET,LSET FROM Metadata_Table WHERE Name_DataFlow = 'Dim_HoaDon_NDStoDDS'"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="CET"
+            SQLTask:DtsVariableName="User::CET_LSP_DIM" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="LSET"
+            SQLTask:DtsVariableName="User::LSET_LSP_DIM" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Set CET for HoaDon_Dim"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{C41B7DD8-D3A0-4F2B-B7C1-A89B1F07D17A}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Set CET for HoaDon_Dim"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{0CBFB452-40A4-42B0-8E20-5060BD02A5D8}"
+          SQLTask:SqlStatementSource="UPDATE Metadata_Table&#xA;SET CET = GETDATE()&#xA;WHERE Name_DataFlow = 'Dim_HoaDon_NDStoDDS'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Set LSET for HoaDon_Dim"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{BD7C1D8D-0B66-4927-BF42-19303E64A0B9}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Set LSET for HoaDon_Dim"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{0CBFB452-40A4-42B0-8E20-5060BD02A5D8}"
+          SQLTask:SqlStatementSource="UPDATE Metadata_Table&#xA;SET LSET  = CET&#xA;WHERE Name_DataFlow = 'Dim_HoaDon_NDStoDDS';" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{6FD1D69A-98B9-4B54-895B-AD71E51BA532}"
+      DTS:From="Package\Set CET for HoaDon_Dim"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Get LSET, CET from HoaDon_Dim" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{522B1811-7D74-4898-9B76-828323A782BC}"
+      DTS:From="Package\Get LSET, CET from HoaDon_Dim"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Data Flow Task_ HoaDon_Dim" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{F8DF0170-E4FD-4D4D-B8DD-57CEA95DBDF6}"
+      DTS:From="Package\Data Flow Task_ HoaDon_Dim"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Set LSET for HoaDon_Dim" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="222.666666666667,42.6666666666667"
+          Id="Package\Data Flow Task_ HoaDon_Dim"
+          TopLeft="248.124996302649,203.449996362031" />
+        <NodeLayout
+          Size="238.666666666667,42.6666666666667"
+          Id="Package\Get LSET, CET from HoaDon_Dim"
+          TopLeft="244.999996349216,124.149997780025" />
+        <NodeLayout
+          Size="198.666666666667,42.6666666666667"
+          Id="Package\Set CET for HoaDon_Dim"
+          TopLeft="264.374996060506,38.9999993026257" />
+        <NodeLayout
+          Size="202.666666666667,42.6666666666667"
+          Id="Package\Set LSET for HoaDon_Dim"
+          TopLeft="244.999996349216,291.199994792938" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="364.020829538194,81.6666659692923">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.4833318107328"
+              Start="0,0"
+              End="0,34.9833318107328">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.9833318107328" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="361.895829659266,166.816664446692">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36.6333319153388"
+              Start="0,0"
+              End="0,29.1333319153388">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.1333319153388" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="359.458329635983,246.116663028697">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-13.1249999534338,45.0833317642411"
+              Start="0,0"
+              End="-13.1249999534338,37.5833317642411">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.5416658821205" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.5416658821205"
+                    Point2="0,22.5416658821205"
+                    Point3="-4,22.5416658821205" />
+                  <mssgle:LineSegment
+                    End="-9.12499995343381,22.5416658821205" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-9.12499995343381,22.5416658821205"
+                    Point2="-13.1249999534338,22.5416658821205"
+                    Point3="-13.1249999534338,26.5416658821205" />
+                  <mssgle:LineSegment
+                    End="-13.1249999534338,37.5833317642411" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task_ HoaDon_Dim">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="177.333333333334,42.6666666666667"
+          Id="Package\Data Flow Task_ HoaDon_Dim\HoaDon_Dim in DDS"
+          TopLeft="179.374997327104,140.399997489452" />
+        <NodeLayout
+          Size="144,42.6666666666667"
+          Id="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS"
+          TopLeft="203.124996973202,53.2999990469217" />
+        <EdgeLayout
+          Id="Package\Data Flow Task_ HoaDon_Dim.Paths[OLE DB Source Output]"
+          TopLeft="271.583330483486,95.9666657135884">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44.433331775864"
+              Start="0,0"
+              End="0,36.933331775864">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.933331775864" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task_ HoaDon_Dim\HoaDon_Dim in DDS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>

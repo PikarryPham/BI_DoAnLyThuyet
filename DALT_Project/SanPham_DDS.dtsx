@@ -5,15 +5,1164 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="DESKTOP-ED2S73F"
   DTS:CreatorName="DESKTOP-ED2S73F\MON"
-  DTS:DTSID="{F8EBD328-8BFD-44A7-B65D-187CBC9B8DD9}"
+  DTS:DTSID="{A98A0A0D-6924-4007-AF25-6611F9D204DE}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.170"
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionGUID="{E8183E0D-C7B0-476B-A961-C3D991B78DCD}">
+  DTS:VersionBuild="44"
+  DTS:VersionGUID="{C7A5F223-3AAB-4617-9B0F-A39727B25ABC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
-  <DTS:Variables />
-  <DTS:Executables />
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.DALT_DW]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{42F1AFD1-477B-4274-9105-949B6127D420}"
+      DTS:ObjectName="LocalHost.DALT_DW">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=DALT_DW;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.DALT_METADATA]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{43F16B14-AA75-459D-B36B-45C47A924C58}"
+      DTS:ObjectName="LocalHost.DALT_METADATA">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=DALT_METADATA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.DALT_NDS]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{8E135330-4CCD-40C7-BDF1-06EE9BC68ED1}"
+      DTS:ObjectName="LocalHost.DALT_NDS">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=DALT_NDS;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2B16013F-EA70-432F-9422-23B378182212}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="CET_SANPHAM_DIM">
+      <DTS:VariableValue
+        DTS:DataType="7">1/1/1900</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C5F46A63-9F4D-4B01-B29E-6D847765D2C9}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="CET_SP_DIMENSIONAL">
+      <DTS:VariableValue
+        DTS:DataType="7">1/1/1900</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6A60850E-27A9-4A59-AE68-47C4F57ADB9F}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="LSET_SANPHAM_DIM">
+      <DTS:VariableValue
+        DTS:DataType="7">1/1/1900</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{4F19F80D-2760-4F4A-A0B8-F006DBE36BCA}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="LSET_SP_DIMENSIONAL">
+      <DTS:VariableValue
+        DTS:DataType="7">1/1/1900</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A39BEA92-B1A1-4EA9-AF15-2D0F64DDFDF4}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="LSET_SP_DIM"
+      DTS:ObjectName="Variable">
+      <DTS:VariableValue
+        DTS:DataType="7">1/1/1900</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{7435CC6C-B728-486C-B1C1-AEA15ED24558}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="CET_SP_DIM"
+      DTS:ObjectName="Variable1">
+      <DTS:VariableValue
+        DTS:DataType="7">1/1/1900</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Dim_SanPham"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{0D598BE0-80D6-441C-AA86-F04431E5A4A1}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Dim_SanPham"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Dim_SanPham\Check MaLoaiSP is in LoaiSP or not"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Check MaLoaiSP is in LoaiSP or not"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Dim_LoaiSanPham]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Dim_LoaiSanPham]) [refTable]
+where [refTable].[SKMaLoaiSP] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="SKMaLoaiSP" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MaLoaiSP" dataType="DT_STR" length="4" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="TenLoaiSP" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="NgayTao" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="NgayCapNhat" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Output].Columns[MaLoaiSP]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Dim_SanPham\Check MaLoaiSP is in LoaiSP or not.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.DALT_DW]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.DALT_DW]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Dim_SanPham\Check MaLoaiSP is in LoaiSP or not.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Dim_SanPham\Check MaLoaiSP is in LoaiSP or not.Inputs[Lookup Input].Columns[MaLoaiSP]"
+                      cachedDataType="i4"
+                      cachedName="MaLoaiSP"
+                      lineageId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Output].Columns[MaLoaiSP]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">SKMaLoaiSP</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Dim_SanPham\Check MaLoaiSP is in LoaiSP or not.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="IgnoreFailure"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Data Flow Dim_SanPham\Check MaLoaiSP is in LoaiSP or not.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Dim_SanPham\Check MaLoaiSP is in LoaiSP or not.Outputs[Lookup Match Output].Columns[SKMaLoaiSPinNDS]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Data Flow Dim_SanPham\Check MaLoaiSP is in LoaiSP or not.Outputs[Lookup Match Output].Columns[SKMaLoaiSPinNDS]"
+                      name="SKMaLoaiSPinNDS"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">SKMaLoaiSP</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Dim_SanPham\Check MaLoaiSP is in LoaiSP or not.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Data Flow Dim_SanPham\Check MaLoaiSP is in LoaiSP or not.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Dim_SanPham\Check MaLoaiSP is in LoaiSP or not.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Data Flow Dim_SanPham\Check MaLoaiSP is in LoaiSP or not.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Dim_SanPham\Check MaLoaiSP is in LoaiSP or not.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Dim_SanPham\Check MaLoaiSP is in LoaiSP or not.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Dim_SanPham\Check MaLoaiSP is in LoaiSP or not.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Dim_SanPham\Check MaLoaiSP is in LoaiSP or not.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Dim_SanPham\Dim_SanPham in DDS"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Dim_SanPham in DDS"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Dim_SanPham]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">true</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Dim_SanPham\Dim_SanPham in DDS.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.DALT_DW]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.DALT_DW]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Dim_SanPham\Dim_SanPham in DDS.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Dim_SanPham\Dim_SanPham in DDS.Inputs[OLE DB Destination Input].Columns[SKMaSP]"
+                      cachedDataType="i4"
+                      cachedName="SKMaSP"
+                      externalMetadataColumnId="Package\Data Flow Dim_SanPham\Dim_SanPham in DDS.Inputs[OLE DB Destination Input].ExternalColumns[SKMaSP]"
+                      lineageId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Output].Columns[SKMaSP]" />
+                    <inputColumn
+                      refId="Package\Data Flow Dim_SanPham\Dim_SanPham in DDS.Inputs[OLE DB Destination Input].Columns[MaSP]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="MaSP"
+                      externalMetadataColumnId="Package\Data Flow Dim_SanPham\Dim_SanPham in DDS.Inputs[OLE DB Destination Input].ExternalColumns[MaSP]"
+                      lineageId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Output].Columns[MaSP]" />
+                    <inputColumn
+                      refId="Package\Data Flow Dim_SanPham\Dim_SanPham in DDS.Inputs[OLE DB Destination Input].Columns[TenSP]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TenSP"
+                      externalMetadataColumnId="Package\Data Flow Dim_SanPham\Dim_SanPham in DDS.Inputs[OLE DB Destination Input].ExternalColumns[TenSP]"
+                      lineageId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Output].Columns[TenSP]" />
+                    <inputColumn
+                      refId="Package\Data Flow Dim_SanPham\Dim_SanPham in DDS.Inputs[OLE DB Destination Input].Columns[NgayTao]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="NgayTao"
+                      externalMetadataColumnId="Package\Data Flow Dim_SanPham\Dim_SanPham in DDS.Inputs[OLE DB Destination Input].ExternalColumns[NgayTao]"
+                      lineageId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Output].Columns[NgayTao]" />
+                    <inputColumn
+                      refId="Package\Data Flow Dim_SanPham\Dim_SanPham in DDS.Inputs[OLE DB Destination Input].Columns[NgayCapNhap]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="NgayCapNhap"
+                      externalMetadataColumnId="Package\Data Flow Dim_SanPham\Dim_SanPham in DDS.Inputs[OLE DB Destination Input].ExternalColumns[NgayCapNhap]"
+                      lineageId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Output].Columns[NgayCapNhap]" />
+                    <inputColumn
+                      refId="Package\Data Flow Dim_SanPham\Dim_SanPham in DDS.Inputs[OLE DB Destination Input].Columns[SKMaLoaiSPinNDS]"
+                      cachedDataType="i4"
+                      cachedName="SKMaLoaiSPinNDS"
+                      externalMetadataColumnId="Package\Data Flow Dim_SanPham\Dim_SanPham in DDS.Inputs[OLE DB Destination Input].ExternalColumns[SKMaLoaiSP]"
+                      lineageId="Package\Data Flow Dim_SanPham\Check MaLoaiSP is in LoaiSP or not.Outputs[Lookup Match Output].Columns[SKMaLoaiSPinNDS]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Dim_SanPham\Dim_SanPham in DDS.Inputs[OLE DB Destination Input].ExternalColumns[SKMaSP]"
+                      dataType="i4"
+                      name="SKMaSP" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Dim_SanPham\Dim_SanPham in DDS.Inputs[OLE DB Destination Input].ExternalColumns[MaSP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="MaSP" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Dim_SanPham\Dim_SanPham in DDS.Inputs[OLE DB Destination Input].ExternalColumns[TenSP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TenSP" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Dim_SanPham\Dim_SanPham in DDS.Inputs[OLE DB Destination Input].ExternalColumns[NgayTao]"
+                      dataType="dbTimeStamp"
+                      name="NgayTao" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Dim_SanPham\Dim_SanPham in DDS.Inputs[OLE DB Destination Input].ExternalColumns[NgayCapNhap]"
+                      dataType="dbTimeStamp"
+                      name="NgayCapNhap" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Dim_SanPham\Dim_SanPham in DDS.Inputs[OLE DB Destination Input].ExternalColumns[SKMaLoaiSP]"
+                      dataType="i4"
+                      name="SKMaLoaiSP" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Dim_SanPham\Dim_SanPham in DDS.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Dim_SanPham\Dim_SanPham in DDS.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Dim_SanPham\Dim_SanPham in DDS.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Dim_SanPham\Dim_SanPham in DDS.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Dim_SanPham\Dim_SanPham in DDS.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Dim_SanPham\Dim_SanPham in DDS.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Dim_SanPham\Get SanPhamNDS has maloaisp is not null"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Get SanPhamNDS has maloaisp is not null"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Dim_SanPham\Get SanPhamNDS has maloaisp is not null.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Dim_SanPham\Get SanPhamNDS has maloaisp is not null.Inputs[Conditional Split Input].Columns[SKMaLoaiSPinNDS]"
+                      cachedDataType="i4"
+                      cachedName="SKMaLoaiSPinNDS"
+                      lineageId="Package\Data Flow Dim_SanPham\Check MaLoaiSP is in LoaiSP or not.Outputs[Lookup Match Output].Columns[SKMaLoaiSPinNDS]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Dim_SanPham\Get SanPhamNDS has maloaisp is not null.Outputs[isnotnull]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="isnotnull"
+                  synchronousInputId="Package\Data Flow Dim_SanPham\Get SanPhamNDS has maloaisp is not null.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">![ISNULL](#{Package\Data Flow Dim_SanPham\Check MaLoaiSP is in LoaiSP or not.Outputs[Lookup Match Output].Columns[SKMaLoaiSPinNDS]})</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">!ISNULL(SKMaLoaiSPinNDS)</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Dim_SanPham\Get SanPhamNDS has maloaisp is not null.Outputs[Conditional Split Default Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Conditional Split Default Output"
+                  synchronousInputId="Package\Data Flow Dim_SanPham\Get SanPhamNDS has maloaisp is not null.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Dim_SanPham\Get SanPhamNDS has maloaisp is not null.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\Data Flow Dim_SanPham\Get SanPhamNDS has maloaisp is not null.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Dim_SanPham\Get SanPhamNDS has maloaisp is not null.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Dim_SanPham\Get SanPhamNDS has maloaisp is not null.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Dim_SanPham\Get SanPhamNDS has maloaisp is not null.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Dim_SanPham\Get SanPhamNDS has maloaisp is not null.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Dim_SanPham\SanPham_NDS"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="SanPham_NDS"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[SanPham]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT * FROM SanPham
+WHERE  MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhap &gt;= ? AND NgayCapNhap &lt; ?))</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping">"Parameter0:Input",{6A60850E-27A9-4A59-AE68-47C4F57ADB9F};"Parameter1:Input",{2B16013F-EA70-432F-9422-23B378182212};"Parameter2:Input",{6A60850E-27A9-4A59-AE68-47C4F57ADB9F};"Parameter3:Input",{2B16013F-EA70-432F-9422-23B378182212};</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Dim_SanPham\SanPham_NDS.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.DALT_NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.DALT_NDS]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Output].Columns[SKMaSP]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Output].ExternalColumns[SKMaSP]"
+                      lineageId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Output].Columns[SKMaSP]"
+                      name="SKMaSP"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Output].Columns[MaSP]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Output].ExternalColumns[MaSP]"
+                      length="4"
+                      lineageId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Output].Columns[MaSP]"
+                      name="MaSP"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Output].Columns[TenSP]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Output].ExternalColumns[TenSP]"
+                      length="50"
+                      lineageId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Output].Columns[TenSP]"
+                      name="TenSP"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Output].Columns[GiaSP]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Output].ExternalColumns[GiaSP]"
+                      lineageId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Output].Columns[GiaSP]"
+                      name="GiaSP"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Output].Columns[NgayTao]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Output].ExternalColumns[NgayTao]"
+                      lineageId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Output].Columns[NgayTao]"
+                      name="NgayTao"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Output].Columns[NgayCapNhap]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Output].ExternalColumns[NgayCapNhap]"
+                      lineageId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Output].Columns[NgayCapNhap]"
+                      name="NgayCapNhap"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Output].Columns[MaTrangThai]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Output].ExternalColumns[MaTrangThai]"
+                      lineageId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Output].Columns[MaTrangThai]"
+                      name="MaTrangThai"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Output].Columns[MaNguon]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Output].ExternalColumns[MaNguon]"
+                      lineageId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Output].Columns[MaNguon]"
+                      name="MaNguon"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Output].Columns[MaLoaiSP]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Output].ExternalColumns[MaLoaiSP]"
+                      lineageId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Output].Columns[MaLoaiSP]"
+                      name="MaLoaiSP"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Output].ExternalColumns[SKMaSP]"
+                      dataType="i4"
+                      name="SKMaSP" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Output].ExternalColumns[MaSP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="MaSP" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Output].ExternalColumns[TenSP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TenSP" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Output].ExternalColumns[GiaSP]"
+                      dataType="i4"
+                      name="GiaSP" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Output].ExternalColumns[NgayTao]"
+                      dataType="dbTimeStamp"
+                      name="NgayTao" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Output].ExternalColumns[NgayCapNhap]"
+                      dataType="dbTimeStamp"
+                      name="NgayCapNhap" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Output].ExternalColumns[MaTrangThai]"
+                      dataType="i4"
+                      name="MaTrangThai" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Output].ExternalColumns[MaNguon]"
+                      dataType="i4"
+                      name="MaNguon" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Output].ExternalColumns[MaLoaiSP]"
+                      dataType="i4"
+                      name="MaLoaiSP" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Error Output].Columns[SKMaSP]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Error Output].Columns[SKMaSP]"
+                      name="SKMaSP" />
+                    <outputColumn
+                      refId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Error Output].Columns[MaSP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Error Output].Columns[MaSP]"
+                      name="MaSP" />
+                    <outputColumn
+                      refId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Error Output].Columns[TenSP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Error Output].Columns[TenSP]"
+                      name="TenSP" />
+                    <outputColumn
+                      refId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Error Output].Columns[GiaSP]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Error Output].Columns[GiaSP]"
+                      name="GiaSP" />
+                    <outputColumn
+                      refId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Error Output].Columns[NgayTao]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Error Output].Columns[NgayTao]"
+                      name="NgayTao" />
+                    <outputColumn
+                      refId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Error Output].Columns[NgayCapNhap]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Error Output].Columns[NgayCapNhap]"
+                      name="NgayCapNhap" />
+                    <outputColumn
+                      refId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Error Output].Columns[MaTrangThai]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Error Output].Columns[MaTrangThai]"
+                      name="MaTrangThai" />
+                    <outputColumn
+                      refId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Error Output].Columns[MaNguon]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Error Output].Columns[MaNguon]"
+                      name="MaNguon" />
+                    <outputColumn
+                      refId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Error Output].Columns[MaLoaiSP]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Error Output].Columns[MaLoaiSP]"
+                      name="MaLoaiSP" />
+                    <outputColumn
+                      refId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Dim_SanPham.Paths[isnotnull]"
+              endId="Package\Data Flow Dim_SanPham\Dim_SanPham in DDS.Inputs[OLE DB Destination Input]"
+              name="isnotnull"
+              startId="Package\Data Flow Dim_SanPham\Get SanPhamNDS has maloaisp is not null.Outputs[isnotnull]" />
+            <path
+              refId="Package\Data Flow Dim_SanPham.Paths[Lookup Match Output]"
+              endId="Package\Data Flow Dim_SanPham\Get SanPhamNDS has maloaisp is not null.Inputs[Conditional Split Input]"
+              name="Lookup Match Output"
+              startId="Package\Data Flow Dim_SanPham\Check MaLoaiSP is in LoaiSP or not.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Data Flow Dim_SanPham.Paths[OLE DB Source Output]"
+              endId="Package\Data Flow Dim_SanPham\Check MaLoaiSP is in LoaiSP or not.Inputs[Lookup Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\GET LSET, CET for Dim_SanPham"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{D67A4EC3-D81F-47FC-8C0C-602992AC4C3D}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="GET LSET, CET for Dim_SanPham"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{43F16B14-AA75-459D-B36B-45C47A924C58}"
+          SQLTask:SqlStatementSource="SELECT CET,LSET FROM Metadata_Table WHERE Name_DataFlow = 'Dim_SanPham_NDStoDDS'"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="LSET"
+            SQLTask:DtsVariableName="User::LSET_SANPHAM_DIM" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="CET"
+            SQLTask:DtsVariableName="User::CET_SANPHAM_DIM" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SET CET for Dim_SanPham_NDStoDDS"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{75FDCD58-E739-4197-B5CB-626CC8DB07BC}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SET CET for Dim_SanPham_NDStoDDS"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{43F16B14-AA75-459D-B36B-45C47A924C58}"
+          SQLTask:SqlStatementSource="UPDATE Metadata_Table&#xA;SET CET = GETDATE()&#xA;WHERE Name_DataFlow = 'Dim_SanPham_NDStoDDS'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Set LSET for Dim_SanPham"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{822EDB15-AB77-4290-A1D5-4A5806041448}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Set LSET for Dim_SanPham"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{43F16B14-AA75-459D-B36B-45C47A924C58}"
+          SQLTask:SqlStatementSource="UPDATE Metadata_Table&#xA;SET LSET  = CET&#xA;WHERE Name_DataFlow = 'Dim_SanPham_NDStoDDS';" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{81863C55-AC0A-4BE0-977B-B3BBC0201163}"
+      DTS:From="Package\SET CET for Dim_SanPham_NDStoDDS"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\GET LSET, CET for Dim_SanPham" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{B4D7F326-F401-435F-9414-B5A527F24DAA}"
+      DTS:From="Package\GET LSET, CET for Dim_SanPham"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Data Flow Dim_SanPham" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{D4745FC5-6696-4879-9314-68B660C64364}"
+      DTS:From="Package\Data Flow Dim_SanPham"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Set LSET for Dim_SanPham" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="198.666666666667,42.6666666666667"
+          Id="Package\Data Flow Dim_SanPham"
+          TopLeft="293.124995632097,210.599996234179" />
+        <NodeLayout
+          Size="238.666666666667,42.6666666666667"
+          Id="Package\GET LSET, CET for Dim_SanPham"
+          TopLeft="279.374995836988,113.749997965992" />
+        <NodeLayout
+          Size="264,42.6666666666667"
+          Id="Package\SET CET for Dim_SanPham_NDStoDDS"
+          TopLeft="259.374996135011,22.7499995931983" />
+        <NodeLayout
+          Size="209.333333333334,42.6666666666667"
+          Id="Package\Set LSET for Dim_SanPham"
+          TopLeft="297.499995566904,287.949994851053" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="395.041662652666,65.416666259865">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48.3333317061266"
+              Start="0,0"
+              End="0,40.8333317061266">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.8333317061266" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="395.583329067876,156.416664632658">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,54.1833316015203"
+              Start="0,0"
+              End="0,46.6833316015203">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.6833316015203" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="392.45832896543,253.266662900846">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="9.70833326814045,34.683331950207"
+              Start="0,0"
+              End="9.70833326814045,27.183331950207">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.3416659751035" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.3416659751035"
+                    Point2="0,17.3416659751035"
+                    Point3="4,17.3416659751035" />
+                  <mssgle:LineSegment
+                    End="5.70833326814045,17.3416659751035" />
+                  <mssgle:CubicBezierSegment
+                    Point1="5.70833326814045,17.3416659751035"
+                    Point2="9.70833326814045,17.3416659751035"
+                    Point3="9.70833326814045,21.3416659751035" />
+                  <mssgle:LineSegment
+                    End="9.70833326814045,27.183331950207" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Dim_SanPham">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="149.333333333334,42.6666666666667"
+          Id="Package\Data Flow Dim_SanPham\SanPham_NDS"
+          TopLeft="354.62499745749,48.499999139905" />
+        <NodeLayout
+          Size="184,42.6666666666667"
+          Id="Package\Data Flow Dim_SanPham\Dim_SanPham in DDS"
+          TopLeft="324.374995166435,342.549993874729" />
+        <NodeLayout
+          Size="277.333333333334,42.6666666666667"
+          Id="Package\Data Flow Dim_SanPham\Get SanPhamNDS has maloaisp is not null"
+          TopLeft="278.749995846302,252.199995490313" />
+        <NodeLayout
+          Size="244,42.6666666666667"
+          Id="Package\Data Flow Dim_SanPham\Check MaLoaiSP is in LoaiSP or not"
+          TopLeft="299.374995538965,139.099997512699" />
+        <EdgeLayout
+          Id="Package\Data Flow Dim_SanPham.Paths[Lookup Match Output]"
+          TopLeft="419.395829025967,181.766664179365">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,70.4333313109473"
+              Start="0,0"
+              End="0,62.9333313109473">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,62.9333313109473" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,25.6619781554737,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Dim_SanPham.Paths[isnotnull]"
+          TopLeft="416.895828839702,294.866662156979">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47.6833317177498"
+              Start="0,0"
+              End="0,40.1833317177498">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.1833317177498" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-18.76572265625,15.2171541401249,37.5314453125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Dim_SanPham.Paths[OLE DB Source Output]"
+          TopLeft="425.333329831561,91.1666658065717">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47.9333317061269"
+              Start="0,0"
+              End="0,40.4333317061269">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.4333317061269" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Dim_SanPham\SanPham_NDS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Dim_SanPham\Dim_SanPham in DDS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Dim_SanPham\Check MaLoaiSP is in LoaiSP or not">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Dim_LoaiSanPham]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>

@@ -5,21 +5,21 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="DESKTOP-ED2S73F"
   DTS:CreatorName="DESKTOP-ED2S73F\MON"
-  DTS:DTSID="{DD38849F-76FD-4E98-B7B5-7244AC2C766B}"
+  DTS:DTSID="{75401497-A518-4804-B415-170DC3C7CDF7}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.170"
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="22"
-  DTS:VersionGUID="{88CEF352-6944-4A24-88BB-F5D40C23E05B}">
+  DTS:VersionBuild="29"
+  DTS:VersionGUID="{1DB2B439-0DDD-4677-A017-B26719F54DB0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_DW]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{1D6997CC-7D57-4BFE-942A-0DF8C7E8531B}"
+      DTS:DTSID="{E11CDAE4-6951-4731-BDA2-3556877174B7}"
       DTS:ObjectName="DESKTOP-ED2S73F\TRANGPHAM.DALT_DW">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -31,7 +31,7 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_METADATA]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{DC0EF49B-BBA8-4243-8676-D5871735D45C}"
+      DTS:DTSID="{A7C663F2-7C4D-455E-A1C2-595398E8FB82}"
       DTS:ObjectName="DESKTOP-ED2S73F\TRANGPHAM.DALT_METADATA">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -43,7 +43,7 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_NDS]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{8A0AC5D6-9BED-49C9-81AA-A1B734CC04B9}"
+      DTS:DTSID="{90B11B0E-C75D-48FB-9C27-386D01DE8234}"
       DTS:ObjectName="DESKTOP-ED2S73F\TRANGPHAM.DALT_NDS">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -52,11 +52,47 @@
           DTS:ConnectionString="Data Source=DESKTOP-ED2S73F\TRANGPHAM;Initial Catalog=DALT_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.DALT_DW]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{4F1283A0-C7A1-43DB-9F92-11D2313B33D2}"
+      DTS:ObjectName="LocalHost.DALT_DW">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=DALT_DW;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.DALT_METADATA]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{1006A71B-4DC1-42AC-A424-1F6A4A32327B}"
+      DTS:ObjectName="LocalHost.DALT_METADATA">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=DALT_METADATA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.DALT_NDS]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{C58A618E-7321-4D5D-B2AB-C7B6A94CFDD5}"
+      DTS:ObjectName="LocalHost.DALT_NDS">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=DALT_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{5307DE3A-08FE-415F-AC25-DE0EF362CEDD}"
+      DTS:DTSID="{0A0CCD3C-2C67-4716-AEE6-50C98FF0E6E4}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="CETLoaiSP_DimR">
@@ -65,7 +101,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{FEE9AE9B-2DCD-4CD3-86B6-6C7A4F81F137}"
+      DTS:DTSID="{5939C28E-01C6-4C06-B3AB-BCCE6BE8F017}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="LSETLoaiSP_DimR">
@@ -79,7 +115,7 @@
       DTS:refId="Package\Data Flow DIM_LoaiSP"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{8eedfbb6-9d3d-4666-93da-2d9e09a39ade}"
+      DTS:DTSID="{5755BA7B-20DE-4221-8A8E-EA09BCBFD5E7}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Data Flow DIM_LoaiSP"
@@ -148,8 +184,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow DIM_LoaiSP\Dim_LoaiSP in DDS.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_DW]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_DW]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.DALT_DW]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.DALT_DW]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -297,13 +333,13 @@ WHERE MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &
                 <property
                   dataType="System.String"
                   description="The mappings between the parameters in the SQL command and variables."
-                  name="ParameterMapping">"Parameter0:Input",{FEE9AE9B-2DCD-4CD3-86B6-6C7A4F81F137};"Parameter1:Input",{5307DE3A-08FE-415F-AC25-DE0EF362CEDD};"Parameter2:Input",{FEE9AE9B-2DCD-4CD3-86B6-6C7A4F81F137};"Parameter3:Input",{5307DE3A-08FE-415F-AC25-DE0EF362CEDD};</property>
+                  name="ParameterMapping">"Parameter0:Input",{5939C28E-01C6-4C06-B3AB-BCCE6BE8F017};"Parameter1:Input",{0A0CCD3C-2C67-4716-AEE6-50C98FF0E6E4};"Parameter2:Input",{5939C28E-01C6-4C06-B3AB-BCCE6BE8F017};"Parameter3:Input",{0A0CCD3C-2C67-4716-AEE6-50C98FF0E6E4};</property>
               </properties>
               <connections>
                 <connection
                   refId="Package\Data Flow DIM_LoaiSP\LoaiSP_NDS.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_NDS]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_NDS]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.DALT_NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.DALT_NDS]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -492,7 +528,7 @@ WHERE MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &
       DTS:refId="Package\Get CET, LSET for LoaiSanPham_DIM"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{d87d23c7-88e9-4c14-825e-842e3887f623}"
+      DTS:DTSID="{10C59F9E-E88F-482E-8388-EFBA7D603EAD}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get CET, LSET for LoaiSanPham_DIM"
@@ -501,7 +537,7 @@ WHERE MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{DC0EF49B-BBA8-4243-8676-D5871735D45C}"
+          SQLTask:Connection="{1006A71B-4DC1-42AC-A424-1F6A4A32327B}"
           SQLTask:SqlStatementSource="SELECT CET,LSET FROM Metadata_Table WHERE Name_DataFlow = 'Dim_LoaiSanPham_NDStoDDS'"
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
@@ -517,7 +553,7 @@ WHERE MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &
       DTS:refId="Package\Set CET for Dim_LoaiSP"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{367736f0-7c76-435a-ade5-2696ed1c4e59}"
+      DTS:DTSID="{C6604DBC-EBA6-4E2F-97BD-7C507AB7B652}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set CET for Dim_LoaiSP"
@@ -526,7 +562,7 @@ WHERE MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{DC0EF49B-BBA8-4243-8676-D5871735D45C}"
+          SQLTask:Connection="{1006A71B-4DC1-42AC-A424-1F6A4A32327B}"
           SQLTask:SqlStatementSource="UPDATE Metadata_Table&#xA;SET CET = GETDATE()&#xA;WHERE Name_DataFlow = 'Dim_LoaiSanPham_NDStoDDS'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -534,7 +570,7 @@ WHERE MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &
       DTS:refId="Package\Set LSET for LoaiSanPham_DIM"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{ca0d605e-6ff8-4fe7-801f-3068c6c10c8d}"
+      DTS:DTSID="{23788F65-BBB8-472A-B252-5C11D98EC287}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set LSET for LoaiSanPham_DIM"
@@ -543,7 +579,7 @@ WHERE MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{DC0EF49B-BBA8-4243-8676-D5871735D45C}"
+          SQLTask:Connection="{1006A71B-4DC1-42AC-A424-1F6A4A32327B}"
           SQLTask:SqlStatementSource="UPDATE Metadata_Table&#xA;SET LSET  = CET&#xA;WHERE Name_DataFlow = 'Dim_LoaiSanPham_NDStoDDS';" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -552,7 +588,7 @@ WHERE MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{BC0821A7-FCB7-4D38-9B7E-D8F3578FFD93}"
+      DTS:DTSID="{22C0EDCC-7749-4D86-A824-A5A155B167E5}"
       DTS:From="Package\Set CET for Dim_LoaiSP"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
@@ -560,7 +596,7 @@ WHERE MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{FCFA7ACC-6D02-4B96-8646-0257956E85A8}"
+      DTS:DTSID="{9F8578F9-28E0-47E8-835B-3AED3AD18EA4}"
       DTS:From="Package\Get CET, LSET for LoaiSanPham_DIM"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
@@ -568,7 +604,7 @@ WHERE MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{A9B43DC0-E495-4422-9C92-FB41E38BA6F0}"
+      DTS:DTSID="{DAB1BA73-8951-4DC5-B8D5-6AACEB7DBDB5}"
       DTS:From="Package\Data Flow DIM_LoaiSP"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
@@ -587,47 +623,35 @@ WHERE MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="184.8,41.6"
+          Size="184.666666666667,41.3333333333334"
           Id="Package\Data Flow DIM_LoaiSP"
-          TopLeft="73.7738091068053,272.91022106332" />
+          TopLeft="235.64880669468,183.860222655658" />
         <NodeLayout
-          Size="254.4,41.6"
+          Size="254.666666666667,41.3333333333334"
           Id="Package\Get CET, LSET for LoaiSanPham_DIM"
-          TopLeft="67.9464278965042,164.724460516727" />
+          TopLeft="203.571425875534,106.874461551166" />
         <NodeLayout
-          Size="190.4,41.6"
+          Size="190.666666666667,41.3333333333334"
           Id="Package\Set CET for Dim_LoaiSP"
-          TopLeft="68.9166618051631,60" />
+          TopLeft="230.791659393038,23.6000006508827" />
         <NodeLayout
-          Size="228,41.6"
+          Size="228,41.3333333333334"
           Id="Package\Set LSET for LoaiSanPham_DIM"
-          TopLeft="77.089285767694,385.804959905643" />
+          TopLeft="198.964283951615,272.704961928029" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="164.116661805163,101.6">
+          TopLeft="328.514875967619,64.933333984216">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="31.0297660913411,63.1244605167274"
+              EndConnector="0,41.9411275669495"
               Start="0,0"
-              End="31.0297660913411,55.6244605167274">
+              End="0,34.4411275669495">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,27.5622302583637" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,27.5622302583637"
-                    Point2="0,31.5622302583637"
-                    Point3="4,31.5622302583637" />
-                  <mssgle:LineSegment
-                    End="27.0297660913411,31.5622302583637" />
-                  <mssgle:CubicBezierSegment
-                    Point1="27.0297660913411,31.5622302583637"
-                    Point2="31.0297660913411,31.5622302583637"
-                    Point3="31.0297660913411,35.5622302583637" />
-                  <mssgle:LineSegment
-                    End="31.0297660913411,55.6244605167274" />
+                    End="0,34.4411275669495" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -638,30 +662,18 @@ WHERE MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="195.146427896504,206.324460516727">
+          TopLeft="329.44344961844,148.207794884499">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-28.9726187896989,66.5857605465926"
+              EndConnector="0,35.6524277711592"
               Start="0,0"
-              End="-28.9726187896989,59.0857605465926">
+              End="0,28.1524277711592">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,29.2928802732963" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,29.2928802732963"
-                    Point2="0,33.2928802732963"
-                    Point3="-4,33.2928802732963" />
-                  <mssgle:LineSegment
-                    End="-24.9726187896989,33.2928802732963" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-24.9726187896989,33.2928802732963"
-                    Point2="-28.9726187896989,33.2928802732963"
-                    Point3="-28.9726187896989,37.2928802732963" />
-                  <mssgle:LineSegment
-                    End="-28.9726187896989,59.0857605465926" />
+                    End="0,28.1524277711592" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -672,30 +684,30 @@ WHERE MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="166.173809106805,314.51022106332">
+          TopLeft="327.982140028013,225.193555988991">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="24.9154766608887,71.2947388423231"
+              EndConnector="-15.0178560763982,47.5114059390371"
               Start="0,0"
-              End="24.9154766608887,63.7947388423231">
+              End="-15.0178560763982,40.0114059390371">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.6473694211616" />
+                    End="0,19.7557029695186" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,31.6473694211616"
-                    Point2="0,35.6473694211616"
-                    Point3="4,35.6473694211616" />
+                    Point1="0,19.7557029695186"
+                    Point2="0,23.7557029695186"
+                    Point3="-4,23.7557029695186" />
                   <mssgle:LineSegment
-                    End="20.9154766608887,35.6473694211616" />
+                    End="-11.0178560763982,23.7557029695186" />
                   <mssgle:CubicBezierSegment
-                    Point1="20.9154766608887,35.6473694211616"
-                    Point2="24.9154766608887,35.6473694211616"
-                    Point3="24.9154766608887,39.6473694211616" />
+                    Point1="-11.0178560763982,23.7557029695186"
+                    Point2="-15.0178560763982,23.7557029695186"
+                    Point3="-15.0178560763982,27.7557029695186" />
                   <mssgle:LineSegment
-                    End="24.9154766608887,63.7947388423231" />
+                    End="-15.0178560763982,40.0114059390371" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -713,11 +725,11 @@ WHERE MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="169.6,41.6"
+          Size="169.333333333334,41.3333333333334"
           Id="Package\Data Flow DIM_LoaiSP\Dim_LoaiSP in DDS"
           TopLeft="262.142861607123,253.117650608703" />
         <NodeLayout
-          Size="216.8,41.6"
+          Size="216.666666666667,41.3333333333334"
           Id="Package\Data Flow DIM_LoaiSP\LoaiSP_NDS"
           TopLeft="237.499996460974,73.8947382329904" />
         <EdgeLayout

@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="31"
-  DTS:VersionGUID="{D821839F-87BF-4D2E-9B5D-AD4BD29B4BA6}">
+  DTS:VersionBuild="34"
+  DTS:VersionGUID="{FF6E6B60-6D13-4131-AF42-3C2120D3BAD0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -21,7 +21,6 @@
       DTS:refId="Package\Dim_CuaHang"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
-      DTS:Disabled="True"
       DTS:DTSID="{02C2A78F-6260-4B8D-90C7-C98ED9BAA72F}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
@@ -57,7 +56,6 @@
       DTS:refId="Package\Dim_KhachHang"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
-      DTS:Disabled="True"
       DTS:DTSID="{2351951F-3CD8-4DA6-9EF5-88CC5FC2AD0F}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
@@ -75,6 +73,7 @@
       DTS:refId="Package\Dim_LoaiCH"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
+      DTS:Disabled="True"
       DTS:DTSID="{C634E79D-6B1F-4D17-8837-99A6297CF526}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
@@ -92,6 +91,7 @@
       DTS:refId="Package\Dim_LoaiSP"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
+      DTS:Disabled="True"
       DTS:DTSID="{29DA8B6A-62FC-4F00-9EE1-1EE276B3FCDC}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
@@ -109,6 +109,7 @@
       DTS:refId="Package\Dim_QuocGia"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
+      DTS:Disabled="True"
       DTS:DTSID="{6d7b217a-2803-4193-8308-c0cc485ec61f}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
@@ -126,7 +127,6 @@
       DTS:refId="Package\Dim_SanPham"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="SanPham_nds to dds"
-      DTS:Disabled="True"
       DTS:DTSID="{994D7681-1462-42C0-83B8-C0E4F0CCF7A1}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
@@ -238,21 +238,37 @@
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="182.4,41.6"
-          Id="Package\Dim_LoaiSP"
-          TopLeft="124.285716402288,69.5882362700664" />
+          Size="182.666666666667,41.3333333333334"
+          Id="Package\Dim_CuaHang"
+          TopLeft="564.285723895443,209.529414703277" />
         <NodeLayout
-          Size="182.4,41.6"
-          Id="Package\Dim_QuocGia"
-          TopLeft="363.571434763013,62.5999994530397" />
+          Size="140.666666666667,41.3333333333334"
+          Id="Package\Dim_HoaDon"
+          TopLeft="784.542869100279,208.000002917121" />
         <NodeLayout
-          Size="135.2,41.6"
+          Size="199.333333333334,41.3333333333334"
+          Id="Package\Dim_KhachHang"
+          TopLeft="336.428577157916,209.529414703277" />
+        <NodeLayout
+          Size="135.333333333334,41.3333333333334"
           Id="Package\Dim_LoaiCH"
           TopLeft="617.142867652738,60.4117655531345" />
         <NodeLayout
-          Size="189.6,41.6"
+          Size="182.666666666667,41.3333333333334"
+          Id="Package\Dim_LoaiSP"
+          TopLeft="124.285716402288,69.5882362700664" />
+        <NodeLayout
+          Size="182.666666666667,41.3333333333334"
+          Id="Package\Dim_QuocGia"
+          TopLeft="363.571434763013,62.5999994530397" />
+        <NodeLayout
+          Size="189.333333333334,41.3333333333334"
           Id="Package\Dim_SanPham"
           TopLeft="106.428573241039,211.058826489432" />
+        <NodeLayout
+          Size="152.666666666667,41.3333333333334"
+          Id="Package\Fact_DoanhThu"
+          TopLeft="511.457149292012,441.235300305805" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="215.485716402288,111.188236270066">
@@ -287,10 +303,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="182.4,41.6"
-          Id="Package\Dim_CuaHang"
-          TopLeft="564.285723895443,209.529414703277" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
           TopLeft="483.83810142968,104.19999945304">
@@ -347,10 +359,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="199.2,41.6"
-          Id="Package\Dim_KhachHang"
-          TopLeft="336.428577157916,209.529414703277" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
           TopLeft="425.704768096347,104.19999945304">
@@ -385,21 +393,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="140.8,41.6"
-          Id="Package\Dim_HoaDon"
-          TopLeft="784.542869100279,208.000002917121" />
-        <AnnotationLayout
-          Text="DimDate đã có sẵn trong DDS (trước đó trong source không có sự xuất hiện của trường thời gian nào trừ timestamp)"
-          ParentId="Package"
-          FontInfo="{assembly:Null}"
-          Size="647.2,60"
-          Id="4c512037-085a-44a8-a42a-f5615dd66432"
-          TopLeft="792.514287344291,81.8235305593088" />
-        <NodeLayout
-          Size="152.8,41.6"
-          Id="Package\Fact_DoanhThu"
-          TopLeft="511.457149292012,441.235300305805" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
           TopLeft="201.228573241039,252.658826489432">
@@ -536,6 +529,13 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <AnnotationLayout
+          Text="DimDate đã có sẵn trong DDS (trước đó trong source không có sự xuất hiện của trường thời gian nào trừ timestamp)"
+          ParentId="Package"
+          FontInfo="{assembly:Null}"
+          Size="647.333333333334,40"
+          Id="4c512037-085a-44a8-a42a-f5615dd66432"
+          TopLeft="791.889287353604,81.8235305593088" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
