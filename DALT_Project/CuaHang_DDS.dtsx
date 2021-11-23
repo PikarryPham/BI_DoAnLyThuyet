@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="27"
-  DTS:VersionGUID="{ED4D1F0F-9570-48D4-BB25-A4F54689C653}">
+  DTS:VersionBuild="29"
+  DTS:VersionGUID="{428E2D41-A39E-4827-B133-24B79276791A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -501,7 +501,8 @@ where [refTable].[SKMaQG] = ?</property>
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT * FROM CuaHang
+WHERE MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNhat &lt; ?))</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -518,11 +519,11 @@ where [refTable].[SKMaQG] = ?</property>
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
                   name="AccessMode"
-                  typeConverter="AccessMode">0</property>
+                  typeConverter="AccessMode">2</property>
                 <property
                   dataType="System.String"
                   description="The mappings between the parameters in the SQL command and variables."
-                  name="ParameterMapping"></property>
+                  name="ParameterMapping">"Parameter0:Input",{BF12C665-90C8-4042-B884-A87DB94F9061};"Parameter1:Input",{250CAAC5-DFC9-413F-A9AD-EBB3D90F8921};"Parameter2:Input",{BF12C665-90C8-4042-B884-A87DB94F9061};"Parameter3:Input",{250CAAC5-DFC9-413F-A9AD-EBB3D90F8921};</property>
               </properties>
               <connections>
                 <connection
@@ -1171,13 +1172,13 @@ where [refTable].[SKMaQG] = ?</property>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Set LSET for QG_DIM"
+      DTS:refId="Package\Set LSET for CH_DIM"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
       DTS:DTSID="{05BF4694-EC36-4DE1-BD7C-2B90740EF260}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Set LSET for QG_DIM"
+      DTS:ObjectName="Set LSET for CH_DIM"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
@@ -1212,7 +1213,7 @@ where [refTable].[SKMaQG] = ?</property>
       DTS:From="Package\Data Flow DIM_CuaHang"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
-      DTS:To="Package\Set LSET for QG_DIM" />
+      DTS:To="Package\Set LSET for CH_DIM" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -1239,8 +1240,8 @@ where [refTable].[SKMaQG] = ?</property>
           Id="Package\Set CET for Dim_KhachHang"
           TopLeft="60.9702339086589,60" />
         <NodeLayout
-          Size="228,42"
-          Id="Package\Set LSET for QG_DIM"
+          Size="179.333333333334,42"
+          Id="Package\Set LSET for CH_DIM"
           TopLeft="69.1428578711898,385.804959905643" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
@@ -1300,30 +1301,18 @@ where [refTable].[SKMaQG] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="164.494047876968,314.91022106332">
+          TopLeft="161.651786207412,314.91022106332">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="18.648809994222,70.894738842323"
+              EndConnector="0,70.894738842323"
               Start="0,0"
-              End="18.648809994222,63.394738842323">
+              End="0,63.394738842323">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.4473694211615" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,31.4473694211615"
-                    Point2="0,35.4473694211615"
-                    Point3="4,35.4473694211615" />
-                  <mssgle:LineSegment
-                    End="14.648809994222,35.4473694211615" />
-                  <mssgle:CubicBezierSegment
-                    Point1="14.648809994222,35.4473694211615"
-                    Point2="18.648809994222,35.4473694211615"
-                    Point3="18.648809994222,39.4473694211615" />
-                  <mssgle:LineSegment
-                    End="18.648809994222,63.394738842323" />
+                    End="0,63.394738842323" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1341,9 +1330,9 @@ where [refTable].[SKMaQG] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="298.666666666667,42.6666666666667"
-          Id="Package\Data Flow DIM_CuaHang\Get CuaHang_NDS has SKMaLoaiCH is not null"
-          TopLeft="351.249994765967,451.149993363321" />
+          Size="281.333333333334,42.6666666666667"
+          Id="Package\Data Flow DIM_CuaHang\Get CuaHang_NDS has SKMaQG is not null"
+          TopLeft="362.083328285565,358.799993584156" />
         <NodeLayout
           Size="313.333333333334,42.6666666666667"
           Id="Package\Data Flow DIM_CuaHang\Check MaQG exists or not in QuocGia_DDS_Table"
@@ -1353,17 +1342,17 @@ where [refTable].[SKMaQG] = ?</property>
           Id="Package\Data Flow DIM_CuaHang\Dim_CuaHang in DDS"
           TopLeft="419.374993750826,531.81665724049" />
         <NodeLayout
-          Size="148,42.6666666666667"
-          Id="Package\Data Flow DIM_CuaHang\CuaHang_NDS"
-          TopLeft="411.874993862584,85.1499984773994" />
+          Size="298.666666666667,42.6666666666667"
+          Id="Package\Data Flow DIM_CuaHang\Get CuaHang_NDS has SKMaLoaiCH is not null"
+          TopLeft="351.249994765967,451.149993363321" />
         <NodeLayout
           Size="353.333333333334,42.6666666666667"
           Id="Package\Data Flow DIM_CuaHang\Check MaLoaiCH exists or not in LoaiCuaHang_DDS_Table"
           TopLeft="333.124995036051,161.849997105897" />
         <NodeLayout
-          Size="281.333333333334,42.6666666666667"
-          Id="Package\Data Flow DIM_CuaHang\Get CuaHang_NDS has SKMaQG is not null"
-          TopLeft="362.083328285565,358.799993584156" />
+          Size="148,42.6666666666667"
+          Id="Package\Data Flow DIM_CuaHang\CuaHang_NDS"
+          TopLeft="411.874993862584,85.1499984773994" />
         <EdgeLayout
           Id="Package\Data Flow DIM_CuaHang.Paths[SKMaLoaiCHisnotnull]"
           TopLeft="500.5833280993,493.816660029988">
@@ -1546,19 +1535,6 @@ where [refTable].[SKMaQG] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow DIM_CuaHang\CuaHang_NDS">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Data Flow DIM_CuaHang\Check MaLoaiCH exists or not in LoaiCuaHang_DDS_Table">
     <Properties>
       <Property>
@@ -1578,6 +1554,19 @@ where [refTable].[SKMaQG] = ?</property>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow DIM_CuaHang\CuaHang_NDS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

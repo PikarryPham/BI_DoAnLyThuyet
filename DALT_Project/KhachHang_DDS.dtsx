@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="55"
-  DTS:VersionGUID="{90B2A808-F62C-4FC5-A351-562766B5EB7E}">
+  DTS:VersionBuild="56"
+  DTS:VersionGUID="{FD840405-248F-4012-A69D-D6F789CE4EC2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -989,13 +989,13 @@ WHERE MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Set LSET for QG_DIM"
+      DTS:refId="Package\Set LSET for KH_DIM"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
       DTS:DTSID="{DCD21318-0129-4934-A6D6-CDF61A58762E}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Set LSET for QG_DIM"
+      DTS:ObjectName="Set LSET for KH_DIM"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
@@ -1030,7 +1030,7 @@ WHERE MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &
       DTS:From="Package\Data Flow DIM_KhachHang"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
-      DTS:To="Package\Set LSET for QG_DIM" />
+      DTS:To="Package\Set LSET for KH_DIM" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -1057,8 +1057,8 @@ WHERE MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &
           Id="Package\Set CET for Dim_KhachHang"
           TopLeft="60.9702339086589,60" />
         <NodeLayout
-          Size="228,42"
-          Id="Package\Set LSET for QG_DIM"
+          Size="179.333333333334,42"
+          Id="Package\Set LSET for KH_DIM"
           TopLeft="69.1428578711898,385.154959917266" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
@@ -1134,26 +1134,26 @@ WHERE MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="13.3154766608887,70.2447388539459"
+              EndConnector="-11.0178566724446,70.244738853946"
               Start="0,0"
-              End="13.3154766608887,62.7447388539459">
+              End="-11.0178566724446,62.744738853946">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.1223694269729" />
+                    End="0,31.122369426973" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,31.1223694269729"
-                    Point2="0,35.1223694269729"
-                    Point3="4,35.1223694269729" />
+                    Point1="0,31.122369426973"
+                    Point2="0,35.122369426973"
+                    Point3="-4,35.122369426973" />
                   <mssgle:LineSegment
-                    End="9.31547666088869,35.1223694269729" />
+                    End="-7.01785667244462,35.122369426973" />
                   <mssgle:CubicBezierSegment
-                    Point1="9.31547666088869,35.1223694269729"
-                    Point2="13.3154766608887,35.1223694269729"
-                    Point3="13.3154766608887,39.1223694269729" />
+                    Point1="-7.01785667244462,35.122369426973"
+                    Point2="-11.0178566724446,35.122369426973"
+                    Point3="-11.0178566724446,39.122369426973" />
                   <mssgle:LineSegment
-                    End="13.3154766608887,62.7447388539459" />
+                    End="-11.0178566724446,62.744738853946" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1171,10 +1171,6 @@ WHERE MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="158.666666666667,42.6666666666667"
-          Id="Package\Data Flow DIM_KhachHang\KhachHang_NDS"
-          TopLeft="246.874996321276,38.9999993026256" />
-        <NodeLayout
           Size="184,42.6666666666667"
           Id="Package\Data Flow DIM_KhachHang\Dim_KhachHang_DDS"
           TopLeft="243.124996377156,317.849994316399" />
@@ -1186,6 +1182,10 @@ WHERE MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &
           Size="269.333333333334,42.6666666666667"
           Id="Package\Data Flow DIM_KhachHang\Check if maqg is in QuocGia_DDS or not"
           TopLeft="186.249997224659,118.949997873008" />
+        <NodeLayout
+          Size="158.666666666667,42.6666666666667"
+          Id="Package\Data Flow DIM_KhachHang\KhachHang_NDS"
+          TopLeft="246.874996321276,38.9999993026256" />
         <EdgeLayout
           Id="Package\Data Flow DIM_KhachHang.Paths[OLE DB Source Output]"
           TopLeft="323.562496772967,81.6666659692923">
@@ -1260,14 +1260,6 @@ WHERE MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow DIM_KhachHang\KhachHang_NDS">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Data Flow DIM_KhachHang\Dim_KhachHang_DDS">
     <Properties>
       <Property>
@@ -1298,6 +1290,14 @@ WHERE MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &
         <Value
           type="q4:string">0</Value>
       </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow DIM_KhachHang\KhachHang_NDS">
+    <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>
