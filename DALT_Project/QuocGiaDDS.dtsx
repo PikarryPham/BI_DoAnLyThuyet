@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="33"
-  DTS:VersionGUID="{1FC1A9F4-18FD-4C53-9777-B0AEA729A22E}">
+  DTS:VersionBuild="34"
+  DTS:VersionGUID="{5D2AD084-6BF9-4AF5-89C4-6707951B2FDB}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -191,7 +191,7 @@
                   expressionType="Notify"
                   name="SqlCommand"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE Dim_QuocGia
-SET NgayCapNhat = GETDATE(), TenQG = ?, TenThanhPho = ? WHERE SKMaQG = ?</property>
+SET NgayCapNhat = GETDATE(), TenQG = ?, TenThanhPho = ? WHERE MaQG = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -230,11 +230,13 @@ SET NgayCapNhat = GETDATE(), TenQG = ?, TenThanhPho = ? WHERE SKMaQG = ?</proper
                       externalMetadataColumnId="Package\Data Flow DIM_QuocGia\Cập nhật dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
                       lineageId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Output].Columns[TenThanhPho]" />
                     <inputColumn
-                      refId="Package\Data Flow DIM_QuocGia\Cập nhật dữ liệu.Inputs[OLE DB Command Input].Columns[SKMaQG]"
-                      cachedDataType="i4"
-                      cachedName="SKMaQG"
+                      refId="Package\Data Flow DIM_QuocGia\Cập nhật dữ liệu.Inputs[OLE DB Command Input].Columns[MaQG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="MaQG"
                       externalMetadataColumnId="Package\Data Flow DIM_QuocGia\Cập nhật dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                      lineageId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Output].Columns[SKMaQG]" />
+                      lineageId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Output].Columns[MaQG]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -266,7 +268,9 @@ SET NgayCapNhat = GETDATE(), TenQG = ?, TenThanhPho = ? WHERE SKMaQG = ?</proper
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Data Flow DIM_QuocGia\Cập nhật dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                      dataType="i4"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
                       name="Param_2">
                       <properties>
                         <property
@@ -1213,10 +1217,6 @@ WHERE MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="216.666666666667,42"
-          Id="Package\Data Flow DIM_QuocGia\QuocGia_NDS"
-          TopLeft="236.874996470287,68.6947383259736" />
-        <NodeLayout
           Size="170,42"
           Id="Package\Data Flow DIM_QuocGia\Dim_QuocGia in DDS"
           TopLeft="262.142861607123,253.117650608703" />
@@ -1225,47 +1225,17 @@ WHERE MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &
           Id="Package\Data Flow DIM_QuocGia\Kiểm tra DDS"
           TopLeft="441.687493969686,154.450983942036" />
         <NodeLayout
+          Size="249.666666666667,41.6666666666667"
+          Id="Package\Data Flow DIM_QuocGia\Cập nhật ngày tạo và ngày cập nhật"
+          TopLeft="45.3762041312797,181.154107724878" />
+        <NodeLayout
           Size="156.666666666667,42"
           Id="Package\Data Flow DIM_QuocGia\Cập nhật dữ liệu"
           TopLeft="589.02082730302,242.874413967339" />
         <NodeLayout
-          Size="249.666666666667,41.6666666666667"
-          Id="Package\Data Flow DIM_QuocGia\Cập nhật ngày tạo và ngày cập nhật"
-          TopLeft="45.3762041312797,181.154107724878" />
-        <EdgeLayout
-          Id="Package\Data Flow DIM_QuocGia.Paths[OLE DB Source Output]"
-          TopLeft="345.20832980362,110.694738325974">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="167.645830832732,43.7562456160628"
-              Start="0,0"
-              End="167.645830832732,36.2562456160628">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,17.8781228080314" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,17.8781228080314"
-                    Point2="0,21.8781228080314"
-                    Point3="4,21.8781228080314" />
-                  <mssgle:LineSegment
-                    End="163.645830832732,21.8781228080314" />
-                  <mssgle:CubicBezierSegment
-                    Point1="163.645830832732,21.8781228080314"
-                    Point2="167.645830832732,21.8781228080314"
-                    Point3="167.645830832732,25.8781228080314" />
-                  <mssgle:LineSegment
-                    End="167.645830832732,36.2562456160628" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="216.666666666667,42"
+          Id="Package\Data Flow DIM_QuocGia\QuocGia_NDS"
+          TopLeft="236.874996470287,68.6947383259736" />
         <EdgeLayout
           Id="Package\Data Flow DIM_QuocGia.Paths[Lookup Match Output]"
           TopLeft="512.854160636353,196.450983942036">
@@ -1300,6 +1270,74 @@ WHERE MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &
             <mssgm:EdgeLabel
               BoundingBox="29.0586132812503,28.2117150126514,96.3827734375,11.609375"
               RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow DIM_QuocGia.Paths[Derived Column Output]"
+          TopLeft="170.209537464613,222.820774391545">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="176.93332414251,30.2968762171579"
+              Start="0,0"
+              End="176.93332414251,22.7968762171579">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.1484381085789" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.1484381085789"
+                    Point2="0,15.1484381085789"
+                    Point3="4,15.1484381085789" />
+                  <mssgle:LineSegment
+                    End="172.93332414251,15.1484381085789" />
+                  <mssgle:CubicBezierSegment
+                    Point1="172.93332414251,15.1484381085789"
+                    Point2="176.93332414251,15.1484381085789"
+                    Point3="176.93332414251,19.1484381085789" />
+                  <mssgle:LineSegment
+                    End="176.93332414251,22.7968762171579" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow DIM_QuocGia.Paths[OLE DB Source Output]"
+          TopLeft="345.20832980362,110.694738325974">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="167.645830832732,43.7562456160628"
+              Start="0,0"
+              End="167.645830832732,36.2562456160628">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.8781228080314" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.8781228080314"
+                    Point2="0,21.8781228080314"
+                    Point3="4,21.8781228080314" />
+                  <mssgle:LineSegment
+                    End="163.645830832732,21.8781228080314" />
+                  <mssgle:CubicBezierSegment
+                    Point1="163.645830832732,21.8781228080314"
+                    Point2="167.645830832732,21.8781228080314"
+                    Point3="167.645830832732,25.8781228080314" />
+                  <mssgle:LineSegment
+                    End="167.645830832732,36.2562456160628" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1338,43 +1376,32 @@ WHERE MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow DIM_QuocGia.Paths[Derived Column Output]"
-          TopLeft="170.209537464613,222.820774391545">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="176.93332414251,30.2968762171579"
-              Start="0,0"
-              End="176.93332414251,22.7968762171579">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,11.1484381085789" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,11.1484381085789"
-                    Point2="0,15.1484381085789"
-                    Point3="4,15.1484381085789" />
-                  <mssgle:LineSegment
-                    End="172.93332414251,15.1484381085789" />
-                  <mssgle:CubicBezierSegment
-                    Point1="172.93332414251,15.1484381085789"
-                    Point2="176.93332414251,15.1484381085789"
-                    Point3="176.93332414251,19.1484381085789" />
-                  <mssgle:LineSegment
-                    End="176.93332414251,22.7968762171579" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow DIM_QuocGia\Kiểm tra DDS">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Dim_QuocGia]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Data Flow DIM_QuocGia\Dim_QuocGia in DDS">
     <Properties>
@@ -1391,29 +1418,6 @@ WHERE MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &
   <PipelineComponentMetadata
     design-time-name="Package\Data Flow DIM_QuocGia\QuocGia_NDS">
     <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow DIM_QuocGia\Kiểm tra DDS">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Dim_QuocGia]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>

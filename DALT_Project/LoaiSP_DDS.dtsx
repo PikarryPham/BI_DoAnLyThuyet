@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="35"
-  DTS:VersionGUID="{08FC07D1-A341-4CC1-8D9F-882DB036F105}">
+  DTS:VersionBuild="36"
+  DTS:VersionGUID="{4C642ECB-ED31-439B-B5E8-0B40498B49BD}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -168,7 +168,7 @@
                   expressionType="Notify"
                   name="SqlCommand"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE Dim_LoaiSanPham
-SET NgayCapNhat = GETDATE(), TenLoaiSP = ? WHERE SKMaloaiSP = ?</property>
+SET NgayCapNhat = GETDATE(), TenLoaiSP = ? WHERE MaloaiSP = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -199,11 +199,13 @@ SET NgayCapNhat = GETDATE(), TenLoaiSP = ? WHERE SKMaloaiSP = ?</property>
                       externalMetadataColumnId="Package\Data Flow DIM_LoaiSP\Cập nhật dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
                       lineageId="Package\Data Flow DIM_LoaiSP\LoaiSP_NDS.Outputs[OLE DB Source Output].Columns[TenLoaiSP]" />
                     <inputColumn
-                      refId="Package\Data Flow DIM_LoaiSP\Cập nhật dữ liệu.Inputs[OLE DB Command Input].Columns[SKMaLoaiSP]"
-                      cachedDataType="i4"
-                      cachedName="SKMaLoaiSP"
+                      refId="Package\Data Flow DIM_LoaiSP\Cập nhật dữ liệu.Inputs[OLE DB Command Input].Columns[MaLoaiSP]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="MaLoaiSP"
                       externalMetadataColumnId="Package\Data Flow DIM_LoaiSP\Cập nhật dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                      lineageId="Package\Data Flow DIM_LoaiSP\LoaiSP_NDS.Outputs[OLE DB Source Output].Columns[SKMaLoaiSP]" />
+                      lineageId="Package\Data Flow DIM_LoaiSP\LoaiSP_NDS.Outputs[OLE DB Source Output].Columns[MaLoaiSP]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -222,7 +224,9 @@ SET NgayCapNhat = GETDATE(), TenLoaiSP = ? WHERE SKMaloaiSP = ?</property>
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Data Flow DIM_LoaiSP\Cập nhật dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                      dataType="i4"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
                       name="Param_1">
                       <properties>
                         <property
