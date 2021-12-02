@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>DALT_Project</Name>
-    <LastWriteTime>2021-11-23T04:15:02.520438Z</LastWriteTime>
+    <LastWriteTime>2021-12-02T05:58:17.6932868Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -48,7 +48,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>CuaHangStage_NDS.dtsx</Name>
-      <LastWriteTime>2021-11-22T17:45:08.0120539Z</LastWriteTime>
+      <LastWriteTime>2021-12-02T05:58:14.6423949Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -73,47 +73,47 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>NDS_DDS.dtsx</Name>
-      <LastWriteTime>2021-11-22T19:03:38.3450363Z</LastWriteTime>
+      <LastWriteTime>2021-11-23T11:26:33.2129399Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DoanhThu_CTHD_DDS.dtsx</Name>
-      <LastWriteTime>2021-11-23T04:15:02.3430128Z</LastWriteTime>
+      <LastWriteTime>2021-12-02T04:38:00.887012Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>LoaiCH_DDS.dtsx</Name>
-      <LastWriteTime>2021-11-22T18:58:01.99602Z</LastWriteTime>
+      <LastWriteTime>2021-12-02T05:40:42.7256216Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>CuaHang_DDS.dtsx</Name>
-      <LastWriteTime>2021-11-22T19:03:38.3330402Z</LastWriteTime>
+      <LastWriteTime>2021-12-02T04:07:02.4870979Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>KhachHang_DDS.dtsx</Name>
-      <LastWriteTime>2021-11-22T19:09:49.9807585Z</LastWriteTime>
+      <LastWriteTime>2021-11-23T11:30:28.826204Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>LoaiSP_DDS.dtsx</Name>
-      <LastWriteTime>2021-11-22T18:32:04.2827884Z</LastWriteTime>
+      <LastWriteTime>2021-12-02T06:03:10.0984443Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>QuocGiaDDS.dtsx</Name>
-      <LastWriteTime>2021-11-22T18:34:22.0410436Z</LastWriteTime>
+      <LastWriteTime>2021-12-02T05:53:37.1606536Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>SanPham_DDS.dtsx</Name>
-      <LastWriteTime>2021-11-22T19:03:38.3190449Z</LastWriteTime>
+      <LastWriteTime>2021-12-02T05:57:33.6374832Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>HoaDon_DDS.dtsx</Name>
-      <LastWriteTime>2021-11-22T18:36:45.1374468Z</LastWriteTime>
+      <LastWriteTime>2021-12-02T05:34:21.9743257Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

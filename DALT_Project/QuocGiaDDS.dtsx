@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="32"
-  DTS:VersionGUID="{822BF82C-92D9-4CB3-B473-B82D9503E756}">
+  DTS:VersionBuild="33"
+  DTS:VersionGUID="{1FC1A9F4-18FD-4C53-9777-B0AEA729A22E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -81,6 +81,18 @@
       DTS:CreationName="OLEDB"
       DTS:DTSID="{83C61BD0-6991-4F3D-AE78-E3A6DCDC4CF5}"
       DTS:ObjectName="DESKTOP-LATGDUJ.DALT_NDS">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-LATGDUJ;Initial Catalog=DALT_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_NDS 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{8E6491ED-8D82-4A59-9A23-71558765DEEE}"
+      DTS:ObjectName="DESKTOP-LATGDUJ.DALT_NDS 1">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
@@ -160,6 +172,241 @@
         <pipeline
           version="1">
           <components>
+            <component
+              refId="Package\Data Flow DIM_QuocGia\Cập nhật dữ liệu"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="Cập nhật dữ liệu"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE Dim_QuocGia
+SET NgayCapNhat = GETDATE(), TenQG = ?, TenThanhPho = ? WHERE SKMaQG = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow DIM_QuocGia\Cập nhật dữ liệu.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_DW]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_DW]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow DIM_QuocGia\Cập nhật dữ liệu.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow DIM_QuocGia\Cập nhật dữ liệu.Inputs[OLE DB Command Input].Columns[TenQG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TenQG"
+                      externalMetadataColumnId="Package\Data Flow DIM_QuocGia\Cập nhật dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Output].Columns[TenQG]" />
+                    <inputColumn
+                      refId="Package\Data Flow DIM_QuocGia\Cập nhật dữ liệu.Inputs[OLE DB Command Input].Columns[TenThanhPho]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="TenThanhPho"
+                      externalMetadataColumnId="Package\Data Flow DIM_QuocGia\Cập nhật dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Output].Columns[TenThanhPho]" />
+                    <inputColumn
+                      refId="Package\Data Flow DIM_QuocGia\Cập nhật dữ liệu.Inputs[OLE DB Command Input].Columns[SKMaQG]"
+                      cachedDataType="i4"
+                      cachedName="SKMaQG"
+                      externalMetadataColumnId="Package\Data Flow DIM_QuocGia\Cập nhật dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Output].Columns[SKMaQG]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow DIM_QuocGia\Cập nhật dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow DIM_QuocGia\Cập nhật dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow DIM_QuocGia\Cập nhật dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      dataType="i4"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow DIM_QuocGia\Cập nhật dữ liệu.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Data Flow DIM_QuocGia\Cập nhật dữ liệu.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow DIM_QuocGia\Cập nhật dữ liệu.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Data Flow DIM_QuocGia\Cập nhật dữ liệu.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow DIM_QuocGia\Cập nhật dữ liệu.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow DIM_QuocGia\Cập nhật dữ liệu.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow DIM_QuocGia\Cập nhật dữ liệu.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow DIM_QuocGia\Cập nhật dữ liệu.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow DIM_QuocGia\Cập nhật ngày tạo và ngày cập nhật"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Cập nhật ngày tạo và ngày cập nhật"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow DIM_QuocGia\Cập nhật ngày tạo và ngày cập nhật.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow DIM_QuocGia\Cập nhật ngày tạo và ngày cập nhật.Inputs[Derived Column Input].Columns[NgayTao]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="NgayTao"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Output].Columns[NgayTao]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow DIM_QuocGia\Cập nhật ngày tạo và ngày cập nhật.Inputs[Derived Column Input].Columns[NgayCapNhat]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="NgayCapNhat"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Output].Columns[NgayCapNhat]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow DIM_QuocGia\Cập nhật ngày tạo và ngày cập nhật.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Data Flow DIM_QuocGia\Cập nhật ngày tạo và ngày cập nhật.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow DIM_QuocGia\Cập nhật ngày tạo và ngày cập nhật.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Data Flow DIM_QuocGia\Cập nhật ngày tạo và ngày cập nhật.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow DIM_QuocGia\Cập nhật ngày tạo và ngày cập nhật.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow DIM_QuocGia\Cập nhật ngày tạo và ngày cập nhật.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow DIM_QuocGia\Cập nhật ngày tạo và ngày cập nhật.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow DIM_QuocGia\Cập nhật ngày tạo và ngày cập nhật.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
             <component
               refId="Package\Data Flow DIM_QuocGia\Dim_QuocGia in DDS"
               componentClassID="Microsoft.OLEDBDestination"
@@ -328,6 +575,147 @@
                       refId="Package\Data Flow DIM_QuocGia\Dim_QuocGia in DDS.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\Data Flow DIM_QuocGia\Dim_QuocGia in DDS.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow DIM_QuocGia\Kiểm tra DDS"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Kiểm tra DDS"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Dim_QuocGia]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Dim_QuocGia]) [refTable]
+where [refTable].[SKMaQG] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="SKMaQG" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MaQG" dataType="DT_STR" length="4" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="TenQG" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="TenThanhPho" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="NgayTao" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="NgayCapNhat" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Output].Columns[SKMaQG]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow DIM_QuocGia\Kiểm tra DDS.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_DW]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_DW]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow DIM_QuocGia\Kiểm tra DDS.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow DIM_QuocGia\Kiểm tra DDS.Inputs[Lookup Input].Columns[SKMaQG]"
+                      cachedDataType="i4"
+                      cachedName="SKMaQG"
+                      lineageId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Output].Columns[SKMaQG]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">SKMaQG</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow DIM_QuocGia\Kiểm tra DDS.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Data Flow DIM_QuocGia\Kiểm tra DDS.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow DIM_QuocGia\Kiểm tra DDS.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Data Flow DIM_QuocGia\Kiểm tra DDS.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow DIM_QuocGia\Kiểm tra DDS.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Data Flow DIM_QuocGia\Kiểm tra DDS.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow DIM_QuocGia\Kiểm tra DDS.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow DIM_QuocGia\Kiểm tra DDS.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow DIM_QuocGia\Kiểm tra DDS.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow DIM_QuocGia\Kiểm tra DDS.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -589,8 +977,23 @@ WHERE MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &
           </components>
           <paths>
             <path
-              refId="Package\Data Flow DIM_QuocGia.Paths[OLE DB Source Output]"
+              refId="Package\Data Flow DIM_QuocGia.Paths[Derived Column Output]"
               endId="Package\Data Flow DIM_QuocGia\Dim_QuocGia in DDS.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Data Flow DIM_QuocGia\Cập nhật ngày tạo và ngày cập nhật.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Data Flow DIM_QuocGia.Paths[Lookup Match Output]"
+              endId="Package\Data Flow DIM_QuocGia\Cập nhật dữ liệu.Inputs[OLE DB Command Input]"
+              name="Lookup Match Output"
+              startId="Package\Data Flow DIM_QuocGia\Kiểm tra DDS.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Data Flow DIM_QuocGia.Paths[Lookup No Match Output]"
+              endId="Package\Data Flow DIM_QuocGia\Cập nhật ngày tạo và ngày cập nhật.Inputs[Derived Column Input]"
+              name="Lookup No Match Output"
+              startId="Package\Data Flow DIM_QuocGia\Kiểm tra DDS.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\Data Flow DIM_QuocGia.Paths[OLE DB Source Output]"
+              endId="Package\Data Flow DIM_QuocGia\Kiểm tra DDS.Inputs[Lookup Input]"
               name="OLE DB Source Output"
               startId="Package\Data Flow DIM_QuocGia\QuocGia_NDS.Outputs[OLE DB Source Output]" />
           </paths>
@@ -808,7 +1211,7 @@ WHERE MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &
     design-time-name="Package\Data Flow DIM_QuocGia">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="216.666666666667,42"
           Id="Package\Data Flow DIM_QuocGia\QuocGia_NDS"
@@ -817,20 +1220,150 @@ WHERE MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &
           Size="170,42"
           Id="Package\Data Flow DIM_QuocGia\Dim_QuocGia in DDS"
           TopLeft="262.142861607123,253.117650608703" />
+        <NodeLayout
+          Size="142.333333333334,42"
+          Id="Package\Data Flow DIM_QuocGia\Kiểm tra DDS"
+          TopLeft="441.687493969686,154.450983942036" />
+        <NodeLayout
+          Size="156.666666666667,42"
+          Id="Package\Data Flow DIM_QuocGia\Cập nhật dữ liệu"
+          TopLeft="589.02082730302,242.874413967339" />
+        <NodeLayout
+          Size="249.666666666667,41.6666666666667"
+          Id="Package\Data Flow DIM_QuocGia\Cập nhật ngày tạo và ngày cập nhật"
+          TopLeft="45.3762041312797,181.154107724878" />
         <EdgeLayout
           Id="Package\Data Flow DIM_QuocGia.Paths[OLE DB Source Output]"
-          TopLeft="346.175595705372,110.694738325974">
+          TopLeft="345.20832980362,110.694738325974">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,142.422912282729"
+              EndConnector="167.645830832732,43.7562456160628"
               Start="0,0"
-              End="0,134.922912282729">
+              End="167.645830832732,36.2562456160628">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,134.922912282729" />
+                    End="0,17.8781228080314" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.8781228080314"
+                    Point2="0,21.8781228080314"
+                    Point3="4,21.8781228080314" />
+                  <mssgle:LineSegment
+                    End="163.645830832732,21.8781228080314" />
+                  <mssgle:CubicBezierSegment
+                    Point1="163.645830832732,21.8781228080314"
+                    Point2="167.645830832732,21.8781228080314"
+                    Point3="167.645830832732,25.8781228080314" />
+                  <mssgle:LineSegment
+                    End="167.645830832732,36.2562456160628" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow DIM_QuocGia.Paths[Lookup Match Output]"
+          TopLeft="512.854160636353,196.450983942036">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="154.500000000001,46.4234300253027"
+              Start="0,0"
+              End="154.500000000001,38.9234300253027">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.2117150126514" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.2117150126514"
+                    Point2="0,23.2117150126514"
+                    Point3="4,23.2117150126514" />
+                  <mssgle:LineSegment
+                    End="150.500000000001,23.2117150126514" />
+                  <mssgle:CubicBezierSegment
+                    Point1="150.500000000001,23.2117150126514"
+                    Point2="154.500000000001,23.2117150126514"
+                    Point3="154.500000000001,27.2117150126514" />
+                  <mssgle:LineSegment
+                    End="154.500000000001,38.9234300253027" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="29.0586132812503,28.2117150126514,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow DIM_QuocGia.Paths[Lookup No Match Output]"
+          TopLeft="441.687493969686,175.450983942036">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-146.644623171739,26.5364571161755"
+              Start="0,0"
+              End="-139.144623171739,26.5364571161755">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-69.3223115858697,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-69.3223115858697,0"
+                    Point2="-73.3223115858697,0"
+                    Point3="-73.3223115858697,4" />
+                  <mssgle:LineSegment
+                    End="-73.3223115858697,22.5364571161755" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-73.3223115858697,22.5364571161755"
+                    Point2="-73.3223115858697,26.5364571161755"
+                    Point3="-77.3223115858697,26.5364571161755" />
+                  <mssgle:LineSegment
+                    End="-139.144623171739,26.5364571161755" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-129.12869830462,-17.609375,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow DIM_QuocGia.Paths[Derived Column Output]"
+          TopLeft="170.209537464613,222.820774391545">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="176.93332414251,30.2968762171579"
+              Start="0,0"
+              End="176.93332414251,22.7968762171579">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.1484381085789" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.1484381085789"
+                    Point2="0,15.1484381085789"
+                    Point3="4,15.1484381085789" />
+                  <mssgle:LineSegment
+                    End="172.93332414251,15.1484381085789" />
+                  <mssgle:CubicBezierSegment
+                    Point1="172.93332414251,15.1484381085789"
+                    Point2="176.93332414251,15.1484381085789"
+                    Point3="176.93332414251,19.1484381085789" />
+                  <mssgle:LineSegment
+                    End="176.93332414251,22.7968762171579" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -858,6 +1391,29 @@ WHERE MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &
   <PipelineComponentMetadata
     design-time-name="Package\Data Flow DIM_QuocGia\QuocGia_NDS">
     <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow DIM_QuocGia\Kiểm tra DDS">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Dim_QuocGia]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>

@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="67"
-  DTS:VersionGUID="{A977F6BC-0EE5-4DCB-BEA1-6536B7B734D7}">
+  DTS:VersionBuild="73"
+  DTS:VersionGUID="{176EE978-CDB6-41F1-B730-52A8309B5B62}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -62,6 +62,30 @@
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
           DTS:ConnectionString="Data Source=DESKTOP-ED2S73F\TRANGPHAM;Initial Catalog=DALT_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_DW]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{31BE3840-4C20-4F0F-A1E5-8BD161E1D251}"
+      DTS:ObjectName="DESKTOP-LATGDUJ.DALT_DW">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-LATGDUJ;Initial Catalog=DALT_DW;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_NDS]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{8E6491ED-8D82-4A59-9A23-71558765DEEE}"
+      DTS:ObjectName="DESKTOP-LATGDUJ.DALT_NDS">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-LATGDUJ;Initial Catalog=DALT_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -486,362 +510,6 @@ where [refTable].[SKMaSP] = ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow FACT_DoanhThu\Conditional Split"
-              componentClassID="Microsoft.ConditionalSplit"
-              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
-              name="Conditional Split"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\Data Flow FACT_DoanhThu\Conditional Split.Inputs[Conditional Split Input]"
-                  description="Input to the Conditional Split Transformation"
-                  name="Conditional Split Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Data Flow FACT_DoanhThu\Conditional Split.Inputs[Conditional Split Input].Columns[SKMaCHinDDS]"
-                      cachedDataType="i4"
-                      cachedName="SKMaCHinDDS"
-                      lineageId="Package\Data Flow FACT_DoanhThu\Find mach has in CuaHang_DDS.Outputs[Lookup Match Output].Columns[SKMaCHinDDS]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Data Flow FACT_DoanhThu\Conditional Split.Outputs[SKMaCH is not null]"
-                  description="Output 1 of the Conditional Split Transformation"
-                  errorOrTruncationOperation="Computation"
-                  errorRowDisposition="FailComponent"
-                  exclusionGroup="1"
-                  name="SKMaCH is not null"
-                  synchronousInputId="Package\Data Flow FACT_DoanhThu\Conditional Split.Inputs[Conditional Split Input]"
-                  truncationRowDisposition="FailComponent">
-                  <properties>
-                    <property
-                      containsID="true"
-                      dataType="System.String"
-                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
-                      name="Expression">![ISNULL](#{Package\Data Flow FACT_DoanhThu\Find mach has in CuaHang_DDS.Outputs[Lookup Match Output].Columns[SKMaCHinDDS]})</property>
-                    <property
-                      containsID="true"
-                      dataType="System.String"
-                      description="Specifies the friendly version of the expression. This expression version uses column names."
-                      expressionType="Notify"
-                      name="FriendlyExpression">!ISNULL(SKMaCHinDDS)</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
-                      name="EvaluationOrder">0</property>
-                  </properties>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Data Flow FACT_DoanhThu\Conditional Split.Outputs[Conditional Split Default Output]"
-                  description="Default Output of the Conditional Split Transformation"
-                  exclusionGroup="1"
-                  name="Conditional Split Default Output"
-                  synchronousInputId="Package\Data Flow FACT_DoanhThu\Conditional Split.Inputs[Conditional Split Input]">
-                  <properties>
-                    <property
-                      dataType="System.Boolean"
-                      name="IsDefaultOut">true</property>
-                  </properties>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Data Flow FACT_DoanhThu\Conditional Split.Outputs[Conditional Split Error Output]"
-                  description="Error Output of the Conditional Split Transformation"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Conditional Split Error Output"
-                  synchronousInputId="Package\Data Flow FACT_DoanhThu\Conditional Split.Inputs[Conditional Split Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Data Flow FACT_DoanhThu\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow FACT_DoanhThu\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Data Flow FACT_DoanhThu\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow FACT_DoanhThu\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Data Flow FACT_DoanhThu\Conditional Split 1"
-              componentClassID="Microsoft.ConditionalSplit"
-              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
-              name="Conditional Split 1"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\Data Flow FACT_DoanhThu\Conditional Split 1.Inputs[Conditional Split Input]"
-                  description="Input to the Conditional Split Transformation"
-                  name="Conditional Split Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Data Flow FACT_DoanhThu\Conditional Split 1.Inputs[Conditional Split Input].Columns[SKMaKHinDDS]"
-                      cachedDataType="i4"
-                      cachedName="SKMaKHinDDS"
-                      lineageId="Package\Data Flow FACT_DoanhThu\Find makh has in KhachHang_DDS.Outputs[Lookup Match Output].Columns[SKMaKHinDDS]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Data Flow FACT_DoanhThu\Conditional Split 1.Outputs[MaKHisnotnull]"
-                  description="Output 1 of the Conditional Split Transformation"
-                  errorOrTruncationOperation="Computation"
-                  errorRowDisposition="FailComponent"
-                  exclusionGroup="1"
-                  name="MaKHisnotnull"
-                  synchronousInputId="Package\Data Flow FACT_DoanhThu\Conditional Split 1.Inputs[Conditional Split Input]"
-                  truncationRowDisposition="FailComponent">
-                  <properties>
-                    <property
-                      containsID="true"
-                      dataType="System.String"
-                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
-                      name="Expression">![ISNULL](#{Package\Data Flow FACT_DoanhThu\Find makh has in KhachHang_DDS.Outputs[Lookup Match Output].Columns[SKMaKHinDDS]})</property>
-                    <property
-                      containsID="true"
-                      dataType="System.String"
-                      description="Specifies the friendly version of the expression. This expression version uses column names."
-                      expressionType="Notify"
-                      name="FriendlyExpression">!ISNULL(SKMaKHinDDS)</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
-                      name="EvaluationOrder">0</property>
-                  </properties>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Data Flow FACT_DoanhThu\Conditional Split 1.Outputs[Conditional Split Default Output]"
-                  description="Default Output of the Conditional Split Transformation"
-                  exclusionGroup="1"
-                  name="Conditional Split Default Output"
-                  synchronousInputId="Package\Data Flow FACT_DoanhThu\Conditional Split 1.Inputs[Conditional Split Input]">
-                  <properties>
-                    <property
-                      dataType="System.Boolean"
-                      name="IsDefaultOut">true</property>
-                  </properties>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Data Flow FACT_DoanhThu\Conditional Split 1.Outputs[Conditional Split Error Output]"
-                  description="Error Output of the Conditional Split Transformation"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Conditional Split Error Output"
-                  synchronousInputId="Package\Data Flow FACT_DoanhThu\Conditional Split 1.Inputs[Conditional Split Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Data Flow FACT_DoanhThu\Conditional Split 1.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow FACT_DoanhThu\Conditional Split 1.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Data Flow FACT_DoanhThu\Conditional Split 1.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow FACT_DoanhThu\Conditional Split 1.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Data Flow FACT_DoanhThu\Conditional Split 2"
-              componentClassID="Microsoft.ConditionalSplit"
-              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
-              name="Conditional Split 2"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\Data Flow FACT_DoanhThu\Conditional Split 2.Inputs[Conditional Split Input]"
-                  description="Input to the Conditional Split Transformation"
-                  name="Conditional Split Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Data Flow FACT_DoanhThu\Conditional Split 2.Inputs[Conditional Split Input].Columns[SKMaSPinDDS]"
-                      cachedDataType="i4"
-                      cachedName="SKMaSPinDDS"
-                      lineageId="Package\Data Flow FACT_DoanhThu\Check MaSP has in SanPham_DDS.Outputs[Lookup Match Output].Columns[SKMaSPinDDS]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Data Flow FACT_DoanhThu\Conditional Split 2.Outputs[MaSP is not null]"
-                  description="Output 1 of the Conditional Split Transformation"
-                  errorOrTruncationOperation="Computation"
-                  errorRowDisposition="FailComponent"
-                  exclusionGroup="1"
-                  name="MaSP is not null"
-                  synchronousInputId="Package\Data Flow FACT_DoanhThu\Conditional Split 2.Inputs[Conditional Split Input]"
-                  truncationRowDisposition="FailComponent">
-                  <properties>
-                    <property
-                      containsID="true"
-                      dataType="System.String"
-                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
-                      name="Expression">![ISNULL](#{Package\Data Flow FACT_DoanhThu\Check MaSP has in SanPham_DDS.Outputs[Lookup Match Output].Columns[SKMaSPinDDS]})</property>
-                    <property
-                      containsID="true"
-                      dataType="System.String"
-                      description="Specifies the friendly version of the expression. This expression version uses column names."
-                      expressionType="Notify"
-                      name="FriendlyExpression">!ISNULL(SKMaSPinDDS)</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
-                      name="EvaluationOrder">0</property>
-                  </properties>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Data Flow FACT_DoanhThu\Conditional Split 2.Outputs[Conditional Split Default Output]"
-                  description="Default Output of the Conditional Split Transformation"
-                  exclusionGroup="1"
-                  name="Conditional Split Default Output"
-                  synchronousInputId="Package\Data Flow FACT_DoanhThu\Conditional Split 2.Inputs[Conditional Split Input]">
-                  <properties>
-                    <property
-                      dataType="System.Boolean"
-                      name="IsDefaultOut">true</property>
-                  </properties>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Data Flow FACT_DoanhThu\Conditional Split 2.Outputs[Conditional Split Error Output]"
-                  description="Error Output of the Conditional Split Transformation"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Conditional Split Error Output"
-                  synchronousInputId="Package\Data Flow FACT_DoanhThu\Conditional Split 2.Inputs[Conditional Split Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Data Flow FACT_DoanhThu\Conditional Split 2.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow FACT_DoanhThu\Conditional Split 2.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Data Flow FACT_DoanhThu\Conditional Split 2.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow FACT_DoanhThu\Conditional Split 2.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Data Flow FACT_DoanhThu\Conditional Split 3"
-              componentClassID="Microsoft.ConditionalSplit"
-              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
-              name="Conditional Split 3"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\Data Flow FACT_DoanhThu\Conditional Split 3.Inputs[Conditional Split Input]"
-                  description="Input to the Conditional Split Transformation"
-                  name="Conditional Split Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Data Flow FACT_DoanhThu\Conditional Split 3.Inputs[Conditional Split Input].Columns[SKMaHDinDDS]"
-                      cachedDataType="i4"
-                      cachedName="SKMaHDinDDS"
-                      lineageId="Package\Data Flow FACT_DoanhThu\Check MaHD has in HoaDon_DDS.Outputs[Lookup Match Output].Columns[SKMaHDinDDS]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Data Flow FACT_DoanhThu\Conditional Split 3.Outputs[SKMaHD is not null]"
-                  description="Output 1 of the Conditional Split Transformation"
-                  errorOrTruncationOperation="Computation"
-                  errorRowDisposition="FailComponent"
-                  exclusionGroup="1"
-                  name="SKMaHD is not null"
-                  synchronousInputId="Package\Data Flow FACT_DoanhThu\Conditional Split 3.Inputs[Conditional Split Input]"
-                  truncationRowDisposition="FailComponent">
-                  <properties>
-                    <property
-                      containsID="true"
-                      dataType="System.String"
-                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
-                      name="Expression">![ISNULL](#{Package\Data Flow FACT_DoanhThu\Check MaHD has in HoaDon_DDS.Outputs[Lookup Match Output].Columns[SKMaHDinDDS]})</property>
-                    <property
-                      containsID="true"
-                      dataType="System.String"
-                      description="Specifies the friendly version of the expression. This expression version uses column names."
-                      expressionType="Notify"
-                      name="FriendlyExpression">!ISNULL(SKMaHDinDDS)</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
-                      name="EvaluationOrder">0</property>
-                  </properties>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Data Flow FACT_DoanhThu\Conditional Split 3.Outputs[Conditional Split Default Output]"
-                  description="Default Output of the Conditional Split Transformation"
-                  exclusionGroup="1"
-                  name="Conditional Split Default Output"
-                  synchronousInputId="Package\Data Flow FACT_DoanhThu\Conditional Split 3.Inputs[Conditional Split Input]">
-                  <properties>
-                    <property
-                      dataType="System.Boolean"
-                      name="IsDefaultOut">true</property>
-                  </properties>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Data Flow FACT_DoanhThu\Conditional Split 3.Outputs[Conditional Split Error Output]"
-                  description="Error Output of the Conditional Split Transformation"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Conditional Split Error Output"
-                  synchronousInputId="Package\Data Flow FACT_DoanhThu\Conditional Split 3.Inputs[Conditional Split Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Data Flow FACT_DoanhThu\Conditional Split 3.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow FACT_DoanhThu\Conditional Split 3.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Data Flow FACT_DoanhThu\Conditional Split 3.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow FACT_DoanhThu\Conditional Split 3.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
               refId="Package\Data Flow FACT_DoanhThu\CTHD_NDS"
               componentClassID="Microsoft.OLEDBSource"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
@@ -1067,6 +735,410 @@ WHERE  MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat 
                       refId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow FACT_DoanhThu\Cập nhật dữ liệu"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="Cập nhật dữ liệu"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE Fact_ABCDoanhThu
+SET NgayCapNhat = GETDATE(), GiaSP = ?
+ WHERE SKDoanhThu = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow FACT_DoanhThu\Cập nhật dữ liệu.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_DW]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_DW]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow FACT_DoanhThu\Cập nhật dữ liệu.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\Cập nhật dữ liệu.Inputs[OLE DB Command Input].Columns[GiaSP_Real]"
+                      cachedDataType="i4"
+                      cachedName="GiaSP_Real"
+                      externalMetadataColumnId="Package\Data Flow FACT_DoanhThu\Cập nhật dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Data Flow FACT_DoanhThu\Find value for Price Product column based on MaSP from SanPham_NDS.Outputs[Lookup Match Output].Columns[GiaSP_Real]" />
+                    <inputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\Cập nhật dữ liệu.Inputs[OLE DB Command Input].Columns[SKMaCTHD]"
+                      cachedDataType="i4"
+                      cachedName="SKMaCTHD"
+                      externalMetadataColumnId="Package\Data Flow FACT_DoanhThu\Cập nhật dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Output].Columns[SKMaCTHD]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow FACT_DoanhThu\Cập nhật dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="i4"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow FACT_DoanhThu\Cập nhật dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="i4"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow FACT_DoanhThu\Cập nhật dữ liệu.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Data Flow FACT_DoanhThu\Cập nhật dữ liệu.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow FACT_DoanhThu\Cập nhật dữ liệu.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Data Flow FACT_DoanhThu\Cập nhật dữ liệu.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\Cập nhật dữ liệu.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow FACT_DoanhThu\Cập nhật dữ liệu.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\Cập nhật dữ liệu.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow FACT_DoanhThu\Cập nhật dữ liệu.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow FACT_DoanhThu\Cập nhật ngày tạo và ngày cập nhật"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Cập nhật ngày tạo và ngày cập nhật"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow FACT_DoanhThu\Cập nhật ngày tạo và ngày cập nhật.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\Cập nhật ngày tạo và ngày cập nhật.Inputs[Derived Column Input].Columns[NgayTao]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="NgayTao"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Output].Columns[NgayTao]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\Cập nhật ngày tạo và ngày cập nhật.Inputs[Derived Column Input].Columns[NgayCapNhat]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="NgayCapNhat"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Output].Columns[NgayCapNhat]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow FACT_DoanhThu\Cập nhật ngày tạo và ngày cập nhật.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Data Flow FACT_DoanhThu\Cập nhật ngày tạo và ngày cập nhật.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow FACT_DoanhThu\Cập nhật ngày tạo và ngày cập nhật.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Data Flow FACT_DoanhThu\Cập nhật ngày tạo và ngày cập nhật.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\Cập nhật ngày tạo và ngày cập nhật.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow FACT_DoanhThu\Cập nhật ngày tạo và ngày cập nhật.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\Cập nhật ngày tạo và ngày cập nhật.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow FACT_DoanhThu\Cập nhật ngày tạo và ngày cập nhật.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow FACT_DoanhThu\DoanhThu_DDS"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="DoanhThu_DDS"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Fact_ABCDoanhThu]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow FACT_DoanhThu\DoanhThu_DDS.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_DW]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_DW]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow FACT_DoanhThu\DoanhThu_DDS.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\DoanhThu_DDS.Inputs[OLE DB Destination Input].Columns[NgayTao]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="NgayTao"
+                      externalMetadataColumnId="Package\Data Flow FACT_DoanhThu\DoanhThu_DDS.Inputs[OLE DB Destination Input].ExternalColumns[NgayTao]"
+                      lineageId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Output].Columns[NgayTao]" />
+                    <inputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\DoanhThu_DDS.Inputs[OLE DB Destination Input].Columns[NgayCapNhat]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="NgayCapNhat"
+                      externalMetadataColumnId="Package\Data Flow FACT_DoanhThu\DoanhThu_DDS.Inputs[OLE DB Destination Input].ExternalColumns[NgayCapNhat]"
+                      lineageId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Output].Columns[NgayCapNhat]" />
+                    <inputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\DoanhThu_DDS.Inputs[OLE DB Destination Input].Columns[SKMaCTHD]"
+                      cachedDataType="i4"
+                      cachedName="SKMaCTHD"
+                      externalMetadataColumnId="Package\Data Flow FACT_DoanhThu\DoanhThu_DDS.Inputs[OLE DB Destination Input].ExternalColumns[SKDoanhThu]"
+                      lineageId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Output].Columns[SKMaCTHD]" />
+                    <inputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\DoanhThu_DDS.Inputs[OLE DB Destination Input].Columns[SKMaCHinDDS]"
+                      cachedDataType="i4"
+                      cachedName="SKMaCHinDDS"
+                      externalMetadataColumnId="Package\Data Flow FACT_DoanhThu\DoanhThu_DDS.Inputs[OLE DB Destination Input].ExternalColumns[SKMaCH]"
+                      lineageId="Package\Data Flow FACT_DoanhThu\Find mach has in CuaHang_DDS.Outputs[Lookup Match Output].Columns[SKMaCHinDDS]" />
+                    <inputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\DoanhThu_DDS.Inputs[OLE DB Destination Input].Columns[SKMaKHinDDS]"
+                      cachedDataType="i4"
+                      cachedName="SKMaKHinDDS"
+                      externalMetadataColumnId="Package\Data Flow FACT_DoanhThu\DoanhThu_DDS.Inputs[OLE DB Destination Input].ExternalColumns[SKMaKH]"
+                      lineageId="Package\Data Flow FACT_DoanhThu\Find makh has in KhachHang_DDS.Outputs[Lookup Match Output].Columns[SKMaKHinDDS]" />
+                    <inputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\DoanhThu_DDS.Inputs[OLE DB Destination Input].Columns[SKMaSPinDDS]"
+                      cachedDataType="i4"
+                      cachedName="SKMaSPinDDS"
+                      externalMetadataColumnId="Package\Data Flow FACT_DoanhThu\DoanhThu_DDS.Inputs[OLE DB Destination Input].ExternalColumns[SKMaSP]"
+                      lineageId="Package\Data Flow FACT_DoanhThu\Check MaSP has in SanPham_DDS.Outputs[Lookup Match Output].Columns[SKMaSPinDDS]" />
+                    <inputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\DoanhThu_DDS.Inputs[OLE DB Destination Input].Columns[SKMaHDinDDS]"
+                      cachedDataType="i4"
+                      cachedName="SKMaHDinDDS"
+                      externalMetadataColumnId="Package\Data Flow FACT_DoanhThu\DoanhThu_DDS.Inputs[OLE DB Destination Input].ExternalColumns[SKMaHD]"
+                      lineageId="Package\Data Flow FACT_DoanhThu\Check MaHD has in HoaDon_DDS.Outputs[Lookup Match Output].Columns[SKMaHDinDDS]" />
+                    <inputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\DoanhThu_DDS.Inputs[OLE DB Destination Input].Columns[randomdate]"
+                      cachedDataType="i4"
+                      cachedName="randomdate"
+                      externalMetadataColumnId="Package\Data Flow FACT_DoanhThu\DoanhThu_DDS.Inputs[OLE DB Destination Input].ExternalColumns[SKDate]"
+                      lineageId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Output].Columns[randomdate]" />
+                    <inputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\DoanhThu_DDS.Inputs[OLE DB Destination Input].Columns[GiaSP_Real]"
+                      cachedDataType="i4"
+                      cachedName="GiaSP_Real"
+                      externalMetadataColumnId="Package\Data Flow FACT_DoanhThu\DoanhThu_DDS.Inputs[OLE DB Destination Input].ExternalColumns[GiaSP]"
+                      lineageId="Package\Data Flow FACT_DoanhThu\Find value for Price Product column based on MaSP from SanPham_NDS.Outputs[Lookup Match Output].Columns[GiaSP_Real]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow FACT_DoanhThu\DoanhThu_DDS.Inputs[OLE DB Destination Input].ExternalColumns[SKDoanhThu]"
+                      dataType="i4"
+                      name="SKDoanhThu" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow FACT_DoanhThu\DoanhThu_DDS.Inputs[OLE DB Destination Input].ExternalColumns[SKMaCH]"
+                      dataType="i4"
+                      name="SKMaCH" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow FACT_DoanhThu\DoanhThu_DDS.Inputs[OLE DB Destination Input].ExternalColumns[SKMaKH]"
+                      dataType="i4"
+                      name="SKMaKH" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow FACT_DoanhThu\DoanhThu_DDS.Inputs[OLE DB Destination Input].ExternalColumns[SKMaSP]"
+                      dataType="i4"
+                      name="SKMaSP" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow FACT_DoanhThu\DoanhThu_DDS.Inputs[OLE DB Destination Input].ExternalColumns[SKMaHD]"
+                      dataType="i4"
+                      name="SKMaHD" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow FACT_DoanhThu\DoanhThu_DDS.Inputs[OLE DB Destination Input].ExternalColumns[SKDate]"
+                      dataType="i4"
+                      name="SKDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow FACT_DoanhThu\DoanhThu_DDS.Inputs[OLE DB Destination Input].ExternalColumns[NgayTao]"
+                      dataType="dbTimeStamp"
+                      name="NgayTao" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow FACT_DoanhThu\DoanhThu_DDS.Inputs[OLE DB Destination Input].ExternalColumns[NgayCapNhat]"
+                      dataType="dbTimeStamp"
+                      name="NgayCapNhat" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow FACT_DoanhThu\DoanhThu_DDS.Inputs[OLE DB Destination Input].ExternalColumns[GiaSP]"
+                      dataType="i4"
+                      name="GiaSP" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow FACT_DoanhThu\DoanhThu_DDS.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow FACT_DoanhThu\DoanhThu_DDS.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\DoanhThu_DDS.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow FACT_DoanhThu\DoanhThu_DDS.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\DoanhThu_DDS.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow FACT_DoanhThu\DoanhThu_DDS.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1733,191 +1805,495 @@ where [refTable].[SKMaSP] = ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow FACT_DoanhThu\OLE DB Destination"
-              componentClassID="Microsoft.OLEDBDestination"
-              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
-              description="OLE DB Destination"
-              name="OLE DB Destination"
+              refId="Package\Data Flow FACT_DoanhThu\Get CTHD has MaCH is not null"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Get CTHD has MaCH is not null"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow FACT_DoanhThu\Get CTHD has MaCH is not null.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\Get CTHD has MaCH is not null.Inputs[Conditional Split Input].Columns[SKMaCHinDDS]"
+                      cachedDataType="i4"
+                      cachedName="SKMaCHinDDS"
+                      lineageId="Package\Data Flow FACT_DoanhThu\Find mach has in CuaHang_DDS.Outputs[Lookup Match Output].Columns[SKMaCHinDDS]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow FACT_DoanhThu\Get CTHD has MaCH is not null.Outputs[SKMaCH is not null]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="SKMaCH is not null"
+                  synchronousInputId="Package\Data Flow FACT_DoanhThu\Get CTHD has MaCH is not null.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">![ISNULL](#{Package\Data Flow FACT_DoanhThu\Find mach has in CuaHang_DDS.Outputs[Lookup Match Output].Columns[SKMaCHinDDS]})</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">!ISNULL(SKMaCHinDDS)</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow FACT_DoanhThu\Get CTHD has MaCH is not null.Outputs[Conditional Split Default Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Conditional Split Default Output"
+                  synchronousInputId="Package\Data Flow FACT_DoanhThu\Get CTHD has MaCH is not null.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow FACT_DoanhThu\Get CTHD has MaCH is not null.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\Data Flow FACT_DoanhThu\Get CTHD has MaCH is not null.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\Get CTHD has MaCH is not null.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow FACT_DoanhThu\Get CTHD has MaCH is not null.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\Get CTHD has MaCH is not null.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow FACT_DoanhThu\Get CTHD has MaCH is not null.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow FACT_DoanhThu\Get CTHD has mahd is not null"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Get CTHD has mahd is not null"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow FACT_DoanhThu\Get CTHD has mahd is not null.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\Get CTHD has mahd is not null.Inputs[Conditional Split Input].Columns[SKMaHDinDDS]"
+                      cachedDataType="i4"
+                      cachedName="SKMaHDinDDS"
+                      lineageId="Package\Data Flow FACT_DoanhThu\Check MaHD has in HoaDon_DDS.Outputs[Lookup Match Output].Columns[SKMaHDinDDS]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow FACT_DoanhThu\Get CTHD has mahd is not null.Outputs[SKMaHD is not null]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="SKMaHD is not null"
+                  synchronousInputId="Package\Data Flow FACT_DoanhThu\Get CTHD has mahd is not null.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">![ISNULL](#{Package\Data Flow FACT_DoanhThu\Check MaHD has in HoaDon_DDS.Outputs[Lookup Match Output].Columns[SKMaHDinDDS]})</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">!ISNULL(SKMaHDinDDS)</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow FACT_DoanhThu\Get CTHD has mahd is not null.Outputs[Conditional Split Default Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Conditional Split Default Output"
+                  synchronousInputId="Package\Data Flow FACT_DoanhThu\Get CTHD has mahd is not null.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow FACT_DoanhThu\Get CTHD has mahd is not null.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\Data Flow FACT_DoanhThu\Get CTHD has mahd is not null.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\Get CTHD has mahd is not null.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow FACT_DoanhThu\Get CTHD has mahd is not null.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\Get CTHD has mahd is not null.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow FACT_DoanhThu\Get CTHD has mahd is not null.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow FACT_DoanhThu\Get CTHD has MaKH is not null"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Get CTHD has MaKH is not null"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow FACT_DoanhThu\Get CTHD has MaKH is not null.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\Get CTHD has MaKH is not null.Inputs[Conditional Split Input].Columns[SKMaKHinDDS]"
+                      cachedDataType="i4"
+                      cachedName="SKMaKHinDDS"
+                      lineageId="Package\Data Flow FACT_DoanhThu\Find makh has in KhachHang_DDS.Outputs[Lookup Match Output].Columns[SKMaKHinDDS]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow FACT_DoanhThu\Get CTHD has MaKH is not null.Outputs[MaKHisnotnull]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="MaKHisnotnull"
+                  synchronousInputId="Package\Data Flow FACT_DoanhThu\Get CTHD has MaKH is not null.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">![ISNULL](#{Package\Data Flow FACT_DoanhThu\Find makh has in KhachHang_DDS.Outputs[Lookup Match Output].Columns[SKMaKHinDDS]})</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">!ISNULL(SKMaKHinDDS)</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow FACT_DoanhThu\Get CTHD has MaKH is not null.Outputs[Conditional Split Default Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Conditional Split Default Output"
+                  synchronousInputId="Package\Data Flow FACT_DoanhThu\Get CTHD has MaKH is not null.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow FACT_DoanhThu\Get CTHD has MaKH is not null.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\Data Flow FACT_DoanhThu\Get CTHD has MaKH is not null.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\Get CTHD has MaKH is not null.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow FACT_DoanhThu\Get CTHD has MaKH is not null.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\Get CTHD has MaKH is not null.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow FACT_DoanhThu\Get CTHD has MaKH is not null.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow FACT_DoanhThu\Get CTHD has masp is not null"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Get CTHD has masp is not null"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow FACT_DoanhThu\Get CTHD has masp is not null.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\Get CTHD has masp is not null.Inputs[Conditional Split Input].Columns[SKMaSPinDDS]"
+                      cachedDataType="i4"
+                      cachedName="SKMaSPinDDS"
+                      lineageId="Package\Data Flow FACT_DoanhThu\Check MaSP has in SanPham_DDS.Outputs[Lookup Match Output].Columns[SKMaSPinDDS]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow FACT_DoanhThu\Get CTHD has masp is not null.Outputs[MaSP is not null]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="MaSP is not null"
+                  synchronousInputId="Package\Data Flow FACT_DoanhThu\Get CTHD has masp is not null.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">![ISNULL](#{Package\Data Flow FACT_DoanhThu\Check MaSP has in SanPham_DDS.Outputs[Lookup Match Output].Columns[SKMaSPinDDS]})</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">!ISNULL(SKMaSPinDDS)</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow FACT_DoanhThu\Get CTHD has masp is not null.Outputs[Conditional Split Default Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Conditional Split Default Output"
+                  synchronousInputId="Package\Data Flow FACT_DoanhThu\Get CTHD has masp is not null.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow FACT_DoanhThu\Get CTHD has masp is not null.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\Data Flow FACT_DoanhThu\Get CTHD has masp is not null.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\Get CTHD has masp is not null.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow FACT_DoanhThu\Get CTHD has masp is not null.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow FACT_DoanhThu\Get CTHD has masp is not null.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow FACT_DoanhThu\Get CTHD has masp is not null.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow FACT_DoanhThu\Kiểm tra xem SKMaDT của từng dòng có tồn tại trong DoanhThu_DDS chưa"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Kiểm tra xem SKMaDT của từng dòng có tồn tại trong DoanhThu_DDS chưa"
               usesDispositions="true"
-              version="4">
+              version="6">
               <properties>
                 <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
                   dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[Fact_ABCDoanhThu]</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Fact_ABCDoanhThu]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Fact_ABCDoanhThu]) [refTable]
+where [refTable].[SKDoanhThu] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="SKDoanhThu" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SKMaCH" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SKMaKH" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SKMaSP" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SKMaHD" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SKDate" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="NgayTao" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="NgayCapNhat" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="GiaSP" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Output].Columns[SKMaCTHD]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
                   name="DefaultCodePage">1252</property>
                 <property
                   dataType="System.Boolean"
-                  description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">3</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepIdentity">false</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepNulls">true</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
-                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow FACT_DoanhThu\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[LocalHost.DALT_DW]"
-                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.DALT_DW]"
-                  description="The OLE DB runtime connection used to access the database."
+                  refId="Package\Data Flow FACT_DoanhThu\Kiểm tra xem SKMaDT của từng dòng có tồn tại trong DoanhThu_DDS chưa.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_DW]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_DW]"
+                  description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
               <inputs>
                 <input
-                  refId="Package\Data Flow FACT_DoanhThu\OLE DB Destination.Inputs[OLE DB Destination Input]"
-                  errorOrTruncationOperation="Insert"
-                  errorRowDisposition="FailComponent"
-                  hasSideEffects="true"
-                  name="OLE DB Destination Input">
+                  refId="Package\Data Flow FACT_DoanhThu\Kiểm tra xem SKMaDT của từng dòng có tồn tại trong DoanhThu_DDS chưa.Inputs[Lookup Input]"
+                  name="Lookup Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow FACT_DoanhThu\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[NgayTao]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="NgayTao"
-                      externalMetadataColumnId="Package\Data Flow FACT_DoanhThu\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NgayTao]"
-                      lineageId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Output].Columns[NgayTao]" />
-                    <inputColumn
-                      refId="Package\Data Flow FACT_DoanhThu\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[NgayCapNhat]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="NgayCapNhat"
-                      externalMetadataColumnId="Package\Data Flow FACT_DoanhThu\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NgayCapNhat]"
-                      lineageId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Output].Columns[NgayCapNhat]" />
-                    <inputColumn
-                      refId="Package\Data Flow FACT_DoanhThu\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SKMaCTHD]"
+                      refId="Package\Data Flow FACT_DoanhThu\Kiểm tra xem SKMaDT của từng dòng có tồn tại trong DoanhThu_DDS chưa.Inputs[Lookup Input].Columns[SKMaCTHD]"
                       cachedDataType="i4"
                       cachedName="SKMaCTHD"
-                      externalMetadataColumnId="Package\Data Flow FACT_DoanhThu\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SKDoanhThu]"
-                      lineageId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Output].Columns[SKMaCTHD]" />
-                    <inputColumn
-                      refId="Package\Data Flow FACT_DoanhThu\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SKMaCHinDDS]"
-                      cachedDataType="i4"
-                      cachedName="SKMaCHinDDS"
-                      externalMetadataColumnId="Package\Data Flow FACT_DoanhThu\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SKMaCH]"
-                      lineageId="Package\Data Flow FACT_DoanhThu\Find mach has in CuaHang_DDS.Outputs[Lookup Match Output].Columns[SKMaCHinDDS]" />
-                    <inputColumn
-                      refId="Package\Data Flow FACT_DoanhThu\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SKMaKHinDDS]"
-                      cachedDataType="i4"
-                      cachedName="SKMaKHinDDS"
-                      externalMetadataColumnId="Package\Data Flow FACT_DoanhThu\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SKMaKH]"
-                      lineageId="Package\Data Flow FACT_DoanhThu\Find makh has in KhachHang_DDS.Outputs[Lookup Match Output].Columns[SKMaKHinDDS]" />
-                    <inputColumn
-                      refId="Package\Data Flow FACT_DoanhThu\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SKMaSPinDDS]"
-                      cachedDataType="i4"
-                      cachedName="SKMaSPinDDS"
-                      externalMetadataColumnId="Package\Data Flow FACT_DoanhThu\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SKMaSP]"
-                      lineageId="Package\Data Flow FACT_DoanhThu\Check MaSP has in SanPham_DDS.Outputs[Lookup Match Output].Columns[SKMaSPinDDS]" />
-                    <inputColumn
-                      refId="Package\Data Flow FACT_DoanhThu\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SKMaHDinDDS]"
-                      cachedDataType="i4"
-                      cachedName="SKMaHDinDDS"
-                      externalMetadataColumnId="Package\Data Flow FACT_DoanhThu\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SKMaHD]"
-                      lineageId="Package\Data Flow FACT_DoanhThu\Check MaHD has in HoaDon_DDS.Outputs[Lookup Match Output].Columns[SKMaHDinDDS]" />
-                    <inputColumn
-                      refId="Package\Data Flow FACT_DoanhThu\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[randomdate]"
-                      cachedDataType="i4"
-                      cachedName="randomdate"
-                      externalMetadataColumnId="Package\Data Flow FACT_DoanhThu\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SKDate]"
-                      lineageId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Output].Columns[randomdate]" />
-                    <inputColumn
-                      refId="Package\Data Flow FACT_DoanhThu\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[GiaSP_Real]"
-                      cachedDataType="i4"
-                      cachedName="GiaSP_Real"
-                      externalMetadataColumnId="Package\Data Flow FACT_DoanhThu\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[GiaSP]"
-                      lineageId="Package\Data Flow FACT_DoanhThu\Find value for Price Product column based on MaSP from SanPham_NDS.Outputs[Lookup Match Output].Columns[GiaSP_Real]" />
+                      lineageId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Output].Columns[SKMaCTHD]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">SKDoanhThu</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
                   </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Data Flow FACT_DoanhThu\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SKDoanhThu]"
-                      dataType="i4"
-                      name="SKDoanhThu" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow FACT_DoanhThu\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SKMaCH]"
-                      dataType="i4"
-                      name="SKMaCH" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow FACT_DoanhThu\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SKMaKH]"
-                      dataType="i4"
-                      name="SKMaKH" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow FACT_DoanhThu\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SKMaSP]"
-                      dataType="i4"
-                      name="SKMaSP" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow FACT_DoanhThu\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SKMaHD]"
-                      dataType="i4"
-                      name="SKMaHD" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow FACT_DoanhThu\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SKDate]"
-                      dataType="i4"
-                      name="SKDate" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow FACT_DoanhThu\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NgayTao]"
-                      dataType="dbTimeStamp"
-                      name="NgayTao" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow FACT_DoanhThu\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NgayCapNhat]"
-                      dataType="dbTimeStamp"
-                      name="NgayCapNhat" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow FACT_DoanhThu\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[GiaSP]"
-                      dataType="i4"
-                      name="GiaSP" />
-                  </externalMetadataColumns>
+                  <externalMetadataColumns />
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow FACT_DoanhThu\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Data Flow FACT_DoanhThu\Kiểm tra xem SKMaDT của từng dòng có tồn tại trong DoanhThu_DDS chưa.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Data Flow FACT_DoanhThu\Kiểm tra xem SKMaDT của từng dòng có tồn tại trong DoanhThu_DDS chưa.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow FACT_DoanhThu\Kiểm tra xem SKMaDT của từng dòng có tồn tại trong DoanhThu_DDS chưa.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Data Flow FACT_DoanhThu\Kiểm tra xem SKMaDT của từng dòng có tồn tại trong DoanhThu_DDS chưa.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow FACT_DoanhThu\Kiểm tra xem SKMaDT của từng dòng có tồn tại trong DoanhThu_DDS chưa.Outputs[Lookup Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
-                  name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Data Flow FACT_DoanhThu\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Data Flow FACT_DoanhThu\Kiểm tra xem SKMaDT của từng dòng có tồn tại trong DoanhThu_DDS chưa.Inputs[Lookup Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow FACT_DoanhThu\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Data Flow FACT_DoanhThu\Kiểm tra xem SKMaDT của từng dòng có tồn tại trong DoanhThu_DDS chưa.Outputs[Lookup Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow FACT_DoanhThu\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Data Flow FACT_DoanhThu\Kiểm tra xem SKMaDT của từng dòng có tồn tại trong DoanhThu_DDS chưa.Outputs[Lookup Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow FACT_DoanhThu\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Data Flow FACT_DoanhThu\Kiểm tra xem SKMaDT của từng dòng có tồn tại trong DoanhThu_DDS chưa.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow FACT_DoanhThu\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Data Flow FACT_DoanhThu\Kiểm tra xem SKMaDT của từng dòng có tồn tại trong DoanhThu_DDS chưa.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1927,6 +2303,11 @@ where [refTable].[SKMaSP] = ?</property>
             </component>
           </components>
           <paths>
+            <path
+              refId="Package\Data Flow FACT_DoanhThu.Paths[Derived Column Output]"
+              endId="Package\Data Flow FACT_DoanhThu\DoanhThu_DDS.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Data Flow FACT_DoanhThu\Cập nhật ngày tạo và ngày cập nhật.Outputs[Derived Column Output]" />
             <path
               refId="Package\Data Flow FACT_DoanhThu.Paths[Lookup Match Output]"
               endId="Package\Data Flow FACT_DoanhThu\Find value for MaKH, MaCH based on MaHD.Inputs[Lookup Input]"
@@ -1954,19 +2335,29 @@ where [refTable].[SKMaSP] = ?</property>
               startId="Package\Data Flow FACT_DoanhThu\Find mach has in CuaHang_DDS.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Data Flow FACT_DoanhThu.Paths[Lookup Match Output5]"
-              endId="Package\Data Flow FACT_DoanhThu\Conditional Split.Inputs[Conditional Split Input]"
+              endId="Package\Data Flow FACT_DoanhThu\Get CTHD has MaCH is not null.Inputs[Conditional Split Input]"
               name="Lookup Match Output"
               startId="Package\Data Flow FACT_DoanhThu\Find makh has in KhachHang_DDS.Outputs[Lookup Match Output]" />
             <path
+              refId="Package\Data Flow FACT_DoanhThu.Paths[Lookup Match Output6]"
+              endId="Package\Data Flow FACT_DoanhThu\Cập nhật dữ liệu.Inputs[OLE DB Command Input]"
+              name="Lookup Match Output"
+              startId="Package\Data Flow FACT_DoanhThu\Kiểm tra xem SKMaDT của từng dòng có tồn tại trong DoanhThu_DDS chưa.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Data Flow FACT_DoanhThu.Paths[Lookup No Match Output]"
+              endId="Package\Data Flow FACT_DoanhThu\Cập nhật ngày tạo và ngày cập nhật.Inputs[Derived Column Input]"
+              name="Lookup No Match Output"
+              startId="Package\Data Flow FACT_DoanhThu\Kiểm tra xem SKMaDT của từng dòng có tồn tại trong DoanhThu_DDS chưa.Outputs[Lookup No Match Output]" />
+            <path
               refId="Package\Data Flow FACT_DoanhThu.Paths[MaKHisnotnull]"
-              endId="Package\Data Flow FACT_DoanhThu\Conditional Split 2.Inputs[Conditional Split Input]"
+              endId="Package\Data Flow FACT_DoanhThu\Get CTHD has masp is not null.Inputs[Conditional Split Input]"
               name="MaKHisnotnull"
-              startId="Package\Data Flow FACT_DoanhThu\Conditional Split 1.Outputs[MaKHisnotnull]" />
+              startId="Package\Data Flow FACT_DoanhThu\Get CTHD has MaKH is not null.Outputs[MaKHisnotnull]" />
             <path
               refId="Package\Data Flow FACT_DoanhThu.Paths[MaSP is not null]"
-              endId="Package\Data Flow FACT_DoanhThu\Conditional Split 3.Inputs[Conditional Split Input]"
+              endId="Package\Data Flow FACT_DoanhThu\Get CTHD has mahd is not null.Inputs[Conditional Split Input]"
               name="MaSP is not null"
-              startId="Package\Data Flow FACT_DoanhThu\Conditional Split 2.Outputs[MaSP is not null]" />
+              startId="Package\Data Flow FACT_DoanhThu\Get CTHD has masp is not null.Outputs[MaSP is not null]" />
             <path
               refId="Package\Data Flow FACT_DoanhThu.Paths[OLE DB Source Output]"
               endId="Package\Data Flow FACT_DoanhThu\Check MaHD has in HoaDon_DDS.Inputs[Lookup Input]"
@@ -1974,14 +2365,14 @@ where [refTable].[SKMaSP] = ?</property>
               startId="Package\Data Flow FACT_DoanhThu\CTHD_NDS.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\Data Flow FACT_DoanhThu.Paths[SKMaCH is not null]"
-              endId="Package\Data Flow FACT_DoanhThu\Conditional Split 1.Inputs[Conditional Split Input]"
+              endId="Package\Data Flow FACT_DoanhThu\Get CTHD has MaKH is not null.Inputs[Conditional Split Input]"
               name="SKMaCH is not null"
-              startId="Package\Data Flow FACT_DoanhThu\Conditional Split.Outputs[SKMaCH is not null]" />
+              startId="Package\Data Flow FACT_DoanhThu\Get CTHD has MaCH is not null.Outputs[SKMaCH is not null]" />
             <path
               refId="Package\Data Flow FACT_DoanhThu.Paths[SKMaHD is not null]"
-              endId="Package\Data Flow FACT_DoanhThu\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              endId="Package\Data Flow FACT_DoanhThu\Kiểm tra xem SKMaDT của từng dòng có tồn tại trong DoanhThu_DDS chưa.Inputs[Lookup Input]"
               name="SKMaHD is not null"
-              startId="Package\Data Flow FACT_DoanhThu\Conditional Split 3.Outputs[SKMaHD is not null]" />
+              startId="Package\Data Flow FACT_DoanhThu\Get CTHD has mahd is not null.Outputs[SKMaHD is not null]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -2199,76 +2590,92 @@ where [refTable].[SKMaSP] = ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="242.666666666667,42.6666666666667"
-          Id="Package\Data Flow FACT_DoanhThu\Find makh has in KhachHang_DDS"
-          TopLeft="308.12499540858,533.51666168044" />
-        <NodeLayout
-          Size="216.666666666667,41.3333333333334"
-          Id="Package\Data Flow FACT_DoanhThu\CTHD_NDS"
-          TopLeft="304.196424631554,33.1359153348083" />
-        <NodeLayout
-          Size="165.333333333334,42.6666666666667"
-          Id="Package\Data Flow FACT_DoanhThu\Conditional Split 1"
-          TopLeft="628.124990640209,548.183329741856" />
-        <NodeLayout
-          Size="420,42.6666666666667"
-          Id="Package\Data Flow FACT_DoanhThu\Find value for Price Product column based on MaSP from SanPham_NDS"
-          TopLeft="209.374996880069,256.733329195579" />
-        <NodeLayout
           Size="232,42.6666666666667"
           Id="Package\Data Flow FACT_DoanhThu\Find mach has in CuaHang_DDS"
-          TopLeft="308.12499540858,435.183329974314" />
+          TopLeft="431.874993564561,435.183329974314" />
         <NodeLayout
-          Size="241.333333333334,42.6666666666667"
-          Id="Package\Data Flow FACT_DoanhThu\Check MaSP has in SanPham_DDS"
-          TopLeft="286.87499572523,174.049999569953" />
-        <NodeLayout
-          Size="165.333333333334,42.6666666666667"
-          Id="Package\Data Flow FACT_DoanhThu\Conditional Split 2"
-          TopLeft="629.999990612269,625.249996687472" />
+          Size="225.333333333334,42.6666666666667"
+          Id="Package\Data Flow FACT_DoanhThu\Get CTHD has MaKH is not null"
+          TopLeft="751.87498879619,548.183329741856" />
         <NodeLayout
           Size="286.666666666667,42.6666666666667"
           Id="Package\Data Flow FACT_DoanhThu\Find value for MaKH, MaCH based on MaHD"
-          TopLeft="287.142855008038,343.871565981383" />
+          TopLeft="410.892853164019,343.871565981383" />
         <NodeLayout
-          Size="165.333333333334,42.6666666666667"
-          Id="Package\Data Flow FACT_DoanhThu\Conditional Split 3"
-          TopLeft="637.499990500511,716.383330811162" />
+          Size="241.333333333334,42.6666666666667"
+          Id="Package\Data Flow FACT_DoanhThu\Check MaSP has in SanPham_DDS"
+          TopLeft="410.624993881211,174.049999569953" />
+        <NodeLayout
+          Size="225.333333333334,42.6666666666667"
+          Id="Package\Data Flow FACT_DoanhThu\Get CTHD has mahd is not null"
+          TopLeft="761.249988656492,716.383330811162" />
+        <NodeLayout
+          Size="154.666666666667,42.6666666666667"
+          Id="Package\Data Flow FACT_DoanhThu\DoanhThu_DDS"
+          TopLeft="816.249987836928,814.549995734394" />
+        <NodeLayout
+          Size="216.666666666667,41.3333333333334"
+          Id="Package\Data Flow FACT_DoanhThu\CTHD_NDS"
+          TopLeft="427.946422787535,33.1359153348083" />
+        <NodeLayout
+          Size="226.666666666667,42.6666666666667"
+          Id="Package\Data Flow FACT_DoanhThu\Get CTHD has MaCH is not null"
+          TopLeft="762.499988637865,468.933331194719" />
+        <NodeLayout
+          Size="224,42.6666666666667"
+          Id="Package\Data Flow FACT_DoanhThu\Get CTHD has masp is not null"
+          TopLeft="753.74998876825,625.249996687472" />
+        <NodeLayout
+          Size="242.666666666667,42.6666666666667"
+          Id="Package\Data Flow FACT_DoanhThu\Find makh has in KhachHang_DDS"
+          TopLeft="431.874993564561,533.51666168044" />
         <NodeLayout
           Size="237.333333333334,42.6666666666667"
           Id="Package\Data Flow FACT_DoanhThu\Check MaHD has in HoaDon_DDS"
-          TopLeft="293.124995632097,103.349998151958" />
+          TopLeft="416.874993788078,103.349998151958" />
         <NodeLayout
-          Size="156,42.6666666666667"
-          Id="Package\Data Flow FACT_DoanhThu\Conditional Split"
-          TopLeft="638.749990481884,468.933331194719" />
+          Size="420,42.6666666666667"
+          Id="Package\Data Flow FACT_DoanhThu\Find value for Price Product column based on MaSP from SanPham_NDS"
+          TopLeft="333.12499503605,256.733329195579" />
         <EdgeLayout
           Id="Package\Data Flow FACT_DoanhThu.Paths[SKMaCH is not null]"
-          TopLeft="713.77082389438,511.599997861385">
+          TopLeft="875.833321971198,511.599997861386">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,36.5833318804703"
+              EndConnector="-11.2916665083417,36.5833318804703"
               Start="0,0"
-              End="0,29.0833318804703">
+              End="-11.2916665083417,29.0833318804703">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,29.0833318804703" />
+                    End="0,14.2916659402352" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.2916659402352"
+                    Point2="0,18.2916659402352"
+                    Point3="-4,18.2916659402352" />
+                  <mssgle:LineSegment
+                    End="-7.29166650834168,18.2916659402352" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-7.29166650834168,18.2916659402352"
+                    Point2="-11.2916665083417,18.2916659402352"
+                    Point3="-11.2916665083417,22.2916659402352" />
+                  <mssgle:LineSegment
+                    End="-11.2916665083417,29.0833318804703" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-42.16779296875,9.66715422148515,84.3355859375,9.7490234375"
+              BoundingBox="-47.8136262229208,23.2916659402352,84.3355859375,9.7490234375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow FACT_DoanhThu.Paths[OLE DB Source Output]"
-          TopLeft="412.160710131825,74.4692486681417">
+          TopLeft="535.910708287806,74.4692486681417">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2290,91 +2697,103 @@ where [refTable].[SKMaSP] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow FACT_DoanhThu.Paths[MaSP is not null]"
-          TopLeft="716.416657223057,667.916663354139">
+          TopLeft="865.74998876825,667.916663354139">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,48.4666674570238"
+              EndConnector="8.1666665549086,48.4666674570233"
               Start="0,0"
-              End="0,40.9666674570238">
+              End="8.1666665549086,40.9666674570233">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,40.9666674570238" />
+                    End="0,20.2333337285116" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2333337285116"
+                    Point2="0,24.2333337285116"
+                    Point3="4,24.2333337285116" />
+                  <mssgle:LineSegment
+                    End="4.1666665549086,24.2333337285116" />
+                  <mssgle:CubicBezierSegment
+                    Point1="4.1666665549086,24.2333337285116"
+                    Point2="8.1666665549086,24.2333337285116"
+                    Point3="8.1666665549086,28.2333337285116" />
+                  <mssgle:LineSegment
+                    End="8.1666665549086,40.9666674570233" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-35.42212890625,15.6088220097619,70.8442578125,9.7490234375"
+              BoundingBox="-31.3387956287957,29.2333337285116,70.8442578125,9.7490234375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow FACT_DoanhThu.Paths[MaKHisnotnull]"
-          TopLeft="711.729157292906,590.849996408522">
+          TopLeft="865.145822115553,590.849996408523">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,34.4000002789498"
+              EndConnector="0,34.4000002789494"
               Start="0,0"
-              End="0,26.9000002789498">
+              End="0,26.9000002789494">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.9000002789498" />
+                    End="0,26.9000002789494" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-31.50212890625,8.5754884207249,63.0042578125,9.7490234375"
+              BoundingBox="-31.50212890625,8.5754884207247,63.0042578125,9.7490234375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow FACT_DoanhThu.Paths[Lookup Match Output5]"
-          TopLeft="550.791662075247,554.849995013773">
+          TopLeft="674.541660231228,554.849995013773">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="87.9583284066371,-64.5833304857214"
+              EndConnector="87.9583284066373,-64.5833304857211"
               Start="0,0"
-              End="80.4583284066371,-64.5833304857214">
+              End="80.4583284066373,-64.5833304857211">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="39.9791642033185,0" />
+                    End="39.9791642033186,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="39.9791642033185,0"
-                    Point2="43.9791642033185,0"
-                    Point3="43.9791642033185,-4" />
+                    Point1="39.9791642033186,0"
+                    Point2="43.9791642033186,0"
+                    Point3="43.9791642033186,-4" />
                   <mssgle:LineSegment
-                    End="43.9791642033185,-60.5833304857214" />
+                    End="43.9791642033186,-60.5833304857211" />
                   <mssgle:CubicBezierSegment
-                    Point1="43.9791642033185,-60.5833304857214"
-                    Point2="43.9791642033185,-64.5833304857214"
-                    Point3="47.9791642033185,-64.5833304857214" />
+                    Point1="43.9791642033186,-60.5833304857211"
+                    Point2="43.9791642033186,-64.5833304857211"
+                    Point3="47.9791642033186,-64.5833304857211" />
                   <mssgle:LineSegment
-                    End="80.4583284066371,-64.5833304857214" />
+                    End="80.4583284066373,-64.5833304857211" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-4.21222251543147,1,96.3827734375,11.609375"
+              BoundingBox="-4.21222251543136,1,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow FACT_DoanhThu.Paths[Lookup Match Output4]"
-          TopLeft="426.791662075246,477.84999664098">
+          TopLeft="550.541660231227,477.84999664098">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2398,7 +2817,7 @@ where [refTable].[SKMaSP] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow FACT_DoanhThu.Paths[Lookup Match Output3]"
-          TopLeft="427.300591874976,386.538232648049">
+          TopLeft="551.050590030957,386.538232648049">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2422,7 +2841,7 @@ where [refTable].[SKMaSP] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow FACT_DoanhThu.Paths[Lookup Match Output2]"
-          TopLeft="407.541662391896,216.716666236619">
+          TopLeft="531.291660547877,216.716666236619">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2458,7 +2877,7 @@ where [refTable].[SKMaSP] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow FACT_DoanhThu.Paths[Lookup Match Output1]"
-          TopLeft="409.66666234533,146.016664818625">
+          TopLeft="533.416660501311,146.016664818625">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2482,7 +2901,7 @@ where [refTable].[SKMaSP] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow FACT_DoanhThu.Paths[Lookup Match Output]"
-          TopLeft="419.374996880069,299.399995862246">
+          TopLeft="543.12499503605,299.399995862246">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2517,48 +2936,151 @@ where [refTable].[SKMaSP] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="172,42.6666666666667"
-          Id="Package\Data Flow FACT_DoanhThu\OLE DB Destination"
-          TopLeft="625.624990677461,814.549995734394" />
+          Size="156.666666666667,42"
+          Id="Package\Data Flow FACT_DoanhThu\Cập nhật dữ liệu"
+          TopLeft="147.645833328677,804.973425759697" />
+        <NodeLayout
+          Size="437,42"
+          Id="Package\Data Flow FACT_DoanhThu\Kiểm tra xem SKMaDT của từng dòng có tồn tại trong DoanhThu_DDS chưa"
+          TopLeft="149.374997774139,715.883329067727" />
+        <NodeLayout
+          Size="249.666666666667,41.6666666666667"
+          Id="Package\Data Flow FACT_DoanhThu\Cập nhật ngày tạo và ngày cập nhật"
+          TopLeft="511.18869663879,813.58645285057" />
         <EdgeLayout
           Id="Package\Data Flow FACT_DoanhThu.Paths[SKMaHD is not null]"
-          TopLeft="720.166657167178,759.049997477829">
+          TopLeft="761.249988656492,737.299996606111">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-8.54166648971648,55.4999982565651"
+              EndConnector="-174.874990882354,0"
               Start="0,0"
-              End="-8.54166648971648,47.9999982565651">
+              End="-167.374990882354,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,23.7499991282825" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,23.7499991282825"
-                    Point2="0,27.7499991282825"
-                    Point3="-4,27.7499991282825" />
-                  <mssgle:LineSegment
-                    End="-4.54166648971648,27.7499991282825" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-4.54166648971648,27.7499991282825"
-                    Point2="-8.54166648971648,27.7499991282825"
-                    Point3="-8.54166648971648,31.7499991282825" />
-                  <mssgle:LineSegment
-                    End="-8.54166648971648,47.9999982565651" />
+                    End="-167.374990882354,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-55.5116144948582,32.7499991282825,102.4815625,16"
+              BoundingBox="-126.240288409927,5,85.1055859375,9.7490234375"
               RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow FACT_DoanhThu.Paths[Lookup Match Output6]"
+          TopLeft="296.374997774139,757.883329067727">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-70.3958311121284,47.0900966919695"
+              Start="0,0"
+              End="-70.3958311121284,39.5900966919695">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.9391086558674" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.9391086558674"
+                    Point2="0,18.9391086558674"
+                    Point3="-4,18.9391086558674" />
+                  <mssgle:LineSegment
+                    End="-66.3958311121284,18.9391086558674" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-66.3958311121284,18.9391086558674"
+                    Point2="-70.3958311121284,18.9391086558674"
+                    Point3="-70.3958311121284,22.9391086558674" />
+                  <mssgle:LineSegment
+                    End="-70.3958311121284,39.5900966919695" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-83.3893022748142,23.9391086558674,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow FACT_DoanhThu.Paths[Lookup No Match Output]"
+          TopLeft="439.374997774139,757.883329067727">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="196.647032197985,55.7031237828423"
+              Start="0,0"
+              End="196.647032197985,48.2031237828423">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.4031715350966" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.4031715350966"
+                    Point2="0,22.4031715350966"
+                    Point3="4,22.4031715350966" />
+                  <mssgle:LineSegment
+                    End="192.647032197985,22.4031715350966" />
+                  <mssgle:CubicBezierSegment
+                    Point1="192.647032197985,22.4031715350966"
+                    Point2="196.647032197985,22.4031715350966"
+                    Point3="196.647032197985,26.4031715350966" />
+                  <mssgle:LineSegment
+                    End="196.647032197985,48.2031237828423" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="42.5171293802425,27.4031715350966,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow FACT_DoanhThu.Paths[Derived Column Output]"
+          TopLeft="760.855363305457,835.151557625815">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="55.394624531471,0"
+              Start="0,0"
+              End="47.894624531471,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="47.894624531471,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow FACT_DoanhThu\DoanhThu_DDS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Data Flow FACT_DoanhThu\CTHD_NDS">
     <Properties>
@@ -2568,15 +3090,25 @@ where [refTable].[SKMaSP] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow FACT_DoanhThu\OLE DB Destination">
+    design-time-name="Package\Data Flow FACT_DoanhThu\Kiểm tra xem SKMaDT của từng dòng có tồn tại trong DoanhThu_DDS chưa">
     <Properties>
       <Property>
-        <Name>DataSourceViewID</Name>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Fact_ABCDoanhThu]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q2:string">Table</Value>
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

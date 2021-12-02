@@ -11,11 +11,35 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="44"
-  DTS:VersionGUID="{C7A5F223-3AAB-4617-9B0F-A39727B25ABC}">
+  DTS:VersionBuild="47"
+  DTS:VersionGUID="{59B142C3-AE9A-44B5-A42E-76B61C779F27}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_DW]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{04AEF8F9-42EB-47CD-B4CF-D0C742C791B6}"
+      DTS:ObjectName="DESKTOP-LATGDUJ.DALT_DW">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-LATGDUJ;Initial Catalog=DALT_DW;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_NDS]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{8E6491ED-8D82-4A59-9A23-71558765DEEE}"
+      DTS:ObjectName="DESKTOP-LATGDUJ.DALT_NDS">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-LATGDUJ;Initial Catalog=DALT_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[LocalHost.DALT_DW]"
       DTS:CreationName="OLEDB"
@@ -283,6 +307,220 @@ where [refTable].[SKMaLoaiSP] = ?</property>
               </outputs>
             </component>
             <component
+              refId="Package\Data Flow Dim_SanPham\Cập nhật dữ liệu"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="Cập nhật dữ liệu"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE Dim_SanPham 
+SET NgayCapNhap = GETDATE(), TenSP = ? WHERE SKMaSP = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Dim_SanPham\Cập nhật dữ liệu.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_DW]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_DW]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Dim_SanPham\Cập nhật dữ liệu.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Dim_SanPham\Cập nhật dữ liệu.Inputs[OLE DB Command Input].Columns[TenSP]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TenSP"
+                      externalMetadataColumnId="Package\Data Flow Dim_SanPham\Cập nhật dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Output].Columns[TenSP]" />
+                    <inputColumn
+                      refId="Package\Data Flow Dim_SanPham\Cập nhật dữ liệu.Inputs[OLE DB Command Input].Columns[SKMaSP]"
+                      cachedDataType="i4"
+                      cachedName="SKMaSP"
+                      externalMetadataColumnId="Package\Data Flow Dim_SanPham\Cập nhật dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Output].Columns[SKMaSP]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Dim_SanPham\Cập nhật dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Dim_SanPham\Cập nhật dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="i4"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Dim_SanPham\Cập nhật dữ liệu.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Data Flow Dim_SanPham\Cập nhật dữ liệu.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Dim_SanPham\Cập nhật dữ liệu.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Data Flow Dim_SanPham\Cập nhật dữ liệu.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Dim_SanPham\Cập nhật dữ liệu.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Dim_SanPham\Cập nhật dữ liệu.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Dim_SanPham\Cập nhật dữ liệu.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Dim_SanPham\Cập nhật dữ liệu.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Dim_SanPham\Cập nhật ngày tạo và ngày cập nhật"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Cập nhật ngày tạo và ngày cập nhật"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Dim_SanPham\Cập nhật ngày tạo và ngày cập nhật.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Dim_SanPham\Cập nhật ngày tạo và ngày cập nhật.Inputs[Derived Column Input].Columns[NgayTao]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="NgayTao"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Output].Columns[NgayTao]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Dim_SanPham\Cập nhật ngày tạo và ngày cập nhật.Inputs[Derived Column Input].Columns[NgayCapNhap]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="NgayCapNhap"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Output].Columns[NgayCapNhap]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Dim_SanPham\Cập nhật ngày tạo và ngày cập nhật.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Data Flow Dim_SanPham\Cập nhật ngày tạo và ngày cập nhật.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Dim_SanPham\Cập nhật ngày tạo và ngày cập nhật.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Data Flow Dim_SanPham\Cập nhật ngày tạo và ngày cập nhật.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Dim_SanPham\Cập nhật ngày tạo và ngày cập nhật.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Dim_SanPham\Cập nhật ngày tạo và ngày cập nhật.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Dim_SanPham\Cập nhật ngày tạo và ngày cập nhật.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Dim_SanPham\Cập nhật ngày tạo và ngày cập nhật.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Data Flow Dim_SanPham\Dim_SanPham in DDS"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
@@ -535,6 +773,147 @@ where [refTable].[SKMaLoaiSP] = ?</property>
                       refId="Package\Data Flow Dim_SanPham\Get SanPhamNDS has maloaisp is not null.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\Data Flow Dim_SanPham\Get SanPhamNDS has maloaisp is not null.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Dim_SanPham\Kiểm tra xem SKMaSP của từng dòng có tồn tại trong SanPham_DDS chưa"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Kiểm tra xem SKMaSP của từng dòng có tồn tại trong SanPham_DDS chưa"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Dim_SanPham]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Dim_SanPham]) [refTable]
+where [refTable].[SKMaSP] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="SKMaSP" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MaSP" dataType="DT_STR" length="4" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="TenSP" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="NgayTao" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="NgayCapNhap" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SKMaLoaiSP" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Output].Columns[SKMaSP]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Dim_SanPham\Kiểm tra xem SKMaSP của từng dòng có tồn tại trong SanPham_DDS chưa.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_DW]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_DW]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Dim_SanPham\Kiểm tra xem SKMaSP của từng dòng có tồn tại trong SanPham_DDS chưa.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Dim_SanPham\Kiểm tra xem SKMaSP của từng dòng có tồn tại trong SanPham_DDS chưa.Inputs[Lookup Input].Columns[SKMaSP]"
+                      cachedDataType="i4"
+                      cachedName="SKMaSP"
+                      lineageId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Output].Columns[SKMaSP]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">SKMaSP</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Dim_SanPham\Kiểm tra xem SKMaSP của từng dòng có tồn tại trong SanPham_DDS chưa.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Data Flow Dim_SanPham\Kiểm tra xem SKMaSP của từng dòng có tồn tại trong SanPham_DDS chưa.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Dim_SanPham\Kiểm tra xem SKMaSP của từng dòng có tồn tại trong SanPham_DDS chưa.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Data Flow Dim_SanPham\Kiểm tra xem SKMaSP của từng dòng có tồn tại trong SanPham_DDS chưa.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Dim_SanPham\Kiểm tra xem SKMaSP của từng dòng có tồn tại trong SanPham_DDS chưa.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Data Flow Dim_SanPham\Kiểm tra xem SKMaSP của từng dòng có tồn tại trong SanPham_DDS chưa.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Dim_SanPham\Kiểm tra xem SKMaSP của từng dòng có tồn tại trong SanPham_DDS chưa.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Dim_SanPham\Kiểm tra xem SKMaSP của từng dòng có tồn tại trong SanPham_DDS chưa.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Dim_SanPham\Kiểm tra xem SKMaSP của từng dòng có tồn tại trong SanPham_DDS chưa.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Dim_SanPham\Kiểm tra xem SKMaSP của từng dòng có tồn tại trong SanPham_DDS chưa.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -808,8 +1187,13 @@ WHERE  MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhap 
           </components>
           <paths>
             <path
-              refId="Package\Data Flow Dim_SanPham.Paths[isnotnull]"
+              refId="Package\Data Flow Dim_SanPham.Paths[Derived Column Output]"
               endId="Package\Data Flow Dim_SanPham\Dim_SanPham in DDS.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Dim_SanPham\Cập nhật ngày tạo và ngày cập nhật.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Data Flow Dim_SanPham.Paths[isnotnull]"
+              endId="Package\Data Flow Dim_SanPham\Kiểm tra xem SKMaSP của từng dòng có tồn tại trong SanPham_DDS chưa.Inputs[Lookup Input]"
               name="isnotnull"
               startId="Package\Data Flow Dim_SanPham\Get SanPhamNDS has maloaisp is not null.Outputs[isnotnull]" />
             <path
@@ -817,6 +1201,16 @@ WHERE  MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhap 
               endId="Package\Data Flow Dim_SanPham\Get SanPhamNDS has maloaisp is not null.Inputs[Conditional Split Input]"
               name="Lookup Match Output"
               startId="Package\Data Flow Dim_SanPham\Check MaLoaiSP is in LoaiSP or not.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Data Flow Dim_SanPham.Paths[Lookup Match Output1]"
+              endId="Package\Data Flow Dim_SanPham\Cập nhật dữ liệu.Inputs[OLE DB Command Input]"
+              name="Lookup Match Output"
+              startId="Package\Data Flow Dim_SanPham\Kiểm tra xem SKMaSP của từng dòng có tồn tại trong SanPham_DDS chưa.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Data Flow Dim_SanPham.Paths[Lookup No Match Output]"
+              endId="Package\Data Flow Dim_SanPham\Cập nhật ngày tạo và ngày cập nhật.Inputs[Derived Column Input]"
+              name="Lookup No Match Output"
+              startId="Package\Data Flow Dim_SanPham\Kiểm tra xem SKMaSP của từng dòng có tồn tại trong SanPham_DDS chưa.Outputs[Lookup No Match Output]" />
             <path
               refId="Package\Data Flow Dim_SanPham.Paths[OLE DB Source Output]"
               endId="Package\Data Flow Dim_SanPham\Check MaLoaiSP is in LoaiSP or not.Inputs[Lookup Input]"
@@ -1025,23 +1419,23 @@ WHERE  MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhap 
     design-time-name="Package\Data Flow Dim_SanPham">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="184,42.6666666666667"
+          Id="Package\Data Flow Dim_SanPham\Dim_SanPham in DDS"
+          TopLeft="92.1874986262983,338.216660541396" />
         <NodeLayout
           Size="149.333333333334,42.6666666666667"
           Id="Package\Data Flow Dim_SanPham\SanPham_NDS"
           TopLeft="354.62499745749,48.499999139905" />
         <NodeLayout
-          Size="184,42.6666666666667"
-          Id="Package\Data Flow Dim_SanPham\Dim_SanPham in DDS"
-          TopLeft="324.374995166435,342.549993874729" />
+          Size="244,42.6666666666667"
+          Id="Package\Data Flow Dim_SanPham\Check MaLoaiSP is in LoaiSP or not"
+          TopLeft="299.374995538965,139.099997512699" />
         <NodeLayout
           Size="277.333333333334,42.6666666666667"
           Id="Package\Data Flow Dim_SanPham\Get SanPhamNDS has maloaisp is not null"
           TopLeft="278.749995846302,252.199995490313" />
-        <NodeLayout
-          Size="244,42.6666666666667"
-          Id="Package\Data Flow Dim_SanPham\Check MaLoaiSP is in LoaiSP or not"
-          TopLeft="299.374995538965,139.099997512699" />
         <EdgeLayout
           Id="Package\Data Flow Dim_SanPham.Paths[Lookup Match Output]"
           TopLeft="419.395829025967,181.766664179365">
@@ -1067,30 +1461,6 @@ WHERE  MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhap 
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Dim_SanPham.Paths[isnotnull]"
-          TopLeft="416.895828839702,294.866662156979">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,47.6833317177498"
-              Start="0,0"
-              End="0,40.1833317177498">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,40.1833317177498" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-18.76572265625,15.2171541401249,37.5314453125,9.7490234375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\Data Flow Dim_SanPham.Paths[OLE DB Source Output]"
           TopLeft="425.333329831561,91.1666658065717">
           <EdgeLayout.Curve>
@@ -1112,11 +1482,141 @@ WHERE  MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhap 
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="430.666666666667,42"
+          Id="Package\Data Flow Dim_SanPham\Kiểm tra xem SKMaSP của từng dòng có tồn tại trong SanPham_DDS chưa"
+          TopLeft="597.395825673206,252.883327208062" />
+        <NodeLayout
+          Size="156.666666666667,42"
+          Id="Package\Data Flow Dim_SanPham\Cập nhật dữ liệu"
+          TopLeft="744.72915900654,341.306757233365" />
+        <NodeLayout
+          Size="250,42"
+          Id="Package\Data Flow Dim_SanPham\Cập nhật ngày tạo và ngày cập nhật"
+          TopLeft="387.647033054802,339.919784324238" />
+        <EdgeLayout
+          Id="Package\Data Flow Dim_SanPham.Paths[isnotnull]"
+          TopLeft="556.083329179635,273.708328015854">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="41.3124964935706,0"
+              Start="0,0"
+              End="33.8124964935706,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="33.8124964935706,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-1.85947440946469,5,37.5314453125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Dim_SanPham.Paths[Lookup Match Output1]"
+          TopLeft="883.173603450984,294.883327208062">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-60.1111111111103,46.4234300253029"
+              Start="0,0"
+              End="-60.1111111111103,38.9234300253029">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.6724715462662" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.6724715462662"
+                    Point2="0,18.6724715462662"
+                    Point3="-4,18.6724715462662" />
+                  <mssgle:LineSegment
+                    End="-56.1111111111103,18.6724715462662" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-56.1111111111103,18.6724715462662"
+                    Point2="-60.1111111111103,18.6724715462662"
+                    Point3="-60.1111111111103,22.6724715462662" />
+                  <mssgle:LineSegment
+                    End="-60.1111111111103,38.9234300253029" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-78.2469422743052,23.6724715462662,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Dim_SanPham.Paths[Lookup No Match Output]"
+          TopLeft="742.284714562095,294.883327208062">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-229.637681507293,45.0364571161758"
+              Start="0,0"
+              End="-229.637681507293,37.5364571161758">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.1146021219905" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.1146021219905"
+                    Point2="0,18.1146021219905"
+                    Point3="-4,18.1146021219905" />
+                  <mssgle:LineSegment
+                    End="-225.637681507293,18.1146021219905" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-225.637681507293,18.1146021219905"
+                    Point2="-229.637681507293,18.1146021219905"
+                    Point3="-229.637681507293,22.1146021219905" />
+                  <mssgle:LineSegment
+                    End="-229.637681507293,37.5364571161758" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-170.625227472396,23.1146021219905,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Dim_SanPham.Paths[Derived Column Output]"
+          TopLeft="387.647033054802,360.234889099484">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-111.459534428504,0"
+              Start="0,0"
+              End="-103.959534428504,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-103.959534428504,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Dim_SanPham\SanPham_NDS">
+    design-time-name="Package\Data Flow Dim_SanPham\Dim_SanPham in DDS">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1129,7 +1629,7 @@ WHERE  MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhap 
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Dim_SanPham\Dim_SanPham in DDS">
+    design-time-name="Package\Data Flow Dim_SanPham\SanPham_NDS">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1158,6 +1658,29 @@ WHERE  MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhap 
         <Name>TableInfoObjectType</Name>
         <Value
           type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Dim_SanPham\Kiểm tra xem SKMaSP của từng dòng có tồn tại trong SanPham_DDS chưa">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Dim_SanPham]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
