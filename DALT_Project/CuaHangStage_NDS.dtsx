@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="44"
-  DTS:VersionGUID="{8C7BBA21-B831-4768-96B3-F3E9AC627FD1}">
+  DTS:VersionBuild="46"
+  DTS:VersionGUID="{D67F007D-ACB5-4385-AC9A-4869627F208B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1701,7 +1701,7 @@ where [refTable].[SKMaTrangThai] = ?</property>
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[CuaHang] SET [MaQG] = ? WHERE [MaCH] = ? AND [MaTrangThai] = '1'</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[CuaHang] SET [MaLoaiCH] = ?,[MaQG] = ? WHERE [MaCH] = ? AND [MaTrangThai] = '1'</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1729,13 +1729,19 @@ where [refTable].[SKMaTrangThai] = ?</property>
                       cachedDataType="str"
                       cachedLength="4"
                       cachedName="MaCH"
-                      externalMetadataColumnId="Package\Stage to NDS - CuaHang\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      externalMetadataColumnId="Package\Stage to NDS - CuaHang\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                       lineageId="Package\Stage to NDS - CuaHang\CuaHang_Stage.Outputs[OLE DB Source Output].Columns[MaCH]" />
+                    <inputColumn
+                      refId="Package\Stage to NDS - CuaHang\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[skmaloaich]"
+                      cachedDataType="i4"
+                      cachedName="skmaloaich"
+                      externalMetadataColumnId="Package\Stage to NDS - CuaHang\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Stage to NDS - CuaHang\Kiểm tra MaLoaiCuaHang của từng dòng có tồn tại trong MaLoaiCuaHang_NDS chưa.Outputs[Lookup Match Output].Columns[skmaloaich]" />
                     <inputColumn
                       refId="Package\Stage to NDS - CuaHang\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[skmaqg]"
                       cachedDataType="i4"
                       cachedName="skmaqg"
-                      externalMetadataColumnId="Package\Stage to NDS - CuaHang\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      externalMetadataColumnId="Package\Stage to NDS - CuaHang\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
                       lineageId="Package\Stage to NDS - CuaHang\Kiểm tra xem MaNuoc của từng dòng có tồn tại trong QuocGia_NDS chưa.Outputs[Lookup Match Output].Columns[skmaqg]" />
                   </inputColumns>
                   <externalMetadataColumns
@@ -1753,10 +1759,21 @@ where [refTable].[SKMaTrangThai] = ?</property>
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Stage to NDS - CuaHang\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="i4"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Stage to NDS - CuaHang\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                       codePage="1252"
                       dataType="str"
                       length="4"
-                      name="Param_1">
+                      name="Param_2">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1811,7 +1828,7 @@ where [refTable].[SKMaTrangThai] = ?</property>
                   dataType="System.String"
                   description="Specifies the SELECT statement used to create a schema rowset."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [MaCH], [MaQG], [MaTrangThai], [TenCH] FROM [dbo].[CuaHang]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [MaCH], [MaLoaiCH], [MaQG], [MaTrangThai], [TenCH] FROM [dbo].[CuaHang]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
@@ -1875,6 +1892,19 @@ where [refTable].[SKMaTrangThai] = ?</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
+                      refId="Package\Stage to NDS - CuaHang\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[skmaloaich]"
+                      cachedDataType="i4"
+                      cachedName="skmaloaich"
+                      externalMetadataColumnId="Package\Stage to NDS - CuaHang\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[MaLoaiCH]"
+                      lineageId="Package\Stage to NDS - CuaHang\Kiểm tra MaLoaiCuaHang của từng dòng có tồn tại trong MaLoaiCuaHang_NDS chưa.Outputs[Lookup Match Output].Columns[skmaloaich]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
                       refId="Package\Stage to NDS - CuaHang\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[skmaqg]"
                       cachedDataType="i4"
                       cachedName="skmaqg"
@@ -1911,6 +1941,10 @@ where [refTable].[SKMaTrangThai] = ?</property>
                       dataType="str"
                       length="4"
                       name="MaCH" />
+                    <externalMetadataColumn
+                      refId="Package\Stage to NDS - CuaHang\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[MaLoaiCH]"
+                      dataType="i4"
+                      name="MaLoaiCH" />
                     <externalMetadataColumn
                       refId="Package\Stage to NDS - CuaHang\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[MaQG]"
                       dataType="i4"
@@ -2844,6 +2878,16 @@ where [refTable].[SKMaTrangThai] = ?</property>
               name="Changing Attribute Updates Output"
               startId="Package\Stage to NDS - CuaHang\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]" />
             <path
+              refId="Package\Stage to NDS - CuaHang.Paths[Derived Column Output2]"
+              endId="Package\Stage to NDS - CuaHang\OLE DB Command.Inputs[OLE DB Command Input]"
+              name="Derived Column Output"
+              startId="Package\Stage to NDS - CuaHang\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Stage to NDS - CuaHang.Paths[Derived Column Output3]"
+              endId="Package\Stage to NDS - CuaHang\Insert Destination.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Stage to NDS - CuaHang\Derived Column 1.Outputs[Derived Column Output]" />
+            <path
               refId="Package\Stage to NDS - CuaHang.Paths[Derived Column Output]"
               endId="Package\Stage to NDS - CuaHang\Kiểm tra xem TrangThai của từng dòng có tồn tại trong TrangThai_NDS chưa.Inputs[Lookup Input]"
               name="Derived Column Output"
@@ -2854,40 +2898,30 @@ where [refTable].[SKMaTrangThai] = ?</property>
               name="Derived Column Output"
               startId="Package\Stage to NDS - CuaHang\Cập nhật ngày tạo và ngày cập nhật.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Stage to NDS - CuaHang.Paths[Derived Column Output2]"
-              endId="Package\Stage to NDS - CuaHang\Insert Destination.Inputs[OLE DB Destination Input]"
-              name="Derived Column Output"
-              startId="Package\Stage to NDS - CuaHang\Derived Column 1.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\Stage to NDS - CuaHang.Paths[Derived Column Output3]"
-              endId="Package\Stage to NDS - CuaHang\OLE DB Command.Inputs[OLE DB Command Input]"
-              name="Derived Column Output"
-              startId="Package\Stage to NDS - CuaHang\Derived Column.Outputs[Derived Column Output]" />
-            <path
               refId="Package\Stage to NDS - CuaHang.Paths[Historical Attribute Inserts Output]"
               endId="Package\Stage to NDS - CuaHang\Derived Column.Inputs[Derived Column Input]"
               name="Historical Attribute Inserts Output"
               startId="Package\Stage to NDS - CuaHang\Slowly Changing Dimension.Outputs[Historical Attribute Inserts Output]" />
             <path
-              refId="Package\Stage to NDS - CuaHang.Paths[Lookup Match Output3]"
-              endId="Package\Stage to NDS - CuaHang\Kiểm tra MaLoaiCuaHang của từng dòng có tồn tại trong MaLoaiCuaHang_NDS chưa.Inputs[Lookup Input]"
-              name="Lookup Match Output"
-              startId="Package\Stage to NDS - CuaHang\Kiểm tra xem TrangThai của từng dòng có tồn tại trong TrangThai_NDS chưa.Outputs[Lookup Match Output]" />
-            <path
               refId="Package\Stage to NDS - CuaHang.Paths[Lookup Match Output2]"
-              endId="Package\Stage to NDS - CuaHang\Kiểm tra xem MaNuoc của từng dòng có tồn tại trong QuocGia_NDS chưa.Inputs[Lookup Input]"
-              name="Lookup Match Output"
-              startId="Package\Stage to NDS - CuaHang\Kiểm tra MaLoaiCuaHang của từng dòng có tồn tại trong MaLoaiCuaHang_NDS chưa.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\Stage to NDS - CuaHang.Paths[Lookup Match Output]"
               endId="Package\Stage to NDS - CuaHang\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
               name="Lookup Match Output"
               startId="Package\Stage to NDS - CuaHang\Kiểm tra xem MaCH của từng dòng có tồn tại trong CuaHang_NDS chưa.Outputs[Lookup Match Output]" />
             <path
-              refId="Package\Stage to NDS - CuaHang.Paths[Lookup Match Output1]"
+              refId="Package\Stage to NDS - CuaHang.Paths[Lookup Match Output3]"
               endId="Package\Stage to NDS - CuaHang\Kiểm tra xem MaCH của từng dòng có tồn tại trong CuaHang_NDS chưa.Inputs[Lookup Input]"
               name="Lookup Match Output"
               startId="Package\Stage to NDS - CuaHang\Kiểm tra xem MaNuoc của từng dòng có tồn tại trong QuocGia_NDS chưa.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Stage to NDS - CuaHang.Paths[Lookup Match Output]"
+              endId="Package\Stage to NDS - CuaHang\Kiểm tra MaLoaiCuaHang của từng dòng có tồn tại trong MaLoaiCuaHang_NDS chưa.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Stage to NDS - CuaHang\Kiểm tra xem TrangThai của từng dòng có tồn tại trong TrangThai_NDS chưa.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Stage to NDS - CuaHang.Paths[Lookup Match Output1]"
+              endId="Package\Stage to NDS - CuaHang\Kiểm tra xem MaNuoc của từng dòng có tồn tại trong QuocGia_NDS chưa.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Stage to NDS - CuaHang\Kiểm tra MaLoaiCuaHang của từng dòng có tồn tại trong MaLoaiCuaHang_NDS chưa.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Stage to NDS - CuaHang.Paths[Lookup No Match Output]"
               endId="Package\Stage to NDS - CuaHang\Thêm dữ liệu vào bảng NoMatch-QuocGia.Inputs[OLE DB Destination Input]"
@@ -2961,21 +2995,9 @@ where [refTable].[SKMaTrangThai] = ?</property>
           Id="Package\Stage to NDS - CuaHang\Cập nhật ngày tạo và ngày cập nhật"
           TopLeft="139.833333333333,617" />
         <NodeLayout
-          Size="278.333333333334,42"
-          Id="Package\Stage to NDS - CuaHang\Thêm dữ liệu vào bảng NoMatch-QuocGia"
-          TopLeft="5.50000000000009,514.833333333333" />
-        <NodeLayout
           Size="251.333333333334,41.6666666666667"
           Id="Package\Stage to NDS - CuaHang\Thêm cột MaNguonDL trong pipeline"
           TopLeft="429,107.5" />
-        <NodeLayout
-          Size="163,42"
-          Id="Package\Stage to NDS - CuaHang\Insert Destination"
-          TopLeft="473.166666666667,1126.83333333333" />
-        <NodeLayout
-          Size="120.666666666667,42"
-          Id="Package\Stage to NDS - CuaHang\Union All"
-          TopLeft="494.333333333333,922.833333333333" />
         <NodeLayout
           Size="456,41.6666666666667"
           Id="Package\Stage to NDS - CuaHang\Kiểm tra xem TrangThai của từng dòng có tồn tại trong TrangThai_NDS chưa"
@@ -2985,33 +3007,21 @@ where [refTable].[SKMaTrangThai] = ?</property>
           Id="Package\Stage to NDS - CuaHang\Kiểm tra MaLoaiCuaHang của từng dòng có tồn tại trong MaLoaiCuaHang_NDS chưa"
           TopLeft="313.5,310.833333333333" />
         <NodeLayout
-          Size="163,42"
-          Id="Package\Stage to NDS - CuaHang\Derived Column 1"
-          TopLeft="473.166666666667,1024.83333333333" />
-        <NodeLayout
           Size="420.333333333334,42"
           Id="Package\Stage to NDS - CuaHang\Kiểm tra xem MaCH của từng dòng có tồn tại trong CuaHang_NDS chưa"
           TopLeft="344.5,514.833333333333" />
         <NodeLayout
-          Size="165.666666666667,42"
-          Id="Package\Stage to NDS - CuaHang\OLE DB Command"
-          TopLeft="327.833333333333,820.833333333333" />
-        <NodeLayout
-          Size="153.666666666667,42"
-          Id="Package\Stage to NDS - CuaHang\Derived Column"
-          TopLeft="339.833333333333,718.833333333333" />
+          Size="236.333333333334,42"
+          Id="Package\Stage to NDS - CuaHang\Thêm dữ liệu vào bảng NoMatch-"
+          TopLeft="44.5000000000001,412.833333333333" />
         <NodeLayout
           Size="208.666666666667,42"
           Id="Package\Stage to NDS - CuaHang\Slowly Changing Dimension"
           TopLeft="450.333333333333,616.833333333333" />
         <NodeLayout
-          Size="174.666666666667,42"
-          Id="Package\Stage to NDS - CuaHang\OLE DB Command 1"
-          TopLeft="615.333333333333,718.833333333333" />
-        <NodeLayout
-          Size="236.333333333334,42"
-          Id="Package\Stage to NDS - CuaHang\Thêm dữ liệu vào bảng NoMatch-"
-          TopLeft="23.9374997252599,382.833333333333" />
+          Size="278.333333333334,42"
+          Id="Package\Stage to NDS - CuaHang\Thêm dữ liệu vào bảng NoMatch-QuocGia"
+          TopLeft="5.50000000000009,514.833333333333" />
         <NodeLayout
           Size="152.333333333334,42"
           Id="Package\Stage to NDS - CuaHang\Cua Hang NDS"
@@ -3020,28 +3030,6 @@ where [refTable].[SKMaTrangThai] = ?</property>
           Size="427,42"
           Id="Package\Stage to NDS - CuaHang\Kiểm tra xem MaNuoc của từng dòng có tồn tại trong QuocGia_NDS chưa"
           TopLeft="341.166666666667,412.833333333333" />
-        <EdgeLayout
-          Id="Package\Stage to NDS - CuaHang.Paths[Union All Output 1]"
-          TopLeft="554.666666666667,964.833333333333">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\Stage to NDS - CuaHang.Paths[OLE DB Source Output]"
           TopLeft="554.666666666667,47.5">
@@ -3065,108 +3053,38 @@ where [refTable].[SKMaTrangThai] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Stage to NDS - CuaHang.Paths[OLE DB Command Output]"
-          TopLeft="410.666666666667,862.833333333333">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="125.222222222222,60"
-              Start="0,0"
-              End="125.222222222222,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.5288985823337" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,31.5288985823337"
-                    Point2="0,35.5288985823337"
-                    Point3="4,35.5288985823337" />
-                  <mssgle:LineSegment
-                    End="121.222222222222,35.5288985823337" />
-                  <mssgle:CubicBezierSegment
-                    Point1="121.222222222222,35.5288985823337"
-                    Point2="125.222222222222,35.5288985823337"
-                    Point3="125.222222222222,39.5288985823337" />
-                  <mssgle:LineSegment
-                    End="125.222222222222,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Stage to NDS - CuaHang.Paths[New Output]"
-          TopLeft="554.666666666667,658.833333333333">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="18.7777777777778,264"
-              Start="0,0"
-              End="18.7777777777778,256.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,152.327153762268" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,152.327153762268"
-                    Point2="0,156.327153762268"
-                    Point3="4,156.327153762268" />
-                  <mssgle:LineSegment
-                    End="14.7777777777778,156.327153762268" />
-                  <mssgle:CubicBezierSegment
-                    Point1="14.7777777777778,156.327153762268"
-                    Point2="18.7777777777778,156.327153762268"
-                    Point3="18.7777777777778,160.327153762268" />
-                  <mssgle:LineSegment
-                    End="18.7777777777778,256.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-17.7024978298611,161.327153762268,54.1827734375,11.43359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\Stage to NDS - CuaHang.Paths[Lookup No Match Output2]"
           TopLeft="475.611111111111,352.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-333.506944719185,30.0000000000002"
+              EndConnector="-312.944444444444,60"
               Start="0,0"
-              End="-333.506944719185,22.5000000000002">
+              End="-312.944444444444,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,8.05951232952204" />
+                    End="0,20.1190246590439" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,8.05951232952204"
-                    Point2="0,12.059512329522"
-                    Point3="-4,12.059512329522" />
+                    Point1="0,20.1190246590439"
+                    Point2="0,24.1190246590439"
+                    Point3="-4,24.1190246590439" />
                   <mssgle:LineSegment
-                    End="-329.506944719185,12.059512329522" />
+                    End="-308.944444444444,24.1190246590439" />
                   <mssgle:CubicBezierSegment
-                    Point1="-329.506944719185,12.059512329522"
-                    Point2="-333.506944719185,12.059512329522"
-                    Point3="-333.506944719185,16.059512329522" />
+                    Point1="-308.944444444444,24.1190246590439"
+                    Point2="-312.944444444444,24.1190246590439"
+                    Point3="-312.944444444444,28.1190246590439" />
                   <mssgle:LineSegment
-                    End="-333.506944719185,22.5000000000002" />
+                    End="-312.944444444444,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-222.559859078342,17.059512329522,111.6127734375,11.609375"
+              BoundingBox="-212.278608940972,29.1190246590439,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -3244,54 +3162,6 @@ where [refTable].[SKMaTrangThai] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Stage to NDS - CuaHang.Paths[Lookup Match Output3]"
-          TopLeft="554.666666666667,250.833333333333">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
-              Start="0,0"
-              End="0,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,20.4453125,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Stage to NDS - CuaHang.Paths[Lookup Match Output2]"
-          TopLeft="554.666666666667,352.833333333333">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,20.4453125,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Stage to NDS - CuaHang.Paths[Lookup Match Output1]"
           TopLeft="624.5,454.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -3327,7 +3197,7 @@ where [refTable].[SKMaTrangThai] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Stage to NDS - CuaHang.Paths[Lookup Match Output]"
+          Id="Package\Stage to NDS - CuaHang.Paths[Lookup Match Output2]"
           TopLeft="623.388888888889,556.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -3363,83 +3233,63 @@ where [refTable].[SKMaTrangThai] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Stage to NDS - CuaHang.Paths[Historical Attribute Inserts Output]"
-          TopLeft="504.5,658.833333333333">
+          Id="Package\Stage to NDS - CuaHang.Paths[Lookup Match Output1]"
+          TopLeft="633.722222222222,352.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-87.8333333333334,60"
+              EndConnector="-79.0555555555555,60"
               Start="0,0"
-              End="-87.8333333333334,52.5">
+              End="-79.0555555555555,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,16.5047318611987" />
+                    End="0,20.1190246590439" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,16.5047318611987"
-                    Point2="0,20.5047318611987"
-                    Point3="-4,20.5047318611987" />
+                    Point1="0,20.1190246590439"
+                    Point2="0,24.1190246590439"
+                    Point3="-4,24.1190246590439" />
                   <mssgle:LineSegment
-                    End="-83.8333333333334,20.5047318611987" />
+                    End="-75.0555555555555,24.1190246590439" />
                   <mssgle:CubicBezierSegment
-                    Point1="-83.8333333333334,20.5047318611987"
-                    Point2="-87.8333333333334,20.5047318611987"
-                    Point3="-87.8333333333334,24.5047318611987" />
+                    Point1="-75.0555555555555,24.1190246590439"
+                    Point2="-79.0555555555555,24.1190246590439"
+                    Point3="-79.0555555555555,28.1190246590439" />
                   <mssgle:LineSegment
-                    End="-87.8333333333334,52.5" />
+                    End="-79.0555555555555,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-118.973053385417,25.5047318611987,150.1127734375,11.609375"
+              BoundingBox="-87.7191644965278,29.1190246590439,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Stage to NDS - CuaHang.Paths[Derived Column Output3]"
-          TopLeft="413.666666666667,760.833333333333">
+          Id="Package\Stage to NDS - CuaHang.Paths[Lookup Match Output]"
+          TopLeft="554.666666666667,250.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="0,59.9999999999999"
               Start="0,0"
-              End="0,52.5">
+              End="0,52.4999999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="0,52.4999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Stage to NDS - CuaHang.Paths[Derived Column Output2]"
-          TopLeft="554.666666666667,1066.83333333333">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,20.4453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3498,6 +3348,202 @@ where [refTable].[SKMaTrangThai] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="153.666666666667,42"
+          Id="Package\Stage to NDS - CuaHang\Derived Column"
+          TopLeft="339.833333333333,718.833333333333" />
+        <EdgeLayout
+          Id="Package\Stage to NDS - CuaHang.Paths[Historical Attribute Inserts Output]"
+          TopLeft="504.5,658.833333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-87.8333333333334,60"
+              Start="0,0"
+              End="-87.8333333333334,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.5047318611987" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.5047318611987"
+                    Point2="0,20.5047318611987"
+                    Point3="-4,20.5047318611987" />
+                  <mssgle:LineSegment
+                    End="-83.8333333333334,20.5047318611987" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-83.8333333333334,20.5047318611987"
+                    Point2="-87.8333333333334,20.5047318611987"
+                    Point3="-87.8333333333334,24.5047318611987" />
+                  <mssgle:LineSegment
+                    End="-87.8333333333334,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-118.973053385417,25.5047318611987,150.1127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="165.666666666667,42"
+          Id="Package\Stage to NDS - CuaHang\OLE DB Command"
+          TopLeft="327.833333333333,820.833333333333" />
+        <EdgeLayout
+          Id="Package\Stage to NDS - CuaHang.Paths[Derived Column Output2]"
+          TopLeft="413.666666666667,760.833333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="120.666666666667,42"
+          Id="Package\Stage to NDS - CuaHang\Union All"
+          TopLeft="494.333333333333,922.833333333333" />
+        <EdgeLayout
+          Id="Package\Stage to NDS - CuaHang.Paths[New Output]"
+          TopLeft="554.666666666667,658.833333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="18.7777777777778,264"
+              Start="0,0"
+              End="18.7777777777778,256.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,152.327153762268" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,152.327153762268"
+                    Point2="0,156.327153762268"
+                    Point3="4,156.327153762268" />
+                  <mssgle:LineSegment
+                    End="14.7777777777778,156.327153762268" />
+                  <mssgle:CubicBezierSegment
+                    Point1="14.7777777777778,156.327153762268"
+                    Point2="18.7777777777778,156.327153762268"
+                    Point3="18.7777777777778,160.327153762268" />
+                  <mssgle:LineSegment
+                    End="18.7777777777778,256.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-17.7024978298611,161.327153762268,54.1827734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Stage to NDS - CuaHang.Paths[OLE DB Command Output]"
+          TopLeft="410.666666666667,862.833333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="125.222222222222,60"
+              Start="0,0"
+              End="125.222222222222,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5288985823337" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.5288985823337"
+                    Point2="0,35.5288985823337"
+                    Point3="4,35.5288985823337" />
+                  <mssgle:LineSegment
+                    End="121.222222222222,35.5288985823337" />
+                  <mssgle:CubicBezierSegment
+                    Point1="121.222222222222,35.5288985823337"
+                    Point2="125.222222222222,35.5288985823337"
+                    Point3="125.222222222222,39.5288985823337" />
+                  <mssgle:LineSegment
+                    End="125.222222222222,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Stage to NDS - CuaHang\Derived Column 1"
+          TopLeft="473.166666666667,1024.83333333333" />
+        <EdgeLayout
+          Id="Package\Stage to NDS - CuaHang.Paths[Union All Output 1]"
+          TopLeft="554.666666666667,964.833333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Stage to NDS - CuaHang\Insert Destination"
+          TopLeft="473.166666666667,1126.83333333333" />
+        <EdgeLayout
+          Id="Package\Stage to NDS - CuaHang.Paths[Derived Column Output3]"
+          TopLeft="554.666666666667,1066.83333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="174.666666666667,42"
+          Id="Package\Stage to NDS - CuaHang\OLE DB Command 1"
+          TopLeft="615.333333333333,718.833333333333" />
         <EdgeLayout
           Id="Package\Stage to NDS - CuaHang.Paths[Changing Attribute Updates Output]"
           TopLeft="604.833333333333,658.833333333333">
@@ -3551,25 +3597,12 @@ where [refTable].[SKMaTrangThai] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Stage to NDS - CuaHang\Thêm dữ liệu vào bảng NoMatch-QuocGia">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Stage to NDS - CuaHang\Kiểm tra xem TrangThai của từng dòng có tồn tại trong TrangThai_NDS chưa">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -3592,7 +3625,7 @@ where [refTable].[SKMaTrangThai] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -3633,6 +3666,19 @@ where [refTable].[SKMaTrangThai] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\Stage to NDS - CuaHang\Thêm dữ liệu vào bảng NoMatch-">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Stage to NDS - CuaHang\Slowly Changing Dimension">
     <Properties>
       <Property>
@@ -3653,7 +3699,7 @@ where [refTable].[SKMaTrangThai] = ?</property>
       &lt;IdentificationString&gt;Kiểm tra MaLoaiCuaHang của từng dòng có tồn tại trong MaLoaiCuaHang_NDS chưa.Outputs[Lookup Match Output].Columns[skmaloaich]&lt;/IdentificationString&gt;
       &lt;ColumnName&gt;MaLoaiCH&lt;/ColumnName&gt;
       &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
     &lt;InputColumnToDBColumn&gt;
       &lt;IdentificationString&gt;Thêm cột MaNguonDL trong pipeline.Outputs[Derived Column Output].Columns[MaNguon]&lt;/IdentificationString&gt;
@@ -3706,7 +3752,7 @@ where [refTable].[SKMaTrangThai] = ?</property>
   &lt;CurrentIndicatorColumn&gt;MaTrangThai&lt;/CurrentIndicatorColumn&gt;
   &lt;InferredIndicatorColumn /&gt;
   &lt;ValueCurrent&gt;1&lt;/ValueCurrent&gt;
-  &lt;ValueExpired&gt;0&lt;/ValueExpired&gt;
+  &lt;ValueExpired&gt;2&lt;/ValueExpired&gt;
   &lt;StartDateColumn /&gt;
   &lt;EndDateColumn /&gt;
   &lt;DateVariable /&gt;
@@ -3716,7 +3762,7 @@ where [refTable].[SKMaTrangThai] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Stage to NDS - CuaHang\Thêm dữ liệu vào bảng NoMatch-">
+    design-time-name="Package\Stage to NDS - CuaHang\Thêm dữ liệu vào bảng NoMatch-QuocGia">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -3747,7 +3793,7 @@ where [refTable].[SKMaTrangThai] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
