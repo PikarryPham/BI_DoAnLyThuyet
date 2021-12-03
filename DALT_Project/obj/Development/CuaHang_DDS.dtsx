@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="35"
-  DTS:VersionGUID="{53FCD339-E867-45C6-97CC-BE649C2231EB}">
+  DTS:VersionBuild="38"
+  DTS:VersionGUID="{6C3A3FEF-ABAF-4EE9-BD33-B7C8FB70F0CC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -770,8 +770,8 @@ WHERE MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &
                   expressionType="Notify"
                   name="SqlCommand"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE Dim_CuaHang
-SET NgayCapNhat = GETDATE(), TenCH = ?, SKMaLoaiCH = ? 
-WHERE SKMaCH = ?</property>
+SET NgayCapNhat = GETDATE(), TenCH = ?
+WHERE MaCH = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -802,17 +802,13 @@ WHERE SKMaCH = ?</property>
                       externalMetadataColumnId="Package\Data Flow DIM_CuaHang\Cập nhật dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
                       lineageId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Output].Columns[TenCH]" />
                     <inputColumn
-                      refId="Package\Data Flow DIM_CuaHang\Cập nhật dữ liệu.Inputs[OLE DB Command Input].Columns[SKMaLoaiCHinDDS]"
-                      cachedDataType="i4"
-                      cachedName="SKMaLoaiCHinDDS"
+                      refId="Package\Data Flow DIM_CuaHang\Cập nhật dữ liệu.Inputs[OLE DB Command Input].Columns[MaCH]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="MaCH"
                       externalMetadataColumnId="Package\Data Flow DIM_CuaHang\Cập nhật dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                      lineageId="Package\Data Flow DIM_CuaHang\Check MaLoaiCH exists or not in LoaiCuaHang_DDS_Table.Outputs[Lookup Match Output].Columns[SKMaLoaiCHinDDS]" />
-                    <inputColumn
-                      refId="Package\Data Flow DIM_CuaHang\Cập nhật dữ liệu.Inputs[OLE DB Command Input].Columns[SKMaCH]"
-                      cachedDataType="i4"
-                      cachedName="SKMaCH"
-                      externalMetadataColumnId="Package\Data Flow DIM_CuaHang\Cập nhật dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                      lineageId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Output].Columns[SKMaCH]" />
+                      lineageId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Output].Columns[MaCH]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -831,19 +827,10 @@ WHERE SKMaCH = ?</property>
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Data Flow DIM_CuaHang\Cập nhật dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                      dataType="i4"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
                       name="Param_1">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">81</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Data Flow DIM_CuaHang\Cập nhật dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                      dataType="i4"
-                      name="Param_2">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1363,7 +1350,7 @@ WHERE SKMaCH = ?</property>
                   expressionType="Notify"
                   name="SqlCommandParam"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Dim_CuaHang]) [refTable]
-where [refTable].[SKMaCH] = ?</property>
+where [refTable].[MaCH] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the type of connection used to access the reference dataset."
@@ -1399,7 +1386,7 @@ where [refTable].[SKMaCH] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Output].Columns[SKMaCH]};</property>
+                  name="ParameterMap">#{Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Output].Columns[MaCH]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1423,15 +1410,17 @@ where [refTable].[SKMaCH] = ?</property>
                   name="Lookup Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow DIM_CuaHang\Kiểm tra xem MaCH của từng dòng có tồn tại trong CuaHang_DDS chưa.Inputs[Lookup Input].Columns[SKMaCH]"
-                      cachedDataType="i4"
-                      cachedName="SKMaCH"
-                      lineageId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Output].Columns[SKMaCH]">
+                      refId="Package\Data Flow DIM_CuaHang\Kiểm tra xem MaCH của từng dòng có tồn tại trong CuaHang_DDS chưa.Inputs[Lookup Input].Columns[MaCH]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="MaCH"
+                      lineageId="Package\Data Flow DIM_CuaHang\CuaHang_NDS.Outputs[OLE DB Source Output].Columns[MaCH]">
                       <properties>
                         <property
                           dataType="System.String"
                           description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">SKMaCH</property>
+                          name="JoinToReferenceColumn">MaCH</property>
                         <property
                           dataType="System.Null"
                           description="Specifies the column in the reference table from which a column is copied."
@@ -1738,13 +1727,17 @@ where [refTable].[SKMaCH] = ?</property>
           Id="Package\Data Flow DIM_CuaHang\Check MaQG exists or not in QuocGia_DDS_Table"
           TopLeft="348.74999480322,253.499995467067" />
         <NodeLayout
+          Size="249.666666666667,41.6666666666667"
+          Id="Package\Data Flow DIM_CuaHang\Cập nhật ngày tạo và ngày cập nhật"
+          TopLeft="1017.75118946295,538.186447689999" />
+        <NodeLayout
+          Size="419,42"
+          Id="Package\Data Flow DIM_CuaHang\Kiểm tra xem MaCH của từng dòng có tồn tại trong CuaHang_DDS chưa"
+          TopLeft="729.999989494682,448.149990573823" />
+        <NodeLayout
           Size="182.666666666667,42.6666666666667"
           Id="Package\Data Flow DIM_CuaHang\Dim_CuaHang in DDS"
           TopLeft="1018.4374848241,627.81665724049" />
-        <NodeLayout
-          Size="298.666666666667,42.6666666666667"
-          Id="Package\Data Flow DIM_CuaHang\Get CuaHang_NDS has SKMaLoaiCH is not null"
-          TopLeft="351.249994765967,451.149993363321" />
         <NodeLayout
           Size="353.333333333334,42.6666666666667"
           Id="Package\Data Flow DIM_CuaHang\Check MaLoaiCH exists or not in LoaiCuaHang_DDS_Table"
@@ -1753,40 +1746,10 @@ where [refTable].[SKMaCH] = ?</property>
           Size="148,42.6666666666667"
           Id="Package\Data Flow DIM_CuaHang\CuaHang_NDS"
           TopLeft="411.874993862584,85.1499984773994" />
-        <EdgeLayout
-          Id="Package\Data Flow DIM_CuaHang.Paths[OLE DB Source Output]"
-          TopLeft="485.874993862584,127.816665144066">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="23.9166678401336,34.0333319618309"
-              Start="0,0"
-              End="23.9166678401336,26.5333319618309">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,13.0166659809155" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,13.0166659809155"
-                    Point2="0,17.0166659809155"
-                    Point3="4,17.0166659809155" />
-                  <mssgle:LineSegment
-                    End="19.9166678401336,17.0166659809155" />
-                  <mssgle:CubicBezierSegment
-                    Point1="19.9166678401336,17.0166659809155"
-                    Point2="23.9166678401336,17.0166659809155"
-                    Point3="23.9166678401336,21.0166659809155" />
-                  <mssgle:LineSegment
-                    End="23.9166678401336,26.5333319618309" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="298.666666666667,42.6666666666667"
+          Id="Package\Data Flow DIM_CuaHang\Get CuaHang_NDS has SKMaLoaiCH is not null"
+          TopLeft="351.249994765967,451.149993363321" />
         <EdgeLayout
           Id="Package\Data Flow DIM_CuaHang.Paths[Lookup Match Output1]"
           TopLeft="504.083328211059,296.166662133734">
@@ -1836,6 +1799,40 @@ where [refTable].[SKMaCH] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\Data Flow DIM_CuaHang.Paths[Derived Column Output]"
+          TopLeft="1142.58452279628,579.853114356666">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-32.8137046388515,47.9635428838241"
+              Start="0,0"
+              End="-32.8137046388515,40.4635428838241">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.981771441912" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.981771441912"
+                    Point2="0,23.981771441912"
+                    Point3="-4,23.981771441912" />
+                  <mssgle:LineSegment
+                    End="-28.8137046388515,23.981771441912" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-28.8137046388515,23.981771441912"
+                    Point2="-32.8137046388515,23.981771441912"
+                    Point3="-32.8137046388515,27.981771441912" />
+                  <mssgle:LineSegment
+                    End="-32.8137046388515,40.4635428838241" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Data Flow DIM_CuaHang.Paths[SKMaQGisnotnull]"
           TopLeft="501.666661525766,401.466660250823">
           <EdgeLayout.Curve>
@@ -1859,18 +1856,6 @@ where [refTable].[SKMaCH] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="419,42"
-          Id="Package\Data Flow DIM_CuaHang\Kiểm tra xem MaCH của từng dòng có tồn tại trong CuaHang_DDS chưa"
-          TopLeft="729.999989494682,448.149990573823" />
-        <NodeLayout
-          Size="156.333333333334,42"
-          Id="Package\Data Flow DIM_CuaHang\Cập nhật dữ liệu"
-          TopLeft="618.270826688348,566.240087265793" />
-        <NodeLayout
-          Size="249.666666666667,41.6666666666667"
-          Id="Package\Data Flow DIM_CuaHang\Cập nhật ngày tạo và ngày cập nhật"
-          TopLeft="1017.75118946295,538.186447689999" />
         <EdgeLayout
           Id="Package\Data Flow DIM_CuaHang.Paths[SKMaLoaiCHisnotnull]"
           TopLeft="649.916661432634,470.816658635239">
@@ -1896,39 +1881,37 @@ where [refTable].[SKMaCH] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow DIM_CuaHang.Paths[Lookup Match Output2]"
-          TopLeft="939.499989494682,490.149990573823">
+          Id="Package\Data Flow DIM_CuaHang.Paths[OLE DB Source Output]"
+          TopLeft="485.874993862584,127.816665144066">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-243.062496139667,76.0900966919697"
+              EndConnector="23.9166678401336,34.0333319618309"
               Start="0,0"
-              End="-243.062496139667,68.5900966919697">
+              End="23.9166678401336,26.5333319618309">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,34.0450483459848" />
+                    End="0,13.0166659809155" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,34.0450483459848"
-                    Point2="0,38.0450483459848"
-                    Point3="-4,38.0450483459848" />
+                    Point1="0,13.0166659809155"
+                    Point2="0,17.0166659809155"
+                    Point3="4,17.0166659809155" />
                   <mssgle:LineSegment
-                    End="-239.062496139667,38.0450483459848" />
+                    End="19.9166678401336,17.0166659809155" />
                   <mssgle:CubicBezierSegment
-                    Point1="-239.062496139667,38.0450483459848"
-                    Point2="-243.062496139667,38.0450483459848"
-                    Point3="-243.062496139667,42.0450483459848" />
+                    Point1="19.9166678401336,17.0166659809155"
+                    Point2="23.9166678401336,17.0166659809155"
+                    Point3="23.9166678401336,21.0166659809155" />
                   <mssgle:LineSegment
-                    End="-243.062496139667,68.5900966919697" />
+                    End="23.9166678401336,26.5333319618309" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-169.722634788584,43.0450483459848,96.3827734375,11.609375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1967,38 +1950,44 @@ where [refTable].[SKMaCH] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="156.333333333334,42"
+          Id="Package\Data Flow DIM_CuaHang\Cập nhật dữ liệu"
+          TopLeft="618.270826688348,566.240087265793" />
         <EdgeLayout
-          Id="Package\Data Flow DIM_CuaHang.Paths[Derived Column Output]"
-          TopLeft="1142.58452279628,579.853114356666">
+          Id="Package\Data Flow DIM_CuaHang.Paths[Lookup Match Output2]"
+          TopLeft="939.499989494682,490.149990573823">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-32.8137046388515,47.9635428838241"
+              EndConnector="-243.062496139667,76.0900966919697"
               Start="0,0"
-              End="-32.8137046388515,40.4635428838241">
+              End="-243.062496139667,68.5900966919697">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,19.981771441912" />
+                    End="0,34.0450483459848" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,19.981771441912"
-                    Point2="0,23.981771441912"
-                    Point3="-4,23.981771441912" />
+                    Point1="0,34.0450483459848"
+                    Point2="0,38.0450483459848"
+                    Point3="-4,38.0450483459848" />
                   <mssgle:LineSegment
-                    End="-28.8137046388515,23.981771441912" />
+                    End="-239.062496139667,38.0450483459848" />
                   <mssgle:CubicBezierSegment
-                    Point1="-28.8137046388515,23.981771441912"
-                    Point2="-32.8137046388515,23.981771441912"
-                    Point3="-32.8137046388515,27.981771441912" />
+                    Point1="-239.062496139667,38.0450483459848"
+                    Point2="-243.062496139667,38.0450483459848"
+                    Point3="-243.062496139667,42.0450483459848" />
                   <mssgle:LineSegment
-                    End="-32.8137046388515,40.4635428838241" />
+                    End="-243.062496139667,68.5900966919697" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-169.722634788584,43.0450483459848,96.3827734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -2016,6 +2005,29 @@ where [refTable].[SKMaCH] = ?</property>
         <Name>UsedTableName</Name>
         <Value
           type="q3:string">[dbo].[Dim_QuocGia]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow DIM_CuaHang\Kiểm tra xem MaCH của từng dòng có tồn tại trong CuaHang_DDS chưa">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Dim_CuaHang]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
@@ -2073,29 +2085,6 @@ where [refTable].[SKMaCH] = ?</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow DIM_CuaHang\Kiểm tra xem MaCH của từng dòng có tồn tại trong CuaHang_DDS chưa">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Dim_CuaHang]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

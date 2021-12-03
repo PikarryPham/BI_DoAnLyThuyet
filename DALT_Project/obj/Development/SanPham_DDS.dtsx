@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="47"
-  DTS:VersionGUID="{59B142C3-AE9A-44B5-A42E-76B61C779F27}">
+  DTS:VersionBuild="48"
+  DTS:VersionGUID="{959AD6A5-1AF9-49D2-A796-119CFFD3078E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -325,7 +325,7 @@ where [refTable].[SKMaLoaiSP] = ?</property>
                   expressionType="Notify"
                   name="SqlCommand"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE Dim_SanPham 
-SET NgayCapNhap = GETDATE(), TenSP = ? WHERE SKMaSP = ?</property>
+SET NgayCapNhap = GETDATE(), TenSP = ? WHERE MaSP = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -356,11 +356,13 @@ SET NgayCapNhap = GETDATE(), TenSP = ? WHERE SKMaSP = ?</property>
                       externalMetadataColumnId="Package\Data Flow Dim_SanPham\Cập nhật dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
                       lineageId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Output].Columns[TenSP]" />
                     <inputColumn
-                      refId="Package\Data Flow Dim_SanPham\Cập nhật dữ liệu.Inputs[OLE DB Command Input].Columns[SKMaSP]"
-                      cachedDataType="i4"
-                      cachedName="SKMaSP"
+                      refId="Package\Data Flow Dim_SanPham\Cập nhật dữ liệu.Inputs[OLE DB Command Input].Columns[MaSP]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="MaSP"
                       externalMetadataColumnId="Package\Data Flow Dim_SanPham\Cập nhật dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                      lineageId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Output].Columns[SKMaSP]" />
+                      lineageId="Package\Data Flow Dim_SanPham\SanPham_NDS.Outputs[OLE DB Source Output].Columns[MaSP]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -379,7 +381,9 @@ SET NgayCapNhap = GETDATE(), TenSP = ? WHERE SKMaSP = ?</property>
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Data Flow Dim_SanPham\Cập nhật dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                      dataType="i4"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
                       name="Param_1">
                       <properties>
                         <property
@@ -1421,45 +1425,33 @@ WHERE  MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhap 
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="277.333333333334,42.6666666666667"
+          Id="Package\Data Flow Dim_SanPham\Get SanPhamNDS has maloaisp is not null"
+          TopLeft="278.749995846302,252.199995490313" />
+        <NodeLayout
+          Size="430.666666666667,42"
+          Id="Package\Data Flow Dim_SanPham\Kiểm tra xem SKMaSP của từng dòng có tồn tại trong SanPham_DDS chưa"
+          TopLeft="597.395825673206,252.883327208062" />
+        <NodeLayout
+          Size="156.666666666667,42"
+          Id="Package\Data Flow Dim_SanPham\Cập nhật dữ liệu"
+          TopLeft="744.72915900654,341.306757233365" />
+        <NodeLayout
+          Size="250,42"
+          Id="Package\Data Flow Dim_SanPham\Cập nhật ngày tạo và ngày cập nhật"
+          TopLeft="387.647033054802,339.919784324238" />
+        <NodeLayout
           Size="184,42.6666666666667"
           Id="Package\Data Flow Dim_SanPham\Dim_SanPham in DDS"
           TopLeft="92.1874986262983,338.216660541396" />
-        <NodeLayout
-          Size="149.333333333334,42.6666666666667"
-          Id="Package\Data Flow Dim_SanPham\SanPham_NDS"
-          TopLeft="354.62499745749,48.499999139905" />
         <NodeLayout
           Size="244,42.6666666666667"
           Id="Package\Data Flow Dim_SanPham\Check MaLoaiSP is in LoaiSP or not"
           TopLeft="299.374995538965,139.099997512699" />
         <NodeLayout
-          Size="277.333333333334,42.6666666666667"
-          Id="Package\Data Flow Dim_SanPham\Get SanPhamNDS has maloaisp is not null"
-          TopLeft="278.749995846302,252.199995490313" />
-        <EdgeLayout
-          Id="Package\Data Flow Dim_SanPham.Paths[Lookup Match Output]"
-          TopLeft="419.395829025967,181.766664179365">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,70.4333313109473"
-              Start="0,0"
-              End="0,62.9333313109473">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,62.9333313109473" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,25.6619781554737,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="149.333333333334,42.6666666666667"
+          Id="Package\Data Flow Dim_SanPham\SanPham_NDS"
+          TopLeft="354.62499745749,48.499999139905" />
         <EdgeLayout
           Id="Package\Data Flow Dim_SanPham.Paths[OLE DB Source Output]"
           TopLeft="425.333329831561,91.1666658065717">
@@ -1482,39 +1474,39 @@ WHERE  MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhap 
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="430.666666666667,42"
-          Id="Package\Data Flow Dim_SanPham\Kiểm tra xem SKMaSP của từng dòng có tồn tại trong SanPham_DDS chưa"
-          TopLeft="597.395825673206,252.883327208062" />
-        <NodeLayout
-          Size="156.666666666667,42"
-          Id="Package\Data Flow Dim_SanPham\Cập nhật dữ liệu"
-          TopLeft="744.72915900654,341.306757233365" />
-        <NodeLayout
-          Size="250,42"
-          Id="Package\Data Flow Dim_SanPham\Cập nhật ngày tạo và ngày cập nhật"
-          TopLeft="387.647033054802,339.919784324238" />
         <EdgeLayout
-          Id="Package\Data Flow Dim_SanPham.Paths[isnotnull]"
-          TopLeft="556.083329179635,273.708328015854">
+          Id="Package\Data Flow Dim_SanPham.Paths[Lookup No Match Output]"
+          TopLeft="742.284714562095,294.883327208062">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="41.3124964935706,0"
+              EndConnector="-229.637681507293,45.0364571161758"
               Start="0,0"
-              End="33.8124964935706,0">
+              End="-229.637681507293,37.5364571161758">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="33.8124964935706,0" />
+                    End="0,14.1146021219905" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.1146021219905"
+                    Point2="0,18.1146021219905"
+                    Point3="-4,18.1146021219905" />
+                  <mssgle:LineSegment
+                    End="-225.637681507293,18.1146021219905" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-225.637681507293,18.1146021219905"
+                    Point2="-229.637681507293,18.1146021219905"
+                    Point3="-229.637681507293,22.1146021219905" />
+                  <mssgle:LineSegment
+                    End="-229.637681507293,37.5364571161758" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-1.85947440946469,5,37.5314453125,9.7490234375"
+              BoundingBox="-170.625227472396,23.1146021219905,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -1555,38 +1547,50 @@ WHERE  MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhap 
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Dim_SanPham.Paths[Lookup No Match Output]"
-          TopLeft="742.284714562095,294.883327208062">
+          Id="Package\Data Flow Dim_SanPham.Paths[Lookup Match Output]"
+          TopLeft="419.395829025967,181.766664179365">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-229.637681507293,45.0364571161758"
+              EndConnector="0,70.4333313109473"
               Start="0,0"
-              End="-229.637681507293,37.5364571161758">
+              End="0,62.9333313109473">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,14.1146021219905" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,14.1146021219905"
-                    Point2="0,18.1146021219905"
-                    Point3="-4,18.1146021219905" />
-                  <mssgle:LineSegment
-                    End="-225.637681507293,18.1146021219905" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-225.637681507293,18.1146021219905"
-                    Point2="-229.637681507293,18.1146021219905"
-                    Point3="-229.637681507293,22.1146021219905" />
-                  <mssgle:LineSegment
-                    End="-229.637681507293,37.5364571161758" />
+                    End="0,62.9333313109473" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-170.625227472396,23.1146021219905,111.6127734375,11.609375"
+              BoundingBox="-48.19138671875,25.6619781554737,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Dim_SanPham.Paths[isnotnull]"
+          TopLeft="556.083329179635,273.708328015854">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="41.3124964935706,0"
+              Start="0,0"
+              End="33.8124964935706,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="33.8124964935706,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-1.85947440946469,5,37.5314453125,9.7490234375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -1616,20 +1620,30 @@ WHERE  MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhap 
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Dim_SanPham\Dim_SanPham in DDS">
+    design-time-name="Package\Data Flow Dim_SanPham\Kiểm tra xem SKMaSP của từng dòng có tồn tại trong SanPham_DDS chưa">
     <Properties>
       <Property>
-        <Name>DataSourceViewID</Name>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Dim_SanPham]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q2:string">Table</Value>
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Dim_SanPham\SanPham_NDS">
+    design-time-name="Package\Data Flow Dim_SanPham\Dim_SanPham in DDS">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1665,25 +1679,15 @@ WHERE  MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhap 
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Dim_SanPham\Kiểm tra xem SKMaSP của từng dòng có tồn tại trong SanPham_DDS chưa">
+    design-time-name="Package\Data Flow Dim_SanPham\SanPham_NDS">
     <Properties>
       <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Dim_SanPham]</Value>
+        <Name>DataSourceViewID</Name>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

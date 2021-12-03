@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="37"
-  DTS:VersionGUID="{594F6EF2-99B0-4A84-B1E8-C46A7BB0AD29}">
+  DTS:VersionBuild="38"
+  DTS:VersionGUID="{6C3A3FEF-ABAF-4EE9-BD33-B7C8FB70F0CC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1723,17 +1723,13 @@ where [refTable].[MaCH] = ?</property>
           Id="Package\Data Flow DIM_CuaHang\Get CuaHang_NDS has SKMaQG is not null"
           TopLeft="362.083328285565,358.799993584156" />
         <NodeLayout
-          Size="249.666666666667,41.6666666666667"
-          Id="Package\Data Flow DIM_CuaHang\Cập nhật ngày tạo và ngày cập nhật"
-          TopLeft="1017.75118946295,538.186447689999" />
-        <NodeLayout
           Size="313.333333333334,42.6666666666667"
           Id="Package\Data Flow DIM_CuaHang\Check MaQG exists or not in QuocGia_DDS_Table"
           TopLeft="348.74999480322,253.499995467067" />
         <NodeLayout
-          Size="156.333333333334,42"
-          Id="Package\Data Flow DIM_CuaHang\Cập nhật dữ liệu"
-          TopLeft="618.270826688348,566.240087265793" />
+          Size="249.666666666667,41.6666666666667"
+          Id="Package\Data Flow DIM_CuaHang\Cập nhật ngày tạo và ngày cập nhật"
+          TopLeft="1017.75118946295,538.186447689999" />
         <NodeLayout
           Size="419,42"
           Id="Package\Data Flow DIM_CuaHang\Kiểm tra xem MaCH của từng dòng có tồn tại trong CuaHang_DDS chưa"
@@ -1743,10 +1739,6 @@ where [refTable].[MaCH] = ?</property>
           Id="Package\Data Flow DIM_CuaHang\Dim_CuaHang in DDS"
           TopLeft="1018.4374848241,627.81665724049" />
         <NodeLayout
-          Size="298.666666666667,42.6666666666667"
-          Id="Package\Data Flow DIM_CuaHang\Get CuaHang_NDS has SKMaLoaiCH is not null"
-          TopLeft="351.249994765967,451.149993363321" />
-        <NodeLayout
           Size="353.333333333334,42.6666666666667"
           Id="Package\Data Flow DIM_CuaHang\Check MaLoaiCH exists or not in LoaiCuaHang_DDS_Table"
           TopLeft="333.124995036051,161.849997105897" />
@@ -1754,6 +1746,58 @@ where [refTable].[MaCH] = ?</property>
           Size="148,42.6666666666667"
           Id="Package\Data Flow DIM_CuaHang\CuaHang_NDS"
           TopLeft="411.874993862584,85.1499984773994" />
+        <NodeLayout
+          Size="298.666666666667,42.6666666666667"
+          Id="Package\Data Flow DIM_CuaHang\Get CuaHang_NDS has SKMaLoaiCH is not null"
+          TopLeft="351.249994765967,451.149993363321" />
+        <EdgeLayout
+          Id="Package\Data Flow DIM_CuaHang.Paths[Lookup Match Output1]"
+          TopLeft="504.083328211059,296.166662133734">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,62.6333314504228"
+              Start="0,0"
+              End="0,55.1333314504228">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,55.1333314504228" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,21.7619782252114,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow DIM_CuaHang.Paths[Lookup Match Output]"
+          TopLeft="507.604161586302,204.516663772563">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48.9833316945036"
+              Start="0,0"
+              End="0,41.4833316945036">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.4833316945036" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,14.9369783472518,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow DIM_CuaHang.Paths[Derived Column Output]"
           TopLeft="1142.58452279628,579.853114356666">
@@ -1906,6 +1950,10 @@ where [refTable].[MaCH] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="156.333333333334,42"
+          Id="Package\Data Flow DIM_CuaHang\Cập nhật dữ liệu"
+          TopLeft="618.270826688348,566.240087265793" />
         <EdgeLayout
           Id="Package\Data Flow DIM_CuaHang.Paths[Lookup Match Output2]"
           TopLeft="939.499989494682,490.149990573823">
@@ -1939,54 +1987,6 @@ where [refTable].[MaCH] = ?</property>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="-169.722634788584,43.0450483459848,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow DIM_CuaHang.Paths[Lookup Match Output1]"
-          TopLeft="504.083328211059,296.166662133734">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,62.6333314504228"
-              Start="0,0"
-              End="0,55.1333314504228">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,55.1333314504228" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,21.7619782252114,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow DIM_CuaHang.Paths[Lookup Match Output]"
-          TopLeft="507.604161586302,204.516663772563">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,48.9833316945036"
-              Start="0,0"
-              End="0,41.4833316945036">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,41.4833316945036" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,14.9369783472518,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>

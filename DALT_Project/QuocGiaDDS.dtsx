@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="34"
-  DTS:VersionGUID="{5D2AD084-6BF9-4AF5-89C4-6707951B2FDB}">
+  DTS:VersionBuild="35"
+  DTS:VersionGUID="{BFB7EAD8-1504-4907-A90F-43F52582B0E1}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1219,7 +1219,7 @@ WHERE MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &
         <NodeLayout
           Size="170,42"
           Id="Package\Data Flow DIM_QuocGia\Dim_QuocGia in DDS"
-          TopLeft="262.142861607123,253.117650608703" />
+          TopLeft="87.4553642101696,255.78431727537" />
         <NodeLayout
           Size="142.333333333334,42"
           Id="Package\Data Flow DIM_QuocGia\Kiểm tra DDS"
@@ -1270,40 +1270,6 @@ WHERE MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &
             <mssgm:EdgeLabel
               BoundingBox="29.0586132812503,28.2117150126514,96.3827734375,11.609375"
               RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow DIM_QuocGia.Paths[Derived Column Output]"
-          TopLeft="170.209537464613,222.820774391545">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="176.93332414251,30.2968762171579"
-              Start="0,0"
-              End="176.93332414251,22.7968762171579">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,11.1484381085789" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,11.1484381085789"
-                    Point2="0,15.1484381085789"
-                    Point3="4,15.1484381085789" />
-                  <mssgle:LineSegment
-                    End="172.93332414251,15.1484381085789" />
-                  <mssgle:CubicBezierSegment
-                    Point1="172.93332414251,15.1484381085789"
-                    Point2="176.93332414251,15.1484381085789"
-                    Point3="176.93332414251,19.1484381085789" />
-                  <mssgle:LineSegment
-                    End="176.93332414251,22.7968762171579" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1374,6 +1340,28 @@ WHERE MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &
             <mssgm:EdgeLabel
               BoundingBox="-129.12869830462,-17.609375,111.6127734375,11.609375"
               RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow DIM_QuocGia.Paths[Derived Column Output]"
+          TopLeft="171.332450837391,222.820774391545">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,32.963542883825"
+              Start="0,0"
+              End="0,25.463542883825">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.463542883825" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
