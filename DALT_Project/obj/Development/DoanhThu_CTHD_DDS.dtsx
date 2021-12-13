@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="73"
-  DTS:VersionGUID="{176EE978-CDB6-41F1-B730-52A8309B5B62}">
+  DTS:VersionBuild="75"
+  DTS:VersionGUID="{28CFD7B3-E917-4FBC-98B6-6F784730647C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -771,8 +771,8 @@ SET NgayCapNhat = GETDATE(), GiaSP = ?
               <connections>
                 <connection
                   refId="Package\Data Flow FACT_DoanhThu\Cập nhật dữ liệu.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_DW]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_DW]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.DALT_DW]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.DALT_DW]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1003,7 +1003,7 @@ SET NgayCapNhat = GETDATE(), GiaSP = ?
                 <property
                   dataType="System.String"
                   description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                  name="FastLoadOptions">CHECK_CONSTRAINTS</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -1012,8 +1012,8 @@ SET NgayCapNhat = GETDATE(), GiaSP = ?
               <connections>
                 <connection
                   refId="Package\Data Flow FACT_DoanhThu\DoanhThu_DDS.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_DW]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_DW]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.DALT_DW]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.DALT_DW]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -2230,8 +2230,8 @@ where [refTable].[SKDoanhThu] = ?</property>
               <connections>
                 <connection
                   refId="Package\Data Flow FACT_DoanhThu\Kiểm tra xem SKMaDT của từng dòng có tồn tại trong DoanhThu_DDS chưa.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_DW]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_DW]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.DALT_DW]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.DALT_DW]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -2590,207 +2590,65 @@ where [refTable].[SKDoanhThu] = ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="232,42.6666666666667"
-          Id="Package\Data Flow FACT_DoanhThu\Find mach has in CuaHang_DDS"
-          TopLeft="431.874993564561,435.183329974314" />
+          Size="226.666666666667,42.6666666666667"
+          Id="Package\Data Flow FACT_DoanhThu\Get CTHD has MaCH is not null"
+          TopLeft="762.499988637865,468.933331194719" />
         <NodeLayout
-          Size="225.333333333334,42.6666666666667"
-          Id="Package\Data Flow FACT_DoanhThu\Get CTHD has MaKH is not null"
-          TopLeft="751.87498879619,548.183329741856" />
+          Size="250,42"
+          Id="Package\Data Flow FACT_DoanhThu\Cập nhật ngày tạo và ngày cập nhật"
+          TopLeft="511.18869663879,813.58645285057" />
         <NodeLayout
-          Size="286.666666666667,42.6666666666667"
-          Id="Package\Data Flow FACT_DoanhThu\Find value for MaKH, MaCH based on MaHD"
-          TopLeft="410.892853164019,343.871565981383" />
+          Size="242.666666666667,42.6666666666667"
+          Id="Package\Data Flow FACT_DoanhThu\Find makh has in KhachHang_DDS"
+          TopLeft="431.874993564561,533.51666168044" />
         <NodeLayout
           Size="241.333333333334,42.6666666666667"
           Id="Package\Data Flow FACT_DoanhThu\Check MaSP has in SanPham_DDS"
           TopLeft="410.624993881211,174.049999569953" />
         <NodeLayout
           Size="225.333333333334,42.6666666666667"
-          Id="Package\Data Flow FACT_DoanhThu\Get CTHD has mahd is not null"
-          TopLeft="761.249988656492,716.383330811162" />
+          Id="Package\Data Flow FACT_DoanhThu\Get CTHD has MaKH is not null"
+          TopLeft="752.569433230286,531.683330116372" />
         <NodeLayout
-          Size="154.666666666667,42.6666666666667"
-          Id="Package\Data Flow FACT_DoanhThu\DoanhThu_DDS"
-          TopLeft="816.249987836928,814.549995734394" />
+          Size="286.666666666667,42.6666666666667"
+          Id="Package\Data Flow FACT_DoanhThu\Find value for MaKH, MaCH based on MaHD"
+          TopLeft="410.892853164019,343.871565981383" />
+        <NodeLayout
+          Size="156.666666666667,42"
+          Id="Package\Data Flow FACT_DoanhThu\Cập nhật dữ liệu"
+          TopLeft="147.645833328677,804.973425759697" />
         <NodeLayout
           Size="216.666666666667,41.3333333333334"
           Id="Package\Data Flow FACT_DoanhThu\CTHD_NDS"
           TopLeft="427.946422787535,33.1359153348083" />
         <NodeLayout
-          Size="226.666666666667,42.6666666666667"
-          Id="Package\Data Flow FACT_DoanhThu\Get CTHD has MaCH is not null"
-          TopLeft="762.499988637865,468.933331194719" />
-        <NodeLayout
           Size="224,42.6666666666667"
           Id="Package\Data Flow FACT_DoanhThu\Get CTHD has masp is not null"
           TopLeft="753.74998876825,625.249996687472" />
         <NodeLayout
-          Size="242.666666666667,42.6666666666667"
-          Id="Package\Data Flow FACT_DoanhThu\Find makh has in KhachHang_DDS"
-          TopLeft="431.874993564561,533.51666168044" />
+          Size="420,42.6666666666667"
+          Id="Package\Data Flow FACT_DoanhThu\Find value for Price Product column based on MaSP from SanPham_NDS"
+          TopLeft="333.12499503605,256.733329195579" />
+        <NodeLayout
+          Size="154.666666666667,42.6666666666667"
+          Id="Package\Data Flow FACT_DoanhThu\DoanhThu_DDS"
+          TopLeft="816.249987836928,814.549995734394" />
+        <NodeLayout
+          Size="232,42.6666666666667"
+          Id="Package\Data Flow FACT_DoanhThu\Find mach has in CuaHang_DDS"
+          TopLeft="431.874993564561,435.183329974314" />
+        <NodeLayout
+          Size="225.333333333334,42.6666666666667"
+          Id="Package\Data Flow FACT_DoanhThu\Get CTHD has mahd is not null"
+          TopLeft="761.249988656492,716.383330811162" />
+        <NodeLayout
+          Size="437.333333333334,42"
+          Id="Package\Data Flow FACT_DoanhThu\Kiểm tra xem SKMaDT của từng dòng có tồn tại trong DoanhThu_DDS chưa"
+          TopLeft="149.374997774139,715.883329067727" />
         <NodeLayout
           Size="237.333333333334,42.6666666666667"
           Id="Package\Data Flow FACT_DoanhThu\Check MaHD has in HoaDon_DDS"
           TopLeft="416.874993788078,103.349998151958" />
-        <NodeLayout
-          Size="420,42.6666666666667"
-          Id="Package\Data Flow FACT_DoanhThu\Find value for Price Product column based on MaSP from SanPham_NDS"
-          TopLeft="333.12499503605,256.733329195579" />
-        <EdgeLayout
-          Id="Package\Data Flow FACT_DoanhThu.Paths[SKMaCH is not null]"
-          TopLeft="875.833321971198,511.599997861386">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-11.2916665083417,36.5833318804703"
-              Start="0,0"
-              End="-11.2916665083417,29.0833318804703">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,14.2916659402352" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,14.2916659402352"
-                    Point2="0,18.2916659402352"
-                    Point3="-4,18.2916659402352" />
-                  <mssgle:LineSegment
-                    End="-7.29166650834168,18.2916659402352" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-7.29166650834168,18.2916659402352"
-                    Point2="-11.2916665083417,18.2916659402352"
-                    Point3="-11.2916665083417,22.2916659402352" />
-                  <mssgle:LineSegment
-                    End="-11.2916665083417,29.0833318804703" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-47.8136262229208,23.2916659402352,84.3355859375,9.7490234375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow FACT_DoanhThu.Paths[OLE DB Source Output]"
-          TopLeft="535.910708287806,74.4692486681417">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,28.8807494838164"
-              Start="0,0"
-              End="0,21.3807494838164">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.3807494838164" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow FACT_DoanhThu.Paths[MaSP is not null]"
-          TopLeft="865.74998876825,667.916663354139">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="8.1666665549086,48.4666674570233"
-              Start="0,0"
-              End="8.1666665549086,40.9666674570233">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.2333337285116" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.2333337285116"
-                    Point2="0,24.2333337285116"
-                    Point3="4,24.2333337285116" />
-                  <mssgle:LineSegment
-                    End="4.1666665549086,24.2333337285116" />
-                  <mssgle:CubicBezierSegment
-                    Point1="4.1666665549086,24.2333337285116"
-                    Point2="8.1666665549086,24.2333337285116"
-                    Point3="8.1666665549086,28.2333337285116" />
-                  <mssgle:LineSegment
-                    End="8.1666665549086,40.9666674570233" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-31.3387956287957,29.2333337285116,70.8442578125,9.7490234375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow FACT_DoanhThu.Paths[MaKHisnotnull]"
-          TopLeft="865.145822115553,590.849996408523">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,34.4000002789494"
-              Start="0,0"
-              End="0,26.9000002789494">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26.9000002789494" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-31.50212890625,8.5754884207247,63.0042578125,9.7490234375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow FACT_DoanhThu.Paths[Lookup Match Output5]"
-          TopLeft="674.541660231228,554.849995013773">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="87.9583284066373,-64.5833304857211"
-              Start="0,0"
-              End="80.4583284066373,-64.5833304857211">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="39.9791642033186,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="39.9791642033186,0"
-                    Point2="43.9791642033186,0"
-                    Point3="43.9791642033186,-4" />
-                  <mssgle:LineSegment
-                    End="43.9791642033186,-60.5833304857211" />
-                  <mssgle:CubicBezierSegment
-                    Point1="43.9791642033186,-60.5833304857211"
-                    Point2="43.9791642033186,-64.5833304857211"
-                    Point3="47.9791642033186,-64.5833304857211" />
-                  <mssgle:LineSegment
-                    End="80.4583284066373,-64.5833304857211" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-4.21222251543136,1,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow FACT_DoanhThu.Paths[Lookup Match Output4]"
           TopLeft="550.541660231227,477.84999664098">
@@ -2935,18 +2793,28 @@ where [refTable].[SKDoanhThu] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="156.666666666667,42"
-          Id="Package\Data Flow FACT_DoanhThu\Cập nhật dữ liệu"
-          TopLeft="147.645833328677,804.973425759697" />
-        <NodeLayout
-          Size="437,42"
-          Id="Package\Data Flow FACT_DoanhThu\Kiểm tra xem SKMaDT của từng dòng có tồn tại trong DoanhThu_DDS chưa"
-          TopLeft="149.374997774139,715.883329067727" />
-        <NodeLayout
-          Size="249.666666666667,41.6666666666667"
-          Id="Package\Data Flow FACT_DoanhThu\Cập nhật ngày tạo và ngày cập nhật"
-          TopLeft="511.18869663879,813.58645285057" />
+        <EdgeLayout
+          Id="Package\Data Flow FACT_DoanhThu.Paths[Derived Column Output]"
+          TopLeft="760.855363305457,835.151557625815">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="55.394624531471,0"
+              Start="0,0"
+              End="47.894624531471,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="47.894624531471,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow FACT_DoanhThu.Paths[SKMaHD is not null]"
           TopLeft="761.249988656492,737.299996606111">
@@ -2972,38 +2840,120 @@ where [refTable].[SKDoanhThu] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow FACT_DoanhThu.Paths[Lookup Match Output6]"
-          TopLeft="296.374997774139,757.883329067727">
+          Id="Package\Data Flow FACT_DoanhThu.Paths[SKMaCH is not null]"
+          TopLeft="989.166655304532,490.266664528052">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-70.3958311121284,47.0900966919695"
+              EndConnector="-11.2638887409119,62.749998921653"
               Start="0,0"
-              End="-70.3958311121284,39.5900966919695">
+              End="-3.76388874091185,62.749998921653">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,14.9391086558674" />
+                    End="18.5,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,14.9391086558674"
-                    Point2="0,18.9391086558674"
-                    Point3="-4,18.9391086558674" />
+                    Point1="18.5,0"
+                    Point2="22.5,0"
+                    Point3="22.5,4" />
                   <mssgle:LineSegment
-                    End="-66.3958311121284,18.9391086558674" />
+                    End="22.5,58.749998921653" />
                   <mssgle:CubicBezierSegment
-                    Point1="-66.3958311121284,18.9391086558674"
-                    Point2="-70.3958311121284,18.9391086558674"
-                    Point3="-70.3958311121284,22.9391086558674" />
+                    Point1="22.5,58.749998921653"
+                    Point2="22.5,62.749998921653"
+                    Point3="18.5,62.749998921653" />
                   <mssgle:LineSegment
-                    End="-70.3958311121284,39.5900966919695" />
+                    End="-3.76388874091185,62.749998921653" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-83.3893022748142,23.9391086558674,96.3827734375,11.609375"
+              BoundingBox="-19.66779296875,-15.7490234375,84.3355859375,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow FACT_DoanhThu.Paths[OLE DB Source Output]"
+          TopLeft="535.910708287806,74.4692486681417">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28.8807494838164"
+              Start="0,0"
+              End="0,21.3807494838164">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.3807494838164" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow FACT_DoanhThu.Paths[MaSP is not null]"
+          TopLeft="865.74998876825,667.916663354139">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="8.1666665549086,48.4666674570233"
+              Start="0,0"
+              End="8.1666665549086,40.9666674570233">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2333337285116" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2333337285116"
+                    Point2="0,24.2333337285116"
+                    Point3="4,24.2333337285116" />
+                  <mssgle:LineSegment
+                    End="4.1666665549086,24.2333337285116" />
+                  <mssgle:CubicBezierSegment
+                    Point1="4.1666665549086,24.2333337285116"
+                    Point2="8.1666665549086,24.2333337285116"
+                    Point3="8.1666665549086,28.2333337285116" />
+                  <mssgle:LineSegment
+                    End="8.1666665549086,40.9666674570233" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-31.3387956287957,29.2333337285116,70.8442578125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow FACT_DoanhThu.Paths[MaKHisnotnull]"
+          TopLeft="865.493044332602,574.349996783039">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50.8999999044335"
+              Start="0,0"
+              End="0,43.3999999044335">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.3999999044335" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-31.50212890625,16.8254882334667,63.0042578125,9.7490234375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -3044,30 +2994,88 @@ where [refTable].[SKDoanhThu] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow FACT_DoanhThu.Paths[Derived Column Output]"
-          TopLeft="760.855363305457,835.151557625815">
+          Id="Package\Data Flow FACT_DoanhThu.Paths[Lookup Match Output6]"
+          TopLeft="296.374997774139,757.883329067727">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="55.394624531471,0"
+              EndConnector="-70.3958311121284,47.0900966919695"
               Start="0,0"
-              End="47.894624531471,0">
+              End="-70.3958311121284,39.5900966919695">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="47.894624531471,0" />
+                    End="0,14.9391086558674" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.9391086558674"
+                    Point2="0,18.9391086558674"
+                    Point3="-4,18.9391086558674" />
+                  <mssgle:LineSegment
+                    End="-66.3958311121284,18.9391086558674" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-66.3958311121284,18.9391086558674"
+                    Point2="-70.3958311121284,18.9391086558674"
+                    Point3="-70.3958311121284,22.9391086558674" />
+                  <mssgle:LineSegment
+                    End="-70.3958311121284,39.5900966919695" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-83.3893022748142,23.9391086558674,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow FACT_DoanhThu.Paths[Lookup Match Output5]"
+          TopLeft="674.541660231228,554.849995013773">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="87.9583284066373,-64.5833304857211"
+              Start="0,0"
+              End="80.4583284066373,-64.5833304857211">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="39.9791642033186,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="39.9791642033186,0"
+                    Point2="43.9791642033186,0"
+                    Point3="43.9791642033186,-4" />
+                  <mssgle:LineSegment
+                    End="43.9791642033186,-60.5833304857211" />
+                  <mssgle:CubicBezierSegment
+                    Point1="43.9791642033186,-60.5833304857211"
+                    Point2="43.9791642033186,-64.5833304857211"
+                    Point3="47.9791642033186,-64.5833304857211" />
+                  <mssgle:LineSegment
+                    End="80.4583284066373,-64.5833304857211" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-4.21222251543136,1,96.3827734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow FACT_DoanhThu\CTHD_NDS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Data Flow FACT_DoanhThu\DoanhThu_DDS">
     <Properties>
@@ -3082,20 +3090,12 @@ where [refTable].[SKDoanhThu] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow FACT_DoanhThu\CTHD_NDS">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Data Flow FACT_DoanhThu\Kiểm tra xem SKMaDT của từng dòng có tồn tại trong DoanhThu_DDS chưa">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -3105,7 +3105,7 @@ where [refTable].[SKDoanhThu] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>

@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="28"
-  DTS:VersionGUID="{E0E2F276-F0C6-44D8-A3D8-3097BC019D07}">
+  DTS:VersionBuild="30"
+  DTS:VersionGUID="{763AF54D-B34C-4AA2-BCBB-60E52E79779E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -212,8 +212,8 @@ SET NgayCapNhat = GETDATE(), TenLoaiCH = ? WHERE MaloaiCH = ?</property>
               <connections>
                 <connection
                   refId="Package\Data Flow DIM_LoaiCH\Cập nhật dữ liệu.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_DW]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_DW]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.DALT_DW]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.DALT_DW]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -577,14 +577,14 @@ SET NgayCapNhat = GETDATE(), TenLoaiCH = ? WHERE MaloaiCH = ?</property>
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select MaCH, skmach from cuahang</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select MaLoaiCH, skmaloaich from dim_loaicuahang</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select MaCH, skmach from cuahang) [refTable]
-where [refTable].[MaCH] = ?</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select MaLoaiCH, skmaloaich from dim_loaicuahang) [refTable]
+where [refTable].[MaLoaiCH] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the type of connection used to access the reference dataset."
@@ -615,12 +615,12 @@ where [refTable].[MaCH] = ?</property>
                 <property
                   dataType="System.String"
                   description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="MaCH" dataType="DT_STR" length="4" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="skmach" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="MaLoaiCH" dataType="DT_STR" length="4" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="skmaloaich" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                 <property
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Data Flow DIM_LoaiCH\341:invalid};</property>
+                  name="ParameterMap">#{Package\Data Flow DIM_LoaiCH\LoaiCH_NDS.Outputs[OLE DB Source Output].Columns[MaLoaiCH]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -633,8 +633,8 @@ where [refTable].[MaCH] = ?</property>
               <connections>
                 <connection
                   refId="Package\Data Flow DIM_LoaiCH\Kiểm tra DDS.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_NDS 1]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_NDS 1]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.DALT_DW]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.DALT_DW]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -644,17 +644,17 @@ where [refTable].[MaCH] = ?</property>
                   name="Lookup Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow DIM_LoaiCH\Kiểm tra DDS.Inputs[Lookup Input].Columns[MaCH]"
+                      refId="Package\Data Flow DIM_LoaiCH\Kiểm tra DDS.Inputs[Lookup Input].Columns[MaLoaiCH]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="4"
-                      cachedName="MaCH"
-                      lineageId="Package\Data Flow DIM_LoaiCH\341:invalid">
+                      cachedName="MaLoaiCH"
+                      lineageId="Package\Data Flow DIM_LoaiCH\LoaiCH_NDS.Outputs[OLE DB Source Output].Columns[MaLoaiCH]">
                       <properties>
                         <property
                           dataType="System.String"
                           description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">MaCH</property>
+                          name="JoinToReferenceColumn">MaLoaiCH</property>
                         <property
                           dataType="System.Null"
                           description="Specifies the column in the reference table from which a column is copied."
@@ -672,22 +672,6 @@ where [refTable].[MaCH] = ?</property>
                   exclusionGroup="1"
                   name="Lookup Match Output"
                   synchronousInputId="Package\Data Flow DIM_LoaiCH\Kiểm tra DDS.Inputs[Lookup Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Data Flow DIM_LoaiCH\Kiểm tra DDS.Outputs[Lookup Match Output].Columns[skmach]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Copy Column"
-                      lineageId="Package\Data Flow DIM_LoaiCH\Kiểm tra DDS.Outputs[Lookup Match Output].Columns[skmach]"
-                      name="skmach"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn">skmach</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
                   <externalMetadataColumns />
                 </output>
                 <output
@@ -1208,7 +1192,7 @@ WHERE  MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat 
           Id="Package\Data Flow DIM_LoaiCH\Dim_LoaiCH in DDS"
           TopLeft="264.64286156987,156.267652340516" />
         <NodeLayout
-          Size="142.333333333334,42"
+          Size="142.666666666667,42"
           Id="Package\Data Flow DIM_LoaiCH\Kiểm tra DDS"
           TopLeft="508.312493811361,116.934319007183" />
         <NodeLayout
@@ -1216,7 +1200,7 @@ WHERE  MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat 
           Id="Package\Data Flow DIM_LoaiCH\Cập nhật dữ liệu"
           TopLeft="655.645827144696,205.357749032486" />
         <NodeLayout
-          Size="249.666666666667,41.6666666666667"
+          Size="250,42"
           Id="Package\Data Flow DIM_LoaiCH\Cập nhật ngày tạo và ngày cập nhật"
           TopLeft="328.251200750579,242.304109456692" />
         <EdgeLayout
@@ -1251,42 +1235,6 @@ WHERE  MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat 
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow DIM_LoaiCH.Paths[OLE DB Source Output]"
-          TopLeft="454.166663127641,94.8947382329904">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="54.1458306837208,43.0395807741923"
-              Start="0,0"
-              End="46.6458306837208,43.0395807741923">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="23.0729153418604,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="23.0729153418604,0"
-                    Point2="27.0729153418604,0"
-                    Point3="27.0729153418604,4" />
-                  <mssgle:LineSegment
-                    End="27.0729153418604,39.0395807741923" />
-                  <mssgle:CubicBezierSegment
-                    Point1="27.0729153418604,39.0395807741923"
-                    Point2="27.0729153418604,43.0395807741923"
-                    Point3="31.0729153418604,43.0395807741923" />
-                  <mssgle:LineSegment
-                    End="46.6458306837208,43.0395807741923" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="19.0729153418604,-22,16,16"
-              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1357,8 +1305,42 @@ WHERE  MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat 
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="17.8641688368059,23.8790048921797,96.3827734375,11.609375"
+              BoundingBox="17.864168836806,23.8790048921797,96.3827734375,11.609375"
               RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow DIM_LoaiCH.Paths[OLE DB Source Output]"
+          TopLeft="454.166663127641,94.8947382329904">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="54.1458306837208,43.0395807741923"
+              Start="0,0"
+              End="46.6458306837208,43.0395807741923">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="23.0729153418604,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="23.0729153418604,0"
+                    Point2="27.0729153418604,0"
+                    Point3="27.0729153418604,4" />
+                  <mssgle:LineSegment
+                    End="27.0729153418604,39.0395807741923" />
+                  <mssgle:CubicBezierSegment
+                    Point1="27.0729153418604,39.0395807741923"
+                    Point2="27.0729153418604,43.0395807741923"
+                    Point3="31.0729153418604,43.0395807741923" />
+                  <mssgle:LineSegment
+                    End="46.6458306837208,43.0395807741923" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -1382,6 +1364,29 @@ WHERE  MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat 
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow DIM_LoaiCH\Kiểm tra DDS">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

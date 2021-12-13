@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="35"
-  DTS:VersionGUID="{BFB7EAD8-1504-4907-A90F-43F52582B0E1}">
+  DTS:VersionBuild="36"
+  DTS:VersionGUID="{340C2087-5FB1-4EE6-B105-830C6EA6156D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -200,8 +200,8 @@ SET NgayCapNhat = GETDATE(), TenQG = ?, TenThanhPho = ? WHERE MaQG = ?</property
               <connections>
                 <connection
                   refId="Package\Data Flow DIM_QuocGia\Cập nhật dữ liệu.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_DW]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_DW]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.DALT_DW]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.DALT_DW]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -656,8 +656,8 @@ where [refTable].[SKMaQG] = ?</property>
               <connections>
                 <connection
                   refId="Package\Data Flow DIM_QuocGia\Kiểm tra DDS.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_DW]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_DW]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.DALT_DW]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.DALT_DW]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -1103,7 +1103,7 @@ WHERE MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="184.666666666667,44"
+          Size="194.666666666667,42.6666666666667"
           Id="Package\Data Flow DIM_QuocGia"
           TopLeft="73.3273810985424,251.460221446876" />
         <NodeLayout
@@ -1154,18 +1154,18 @@ WHERE MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="165.830357215938,207.391127183394">
+          TopLeft="168.330357215938,207.391127183394">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,44.0690942634822"
+              EndConnector="0,44.0690942634823"
               Start="0,0"
-              End="0,36.5690942634822">
+              End="0,36.5690942634823">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,36.5690942634822" />
+                    End="0,36.5690942634823" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1176,30 +1176,30 @@ WHERE MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="165.660714431876,295.460221446876">
+          TopLeft="170.660714431876,294.126888113543">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="17.4821434393141,90.3447384587672"
+              EndConnector="12.4821434393141,91.6780717921004"
               Start="0,0"
-              End="17.4821434393141,82.8447384587672">
+              End="12.4821434393141,84.1780717921004">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,41.1723692293836" />
+                    End="0,41.8390358960502" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,41.1723692293836"
-                    Point2="0,45.1723692293836"
-                    Point3="4,45.1723692293836" />
+                    Point1="0,41.8390358960502"
+                    Point2="0,45.8390358960502"
+                    Point3="4,45.8390358960502" />
                   <mssgle:LineSegment
-                    End="13.4821434393141,45.1723692293836" />
+                    End="8.48214343931406,45.8390358960502" />
                   <mssgle:CubicBezierSegment
-                    Point1="13.4821434393141,45.1723692293836"
-                    Point2="17.4821434393141,45.1723692293836"
-                    Point3="17.4821434393141,49.1723692293836" />
+                    Point1="8.48214343931406,45.8390358960502"
+                    Point2="12.4821434393141,45.8390358960502"
+                    Point3="12.4821434393141,49.8390358960502" />
                   <mssgle:LineSegment
-                    End="17.4821434393141,82.8447384587672" />
+                    End="12.4821434393141,84.1780717921004" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1221,11 +1221,11 @@ WHERE MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &
           Id="Package\Data Flow DIM_QuocGia\Dim_QuocGia in DDS"
           TopLeft="87.4553642101696,255.78431727537" />
         <NodeLayout
-          Size="142.333333333334,42"
+          Size="142.666666666667,42"
           Id="Package\Data Flow DIM_QuocGia\Kiểm tra DDS"
           TopLeft="441.687493969686,154.450983942036" />
         <NodeLayout
-          Size="249.666666666667,41.6666666666667"
+          Size="250,42"
           Id="Package\Data Flow DIM_QuocGia\Cập nhật ngày tạo và ngày cập nhật"
           TopLeft="45.3762041312797,181.154107724878" />
         <NodeLayout
@@ -1270,6 +1270,28 @@ WHERE MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &
             <mssgm:EdgeLabel
               BoundingBox="29.0586132812503,28.2117150126514,96.3827734375,11.609375"
               RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow DIM_QuocGia.Paths[Derived Column Output]"
+          TopLeft="171.332450837391,222.820774391545">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,32.963542883825"
+              Start="0,0"
+              End="0,25.463542883825">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.463542883825" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1342,28 +1364,6 @@ WHERE MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow DIM_QuocGia.Paths[Derived Column Output]"
-          TopLeft="171.332450837391,222.820774391545">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,32.963542883825"
-              Start="0,0"
-              End="0,25.463542883825">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,25.463542883825" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -1373,7 +1373,7 @@ WHERE MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -1383,7 +1383,7 @@ WHERE MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>

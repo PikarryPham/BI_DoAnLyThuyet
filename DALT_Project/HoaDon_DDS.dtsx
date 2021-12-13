@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="HoaDon_DDS"
   DTS:PackageType="5"
-  DTS:VersionBuild="19"
-  DTS:VersionGUID="{79986999-35FC-4867-837F-B0FF66433972}">
+  DTS:VersionBuild="22"
+  DTS:VersionGUID="{8D4314FD-AE6B-4F96-941E-A436B209E7BC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -165,8 +165,8 @@ SET NgayCapNhat = GETDATE(), LoaiHoaDon = ?
               <connections>
                 <connection
                   refId="Package\Data Flow Task_ HoaDon_Dim\Cập nhật dữ liệu.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_DW]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_DW]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.DALT_DW]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.DALT_DW]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -414,8 +414,8 @@ SET NgayCapNhat = GETDATE(), LoaiHoaDon = ?
               <connections>
                 <connection
                   refId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_Dim in DDS.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_DW]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_DW]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.DALT_DW]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.DALT_DW]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -568,8 +568,8 @@ WHERE MaTrangThai = 1 AND ((NgayBan &gt;= ? AND NgayBan&lt; ?) OR (NgayCapNhat &
               <connections>
                 <connection
                   refId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_NDS]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_NDS]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.DALT_NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.DALT_NDS]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -672,7 +672,9 @@ WHERE MaTrangThai = 1 AND ((NgayBan &gt;= ? AND NgayBan&lt; ?) OR (NgayCapNhat &
                       name="SKMaHD" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Output].ExternalColumns[MaHD]"
-                      dataType="i4"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
                       name="MaHD" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Output].ExternalColumns[NgayBan]"
@@ -718,7 +720,9 @@ WHERE MaTrangThai = 1 AND ((NgayBan &gt;= ? AND NgayBan&lt; ?) OR (NgayCapNhat &
                       name="SKMaHD" />
                     <outputColumn
                       refId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Error Output].Columns[MaHD]"
-                      dataType="i4"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
                       lineageId="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS.Outputs[OLE DB Source Error Output].Columns[MaHD]"
                       name="MaHD" />
                     <outputColumn
@@ -806,7 +810,7 @@ where [refTable].[MaHD] = ?</property>
                   dataType="System.Int32"
                   description="Specifies the cache type of the lookup table."
                   name="CacheType"
-                  typeConverter="CacheType">0</property>
+                  typeConverter="CacheType">1</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
@@ -845,8 +849,8 @@ where [refTable].[MaHD] = ?</property>
               <connections>
                 <connection
                   refId="Package\Data Flow Task_ HoaDon_Dim\Kiểm tra xem MaHD của từng dòng có tồn tại trong HoaDon_DDS chưa.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_DW]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_DW]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.DALT_DW]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.DALT_DW]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -1147,26 +1151,26 @@ where [refTable].[MaHD] = ?</property>
         <NodeLayout
           Size="414.666666666667,42"
           Id="Package\Data Flow Task_ HoaDon_Dim\Kiểm tra xem MaHD của từng dòng có tồn tại trong HoaDon_DDS chưa"
-          TopLeft="420.291660398866,51.0666641561187" />
+          TopLeft="241.541663062448,45.8666642491019" />
         <NodeLayout
           Size="177.333333333334,42.6666666666667"
           Id="Package\Data Flow Task_ HoaDon_Dim\HoaDon_Dim in DDS"
-          TopLeft="670.312490011565,229.733330822785" />
+          TopLeft="491.562492675147,224.533330915768" />
         <NodeLayout
           Size="144,42.6666666666667"
           Id="Package\Data Flow Task_ HoaDon_Dim\HoaDon_NDS"
-          TopLeft="203.124996973202,53.2999990469217" />
+          TopLeft="24.3749996367844,48.0999991399049" />
         <NodeLayout
           Size="156.666666666667,42"
           Id="Package\Data Flow Task_ HoaDon_Dim\Cập nhật dữ liệu"
-          TopLeft="341.687497098931,156.156760848088" />
+          TopLeft="162.937499762513,150.956760941071" />
         <NodeLayout
-          Size="249.666666666667,41.6666666666667"
+          Size="250,42"
           Id="Package\Data Flow Task_ HoaDon_Dim\Cập nhật ngày tạo và ngày cập nhật"
-          TopLeft="781.48035927283,139.103121272294" />
+          TopLeft="573.355362374134,143.003121202557" />
         <EdgeLayout
           Id="Package\Data Flow Task_ HoaDon_Dim.Paths[OLE DB Source Output]"
-          TopLeft="347.124996973202,73.3499982681869">
+          TopLeft="168.374999636784,68.1499983611701">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1188,43 +1192,43 @@ where [refTable].[MaHD] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task_ HoaDon_Dim.Paths[Lookup No Match Output]"
-          TopLeft="695.402771509977,93.0666641561187">
+          TopLeft="516.652774173559,87.8666642491019">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="210.910921096186,46.0364571161753"
+              EndConnector="181.702588200575,55.1364569534546"
               Start="0,0"
-              End="210.910921096186,38.5364571161753">
+              End="181.702588200575,47.6364569534546">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,14.5207527667893" />
+                    End="0,18.181739248411" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,14.5207527667893"
-                    Point2="0,18.5207527667893"
-                    Point3="4,18.5207527667893" />
+                    Point1="0,18.181739248411"
+                    Point2="0,22.181739248411"
+                    Point3="4,22.181739248411" />
                   <mssgle:LineSegment
-                    End="206.910921096186,18.5207527667893" />
+                    End="177.702588200575,22.181739248411" />
                   <mssgle:CubicBezierSegment
-                    Point1="206.910921096186,18.5207527667893"
-                    Point2="210.910921096186,18.5207527667893"
-                    Point3="210.910921096186,22.5207527667893" />
+                    Point1="177.702588200575,22.181739248411"
+                    Point2="181.702588200575,22.181739248411"
+                    Point3="181.702588200575,26.181739248411" />
                   <mssgle:LineSegment
-                    End="210.910921096186,38.5364571161753" />
+                    End="181.702588200575,47.6364569534546" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="49.6490738293431,23.5207527667893,111.6127734375,11.609375"
+              BoundingBox="35.0449073815374,27.181739248411,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task_ HoaDon_Dim.Paths[Lookup Match Output]"
-          TopLeft="559.847215954422,93.0666641561187">
+          TopLeft="381.097218618004,87.8666642491019">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1260,30 +1264,30 @@ where [refTable].[MaHD] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task_ HoaDon_Dim.Paths[Derived Column Output]"
-          TopLeft="906.313692606164,180.769787938961">
+          TopLeft="698.355362374134,185.003121202557">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-147.334535927932,48.9635428838242"
+              EndConnector="-118.12620303232,39.5302097132117"
               Start="0,0"
-              End="-147.334535927932,41.4635428838242">
+              End="-118.12620303232,32.0302097132117">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20.4817714419121" />
+                    End="0,15.7651048566059" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,20.4817714419121"
-                    Point2="0,24.4817714419121"
-                    Point3="-4,24.4817714419121" />
+                    Point1="0,15.7651048566059"
+                    Point2="0,19.7651048566059"
+                    Point3="-4,19.7651048566059" />
                   <mssgle:LineSegment
-                    End="-143.334535927932,24.4817714419121" />
+                    End="-114.12620303232,19.7651048566059" />
                   <mssgle:CubicBezierSegment
-                    Point1="-143.334535927932,24.4817714419121"
-                    Point2="-147.334535927932,24.4817714419121"
-                    Point3="-147.334535927932,28.4817714419121" />
+                    Point1="-114.12620303232,19.7651048566059"
+                    Point2="-118.12620303232,19.7651048566059"
+                    Point3="-118.12620303232,23.7651048566059" />
                   <mssgle:LineSegment
-                    End="-147.334535927932,41.4635428838242" />
+                    End="-118.12620303232,32.0302097132117" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="34"
-  DTS:VersionGUID="{FF6E6B60-6D13-4131-AF42-3C2120D3BAD0}">
+  DTS:VersionBuild="36"
+  DTS:VersionGUID="{60B0C0A6-575E-49E6-8FD3-B5A198EC70E8}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -38,7 +38,6 @@
       DTS:refId="Package\Dim_HoaDon"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
-      DTS:Disabled="True"
       DTS:DTSID="{0F6677F1-0AEA-453D-93BC-E481678A8AEB}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
@@ -73,7 +72,6 @@
       DTS:refId="Package\Dim_LoaiCH"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
-      DTS:Disabled="True"
       DTS:DTSID="{C634E79D-6B1F-4D17-8837-99A6297CF526}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
@@ -91,7 +89,6 @@
       DTS:refId="Package\Dim_LoaiSP"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
-      DTS:Disabled="True"
       DTS:DTSID="{29DA8B6A-62FC-4F00-9EE1-1EE276B3FCDC}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
@@ -109,7 +106,6 @@
       DTS:refId="Package\Dim_QuocGia"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
-      DTS:Disabled="True"
       DTS:DTSID="{6d7b217a-2803-4193-8308-c0cc485ec61f}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
@@ -144,7 +140,6 @@
       DTS:refId="Package\Fact_DoanhThu"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="fact doanh thu này là chi tiết hóa đơn"
-      DTS:Disabled="True"
       DTS:DTSID="{5E5F20CA-9B14-4E54-9110-4B1002484AFE}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"

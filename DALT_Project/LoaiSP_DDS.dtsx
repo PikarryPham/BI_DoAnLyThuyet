@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="36"
-  DTS:VersionGUID="{4C642ECB-ED31-439B-B5E8-0B40498B49BD}">
+  DTS:VersionBuild="37"
+  DTS:VersionGUID="{B8AE1F18-71AC-454C-8044-0D7A2613A88A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -177,8 +177,8 @@ SET NgayCapNhat = GETDATE(), TenLoaiSP = ? WHERE MaloaiSP = ?</property>
               <connections>
                 <connection
                   refId="Package\Data Flow DIM_LoaiSP\Cập nhật dữ liệu.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_DW]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_DW]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.DALT_DW]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.DALT_DW]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -598,8 +598,8 @@ where [refTable].[SKMaLoaiSP] = ?</property>
               <connections>
                 <connection
                   refId="Package\Data Flow DIM_LoaiSP\Kiểm tra DDS.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_DW]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_DW]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.DALT_DW]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.DALT_DW]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -1131,7 +1131,7 @@ WHERE MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &
           Id="Package\Data Flow DIM_LoaiSP\LoaiSP_NDS"
           TopLeft="237.499996460974,73.8947382329904" />
         <NodeLayout
-          Size="142.333333333334,42"
+          Size="142.666666666667,42"
           Id="Package\Data Flow DIM_LoaiSP\Kiểm tra DDS"
           TopLeft="539.645826101613,80.3843186236267" />
         <NodeLayout
@@ -1139,7 +1139,7 @@ WHERE MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &
           Id="Package\Data Flow DIM_LoaiSP\Cập nhật dữ liệu"
           TopLeft="686.979159434947,168.80774864893" />
         <NodeLayout
-          Size="249.666666666667,41.6666666666667"
+          Size="250,42"
           Id="Package\Data Flow DIM_LoaiSP\Cập nhật ngày tạo và ngày cập nhật"
           TopLeft="346.147033241066,226.754109073136" />
         <EdgeLayout
@@ -1300,7 +1300,7 @@ WHERE MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -1310,7 +1310,7 @@ WHERE MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>

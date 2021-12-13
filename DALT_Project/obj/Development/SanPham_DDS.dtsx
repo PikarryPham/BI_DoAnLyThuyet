@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="48"
-  DTS:VersionGUID="{959AD6A5-1AF9-49D2-A796-119CFFD3078E}">
+  DTS:VersionBuild="49"
+  DTS:VersionGUID="{DFC34070-5629-4123-BEFE-C96872C3841A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -334,8 +334,8 @@ SET NgayCapNhap = GETDATE(), TenSP = ? WHERE MaSP = ?</property>
               <connections>
                 <connection
                   refId="Package\Data Flow Dim_SanPham\Cập nhật dữ liệu.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_DW]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_DW]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.DALT_DW]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.DALT_DW]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -854,8 +854,8 @@ where [refTable].[SKMaSP] = ?</property>
               <connections>
                 <connection
                   refId="Package\Data Flow Dim_SanPham\Kiểm tra xem SKMaSP của từng dòng có tồn tại trong SanPham_DDS chưa.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_DW]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-LATGDUJ.DALT_DW]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.DALT_DW]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.DALT_DW]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -1625,7 +1625,7 @@ WHERE  MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhap 
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -1635,7 +1635,7 @@ WHERE  MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhap 
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
