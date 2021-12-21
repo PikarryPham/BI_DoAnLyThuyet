@@ -12,7 +12,7 @@
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
   DTS:VersionBuild="105"
-  DTS:VersionGUID="{C2C4A5AD-2731-43BB-B28D-F01723797D91}">
+  DTS:VersionGUID="{6BD496D3-753F-4F82-9AC5-220D82059EE3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -79,7 +79,7 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[LocalHost.DALT_NDS]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{1D2C2D48-DD07-4890-87F1-DA53865BBC3F}"
+      DTS:DTSID="{C7BCEA0A-1192-4DBA-BE46-31152484BFA2}"
       DTS:ObjectName="LocalHost.DALT_NDS">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -91,7 +91,7 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[LocalHost.DALT_STAGE]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{505C8E8F-F8BB-4E6E-844F-F42E5B12D4CF}"
+      DTS:DTSID="{F273FB12-ECF3-41B0-9106-397B79CD6A27}"
       DTS:ObjectName="LocalHost.DALT_STAGE">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -618,7 +618,7 @@ WHERE MaQG = ? AND MaNguon = ?</property>
                   expressionType="Notify"
                   name="SqlCommand"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT maqg
- FROM QuocGia
+FROM QuocGia
 WHERE MaNguon  = 1;</property>
                 <property
                   dataType="System.String"
@@ -626,7 +626,7 @@ WHERE MaNguon  = 1;</property>
                   expressionType="Notify"
                   name="SqlCommandParam"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT maqg
- FROM QuocGia
+FROM QuocGia
 WHERE MaNguon  = 1;) [refTable]
 where [refTable].[maqg] = ?</property>
                 <property

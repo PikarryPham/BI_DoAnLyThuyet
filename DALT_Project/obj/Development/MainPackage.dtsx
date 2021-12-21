@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="34"
-  DTS:VersionGUID="{BE4B36DD-D3B8-4D39-BDDF-4AA838E96D72}">
+  DTS:VersionBuild="35"
+  DTS:VersionGUID="{D64DF7A6-8887-4BE2-B681-B4DA94DF6F94}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -38,7 +38,6 @@
       DTS:refId="Package\Source Jade To Stage"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
-      DTS:Disabled="True"
       DTS:DTSID="{E5973C65-CFAD-487B-9BD0-C4AF296FF246}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
@@ -56,7 +55,6 @@
       DTS:refId="Package\Source Jupiter To Stage"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
-      DTS:Disabled="True"
       DTS:DTSID="{76634B6D-19B3-4A8E-8A9B-D30F69E8FDCD}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
@@ -74,7 +72,6 @@
       DTS:refId="Package\Source Webtower To Stage"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
-      DTS:Disabled="True"
       DTS:DTSID="{3970EC74-E6CC-4D65-9AD5-F1D4668A53CD}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
@@ -153,19 +150,23 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="180.8,41.6"
+          Size="135.333333333334,41.3333333333334"
+          Id="Package\NDS to DDS"
+          TopLeft="144.285716742885,412.176476368855" />
+        <NodeLayout
+          Size="180.666666666667,41.3333333333334"
           Id="Package\Source Jade To Stage"
           TopLeft="118.571430590688,128.470590037046" />
         <NodeLayout
-          Size="182.4,41.6"
+          Size="182.666666666667,41.3333333333334"
           Id="Package\Source Jupiter To Stage"
           TopLeft="117.857144864238,34.4117651884944" />
         <NodeLayout
-          Size="182.4,41.6"
+          Size="182.666666666667,41.3333333333334"
           Id="Package\Source Webtower To Stage"
           TopLeft="127.142859308087,227.117650244063" />
         <NodeLayout
-          Size="142.4,41.6"
+          Size="142.666666666667,41.3333333333334"
           Id="Package\Stage to NDS"
           TopLeft="145.000002469336,308.176474910293" />
         <EdgeLayout
@@ -246,10 +247,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="135.2,41.6"
-          Id="Package\NDS to DDS"
-          TopLeft="144.285716742885,412.176476368855" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
           TopLeft="214.042859606111,349.776474910293">

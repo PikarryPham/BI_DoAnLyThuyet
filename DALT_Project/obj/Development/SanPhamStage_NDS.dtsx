@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="4"
-  DTS:VersionGUID="{658F63E3-592D-4779-91DB-879C9C65D434}">
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{FF7E1C40-CEA9-419E-A888-35FA0ACE898D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1558,9 +1558,9 @@ where [refTable].[SKMaTrangThai] = ?</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="144,42.6666666666667"
+          Size="144,42"
           Id="Package\Stage to NDS"
-          TopLeft="375.624994402751,331.842111509262" />
+          TopLeft="368.12499451451,72.4921161468013" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -1586,7 +1586,7 @@ where [refTable].[SKMaTrangThai] = ?</property>
           Id="Package\Stage to NDS\Cập nhật lại ngày tạo và ngày cập nhật"
           TopLeft="695.62498963438,523.929833808213" />
         <NodeLayout
-          Size="182.666666666667,42.6666666666667"
+          Size="157.333333333334,42.6666666666667"
           Id="Package\Stage to NDS\San Pham Stage"
           TopLeft="574.378565053383,31.5263164205234" />
         <NodeLayout
@@ -1629,24 +1629,72 @@ where [refTable].[SKMaTrangThai] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Stage to NDS.Paths[OLE DB Source Output]"
-          TopLeft="669.180351529548,74.1929830871901">
+          TopLeft="653.04523172005,74.1929830871901">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,54.345097974868"
+              EndConnector="19.603572952329,54.345097974868"
               Start="0,0"
-              End="0,46.845097974868">
+              End="19.603572952329,46.845097974868">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,46.845097974868" />
+                    End="0,23.172548987434" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.172548987434"
+                    Point2="0,27.172548987434"
+                    Point3="4,27.172548987434" />
+                  <mssgle:LineSegment
+                    End="15.603572952329,27.172548987434" />
+                  <mssgle:CubicBezierSegment
+                    Point1="15.603572952329,27.172548987434"
+                    Point2="19.603572952329,27.172548987434"
+                    Point3="19.603572952329,31.172548987434" />
+                  <mssgle:LineSegment
+                    End="19.603572952329,46.845097974868" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Stage to NDS.Paths[Lookup No Match Output]"
+          TopLeft="478.124992875382,328.368426216936">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-26.3333293845254,49.929824509889"
+              Start="0,0"
+              End="-18.8333293845254,49.929824509889">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-9.16666469226271,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-9.16666469226271,0"
+                    Point2="-13.1666646922627,0"
+                    Point3="-13.1666646922627,4" />
+                  <mssgle:LineSegment
+                    End="-13.1666646922627,45.929824509889" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-13.1666646922627,45.929824509889"
+                    Point2="-13.1666646922627,49.929824509889"
+                    Point3="-17.1666646922627,49.929824509889" />
+                  <mssgle:LineSegment
+                    End="-18.8333293845254,49.929824509889" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-68.9730514110127,-17.609375,111.6127734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1815,42 +1863,6 @@ where [refTable].[SKMaTrangThai] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Stage to NDS.Paths[Lookup No Match Output]"
-          TopLeft="478.124992875382,328.368426216936">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-26.3333293845254,49.929824509889"
-              Start="0,0"
-              End="-18.8333293845254,49.929824509889">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-9.16666469226271,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-9.16666469226271,0"
-                    Point2="-13.1666646922627,0"
-                    Point3="-13.1666646922627,4" />
-                  <mssgle:LineSegment
-                    End="-13.1666646922627,45.929824509889" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-13.1666646922627,45.929824509889"
-                    Point2="-13.1666646922627,49.929824509889"
-                    Point3="-17.1666646922627,49.929824509889" />
-                  <mssgle:LineSegment
-                    End="-18.8333293845254,49.929824509889" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-68.9730514110127,-17.609375,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -1909,7 +1921,7 @@ where [refTable].[SKMaTrangThai] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -1919,7 +1931,7 @@ where [refTable].[SKMaTrangThai] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>

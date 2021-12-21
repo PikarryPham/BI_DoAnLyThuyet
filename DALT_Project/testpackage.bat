@@ -1,0 +1,1 @@
+"C:\Program Files\Microsoft SQL Server\150\DTS\Binn\DTExec.exe" /F "C:\Users\Thanh Thao\Desktop\LT new\BI_DoAnLyThuyet\DALT_Project\NDS_DDS.dtsx"

@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="37"
-  DTS:VersionGUID="{B8AE1F18-71AC-454C-8044-0D7A2613A88A}">
+  DTS:VersionBuild="38"
+  DTS:VersionGUID="{1966D2F2-BDED-4DB3-944C-DC8DD72FD347}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1025,7 +1025,7 @@ WHERE MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &
           Id="Package\Data Flow DIM_LoaiSP"
           TopLeft="235.64880669468,183.860222655658" />
         <NodeLayout
-          Size="254.666666666667,41.3333333333334"
+          Size="256,42.6666666666667"
           Id="Package\Get CET, LSET for LoaiSanPham_DIM"
           TopLeft="203.571425875534,106.874461551166" />
         <NodeLayout
@@ -1038,18 +1038,18 @@ WHERE MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &
           TopLeft="198.964283951615,272.704961928029" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="328.514875967619,64.933333984216">
+          TopLeft="328.848209300953,64.933333984216">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,41.9411275669495"
+              EndConnector="0,41.94112756695"
               Start="0,0"
-              End="0,34.4411275669495">
+              End="0,34.44112756695">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,34.4411275669495" />
+                    End="0,34.44112756695" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1060,18 +1060,18 @@ WHERE MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="329.44344961844,148.207794884499">
+          TopLeft="329.776782951774,149.541128217833">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,35.6524277711592"
+              EndConnector="0,34.3190944378253"
               Start="0,0"
-              End="0,28.1524277711592">
+              End="0,26.8190944378253">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,28.1524277711592" />
+                    End="0,26.8190944378253" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1300,7 +1300,7 @@ WHERE MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -1310,7 +1310,7 @@ WHERE MaTrangThai = 1 AND ((NgayTao &gt;= ? AND NgayTao&lt; ?) OR (NgayCapNhat &
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>

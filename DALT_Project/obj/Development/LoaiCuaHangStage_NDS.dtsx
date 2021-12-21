@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="76"
-  DTS:VersionGUID="{18FAC87F-2CFF-49C1-A892-D369F21AC945}">
+  DTS:VersionBuild="68"
+  DTS:VersionGUID="{1B09EC69-E239-425E-9919-3C3D5A2583A1}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -43,8 +43,20 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[LocalHost.DALT_NDS]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{6C83221B-EC5A-4955-9075-874AD1CE2597}"
+      DTS:DTSID="{57C614A2-565A-492B-84F7-ED0CAE1C7727}"
       DTS:ObjectName="LocalHost.DALT_NDS">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=DALT_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.DALT_NDS 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{3938618E-9D02-4CC6-8656-179D0DC22F89}"
+      DTS:ObjectName="LocalHost.DALT_NDS 1">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
@@ -55,7 +67,7 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[LocalHost.DALT_STAGE]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{2A53417F-5ED4-46CE-A683-80E52B55EE80}"
+      DTS:DTSID="{293D9D92-BABF-4432-811B-455B09C916B3}"
       DTS:ObjectName="LocalHost.DALT_STAGE">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -348,16 +360,16 @@ WHERE MaLoaiCH = ? AND MaNguon = ?</property>
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT maloaich 
-FROM LoaiCuaHang 
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT maloaich
+FROM LoaiCuaHang
 WHERE MaNguon  = 1;</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT maloaich 
-FROM LoaiCuaHang 
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT maloaich
+FROM LoaiCuaHang
 WHERE MaNguon  = 1;) [refTable]
 where [refTable].[maloaich] = ?</property>
                 <property
@@ -408,8 +420,8 @@ where [refTable].[maloaich] = ?</property>
               <connections>
                 <connection
                   refId="Package\Stage to NDS\Kiểm tra xem MaLoaiCH của từng dòng có tồn tại trong LoaiCuaHang_NDS chưa.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[LocalHost.DALT_NDS]"
-                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.DALT_NDS]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.DALT_NDS 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.DALT_NDS 1]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -497,14 +509,14 @@ where [refTable].[maloaich] = ?</property>
                   expressionType="Notify"
                   name="SqlCommand"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT SKMaTrangThai
- FROM TrangThai</property>
+FROM TrangThai</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT SKMaTrangThai
- FROM TrangThai) [refTable]
+FROM TrangThai) [refTable]
 where [refTable].[SKMaTrangThai] = ?</property>
                 <property
                   dataType="System.Int32"
@@ -1257,119 +1269,112 @@ where [refTable].[SKMaTrangThai] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Stage to NDS.Paths[Lookup Match Output1]"
-          TopLeft="190.61269769501,383.823534205711">
+          TopLeft="265.457142139454,383.423534205711">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-23.3269818887689,97.176472540133"
+              EndConnector="-98.1714263332133,97.576472540133"
               Start="0,0"
-              End="-23.3269818887689,89.676472540133">
+              End="-98.1714263332133,90.076472540133">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35.0741591651044" />
+                    End="0,44.7882362700665" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,35.0741591651044"
-                    Point2="0,39.0741591651044"
-                    Point3="-4,39.0741591651044" />
+                    Point1="0,44.7882362700665"
+                    Point2="0,48.7882362700665"
+                    Point3="-4,48.7882362700665" />
                   <mssgle:LineSegment
-                    End="-19.3269818887689,39.0741591651044" />
+                    End="-94.1714263332133,48.7882362700665" />
                   <mssgle:CubicBezierSegment
-                    Point1="-19.3269818887689,39.0741591651044"
-                    Point2="-23.3269818887689,39.0741591651044"
-                    Point3="-23.3269818887689,43.0741591651044" />
+                    Point1="-94.1714263332133,48.7882362700665"
+                    Point2="-98.1714263332133,48.7882362700665"
+                    Point3="-98.1714263332133,52.7882362700665" />
                   <mssgle:LineSegment
-                    End="-23.3269818887689,89.676472540133" />
+                    End="-98.1714263332133,90.076472540133" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-59.8548776631344,44.0741591651044,96.3827734375,11.609375"
+              BoundingBox="-97.2770998853566,53.7882362700665,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Stage to NDS.Paths[Lookup Match Output]"
-          TopLeft="320.142858712041,305.058827218712">
+          TopLeft="320.142858712041,304.658827218712">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-54.7523832392528,36.764706986999"
+              EndConnector="-54.6857165725861,37.1647069869985"
               Start="0,0"
-              End="-54.7523832392528,29.264706986999">
+              End="-54.6857165725861,29.6647069869985">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,14.3823534934995" />
+                    End="0,14.5823534934992" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,14.3823534934995"
-                    Point2="0,18.3823534934995"
-                    Point3="-4,18.3823534934995" />
+                    Point1="0,14.5823534934992"
+                    Point2="0,18.5823534934992"
+                    Point3="-4,18.5823534934992" />
                   <mssgle:LineSegment
-                    End="-50.7523832392528,18.3823534934995" />
+                    End="-50.6857165725861,18.5823534934992" />
                   <mssgle:CubicBezierSegment
-                    Point1="-50.7523832392528,18.3823534934995"
-                    Point2="-54.7523832392528,18.3823534934995"
-                    Point3="-54.7523832392528,22.3823534934995" />
+                    Point1="-50.6857165725861,18.5823534934992"
+                    Point2="-54.6857165725861,18.5823534934992"
+                    Point3="-54.6857165725861,22.5823534934992" />
                   <mssgle:LineSegment
-                    End="-54.7523832392528,29.264706986999" />
+                    End="-54.6857165725861,29.6647069869985" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-75.5675783383764,23.3823534934995,96.3827734375,11.609375"
+              BoundingBox="-75.5342450050431,23.5823534934992,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Stage to NDS.Paths[Lookup Error Output]"
-          TopLeft="340.168253250566,383.823534205711">
+          TopLeft="340.257142139454,383.423534205711">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="91.2603236519015,63.176469987651"
+              EndConnector="91.1714347630131,63.5764699876511"
               Start="0,0"
-              End="91.2603236519015,55.676469987651">
+              End="91.1714347630131,56.0764699876511">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,21.4029332333237" />
+                    End="0,21.5637324348252" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,21.4029332333237"
-                    Point2="0,25.4029332333237"
-                    Point3="4,25.4029332333237" />
+                    Point1="0,21.5637324348252"
+                    Point2="0,25.5637324348252"
+                    Point3="4,25.5637324348252" />
                   <mssgle:LineSegment
-                    End="87.2603236519015,25.4029332333237" />
+                    End="87.1714347630131,25.5637324348252" />
                   <mssgle:CubicBezierSegment
-                    Point1="87.2603236519015,25.4029332333237"
-                    Point2="91.2603236519015,25.4029332333237"
-                    Point3="91.2603236519015,29.4029332333237" />
+                    Point1="87.1714347630131,25.5637324348252"
+                    Point2="91.1714347630131,25.5637324348252"
+                    Point3="91.1714347630131,29.5637324348252" />
                   <mssgle:LineSegment
-                    End="91.2603236519015,55.676469987651" />
+                    End="91.1714347630131,56.0764699876511" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-0.236224892799257,30.4029332333237,91.7327734375,11.609375"
+              BoundingBox="-0.280669337243481,30.5637324348252,91.7327734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <AnnotationLayout
-          Text="p"
-          ParentId="Package\Stage to NDS"
-          FontInfo="{assembly:Null}"
-          Size="36.6666666666667,40"
-          Id="9d9aefa9-36bc-4514-aecb-5ba781e2aeb7"
-          TopLeft="266.249996032566,173.333335290875" />
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>

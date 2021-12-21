@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="52"
-  DTS:VersionGUID="{9F651642-C7EF-48D0-9178-D0FC3CE23A86}">
+  DTS:VersionBuild="53"
+  DTS:VersionGUID="{883167C6-FF0A-427C-A5EE-3B19A917A66B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -233,35 +233,35 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="182.4,41.6"
+          Size="182.666666666667,41.3333333333334"
           Id="Package\NDS_ChiTietHoaDon"
           TopLeft="440.714289866844,537.021056697418" />
         <NodeLayout
-          Size="147.2,41.6"
+          Size="147.333333333334,41.3333333333334"
           Id="Package\NDS_CuaHang"
           TopLeft="117.142855785027,219.068114169634" />
         <NodeLayout
-          Size="146.4,42.4"
+          Size="146.666666666667,42.6666666666667"
           Id="Package\NDS_HoaDon"
           TopLeft="210.714285949967,444.844586162806" />
         <NodeLayout
-          Size="182.4,41.6"
+          Size="182.666666666667,41.3333333333334"
           Id="Package\NDS_KhachHang"
           TopLeft="270.714286971761,316.950468483573" />
         <NodeLayout
-          Size="182.4,41.6"
+          Size="182.666666666667,41.3333333333334"
           Id="Package\NDS_LoaiCuaHang"
           TopLeft="115.714284332127,40.8916410825412" />
         <NodeLayout
-          Size="167.2,41.6"
+          Size="167.333333333334,41.3333333333334"
           Id="Package\NDS_LoaiSanPham"
           TopLeft="530.000005673085,43.9504646548512" />
         <NodeLayout
-          Size="144,41.6"
+          Size="144,41.3333333333334"
           Id="Package\NDS_QuocGia"
           TopLeft="342.142859616754,43.9504646548512" />
         <NodeLayout
-          Size="154.4,42.4"
+          Size="154.666666666667,42.6666666666667"
           Id="Package\NDS_SanPham"
           TopLeft="502.142862341538,181.585760220334" />
         <EdgeLayout

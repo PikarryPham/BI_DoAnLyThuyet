@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="HoaDon_DDS"
   DTS:PackageType="5"
-  DTS:VersionBuild="22"
-  DTS:VersionGUID="{8D4314FD-AE6B-4F96-941E-A436B209E7BC}">
+  DTS:VersionBuild="24"
+  DTS:VersionGUID="{B4D65A52-A3FF-434C-A275-E07C1D364AF4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1305,7 +1305,7 @@ where [refTable].[MaHD] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -1315,7 +1315,7 @@ where [refTable].[MaHD] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>

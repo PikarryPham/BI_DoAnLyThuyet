@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="33"
-  DTS:VersionGUID="{E7ABFFBA-05E1-41D9-9984-DEC8E47BA002}">
+  DTS:VersionBuild="34"
+  DTS:VersionGUID="{C0A58233-C6D0-45DA-9124-1C9DE459B356}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -64,6 +64,30 @@
           DTS:ConnectionString="Data Source=DESKTOP-LATGDUJ;Initial Catalog=DALT_STAGE;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.DALT_NDS]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{8DF3334F-D560-4571-819C-AFD1CC6B1941}"
+      DTS:ObjectName="LocalHost.DALT_NDS">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=DALT_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.DALT_STAGE]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{E84A24ED-C8B8-47DE-AA0F-0F41F0E793E8}"
+      DTS:ObjectName="LocalHost.DALT_STAGE">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=DALT_STAGE;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
@@ -110,8 +134,8 @@ WHERE MaLoaiSP = ? AND MaNguon = ?</property>
               <connections>
                 <connection
                   refId="Package\Stage to NDS\Cập nhật dữ liệu cho LoaiSP.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_NDS]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_NDS]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.DALT_NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.DALT_NDS]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -404,8 +428,8 @@ where [refTable].[MaLoaiSP] = ?</property>
               <connections>
                 <connection
                   refId="Package\Stage to NDS\Kiểm tra xem MaLoaiSP của từng dòng có tồn tại trong LoaiSanPham_NDS chưa.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_NDS]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_NDS]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.DALT_NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.DALT_NDS]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -566,8 +590,8 @@ where [refTable].[skmatrangthai] = ?</property>
               <connections>
                 <connection
                   refId="Package\Stage to NDS\Kiểm tra xem TrangThai của từng dòng có tồn tại trong TrangThai_NDS chưa.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_NDS]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_NDS]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.DALT_NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.DALT_NDS]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -713,8 +737,8 @@ where [refTable].[skmatrangthai] = ?</property>
               <connections>
                 <connection
                   refId="Package\Stage to NDS\Loai San Pham NDS.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_NDS]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_NDS]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.DALT_NDS]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.DALT_NDS]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -880,8 +904,8 @@ where [refTable].[skmatrangthai] = ?</property>
               <connections>
                 <connection
                   refId="Package\Stage to NDS\Loai San Pham Stage.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_STAGE]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-ED2S73F\TRANGPHAM.DALT_STAGE]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.DALT_STAGE]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.DALT_STAGE]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1142,7 +1166,7 @@ where [refTable].[skmatrangthai] = ?</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="150.4,41.6"
+          Size="150.666666666667,41.3333333333334"
           Id="Package\Stage to NDS"
           TopLeft="242.857146992975,141.470590219366" />
       </GraphLayout>
@@ -1154,59 +1178,59 @@ where [refTable].[skmatrangthai] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="178.4,41.6"
+          Size="178.666666666667,42.6666666666667"
           Id="Package\Stage to NDS\Loai San Pham Stage"
           TopLeft="220.000003746578,75.7058834146876" />
         <NodeLayout
-          Size="210.4,41.6"
+          Size="210.666666666667,41.3333333333334"
           Id="Package\Stage to NDS\Cập nhật dữ liệu cho LoaiSP"
           TopLeft="61.4285724746939,475.647063306459" />
         <NodeLayout
-          Size="456,41.6"
+          Size="456,41.3333333333334"
           Id="Package\Stage to NDS\Kiểm tra xem TrangThai của từng dòng có tồn tại trong TrangThai_NDS chưa"
           TopLeft="109.371431782781,265.247061118618" />
         <NodeLayout
-          Size="249.6,41.6"
+          Size="249.333333333334,41.3333333333334"
           Id="Package\Stage to NDS\Cập nhật ngày tạo và ngày cập nhật"
           TopLeft="330.65714792962,479.04706494734" />
         <NodeLayout
-          Size="251.2,41.6"
+          Size="251.333333333334,41.3333333333334"
           Id="Package\Stage to NDS\Thêm cột MaNguonDL trong pipeline"
           TopLeft="212.22857639157,172.717648056222" />
         <NodeLayout
-          Size="456,41.6"
+          Size="456,41.3333333333334"
           Id="Package\Stage to NDS\Kiểm tra xem MaLoaiSP của từng dòng có tồn tại trong LoaiSanPham_NDS chưa"
           TopLeft="102.14285888234,368.482356684101" />
         <NodeLayout
-          Size="170.4,41.6"
+          Size="170.666666666667,41.3333333333334"
           Id="Package\Stage to NDS\Loai San Pham NDS"
           TopLeft="372.142863480413,581.011771205057" />
         <EdgeLayout
           Id="Package\Stage to NDS.Paths[OLE DB Source Output]"
-          TopLeft="309.200003746578,117.305883414688">
+          TopLeft="309.333337079911,118.372550081354">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="28.6285726449921,55.4117646415341"
+              EndConnector="28.5619059783253,54.3450979748677"
               Start="0,0"
-              End="28.6285726449921,47.9117646415341">
+              End="28.5619059783253,46.8450979748677">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,23.7058823207671" />
+                    End="0,23.1725489874339" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,23.7058823207671"
-                    Point2="0,27.7058823207671"
-                    Point3="4,27.7058823207671" />
+                    Point1="0,23.1725489874339"
+                    Point2="0,27.1725489874339"
+                    Point3="4,27.1725489874339" />
                   <mssgle:LineSegment
-                    End="24.6285726449921,27.7058823207671" />
+                    End="24.5619059783253,27.1725489874339" />
                   <mssgle:CubicBezierSegment
-                    Point1="24.6285726449921,27.7058823207671"
-                    Point2="28.6285726449921,27.7058823207671"
-                    Point3="28.6285726449921,31.7058823207671" />
+                    Point1="24.5619059783253,27.1725489874339"
+                    Point2="28.5619059783253,27.1725489874339"
+                    Point3="28.5619059783253,31.1725489874339" />
                   <mssgle:LineSegment
-                    End="28.6285726449921,47.9117646415341" />
+                    End="28.5619059783253,46.8450979748677" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1377,7 +1401,7 @@ where [refTable].[skmatrangthai] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -1387,7 +1411,7 @@ where [refTable].[skmatrangthai] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1400,7 +1424,7 @@ where [refTable].[skmatrangthai] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -1410,7 +1434,7 @@ where [refTable].[skmatrangthai] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
