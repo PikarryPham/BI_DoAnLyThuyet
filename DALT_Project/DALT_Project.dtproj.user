@@ -8,9 +8,9 @@
         <UseWinAuth>false</UseWinAuth>
         <WinAuthUserName />
         <WinAuthDomain />
-        <ServerName />
-        <PathOnServer />
-        <StartObjectID>LoaiSP_DDS.dtsx</StartObjectID>
+        <ServerName>DESKTOP-ASETP96</ServerName>
+        <PathOnServer>/SSISDB/AutomatePackage/DALT_Project</PathOnServer>
+        <StartObjectID>MainPackage.dtsx</StartObjectID>
         <UserIDs />
         <UserPasswords />
         <OfflineMode>false</OfflineMode>
